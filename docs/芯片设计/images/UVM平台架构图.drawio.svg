@@ -1,7 +1,65 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
-  <defs/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#666"/>
+    </marker>
+  </defs>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 UVM平台架构图 示意图</text>
+    <text x="300" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">UVM验证平台架构图</text>
+    <!-- uvm_test -->
+    <rect x="230" y="40" width="140" height="35" rx="5" fill="#e3f2fd" stroke="#1e88e5" stroke-width="2"/>
+    <text x="300" y="63" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e88e5">uvm_test</text>
+    <line x1="300" y1="75" x2="300" y2="95" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- uvm_env -->
+    <rect x="200" y="100" width="200" height="40" rx="5" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+    <text x="300" y="125" text-anchor="middle" font-size="13" font-weight="bold" fill="#e65100">uvm_env (验证环境)</text>
+    <!-- Scoreboard -->
+    <rect x="420" y="100" width="130" height="40" rx="5" fill="#fce4ec" stroke="#c62828" stroke-width="2"/>
+    <text x="485" y="120" text-anchor="middle" font-size="11" font-weight="bold" fill="#c62828">uvm_scoreboard</text>
+    <text x="485" y="135" text-anchor="middle" font-size="9" fill="#c62828">计分板</text>
+    <line x1="400" y1="120" x2="415" y2="120" stroke="#c62828" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <!-- uvm_agent -->
+    <rect x="50" y="100" width="130" height="40" rx="5" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="115" y="120" text-anchor="middle" font-size="11" font-weight="bold" fill="#2e7d32">uvm_agent</text>
+    <text x="115" y="135" text-anchor="middle" font-size="9" fill="#2e7d32">代理</text>
+    <line x1="180" y1="120" x2="195" y2="120" stroke="#2e7d32" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <!-- Agent components -->
+    <rect x="30" y="160" width="80" height="40" rx="3" fill="#bbdefb" stroke="#1e88e5" stroke-width="1.5"/>
+    <text x="70" y="180" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e88e5">uvm_sequencer</text>
+    <text x="70" y="195" text-anchor="middle" font-size="9" fill="#555">序列器</text>
+    <rect x="30" y="215" width="80" height="40" rx="3" fill="#ffe0b2" stroke="#e65100" stroke-width="1.5"/>
+    <text x="70" y="235" text-anchor="middle" font-size="10" font-weight="bold" fill="#e65100">uvm_driver</text>
+    <text x="70" y="250" text-anchor="middle" font-size="9" fill="#555">驱动器</text>
+    <line x1="70" y1="200" x2="70" y2="213" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <rect x="30" y="270" width="80" height="40" rx="3" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="1.5"/>
+    <text x="70" y="290" text-anchor="middle" font-size="10" font-weight="bold" fill="#7b1fa2">uvm_monitor</text>
+    <text x="70" y="305" text-anchor="middle" font-size="9" fill="#555">监视器</text>
+    <!-- DUT -->
+    <rect x="250" y="180" width="100" height="60" rx="8" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2.5"/>
+    <text x="300" y="205" text-anchor="middle" font-size="13" font-weight="bold" fill="#2e7d32">DUT</text>
+    <text x="300" y="225" text-anchor="middle" font-size="10" fill="#2e7d32">被测试设计</text>
+    <!-- Driver to DUT -->
+    <line x1="110" y1="235" x2="245" y2="210" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <!-- Monitor to DUT -->
+    <line x1="110" y1="290" x2="245" y2="220" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <!-- Monitor to Scoreboard -->
+    <line x1="115" y1="290" x2="485" y2="145" stroke="#c62828" stroke-width="1.5" stroke-dasharray="4 2"/>
+    <text x="300" y="280" font-size="9" fill="#c62828">TLM通信</text>
+    <!-- uvm_sequence -->
+    <rect x="140" y="160" width="100" height="35" rx="3" fill="#e0f7fa" stroke="#00838f" stroke-width="1.5"/>
+    <text x="190" y="180" text-anchor="middle" font-size="10" font-weight="bold" fill="#00838f">uvm_sequence</text>
+    <text x="190" y="192" text-anchor="middle" font-size="9" fill="#555">序列</text>
+    <line x1="140" y1="177" x2="115" y2="177" stroke="#00838f" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <!-- UVM Phases -->
+    <rect x="200" y="325" width="380" height="65" rx="5" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+    <text x="390" y="345" text-anchor="middle" font-size="11" font-weight="bold" fill="#555">UVM Phase 执行顺序</text>
+    <text x="210" y="362" font-size="10" fill="#555">build_phase → connect_phase → end_of_elaboration_phase → start_of_simulation_phase</text>
+    <text x="210" y="378" font-size="10" fill="#555">run_phase → extract_phase → check_phase → report_phase → final_phase</text>
+    <!-- Legend -->
+    <rect x="20" y="325" width="160" height="65" rx="5" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+    <text x="100" y="345" text-anchor="middle" font-size="11" font-weight="bold" fill="#555">UVM组件层级</text>
+    <text x="30" y="362" font-size="10" fill="#333">test → env → agent</text>
+    <text x="30" y="378" font-size="10" fill="#333">agent → {sequencer, driver, monitor}</text>
   </g>
 </svg>

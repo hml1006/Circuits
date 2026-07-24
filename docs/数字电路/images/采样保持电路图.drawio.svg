@@ -1,7 +1,88 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
-  <defs/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 采样保持电路图 示意图</text>
+    <text x="300" y="25" text-anchor="middle" font-size="18" font-weight="bold" fill="#333">采样保持电路（Sample & Hold）</text>
+
+    <!-- Vin 输入 -->
+    <text x="40" y="130" text-anchor="middle" font-size="14" font-weight="bold" fill="#1565C0">V_in</text>
+    <line x1="55" y1="125" x2="80" y2="125" stroke="#1565C0" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <!-- 输入缓冲放大器 A1 -->
+    <g transform="translate(85,95)">
+      <polygon points="0,30 30,0 30,60" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+      <text x="15" y="35" text-anchor="middle" font-size="11" fill="#1565C0">A</text>
+    </g>
+    <text x="100" y="85" font-size="10" fill="#666">A1</text>
+
+    <!-- 导线 -->
+    <line x1="115" y1="125" x2="140" y2="125" stroke="#333" stroke-width="2"/>
+
+    <!-- 模拟开关 S -->
+    <rect x="140" y="110" width="30" height="30" rx="3" ry="3" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+    <text x="155" y="130" text-anchor="middle" font-size="14" font-weight="bold" fill="#E65100">S</text>
+
+    <!-- 控制信号 -->
+    <line x1="155" y1="140" x2="155" y2="165" stroke="#999" stroke-width="1.5"/>
+    <text x="165" y="160" font-size="10" fill="#999">控制</text>
+
+    <!-- 导线到保持电容 -->
+    <line x1="170" y1="125" x2="200" y2="125" stroke="#333" stroke-width="2"/>
+
+    <!-- 保持电容 CH -->
+    <rect x="200" y="95" width="30" height="60" rx="3" ry="3" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+    <text x="215" y="130" text-anchor="middle" font-size="11" fill="#2E7D32">C_H</text>
+
+    <!-- 电容接地 -->
+    <line x1="215" y1="155" x2="215" y2="180" stroke="#333" stroke-width="1.5"/>
+    <line x1="195" y1="180" x2="235" y2="180" stroke="#333" stroke-width="1.5"/>
+    <line x1="200" y1="185" x2="230" y2="185" stroke="#333" stroke-width="1.5"/>
+
+    <!-- 导线到输出缓冲 -->
+    <line x1="230" y1="125" x2="260" y2="125" stroke="#333" stroke-width="2"/>
+
+    <!-- 输出缓冲放大器 A2 -->
+    <g transform="translate(265,95)">
+      <polygon points="0,30 30,0 30,60" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+      <text x="15" y="35" text-anchor="middle" font-size="11" fill="#1565C0">A</text>
+    </g>
+    <text x="280" y="85" font-size="10" fill="#666">A2</text>
+
+    <!-- Vout 输出 -->
+    <line x1="295" y1="125" x2="330" y2="125" stroke="#1565C0" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="340" y="130" text-anchor="middle" font-size="14" font-weight="bold" fill="#1565C0">V_out</text>
+
+    <!-- 波形图 -->
+    <rect x="50" y="230" width="500" height="150" rx="8" ry="8" fill="#FAFAFA" stroke="#ddd" stroke-width="1"/>
+    <text x="300" y="252" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">采样保持波形</text>
+
+    <!-- 坐标轴 -->
+    <line x1="80" y1="360" x2="520" y2="360" stroke="#333" stroke-width="1.5"/>
+    <line x1="80" y1="280" x2="80" y2="360" stroke="#333" stroke-width="1.5"/>
+    <text x="75" y="278" text-anchor="end" font-size="10" fill="#333">V</text>
+    <text x="520" y="375" text-anchor="end" font-size="10" fill="#333">t</text>
+
+    <!-- 输入模拟信号（正弦波） -->
+    <path d="M 80 340 Q 100 350 120 340 Q 140 330 160 340 Q 180 350 200 340 Q 220 330 240 340 Q 260 350 280 340 Q 300 330 320 340 Q 340 350 360 340 Q 380 330 400 340 Q 420 350 440 340 Q 460 330 480 340 Q 500 350 520 340" fill="none" stroke="#1565C0" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <text x="530" y="338" font-size="10" fill="#1565C0">V_in</text>
+
+    <!-- 采样保持输出（阶梯波） -->
+    <path d="M 80 340 L 95 340 L 95 320 L 110 320 L 110 345 L 125 345 L 125 315 L 140 315 L 140 335 L 155 335 L 155 310 L 170 310 L 170 330 L 185 330 L 185 305 L 200 305 L 200 325 L 215 325 L 215 300 L 230 300 L 230 320 L 245 320 L 245 295 L 260 295 L 260 315 L 275 315 L 275 290 L 290 290 L 290 310 L 305 310 L 305 285 L 320 285 L 320 305 L 335 305 L 335 280 L 350 280 L 350 300 L 365 300 L 365 285 L 380 285 L 380 295 L 395 295 L 395 290 L 410 290 L 410 295 L 425 295 L 425 300 L 440 300 L 440 305 L 455 305 L 455 310 L 470 310 L 470 315 L 485 315 L 485 320 L 500 320 L 500 325 L 520 325" fill="none" stroke="#E65100" stroke-width="2"/>
+    <text x="530" y="318" font-size="10" fill="#E65100">V_out</text>
+
+    <!-- 采样时钟标注 -->
+    <line x1="95" y1="365" x2="95" y2="370" stroke="#999" stroke-width="1"/>
+    <line x1="125" y1="365" x2="125" y2="370" stroke="#999" stroke-width="1"/>
+    <line x1="155" y1="365" x2="155" y2="370" stroke="#999" stroke-width="1"/>
+    <line x1="185" y1="365" x2="185" y2="370" stroke="#999" stroke-width="1"/>
+    <line x1="215" y1="365" x2="215" y2="370" stroke="#999" stroke-width="1"/>
+    <line x1="245" y1="365" x2="245" y2="370" stroke="#999" stroke-width="1"/>
+    <line x1="275" y1="365" x2="275" y2="370" stroke="#999" stroke-width="1"/>
+    <line x1="305" y1="365" x2="305" y2="370" stroke="#999" stroke-width="1"/>
+    <text x="200" y="380" text-anchor="middle" font-size="10" fill="#999">采样时钟（T_s）</text>
   </g>
 </svg>

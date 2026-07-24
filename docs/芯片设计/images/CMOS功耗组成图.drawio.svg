@@ -1,7 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
   <defs/>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 CMOS功耗组成图 示意图</text>
+    <text x="300" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">CMOS功耗组成图</text>
+    <!-- Pie chart -->
+    <circle cx="200" cy="200" r="120" fill="none" stroke="#333" stroke-width="2"/>
+    <!-- Dynamic power (largest slice) - 70% -->
+    <path d="M 200 80 A 120 120 0 0 1 316 174 L 200 200 Z" fill="#e3f2fd" stroke="#1e88e5" stroke-width="1.5"/>
+    <text x="270" y="120" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e88e5">动态功耗</text>
+    <text x="270" y="138" text-anchor="middle" font-size="11" fill="#1e88e5">~70%</text>
+    <!-- Short circuit power - 10% -->
+    <path d="M 200 80 A 120 120 0 0 0 140 97 L 200 200 Z" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+    <text x="150" y="105" text-anchor="middle" font-size="11" font-weight="bold" fill="#e65100">短路</text>
+    <text x="150" y="120" text-anchor="middle" font-size="10" fill="#e65100">~10%</text>
+    <!-- Static power - 20% -->
+    <path d="M 316 174 A 120 120 0 0 1 200 320 L 200 200 Z" fill="#fce4ec" stroke="#c62828" stroke-width="1.5"/>
+    <text x="280" y="280" text-anchor="middle" font-size="12" font-weight="bold" fill="#c62828">静态功耗</text>
+    <text x="280" y="298" text-anchor="middle" font-size="11" fill="#c62828">~20%</text>
+    <!-- Remaining (Leakage details) -->
+    <path d="M 140 97 A 120 120 0 0 0 80 200 L 200 200 Z" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="1.5"/>
+    <text x="100" y="160" text-anchor="middle" font-size="10" fill="#7b1fa2">其他</text>
+    <!-- Power formula -->
+    <rect x="340" y="50" width="240" height="100" rx="5" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+    <text x="460" y="70" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">总功耗公式</text>
+    <text x="460" y="95" text-anchor="middle" font-size="13" fill="#333">Ptotal = Pdynamic</text>
+    <text x="460" y="115" text-anchor="middle" font-size="13" fill="#333">+ Pshort + Pstatic</text>
+    <text x="460" y="140" text-anchor="middle" font-size="10" fill="#666">Pdynamic = ½α·CL·VDD²·f</text>
+    <!-- Dynamic power details -->
+    <rect x="340" y="165" width="240" height="85" rx="5" fill="#e3f2fd" stroke="#1e88e5" stroke-width="1.5"/>
+    <text x="460" y="185" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e88e5">动态功耗</text>
+    <text x="360" y="205" font-size="10" fill="#333">Pdynamic = ½·α·CL·VDD²·f</text>
+    <text x="360" y="225" font-size="10" fill="#333">α: 活动因子 (0.1~1.0)</text>
+    <text x="360" y="243" font-size="10" fill="#333">CL: 负载电容, f: 频率</text>
+    <!-- Static power details -->
+    <rect x="340" y="260" width="240" height="85" rx="5" fill="#fce4ec" stroke="#c62828" stroke-width="1.5"/>
+    <text x="460" y="280" text-anchor="middle" font-size="12" font-weight="bold" fill="#c62828">静态功耗 (漏电)</text>
+    <text x="360" y="300" font-size="10" fill="#c62828">Pstatic = VDD · Ileakage</text>
+    <text x="360" y="318" font-size="10" fill="#c62828">Ileak = Isub + Igate + Ibtbt + Igidl</text>
+    <text x="360" y="335" font-size="10" fill="#c62828">Isub ∝ exp(-VTH/nVT)</text>
+    <!-- Trend -->
+    <rect x="20" y="340" width="560" height="50" rx="5" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+    <text x="300" y="360" text-anchor="middle" font-size="12" font-weight="bold" fill="#555">功耗趋势</text>
+    <text x="40" y="380" font-size="10" fill="#555">先进工艺节点: 静态功耗占比增大 | 低功耗技术: DVFS, 时钟门控, 电源门控, 多Vt, AVS</text>
   </g>
 </svg>

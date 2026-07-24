@@ -1,7 +1,96 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
   <defs/>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 Smith圆图 示意图</text>
+    
+    <text x="300" y="25" text-anchor="middle" font-size="16" fill="#000" font-weight="bold">Smith 圆图</text>
+    
+    <!-- Smith Chart main circle (|Γ| = 1) -->
+    <circle cx="300" cy="210" r="160" fill="#fafafa" stroke="#000" stroke-width="2"/>
+    
+    <!-- Horizontal axis -->
+    <line x1="140" y1="210" x2="460" y2="210" stroke="#000" stroke-width="1.5"/>
+    
+    <!-- Key points -->
+    <!-- Center (Γ=0, matched) -->
+    <circle cx="300" cy="210" r="3" fill="#c00"/>
+    <text x="300" y="200" text-anchor="middle" font-size="10" fill="#c00">匹配点</text>
+    
+    <!-- Right end (Γ=1, open) -->
+    <circle cx="460" cy="210" r="3" fill="#c00"/>
+    <text x="470" y="215" font-size="10" fill="#c00">开路 ∞</text>
+    
+    <!-- Left end (Γ=-1, short) -->
+    <circle cx="140" cy="210" r="3" fill="#c00"/>
+    <text x="130" y="215" text-anchor="end" font-size="10" fill="#c00">短路 0</text>
+    
+    <!-- Top (Γ=j, inductive) -->
+    <circle cx="300" cy="50" r="3" fill="#00c"/>
+    <text x="310" y="48" font-size="10" fill="#00c">感性区域 (x&gt;0)</text>
+    
+    <!-- Bottom (Γ=-j, capacitive) -->
+    <circle cx="300" cy="370" r="3" fill="#00c"/>
+    <text x="310" y="385" font-size="10" fill="#00c">容性区域 (x&lt;0)</text>
+    
+    <!-- Constant Resistance Circles (r circles) -->
+    <!-- r=0 (outer circle, already drawn) -->
+    
+    <!-- r=1 circle (passes through center) -->
+    <circle cx="380" cy="210" r="80" fill="none" stroke="#e66" stroke-width="1" stroke-dasharray="4,4"/>
+    <text x="385" y="205" font-size="9" fill="#e66">r=1</text>
+    
+    <!-- r=0.5 circle -->
+    <circle cx="353.3" cy="210" r="53.3" fill="none" stroke="#e66" stroke-width="1" stroke-dasharray="4,4"/>
+    <text x="358" y="205" font-size="9" fill="#e66">r=0.5</text>
+    
+    <!-- r=2 circle -->
+    <circle cx="406.7" cy="210" r="106.7" fill="none" stroke="#e66" stroke-width="1" stroke-dasharray="4,4"/>
+    <text x="412" y="205" font-size="9" fill="#e66">r=2</text>
+    
+    <!-- Constant Reactance Arcs (x circles) -->
+    <!-- x=1 arc (upper) -->
+    <path d="M 460 210 A 100 100 0 0 0 300 110" fill="none" stroke="#66e" stroke-width="1" stroke-dasharray="3,3"/>
+    <text x="385" y="148" font-size="9" fill="#66e">x=1</text>
+    
+    <!-- x=-1 arc (lower) -->
+    <path d="M 460 210 A 100 100 0 0 1 300 310" fill="none" stroke="#66e" stroke-width="1" stroke-dasharray="3,3"/>
+    <text x="385" y="278" font-size="9" fill="#66e">x=-1</text>
+    
+    <!-- x=0.5 arc (upper) -->
+    <path d="M 460 210 A 200 200 0 0 0 300 10" fill="none" stroke="#66e" stroke-width="0.8" stroke-dasharray="3,3"/>
+    <text x="350" y="70" font-size="9" fill="#66e">x=0.5</text>
+    
+    <!-- x=-0.5 arc (lower) -->
+    <path d="M 460 210 A 200 200 0 0 1 300 410" fill="none" stroke="#66e" stroke-width="0.8" stroke-dasharray="3,3"/>
+    <text x="350" y="355" font-size="9" fill="#66e">x=-0.5</text>
+    
+    <!-- x=2 arc (upper) -->
+    <path d="M 460 210 A 66.7 66.7 0 0 0 300 143.3" fill="none" stroke="#66e" stroke-width="1" stroke-dasharray="3,3"/>
+    <text x="400" y="168" font-size="9" fill="#66e">x=2</text>
+    
+    <!-- x=-2 arc (lower) -->
+    <path d="M 460 210 A 66.7 66.7 0 0 1 300 276.7" fill="none" stroke="#66e" stroke-width="1" stroke-dasharray="3,3"/>
+    <text x="400" y="258" font-size="9" fill="#66e">x=-2</text>
+    
+    <!-- Wavelength scales around the perimeter -->
+    <text x="300" y="385" text-anchor="middle" font-size="9" fill="#888">λ/4</text>
+    <text x="300" y="38" text-anchor="middle" font-size="9" fill="#888">0 λ</text>
+    <text x="135" y="214" text-anchor="end" font-size="9" fill="#888">λ/8</text>
+    <text x="470" y="214" font-size="9" fill="#888">3λ/8</text>
+    
+    <!-- Example impedance point -->
+    <circle cx="350" cy="170" r="4" fill="#080"/>
+    <text x="360" y="165" font-size="10" fill="#080">z=2+j1</text>
+    
+    <!-- Matching path arrow -->
+    <path d="M 350 170 Q 320 190 300 210" fill="none" stroke="#080" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+    
+    <defs>
+      <marker id="arrowGreen" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 Z" fill="#080"/>
+      </marker>
+    </defs>
+    
+    <text x="300" y="395" text-anchor="middle" font-size="11" fill="#666">归一化阻抗 z = (1+Γ)/(1-Γ) | 等电阻圆 / 等电抗圆</text>
   </g>
 </svg>

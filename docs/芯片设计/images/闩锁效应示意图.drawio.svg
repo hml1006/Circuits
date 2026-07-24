@@ -1,7 +1,76 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
   <defs/>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 闩锁效应示意图 示意图</text>
+    <text x="300" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">闩锁效应示意图 (Latch-up)</text>
+    <!-- Cross-section structure -->
+    <text x="150" y="50" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">剖面结构中的寄生PNPN</text>
+    <!-- P+ Source (PMOS) -->
+    <rect x="50" y="70" width="60" height="50" fill="#99ccff" stroke="#0066cc" stroke-width="1.5"/>
+    <text x="80" y="95" text-anchor="middle" font-size="10" font-weight="bold" fill="#0066cc">P+</text>
+    <text x="80" y="110" text-anchor="middle" font-size="9" fill="#0066cc">源极</text>
+    <!-- N+ Drain (PMOS) -->
+    <rect x="130" y="70" width="60" height="50" fill="#99ccff" stroke="#0066cc" stroke-width="1.5"/>
+    <text x="160" y="95" text-anchor="middle" font-size="10" font-weight="bold" fill="#0066cc">P+</text>
+    <text x="160" y="110" text-anchor="middle" font-size="9" fill="#0066cc">漏极</text>
+    <!-- N-well -->
+    <rect x="40" y="120" width="160" height="60" fill="#f5d5a0" stroke="#333" stroke-width="2"/>
+    <text x="120" y="155" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">N阱 (N-Well)</text>
+    <!-- N+ contact in well -->
+    <rect x="50" y="125" width="25" height="25" fill="#ff9999" stroke="#cc0000" stroke-width="1"/>
+    <text x="62" y="142" text-anchor="middle" font-size="8" fill="#cc0000">N+</text>
+    <!-- P-substrate -->
+    <rect x="40" y="180" width="160" height="60" fill="#e8d5b7" stroke="#333" stroke-width="2"/>
+    <text x="120" y="215" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">P衬底 (P-Sub)</text>
+    <!-- NMOS source/drain -->
+    <rect x="220" y="70" width="60" height="50" fill="#ff9999" stroke="#cc0000" stroke-width="1.5"/>
+    <text x="250" y="95" text-anchor="middle" font-size="10" font-weight="bold" fill="#cc0000">N+</text>
+    <text x="250" y="110" text-anchor="middle" font-size="9" fill="#cc0000">漏极</text>
+    <rect x="300" y="70" width="60" height="50" fill="#ff9999" stroke="#cc0000" stroke-width="1.5"/>
+    <text x="330" y="95" text-anchor="middle" font-size="10" font-weight="bold" fill="#cc0000">N+</text>
+    <text x="330" y="110" text-anchor="middle" font-size="9" fill="#cc0000">源极</text>
+    <!-- P+ contact in substrate -->
+    <rect x="220" y="185" width="25" height="25" fill="#99ccff" stroke="#0066cc" stroke-width="1"/>
+    <text x="232" y="202" text-anchor="middle" font-size="8" fill="#0066cc">P+</text>
+    <!-- Equivalent circuit -->
+    <text x="450" y="50" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">等效电路 (SCR)</text>
+    <!-- Q1 (PNP) -->
+    <circle cx="420" cy="100" r="35" fill="none" stroke="#e53935" stroke-width="2"/>
+    <text x="420" y="95" text-anchor="middle" font-size="11" font-weight="bold" fill="#e53935">Q₁</text>
+    <text x="420" y="110" text-anchor="middle" font-size="10" fill="#e53935">PNP</text>
+    <line x1="420" y1="65" x2="420" y2="50" stroke="#333" stroke-width="1.5"/>
+    <text x="420" y="47" text-anchor="middle" font-size="10" fill="#333">VDD</text>
+    <!-- Q2 (NPN) -->
+    <circle cx="520" cy="180" r="35" fill="none" stroke="#1e88e5" stroke-width="2"/>
+    <text x="520" y="175" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e88e5">Q₂</text>
+    <text x="520" y="190" text-anchor="middle" font-size="10" fill="#1e88e5">NPN</text>
+    <line x1="520" y1="215" x2="520" y2="235" stroke="#333" stroke-width="1.5"/>
+    <text x="520" y="248" text-anchor="middle" font-size="10" fill="#333">VSS</text>
+    <!-- Resistor connections -->
+    <line x1="420" y1="135" x2="420" y2="180" stroke="#333" stroke-width="1.5"/>
+    <line x1="485" y1="180" x2="520" y2="180" stroke="#333" stroke-width="1.5"/>
+    <line x1="420" y1="100" x2="485" y2="100" stroke="#333" stroke-width="1.5"/>
+    <line x1="485" y1="100" x2="485" y2="180" stroke="#333" stroke-width="1.5"/>
+    <!-- Rw (N-well resistor) -->
+    <rect x="465" y="85" width="25" height="16" fill="#f5d5a0" stroke="#333" stroke-width="1"/>
+    <text x="477" y="97" text-anchor="middle" font-size="9" fill="#333">Rw</text>
+    <!-- Rs (P-sub resistor) -->
+    <rect x="465" y="165" width="25" height="16" fill="#e8d5b7" stroke="#333" stroke-width="1"/>
+    <text x="477" y="177" text-anchor="middle" font-size="9" fill="#333">Rs</text>
+    <!-- Trigger -->
+    <line x1="380" y1="180" x2="380" y2="235" stroke="#e53935" stroke-width="1" stroke-dasharray="4 2"/>
+    <text x="370" y="250" text-anchor="middle" font-size="9" fill="#e53935">触发</text>
+    <!-- Current path -->
+    <path d="M 420 50 L 420 65 L 420 85 L 477 101 L 520 145 L 520 215 L 520 235" fill="none" stroke="#e53935" stroke-width="1.5" stroke-dasharray="4 2"/>
+    <text x="540" y="150" font-size="9" fill="#e53935">正反馈</text>
+    <!-- Conditions -->
+    <rect x="40" y="260" width="520" height="60" rx="5" fill="#fce4ec" stroke="#c62828" stroke-width="1.5"/>
+    <text x="300" y="280" text-anchor="middle" font-size="12" font-weight="bold" fill="#c62828">闩锁触发条件</text>
+    <text x="60" y="300" font-size="11" fill="#c62828">① β_NPN · β_PNP &gt; 1 (增益乘积大于1)</text>
+    <text x="60" y="315" font-size="11" fill="#c62828">② 阱/衬底电阻压降使发射结正偏 | ③ 外部触发电流/电压过冲</text>
+    <!-- Prevention -->
+    <rect x="40" y="330" width="520" height="60" rx="5" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+    <text x="300" y="350" text-anchor="middle" font-size="12" font-weight="bold" fill="#2e7d32">预防措施</text>
+    <text x="60" y="370" font-size="11" fill="#2e7d32">保护环 (Guard Ring) | 增加衬底/阱接触密度 | SOI技术 | 限制电流注入</text>
   </g>
 </svg>

@@ -1,7 +1,68 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
-  <defs/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#666"/>
+    </marker>
+  </defs>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 RTL设计流程图 示意图</text>
+    <text x="300" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">RTL设计流程图 — 三级流水线加法器</text>
+    <!-- Pipeline Stage 1: Input -->
+    <rect x="30" y="50" width="160" height="90" rx="5" fill="#e3f2fd" stroke="#1e88e5" stroke-width="2"/>
+    <text x="110" y="70" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e88e5">第一级: 输入寄存</text>
+    <text x="110" y="90" text-anchor="middle" font-size="10" fill="#333">a_reg &lt;= a</text>
+    <text x="110" y="105" text-anchor="middle" font-size="10" fill="#333">b_reg &lt;= b</text>
+    <text x="110" y="120" text-anchor="middle" font-size="10" fill="#333">c_reg &lt;= c</text>
+    <text x="110" y="135" text-anchor="middle" font-size="10" fill="#333">d_reg &lt;= d</text>
+    <line x1="190" y1="95" x2="220" y2="95" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- Pipeline Stage 2: Partial sum -->
+    <rect x="225" y="50" width="160" height="90" rx="5" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+    <text x="305" y="70" text-anchor="middle" font-size="12" font-weight="bold" fill="#e65100">第二级: 部分和</text>
+    <text x="305" y="90" text-anchor="middle" font-size="10" fill="#333">sum1 &lt;= a_reg + b_reg</text>
+    <text x="305" y="110" text-anchor="middle" font-size="10" fill="#333">sum2 &lt;= c_reg + d_reg</text>
+    <line x1="385" y1="95" x2="415" y2="95" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- Pipeline Stage 3: Result -->
+    <rect x="420" y="50" width="160" height="90" rx="5" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="500" y="70" text-anchor="middle" font-size="12" font-weight="bold" fill="#2e7d32">第三级: 最终结果</text>
+    <text x="500" y="95" text-anchor="middle" font-size="10" fill="#333">result &lt;= sum1 + sum2</text>
+    <!-- Clock signal -->
+    <rect x="30" y="155" width="550" height="25" rx="3" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="1.5"/>
+    <text x="305" y="172" text-anchor="middle" font-size="11" fill="#7b1fa2">时钟沿 (posedge clk) — 每级寄存器在时钟上升沿更新</text>
+    <!-- FSM section -->
+    <text x="150" y="220" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">三段式有限状态机 (FSM)</text>
+    <!-- State register -->
+    <rect x="20" y="235" width="170" height="60" rx="5" fill="#e3f2fd" stroke="#1e88e5" stroke-width="1.5"/>
+    <text x="105" y="255" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e88e5">状态寄存器</text>
+    <text x="105" y="275" text-anchor="middle" font-size="10" fill="#333">state &lt;= next_state</text>
+    <text x="105" y="290" text-anchor="middle" font-size="10" fill="#333">(时序逻辑)</text>
+    <line x1="190" y1="265" x2="215" y2="265" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- Next state logic -->
+    <rect x="220" y="235" width="170" height="60" rx="5" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+    <text x="305" y="255" text-anchor="middle" font-size="11" font-weight="bold" fill="#e65100">次态逻辑</text>
+    <text x="305" y="275" text-anchor="middle" font-size="10" fill="#333">case (state)</text>
+    <text x="305" y="290" text-anchor="middle" font-size="10" fill="#333">(组合逻辑)</text>
+    <line x1="390" y1="265" x2="415" y2="265" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- Output logic -->
+    <rect x="420" y="235" width="170" height="60" rx="5" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+    <text x="505" y="255" text-anchor="middle" font-size="11" font-weight="bold" fill="#2e7d32">输出逻辑</text>
+    <text x="505" y="275" text-anchor="middle" font-size="10" fill="#333">data_out &lt;= ...</text>
+    <text x="505" y="290" text-anchor="middle" font-size="10" fill="#333">(时序/组合)</text>
+    <!-- FSM states -->
+    <rect x="20" y="310" width="560" height="80" rx="5" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+    <text x="300" y="330" text-anchor="middle" font-size="12" font-weight="bold" fill="#555">FSM状态转移图示例</text>
+    <ellipse cx="100" cy="360" rx="40" ry="18" fill="#e3f2fd" stroke="#1e88e5" stroke-width="1.5"/>
+    <text x="100" y="365" text-anchor="middle" font-size="11" fill="#1e88e5">IDLE</text>
+    <line x1="140" y1="360" x2="175" y2="360" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text x="158" y="355" font-size="9" fill="#666">start</text>
+    <ellipse cx="230" cy="360" rx="40" ry="18" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+    <text x="230" y="365" text-anchor="middle" font-size="11" fill="#e65100">READ</text>
+    <line x1="270" y1="360" x2="305" y2="360" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text x="288" y="355" font-size="9" fill="#666">done</text>
+    <ellipse cx="360" cy="360" rx="40" ry="18" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+    <text x="360" y="365" text-anchor="middle" font-size="11" fill="#2e7d32">WRITE</text>
+    <line x1="400" y1="360" x2="465" y2="360" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text x="433" y="355" font-size="9" fill="#666">done</text>
+    <ellipse cx="520" cy="360" rx="35" ry="18" fill="#fce4ec" stroke="#c62828" stroke-width="1.5"/>
+    <text x="520" y="365" text-anchor="middle" font-size="11" fill="#c62828">DONE</text>
   </g>
 </svg>

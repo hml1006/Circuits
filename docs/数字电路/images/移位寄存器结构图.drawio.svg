@@ -1,7 +1,81 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
   <defs/>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 移位寄存器结构图 示意图</text>
+    <text x="300" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#000">4位右移移位寄存器</text>
+    <!-- 时钟线 -->
+    <line x1="90" y1="60" x2="560" y2="60" stroke="#000" stroke-width="2"/>
+    <text x="80" y="64" text-anchor="end" font-size="12" font-weight="bold" fill="#000">CP</text>
+    <line x1="90" y1="60" x2="90" y2="340" stroke="#000" stroke-width="1" stroke-dasharray="4"/>
+    <line x1="215" y1="60" x2="215" y2="340" stroke="#000" stroke-width="1" stroke-dasharray="4"/>
+    <line x1="340" y1="60" x2="340" y2="340" stroke="#000" stroke-width="1" stroke-dasharray="4"/>
+    <line x1="465" y1="60" x2="465" y2="340" stroke="#000" stroke-width="1" stroke-dasharray="4"/>
+    <!-- DFF0 -->
+    <rect x="100" y="90" width="100" height="70" rx="4" fill="#f0f0ff" stroke="#000" stroke-width="2"/>
+    <text x="150" y="120" text-anchor="middle" font-size="11" font-weight="bold" fill="#000">DFF₀</text>
+    <text x="150" y="140" text-anchor="middle" font-size="10" fill="#555">D</text>
+    <line x1="100" y1="110" x2="70" y2="110" stroke="#000" stroke-width="1.5"/>
+    <text x="60" y="114" text-anchor="end" font-size="11" fill="#000">D</text>
+    <line x1="100" y1="130" x2="85" y2="130" stroke="#000" stroke-width="1.5"/>
+    <line x1="200" y1="110" x2="230" y2="110" stroke="#000" stroke-width="1.5"/>
+    <text x="235" y="114" text-anchor="start" font-size="11" fill="#000">Q₀</text>
+    <!-- DFF1 -->
+    <rect x="225" y="90" width="100" height="70" rx="4" fill="#f0f0ff" stroke="#000" stroke-width="2"/>
+    <text x="275" y="120" text-anchor="middle" font-size="11" font-weight="bold" fill="#000">DFF₁</text>
+    <text x="275" y="140" text-anchor="middle" font-size="10" fill="#555">D</text>
+    <line x1="225" y1="110" x2="210" y2="110" stroke="#000" stroke-width="1.5"/>
+    <line x1="325" y1="110" x2="355" y2="110" stroke="#000" stroke-width="1.5"/>
+    <text x="360" y="114" text-anchor="start" font-size="11" fill="#000">Q₁</text>
+    <!-- DFF2 -->
+    <rect x="350" y="90" width="100" height="70" rx="4" fill="#f0f0ff" stroke="#000" stroke-width="2"/>
+    <text x="400" y="120" text-anchor="middle" font-size="11" font-weight="bold" fill="#000">DFF₂</text>
+    <text x="400" y="140" text-anchor="middle" font-size="10" fill="#555">D</text>
+    <line x1="350" y1="110" x2="335" y2="110" stroke="#000" stroke-width="1.5"/>
+    <line x1="450" y1="110" x2="480" y2="110" stroke="#000" stroke-width="1.5"/>
+    <text x="485" y="114" text-anchor="start" font-size="11" fill="#000">Q₂</text>
+    <!-- DFF3 -->
+    <rect x="475" y="90" width="100" height="70" rx="4" fill="#f0f0ff" stroke="#000" stroke-width="2"/>
+    <text x="525" y="120" text-anchor="middle" font-size="11" font-weight="bold" fill="#000">DFF₃</text>
+    <text x="525" y="140" text-anchor="middle" font-size="10" fill="#555">D</text>
+    <line x1="475" y1="110" x2="460" y2="110" stroke="#000" stroke-width="1.5"/>
+    <line x1="575" y1="110" x2="590" y2="110" stroke="#000" stroke-width="1.5"/>
+    <text x="595" y="114" text-anchor="start" font-size="11" fill="#000">Q₃</text>
+    <!-- 移位连接线 -->
+    <line x1="230" y1="110" x2="230" y2="180" stroke="#000" stroke-width="1.5"/>
+    <line x1="210" y1="110" x2="210" y2="180" stroke="#000" stroke-width="1.5"/>
+    <line x1="210" y1="180" x2="230" y2="180" stroke="#000" stroke-width="1.5"/>
+    <line x1="355" y1="110" x2="355" y2="200" stroke="#000" stroke-width="1.5"/>
+    <line x1="335" y1="110" x2="335" y2="200" stroke="#000" stroke-width="1.5"/>
+    <line x1="335" y1="200" x2="355" y2="200" stroke="#000" stroke-width="1.5"/>
+    <line x1="480" y1="110" x2="480" y2="220" stroke="#000" stroke-width="1.5"/>
+    <line x1="460" y1="110" x2="460" y2="220" stroke="#000" stroke-width="1.5"/>
+    <line x1="460" y1="220" x2="480" y2="220" stroke="#000" stroke-width="1.5"/>
+    <!-- 串行输入 -->
+    <text x="30" y="114" text-anchor="end" font-size="11" fill="#000">DSR</text>
+    <text x="30" y="130" text-anchor="end" font-size="11" fill="#000">(串行输入)</text>
+    <!-- 输出 -->
+    <text x="600" y="114" text-anchor="start" font-size="11" fill="#000">串行输出</text>
+    <!-- 并行输出标注 -->
+    <line x1="230" y1="160" x2="230" y2="250" stroke="#000" stroke-width="1" stroke-dasharray="3"/>
+    <line x1="355" y1="160" x2="355" y2="250" stroke="#000" stroke-width="1" stroke-dasharray="3"/>
+    <line x1="480" y1="160" x2="480" y2="250" stroke="#000" stroke-width="1" stroke-dasharray="3"/>
+    <text x="150" y="265" text-anchor="middle" font-size="10" fill="#555">并行输出</text>
+    <text x="275" y="265" text-anchor="middle" font-size="10" fill="#555">并行输出</text>
+    <text x="400" y="265" text-anchor="middle" font-size="10" fill="#555">并行输出</text>
+    <text x="525" y="265" text-anchor="middle" font-size="10" fill="#555">并行输出</text>
+    <!-- 移位数据流向 -->
+    <line x1="150" y1="280" x2="150" y2="300" stroke="#000" stroke-width="1.5"/>
+    <polygon points="150,300 145,290 155,290" fill="#000"/>
+    <line x1="150" y1="300" x2="275" y2="300" stroke="#000" stroke-width="1.5"/>
+    <polygon points="275,300 270,290 280,290" fill="#000"/>
+    <line x1="275" y1="300" x2="400" y2="300" stroke="#000" stroke-width="1.5"/>
+    <polygon points="400,300 395,290 405,290" fill="#000"/>
+    <line x1="400" y1="300" x2="525" y2="300" stroke="#000" stroke-width="1.5"/>
+    <polygon points="525,300 520,290 530,290" fill="#000"/>
+    <text x="300" y="320" text-anchor="middle" font-size="11" fill="#555">数据逐位右移方向 →</text>
+    <!-- 说明 -->
+    <rect x="30" y="340" width="540" height="50" rx="5" fill="#f0fff0" stroke="#000" stroke-width="1.5"/>
+    <text x="50" y="360" text-anchor="start" font-size="12" fill="#000">Q₀ⁿ⁺¹ = DSR, Q₁ⁿ⁺¹ = Q₀ⁿ, Q₂ⁿ⁺¹ = Q₁ⁿ, Q₃ⁿ⁺¹ = Q₂ⁿ</text>
+    <text x="50" y="380" text-anchor="start" font-size="12" fill="#000">每个 CP 上升沿，数据向右移动一位</text>
   </g>
 </svg>

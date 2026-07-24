@@ -1,7 +1,90 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
-  <defs/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#666"/>
+    </marker>
+  </defs>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 SoC架构图 示意图</text>
+
+    <!-- Title -->
+    <text x="300" y="22" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">典型 SoC 架构图</text>
+
+    <!-- Top-level chip boundary -->
+    <rect x="10" y="35" width="580" height="355" fill="#fafafa" stroke="#333" stroke-width="2" rx="8" stroke-dasharray="8,3"/>
+    <text x="15" y="52" font-size="10" fill="#888">SoC Chip Boundary</text>
+
+    <!-- Bus system (central) -->
+    <rect x="200" y="60" width="200" height="280" fill="#e3f2fd" stroke="#1565c0" stroke-width="2" rx="5" fill-opacity="0.4"/>
+    <text x="300" y="85" text-anchor="middle" font-size="13" font-weight="bold" fill="#1565c0">片上总线</text>
+    <text x="300" y="105" text-anchor="middle" font-size="11" fill="#1565c0">AXI / AHB / APB</text>
+    <text x="300" y="125" text-anchor="middle" font-size="10" fill="#1565c0">总线矩阵</text>
+    <text x="300" y="145" text-anchor="middle" font-size="10" fill="#1565c0">(Bus Matrix)</text>
+
+    <!-- CPU section (top-left) -->
+    <rect x="25" y="65" width="160" height="80" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2" rx="6"/>
+    <text x="105" y="88" text-anchor="middle" font-size="13" font-weight="bold" fill="#2e7d32">处理器核心 (CPU)</text>
+    <text x="105" y="105" text-anchor="middle" font-size="10" fill="#2e7d32">ARM / RISC-V</text>
+    <text x="105" y="120" text-anchor="middle" font-size="10" fill="#2e7d32">L1 Cache (I/D)</text>
+    <text x="105" y="135" text-anchor="middle" font-size="10" fill="#2e7d32">L2 Cache</text>
+    <line x1="185" y1="105" x2="200" y2="105" stroke="#2e7d32" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- Memory section (top-right) -->
+    <rect x="415" y="65" width="160" height="80" fill="#fce4ec" stroke="#c62828" stroke-width="2" rx="6"/>
+    <text x="495" y="88" text-anchor="middle" font-size="13" font-weight="bold" fill="#c62828">存储器</text>
+    <text x="495" y="105" text-anchor="middle" font-size="10" fill="#c62828">SRAM</text>
+    <text x="495" y="120" text-anchor="middle" font-size="10" fill="#c62828">ROM / Boot ROM</text>
+    <text x="495" y="135" text-anchor="middle" font-size="10" fill="#c62828">DDR Controller</text>
+    <line x1="400" y1="105" x2="415" y2="105" stroke="#c62828" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- DMA section -->
+    <rect x="25" y="165" width="160" height="50" fill="#fff3e0" stroke="#e65100" stroke-width="2" rx="6"/>
+    <text x="105" y="188" text-anchor="middle" font-size="13" font-weight="bold" fill="#e65100">DMA 控制器</text>
+    <text x="105" y="205" text-anchor="middle" font-size="10" fill="#e65100">直接内存访问</text>
+    <line x1="185" y1="190" x2="200" y2="190" stroke="#e65100" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- Interrupt Controller -->
+    <rect x="25" y="235" width="160" height="50" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2" rx="6"/>
+    <text x="105" y="258" text-anchor="middle" font-size="13" font-weight="bold" fill="#7b1fa2">中断控制器</text>
+    <text x="105" y="275" text-anchor="middle" font-size="10" fill="#7b1fa2">PLIC / GIC</text>
+    <line x1="185" y1="260" x2="200" y2="260" stroke="#7b1fa2" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- Accelerators -->
+    <rect x="415" y="165" width="160" height="50" fill="#e0f7fa" stroke="#00695c" stroke-width="2" rx="6"/>
+    <text x="495" y="188" text-anchor="middle" font-size="13" font-weight="bold" fill="#00695c">专用加速器</text>
+    <text x="495" y="205" text-anchor="middle" font-size="10" fill="#00695c">GPU / DSP / NPU</text>
+    <line x1="400" y1="190" x2="415" y2="190" stroke="#00695c" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- Analog IP -->
+    <rect x="415" y="235" width="160" height="50" fill="#fff3e0" stroke="#e65100" stroke-width="2" rx="6"/>
+    <text x="495" y="258" text-anchor="middle" font-size="13" font-weight="bold" fill="#e65100">模拟 IP</text>
+    <text x="495" y="275" text-anchor="middle" font-size="10" fill="#e65100">PLL / ADC / DAC / PMU</text>
+    <line x1="400" y1="260" x2="415" y2="260" stroke="#e65100" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- Peripheral section (bottom) -->
+    <rect x="25" y="305" width="550" height="70" fill="#f5f5f5" stroke="#999" stroke-width="1.5" rx="6"/>
+    <text x="300" y="325" text-anchor="middle" font-size="13" font-weight="bold" fill="#555">外设接口 (Peripherals)</text>
+
+    <rect x="35" y="335" width="65" height="28" fill="#fff3e0" stroke="#e65100" stroke-width="1.5" rx="3"/>
+    <text x="67" y="354" text-anchor="middle" font-size="10" fill="#e65100">UART</text>
+    <rect x="108" y="335" width="50" height="28" fill="#fff3e0" stroke="#e65100" stroke-width="1.5" rx="3"/>
+    <text x="133" y="354" text-anchor="middle" font-size="10" fill="#e65100">SPI</text>
+    <rect x="166" y="335" width="50" height="28" fill="#fff3e0" stroke="#e65100" stroke-width="1.5" rx="3"/>
+    <text x="191" y="354" text-anchor="middle" font-size="10" fill="#e65100">I²C</text>
+    <rect x="224" y="335" width="55" height="28" fill="#fff3e0" stroke="#e65100" stroke-width="1.5" rx="3"/>
+    <text x="251" y="354" text-anchor="middle" font-size="10" fill="#e65100">GPIO</text>
+    <rect x="287" y="335" width="55" height="28" fill="#fff3e0" stroke="#e65100" stroke-width="1.5" rx="3"/>
+    <text x="314" y="354" text-anchor="middle" font-size="10" fill="#e65100">Timer</text>
+    <rect x="350" y="335" width="55" height="28" fill="#fff3e0" stroke="#e65100" stroke-width="1.5" rx="3"/>
+    <text x="377" y="354" text-anchor="middle" font-size="10" fill="#e65100">Watchdog</text>
+    <rect x="413" y="335" width="55" height="28" fill="#fff3e0" stroke="#e65100" stroke-width="1.5" rx="3"/>
+    <text x="440" y="354" text-anchor="middle" font-size="10" fill="#e65100">Ethernet</text>
+    <rect x="476" y="335" width="55" height="28" fill="#fff3e0" stroke="#e65100" stroke-width="1.5" rx="3"/>
+    <text x="503" y="354" text-anchor="middle" font-size="10" fill="#e65100">USB</text>
+    <rect x="539" y="335" width="28" height="28" fill="#fff3e0" stroke="#e65100" stroke-width="1.5" rx="3"/>
+    <text x="553" y="354" text-anchor="middle" font-size="9" fill="#e65100">...</text>
+
+    <!-- Design principles box -->
+    <rect x="25" y="380" width="550" height="0" fill="none" stroke="none"/>
   </g>
 </svg>

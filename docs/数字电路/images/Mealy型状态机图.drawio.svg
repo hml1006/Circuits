@@ -1,7 +1,84 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
-  <defs/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1565C0"/>
+    </marker>
+  </defs>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 Mealy型状态机图 示意图</text>
+    <text x="300" y="25" text-anchor="middle" font-size="18" font-weight="bold" fill="#333">Mealy 型状态机结构</text>
+    <text x="300" y="45" text-anchor="middle" font-size="12" fill="#666">输出取决于当前状态和输入：Y = G(S_current, X)</text>
+
+    <!-- 输入 X -->
+    <text x="50" y="170" text-anchor="middle" font-size="15" font-weight="bold" fill="#1565C0">X</text>
+    <line x1="65" y1="165" x2="115" y2="165" stroke="#1565C0" stroke-width="2" marker-end="url(#arrow-blue)"/>
+
+    <!-- 次态+输出逻辑（组合逻辑） -->
+    <rect x="120" y="120" width="150" height="90" rx="6" ry="6" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+    <text x="195" y="150" text-anchor="middle" font-size="13" font-weight="bold" fill="#1565C0">次态 + 输出逻辑</text>
+    <text x="195" y="168" text-anchor="middle" font-size="11" fill="#1565C0">S_next = F(S, X)</text>
+    <text x="195" y="186" text-anchor="middle" font-size="11" fill="#1565C0">Y = G(S, X)</text>
+
+    <!-- 箭头 组合逻辑 → 状态寄存器 -->
+    <line x1="270" y1="150" x2="300" y2="150" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <!-- 状态寄存器（触发器组） -->
+    <rect x="305" y="120" width="110" height="90" rx="6" ry="6" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+    <text x="360" y="150" text-anchor="middle" font-size="13" font-weight="bold" fill="#2E7D32">状态寄存器</text>
+    <text x="360" y="168" text-anchor="middle" font-size="11" fill="#2E7D32">（D 触发器）</text>
+    <text x="360" y="186" text-anchor="middle" font-size="11" fill="#2E7D32">CLK ↑</text>
+
+    <!-- 时钟 -->
+    <line x1="360" y1="210" x2="360" y2="245" stroke="#999" stroke-width="1.5"/>
+    <text x="370" y="240" font-size="12" fill="#999">CLK</text>
+
+    <!-- 反馈回路（状态 → 组合逻辑） -->
+    <path d="M 360 115 L 360 95 L 195 95 L 195 115" fill="none" stroke="#333" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#arrow)"/>
+    <text x="280" y="90" text-anchor="middle" font-size="11" fill="#666">当前状态反馈</text>
+
+    <!-- 输出 Y（直接从组合逻辑输出） -->
+    <line x1="120" y1="210" x2="120" y2="260" stroke="#E65100" stroke-width="1.5"/>
+    <line x1="65" y1="260" x2="175" y2="260" stroke="#E65100" stroke-width="1.5"/>
+    <line x1="65" y1="260" x2="50" y2="260" stroke="#E65100" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="55" y="250" text-anchor="middle" font-size="15" font-weight="bold" fill="#E65100">Y</text>
+    <text x="120" y="255" text-anchor="middle" font-size="10" fill="#E65100">输出</text>
+
+    <!-- 关键区别标注 -->
+    <rect x="410" y="120" width="170" height="60" rx="6" ry="6" fill="#FFEBEE" stroke="#C62828" stroke-width="1.5"/>
+    <text x="495" y="142" text-anchor="middle" font-size="11" font-weight="bold" fill="#C62828">关键区别</text>
+    <text x="495" y="158" text-anchor="middle" font-size="10" fill="#C62828">输出来自组合逻辑</text>
+    <text x="495" y="173" text-anchor="middle" font-size="10" fill="#C62828">输入变化即时影响输出</text>
+
+    <!-- 状态转换图示例 -->
+    <rect x="110" y="280" width="380" height="110" rx="8" ry="8" fill="#FAFAFA" stroke="#ddd" stroke-width="1"/>
+    <text x="300" y="300" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">示例：3 状态 Mealy 机状态图</text>
+
+    <!-- State S0 -->
+    <circle cx="200" cy="350" r="23" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+    <text x="200" y="355" text-anchor="middle" font-size="12" font-weight="bold" fill="#1565C0">S0</text>
+
+    <!-- State S1 -->
+    <circle cx="300" cy="350" r="23" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+    <text x="300" y="355" text-anchor="middle" font-size="12" font-weight="bold" fill="#2E7D32">S1</text>
+
+    <!-- State S2 -->
+    <circle cx="400" cy="350" r="23" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+    <text x="400" y="355" text-anchor="middle" font-size="12" font-weight="bold" fill="#E65100">S2</text>
+
+    <!-- Transitions with output -->
+    <path d="M 223 350 Q 250 338 277 350" fill="none" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text x="250" y="340" text-anchor="middle" font-size="9" fill="#333">X=0/Y0</text>
+
+    <path d="M 323 350 Q 350 338 377 350" fill="none" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text x="350" y="340" text-anchor="middle" font-size="9" fill="#333">X=1/Y1</text>
+
+    <path d="M 423 350 Q 450 378 400 373" fill="none" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text x="435" y="370" text-anchor="middle" font-size="9" fill="#333">X=0/Y0</text>
+
+    <path d="M 177 373 Q 150 378 175 365" fill="none" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text x="155" y="375" text-anchor="middle" font-size="9" fill="#333">X=1/Y1</text>
   </g>
 </svg>

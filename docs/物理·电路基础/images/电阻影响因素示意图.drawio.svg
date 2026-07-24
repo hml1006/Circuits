@@ -1,7 +1,74 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
   <defs/>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 电阻影响因素示意图 示意图</text>
+    
+    <!-- 标题 -->
+    <text x="300" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#333">电阻影响因素示意图</text>
+    <text x="300" y="50" text-anchor="middle" font-size="13" fill="#666">R = ρ · L / S</text>
+    
+    <!-- 因素1：材料 - 左上 -->
+    <rect x="20" y="70" width="280" height="140" rx="8" ry="8" fill="#f0f8ff" stroke="#3498db" stroke-width="2"/>
+    <text x="160" y="95" text-anchor="middle" font-size="14" font-weight="bold" fill="#2980b9">① 材料</text>
+    
+    <!-- 铜导线 -->
+    <rect x="40" y="110" width="100" height="16" rx="3" ry="3" fill="#e8a87c" stroke="#c0392b" stroke-width="1.5"/>
+    <text x="90" y="140" text-anchor="middle" font-size="11" fill="#555">铜（电阻率小）</text>
+    
+    <!-- 铁导线 -->
+    <rect x="180" y="110" width="100" height="16" rx="3" ry="3" fill="#a0a0a0" stroke="#666" stroke-width="1.5"/>
+    <text x="230" y="140" text-anchor="middle" font-size="11" fill="#555">铁（电阻率大）</text>
+    
+    <text x="160" y="170" text-anchor="middle" font-size="11" fill="#666">不同材料 → 电阻不同</text>
+    <text x="160" y="190" text-anchor="middle" font-size="10" fill="#888">ρ（电阻率）是材料属性</text>
+    
+    <!-- 因素2：长度 - 右上 -->
+    <rect x="300" y="70" width="280" height="140" rx="8" ry="8" fill="#fef9e7" stroke="#f39c12" stroke-width="2"/>
+    <text x="440" y="95" text-anchor="middle" font-size="14" font-weight="bold" fill="#e67e22">② 长度</text>
+    
+    <!-- 短导线 -->
+    <rect x="320" y="110" width="80" height="16" rx="3" ry="3" fill="#e8a87c" stroke="#c0392b" stroke-width="1.5"/>
+    <text x="360" y="140" text-anchor="middle" font-size="11" fill="#555">L 短</text>
+    
+    <!-- 长导线 -->
+    <rect x="430" y="110" width="130" height="16" rx="3" ry="3" fill="#e8a87c" stroke="#c0392b" stroke-width="1.5"/>
+    <text x="495" y="140" text-anchor="middle" font-size="11" fill="#555">L 长</text>
+    
+    <text x="440" y="170" text-anchor="middle" font-size="11" fill="#666">导体越长 → 电阻越大</text>
+    <text x="440" y="190" text-anchor="middle" font-size="10" fill="#888">R ∝ L（正比）</text>
+    
+    <!-- 因素3：横截面积 - 左下 -->
+    <rect x="20" y="220" width="280" height="150" rx="8" ry="8" fill="#f5eef8" stroke="#9b59b6" stroke-width="2"/>
+    <text x="160" y="245" text-anchor="middle" font-size="14" font-weight="bold" fill="#8e44ad">③ 横截面积</text>
+    
+    <!-- 细导线 -->
+    <rect x="50" y="260" width="80" height="8" rx="2" ry="2" fill="#e8a87c" stroke="#c0392b" stroke-width="1.5"/>
+    <text x="90" y="285" text-anchor="middle" font-size="11" fill="#555">S 小</text>
+    
+    <!-- 粗导线 -->
+    <rect x="170" y="255" width="100" height="18" rx="3" ry="3" fill="#e8a87c" stroke="#c0392b" stroke-width="1.5"/>
+    <text x="220" y="285" text-anchor="middle" font-size="11" fill="#555">S 大</text>
+    
+    <text x="160" y="315" text-anchor="middle" font-size="11" fill="#666">横截面积越大 → 电阻越小</text>
+    <text x="160" y="335" text-anchor="middle" font-size="10" fill="#888">R ∝ 1/S（反比）</text>
+    
+    <!-- 因素4：温度 - 右下 -->
+    <rect x="300" y="220" width="280" height="150" rx="8" ry="8" fill="#fdedec" stroke="#e74c3c" stroke-width="2"/>
+    <text x="440" y="245" text-anchor="middle" font-size="14" font-weight="bold" fill="#c0392b">④ 温度</text>
+    
+    <!-- 低温 -->
+    <rect x="320" y="260" width="100" height="16" rx="3" ry="3" fill="#74b9ff" stroke="#2980b9" stroke-width="1.5"/>
+    <text x="370" y="285" text-anchor="middle" font-size="11" fill="#fff">低温</text>
+    
+    <!-- 高温 -->
+    <rect x="450" y="260" width="100" height="16" rx="3" ry="3" fill="#e74c3c" stroke="#c0392b" stroke-width="1.5"/>
+    <text x="500" y="285" text-anchor="middle" font-size="11" fill="#fff">高温</text>
+    
+    <text x="440" y="315" text-anchor="middle" font-size="11" fill="#666">温度升高 → 金属电阻增大</text>
+    <text x="440" y="335" text-anchor="middle" font-size="10" fill="#888">半导体随温度升高电阻减小</text>
+    
+    <!-- 公式标注 -->
+    <rect x="170" y="380" width="260" height="20" rx="4" ry="4" fill="#333" opacity="0.8"/>
+    <text x="300" y="394" text-anchor="middle" font-size="12" fill="#fff">R = ρ · L / S  — 电阻定律</text>
   </g>
 </svg>

@@ -1,7 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
   <defs/>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 CMOS传输门图 示意图</text>
+    <text x="300" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#000">CMOS 传输门</text>
+    <!-- 输入 -->
+    <text x="80" y="180" text-anchor="end" font-size="14" font-weight="bold" fill="#000">VIN</text>
+    <line x1="90" y1="175" x2="180" y2="175" stroke="#000" stroke-width="2"/>
+    <line x1="180" y1="175" x2="180" y2="130" stroke="#000" stroke-width="1.5"/>
+    <!-- PMOS 管 -->
+    <rect x="180" y="100" width="60" height="60" rx="4" fill="#e8f8e8" stroke="#000" stroke-width="2"/>
+    <circle cx="175" cy="115" r="3" fill="#fff" stroke="#000" stroke-width="1.5"/>
+    <text x="210" y="120" text-anchor="middle" font-size="11" fill="#000">PMOS</text>
+    <text x="210" y="135" text-anchor="middle" font-size="11" fill="#000">T₁</text>
+    <!-- NMOS 管 -->
+    <rect x="180" y="190" width="60" height="60" rx="4" fill="#ffe8e8" stroke="#000" stroke-width="2"/>
+    <text x="210" y="210" text-anchor="middle" font-size="11" fill="#000">NMOS</text>
+    <text x="210" y="225" text-anchor="middle" font-size="11" fill="#000">T₂</text>
+    <line x1="180" y1="175" x2="180" y2="190" stroke="#000" stroke-width="1.5"/>
+    <!-- 输出侧 -->
+    <line x1="240" y1="130" x2="240" y2="175" stroke="#000" stroke-width="1.5"/>
+    <line x1="240" y1="175" x2="240" y2="250" stroke="#000" stroke-width="1.5"/>
+    <line x1="240" y1="175" x2="350" y2="175" stroke="#000" stroke-width="2"/>
+    <text x="360" y="179" text-anchor="start" font-size="14" font-weight="bold" fill="#000">VOUT</text>
+    <!-- 控制信号 C -->
+    <line x1="175" y1="115" x2="115" y2="115" stroke="#000" stroke-width="1.5"/>
+    <line x1="115" y1="115" x2="115" y2="60" stroke="#000" stroke-width="1.5"/>
+    <line x1="90" y1="60" x2="140" y2="60" stroke="#000" stroke-width="1.5"/>
+    <text x="80" y="64" text-anchor="end" font-size="14" font-weight="bold" fill="#000">C</text>
+    <!-- 控制信号 ~C -->
+    <line x1="240" y1="220" x2="300" y2="220" stroke="#000" stroke-width="1.5"/>
+    <circle cx="300" cy="220" r="3" fill="#fff" stroke="#000" stroke-width="1.5"/>
+    <line x1="300" y1="220" x2="340" y2="220" stroke="#000" stroke-width="1.5"/>
+    <line x1="340" y1="220" x2="340" y2="60" stroke="#000" stroke-width="1.5"/>
+    <line x1="340" y1="60" x2="360" y2="60" stroke="#000" stroke-width="1.5"/>
+    <text x="370" y="64" text-anchor="start" font-size="13" font-weight="bold" fill="#000">C</text>
+    <!-- 上划线符号 -->
+    <text x="385" y="58" text-anchor="start" font-size="13" fill="#000">‾</text>
+    <!-- 工作原理 -->
+    <rect x="30" y="290" width="540" height="95" rx="6" fill="#f0f8ff" stroke="#000" stroke-width="1.5"/>
+    <text x="300" y="312" text-anchor="middle" font-size="13" font-weight="bold" fill="#000">工作原理</text>
+    <text x="50" y="335" text-anchor="start" font-size="12" fill="#000">C=1, C̄=0: PMOS 和 NMOS 均导通 → VOUT = VIN（传输模式）</text>
+    <text x="50" y="355" text-anchor="start" font-size="12" fill="#000">C=0, C̄=1: PMOS 和 NMOS 均截止 → 高阻态（断开模式）</text>
+    <text x="50" y="375" text-anchor="start" font-size="12" fill="#555">特点：双向传输、导通电阻小、适合模拟信号</text>
   </g>
 </svg>

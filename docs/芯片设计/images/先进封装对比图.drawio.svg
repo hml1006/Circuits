@@ -1,7 +1,115 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
-  <defs/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#666"/>
+    </marker>
+  </defs>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 先进封装对比图 示意图</text>
+
+    <!-- Title -->
+    <text x="300" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">先进封装技术对比图</text>
+
+    <!-- 1. Wire Bond -->
+    <rect x="10" y="40" width="180" height="160" fill="#f5f5f5" stroke="#999" stroke-width="1.5" rx="5"/>
+    <text x="100" y="60" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">Wire Bond (传统)</text>
+    <!-- Chip -->
+    <rect x="35" y="70" width="80" height="40" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5" rx="3"/>
+    <text x="75" y="95" text-anchor="middle" font-size="10" fill="#1565c0">芯片</text>
+    <!-- Substrate -->
+    <rect x="25" y="140" width="150" height="30" fill="#d7ccc8" stroke="#5d4037" stroke-width="1.5" rx="3"/>
+    <text x="100" y="160" text-anchor="middle" font-size="10" fill="#5d4037">基板</text>
+    <!-- Wire bonds -->
+    <line x1="40" y1="110" x2="35" y2="140" stroke="#fdd835" stroke-width="1.5"/>
+    <line x1="60" y1="110" x2="60" y2="140" stroke="#fdd835" stroke-width="1.5"/>
+    <line x1="80" y1="110" x2="90" y2="140" stroke="#fdd835" stroke-width="1.5"/>
+    <line x1="105" y1="110" x2="120" y2="140" stroke="#fdd835" stroke-width="1.5"/>
+    <text x="100" y="185" text-anchor="middle" font-size="10" fill="#888">低密度 | 低成本</text>
+    <text x="100" y="198" text-anchor="middle" font-size="10" fill="#888">电气性能一般</text>
+
+    <!-- 2. Flip Chip -->
+    <rect x="210" y="40" width="180" height="160" fill="#f5f5f5" stroke="#999" stroke-width="1.5" rx="5"/>
+    <text x="300" y="60" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">Flip Chip (先进)</text>
+    <!-- Chip (upside down) -->
+    <rect x="235" y="70" width="80" height="40" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5" rx="3"/>
+    <text x="275" y="95" text-anchor="middle" font-size="10" fill="#1565c0">芯片</text>
+    <!-- Bumps -->
+    <circle cx="250" cy="115" r="4" fill="#fdd835" stroke="#f57f17" stroke-width="1"/>
+    <circle cx="270" cy="115" r="4" fill="#fdd835" stroke="#f57f17" stroke-width="1"/>
+    <circle cx="290" cy="115" r="4" fill="#fdd835" stroke="#f57f17" stroke-width="1"/>
+    <circle cx="310" cy="115" r="4" fill="#fdd835" stroke="#f57f17" stroke-width="1"/>
+    <!-- Substrate -->
+    <rect x="225" y="140" width="150" height="30" fill="#d7ccc8" stroke="#5d4037" stroke-width="1.5" rx="3"/>
+    <text x="300" y="160" text-anchor="middle" font-size="10" fill="#5d4037">基板</text>
+    <text x="300" y="185" text-anchor="middle" font-size="10" fill="#888">高密度 | 良好电气性能</text>
+    <text x="300" y="198" text-anchor="middle" font-size="10" fill="#888">短互连距离</text>
+
+    <!-- 3. Fan-Out WLP -->
+    <rect x="410" y="40" width="180" height="160" fill="#f5f5f5" stroke="#999" stroke-width="1.5" rx="5"/>
+    <text x="500" y="60" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">Fan-Out (晶圆级)</text>
+    <!-- Chip -->
+    <rect x="460" y="75" width="80" height="30" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5" rx="3"/>
+    <text x="500" y="94" text-anchor="middle" font-size="10" fill="#1565c0">芯片</text>
+    <!-- Mold compound -->
+    <rect x="445" y="70" width="110" height="40" fill="#e0e0e0" stroke="#666" stroke-width="1" rx="3" fill-opacity="0.5"/>
+    <!-- RDL layer -->
+    <rect x="440" y="115" width="120" height="15" fill="#b3d9ff" stroke="#1565c0" stroke-width="1" rx="2"/>
+    <text x="500" y="126" text-anchor="middle" font-size="9" fill="#1565c0">RDL 重分布层</text>
+    <!-- Balls -->
+    <circle cx="455" cy="155" r="5" fill="#bdbdbd" stroke="#666" stroke-width="1"/>
+    <circle cx="480" cy="155" r="5" fill="#bdbdbd" stroke="#666" stroke-width="1"/>
+    <circle cx="505" cy="155" r="5" fill="#bdbdbd" stroke="#666" stroke-width="1"/>
+    <circle cx="530" cy="155" r="5" fill="#bdbdbd" stroke="#666" stroke-width="1"/>
+    <text x="500" y="185" text-anchor="middle" font-size="10" fill="#888">厚度小 | 带宽高</text>
+    <text x="500" y="198" text-anchor="middle" font-size="10" fill="#888">无基板</text>
+
+    <!-- 4. 2.5D IC -->
+    <rect x="10" y="215" width="280" height="170" fill="#f5f5f5" stroke="#999" stroke-width="1.5" rx="5"/>
+    <text x="150" y="235" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">2.5D IC (中介层)</text>
+    <!-- Chips on interposer -->
+    <rect x="30" y="245" width="80" height="40" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5" rx="3"/>
+    <text x="70" y="270" text-anchor="middle" font-size="10" fill="#1565c0">Chip A</text>
+    <rect x="130" y="245" width="80" height="40" fill="#fce4ec" stroke="#c62828" stroke-width="1.5" rx="3"/>
+    <text x="170" y="270" text-anchor="middle" font-size="10" fill="#c62828">Chip B</text>
+    <rect x="230" y="245" width="50" height="40" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5" rx="3"/>
+    <text x="255" y="270" text-anchor="middle" font-size="10" fill="#2e7d32">HBM</text>
+    <!-- Interposer -->
+    <rect x="20" y="295" width="260" height="20" fill="#e8e0d0" stroke="#8d6e63" stroke-width="1.5" rx="2"/>
+    <text x="150" y="310" text-anchor="middle" font-size="10" fill="#8d6e63">硅中介层 (Silicon Interposer)</text>
+    <!-- Substrate -->
+    <rect x="15" y="325" width="270" height="25" fill="#d7ccc8" stroke="#5d4037" stroke-width="1.5" rx="2"/>
+    <text x="150" y="342" text-anchor="middle" font-size="10" fill="#5d4037">封装基板</text>
+    <!-- Balls -->
+    <circle cx="40" cy="358" r="4" fill="#bdbdbd" stroke="#666" stroke-width="1"/>
+    <circle cx="80" cy="358" r="4" fill="#bdbdbd" stroke="#666" stroke-width="1"/>
+    <circle cx="120" cy="358" r="4" fill="#bdbdbd" stroke="#666" stroke-width="1"/>
+    <circle cx="160" cy="358" r="4" fill="#bdbdbd" stroke="#666" stroke-width="1"/>
+    <circle cx="200" cy="358" r="4" fill="#bdbdbd" stroke="#666" stroke-width="1"/>
+    <circle cx="240" cy="358" r="4" fill="#bdbdbd" stroke="#666" stroke-width="1"/>
+    <text x="150" y="380" text-anchor="middle" font-size="10" fill="#888">代表：CoWoS | 高密度互连 | 适合HBM+GPU</text>
+
+    <!-- 5. 3D IC -->
+    <rect x="310" y="215" width="280" height="170" fill="#f5f5f5" stroke="#999" stroke-width="1.5" rx="5"/>
+    <text x="450" y="235" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">3D IC (垂直堆叠)</text>
+    <!-- Top chip -->
+    <rect x="370" y="245" width="80" height="30" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5" rx="3"/>
+    <text x="410" y="264" text-anchor="middle" font-size="10" fill="#1565c0">逻辑层</text>
+    <!-- TSV -->
+    <rect x="380" y="275" width="6" height="20" fill="#80cbc4" stroke="#00695c" stroke-width="1"/>
+    <rect x="400" y="275" width="6" height="20" fill="#80cbc4" stroke="#00695c" stroke-width="1"/>
+    <rect x="420" y="275" width="6" height="20" fill="#80cbc4" stroke="#00695c" stroke-width="1"/>
+    <rect x="440" y="275" width="6" height="20" fill="#80cbc4" stroke="#00695c" stroke-width="1"/>
+    <!-- Middle chip -->
+    <rect x="370" y="295" width="80" height="30" fill="#fce4ec" stroke="#c62828" stroke-width="1.5" rx="3"/>
+    <text x="410" y="314" text-anchor="middle" font-size="10" fill="#c62828">存储层</text>
+    <!-- TSV -->
+    <rect x="380" y="325" width="6" height="15" fill="#80cbc4" stroke="#00695c" stroke-width="1"/>
+    <rect x="400" y="325" width="6" height="15" fill="#80cbc4" stroke="#00695c" stroke-width="1"/>
+    <rect x="420" y="325" width="6" height="15" fill="#80cbc4" stroke="#00695c" stroke-width="1"/>
+    <rect x="440" y="325" width="6" height="15" fill="#80cbc4" stroke="#00695c" stroke-width="1"/>
+    <!-- Bottom chip -->
+    <rect x="370" y="340" width="80" height="30" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5" rx="3"/>
+    <text x="410" y="359" text-anchor="middle" font-size="10" fill="#2e7d32">传感器层</text>
+    <text x="450" y="380" text-anchor="middle" font-size="10" fill="#888">最高密度 | TSV互连 | 面积最小</text>
   </g>
 </svg>

@@ -1,7 +1,62 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
   <defs/>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 MOSFET结构剖面图 示意图</text>
+    <text x="300" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">MOSFET结构剖面图</text>
+    <!-- Substrate -->
+    <rect x="50" y="280" width="500" height="80" fill="#e8d5b7" stroke="#333" stroke-width="2"/>
+    <text x="300" y="325" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">P型衬底 (P-Substrate)</text>
+    <text x="300" y="340" text-anchor="middle" font-size="10" fill="#666">掺杂浓度 NA = 10¹⁵~10¹⁶ cm⁻³</text>
+    <!-- Source (N+) -->
+    <rect x="80" y="230" width="80" height="50" fill="#ff9999" stroke="#cc0000" stroke-width="2"/>
+    <text x="120" y="255" text-anchor="middle" font-size="12" font-weight="bold" fill="#cc0000">N+</text>
+    <text x="120" y="270" text-anchor="middle" font-size="10" fill="#cc0000">源极 (Source)</text>
+    <!-- Drain (N+) -->
+    <rect x="440" y="230" width="80" height="50" fill="#ff9999" stroke="#cc0000" stroke-width="2"/>
+    <text x="480" y="255" text-anchor="middle" font-size="12" font-weight="bold" fill="#cc0000">N+</text>
+    <text x="480" y="270" text-anchor="middle" font-size="10" fill="#cc0000">漏极 (Drain)</text>
+    <!-- Channel region -->
+    <rect x="160" y="245" width="280" height="20" fill="#fff5cc" stroke="#cc9900" stroke-width="1" stroke-dasharray="4 2"/>
+    <text x="300" y="259" text-anchor="middle" font-size="10" fill="#cc9900">沟道 (Channel) L</text>
+    <!-- Gate Oxide -->
+    <rect x="175" y="220" width="250" height="12" fill="#666" stroke="#333" stroke-width="1.5"/>
+    <text x="300" y="215" text-anchor="middle" font-size="10" fill="#333">栅氧化层 (SiO₂) tox = 1~5nm</text>
+    <!-- Gate (Poly) -->
+    <rect x="180" y="190" width="240" height="30" fill="#cc6666" stroke="#993333" stroke-width="2"/>
+    <text x="300" y="210" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">多晶硅栅极 (Gate)</text>
+    <!-- Spacers -->
+    <rect x="170" y="190" width="12" height="42" fill="#aaa" stroke="#666" stroke-width="1"/>
+    <rect x="418" y="190" width="12" height="42" fill="#aaa" stroke="#666" stroke-width="1"/>
+    <!-- STI regions -->
+    <rect x="50" y="230" width="30" height="50" fill="#a0a0a0" stroke="#333" stroke-width="1"/>
+    <text x="65" y="260" text-anchor="middle" font-size="9" fill="#fff">STI</text>
+    <rect x="520" y="230" width="30" height="50" fill="#a0a0a0" stroke="#333" stroke-width="1"/>
+    <text x="535" y="260" text-anchor="middle" font-size="9" fill="#fff">STI</text>
+    <!-- Contacts -->
+    <rect x="100" y="175" width="40" height="18" fill="#ffcc66" stroke="#cc9900" stroke-width="1"/>
+    <text x="120" y="187" text-anchor="middle" font-size="9" fill="#333">接触孔</text>
+    <rect x="460" y="175" width="40" height="18" fill="#ffcc66" stroke="#cc9900" stroke-width="1"/>
+    <text x="480" y="187" text-anchor="middle" font-size="9" fill="#333">接触孔</text>
+    <rect x="285" y="175" width="30" height="18" fill="#ffcc66" stroke="#cc9900" stroke-width="1"/>
+    <text x="300" y="187" text-anchor="middle" font-size="9" fill="#333">接触孔</text>
+    <!-- Metal 1 -->
+    <rect x="95" y="155" width="50" height="22" fill="#88ccff" stroke="#3399ff" stroke-width="1.5"/>
+    <text x="120" y="170" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">M1</text>
+    <rect x="455" y="155" width="50" height="22" fill="#88ccff" stroke="#3399ff" stroke-width="1.5"/>
+    <text x="480" y="170" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">M1</text>
+    <!-- Device parameters table -->
+    <rect x="50" y="370" width="500" height="25" rx="3" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+    <text x="60" y="387" font-size="10" fill="#555">参数: W=沟道宽度, L=沟道长度, tox=栅氧厚度, VTH=阈值电压, Cox=εox/tox</text>
+    <!-- Body contact -->
+    <rect x="80" y="280" width="30" height="40" fill="#e8d5b7" stroke="#333" stroke-width="1" stroke-dasharray="3 2"/>
+    <text x="95" y="305" text-anchor="middle" font-size="8" fill="#333">衬底接触</text>
+    <!-- Four terminal labels -->
+    <line x1="120" y1="155" x2="120" y2="140" stroke="#333" stroke-width="1"/>
+    <text x="120" y="138" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">源极 (S)</text>
+    <line x1="300" y1="175" x2="300" y2="140" stroke="#333" stroke-width="1"/>
+    <text x="300" y="138" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">栅极 (G)</text>
+    <line x1="480" y1="155" x2="480" y2="140" stroke="#333" stroke-width="1"/>
+    <text x="480" y="138" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">漏极 (D)</text>
+    <text x="300" y="365" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">衬底 (B)</text>
   </g>
 </svg>

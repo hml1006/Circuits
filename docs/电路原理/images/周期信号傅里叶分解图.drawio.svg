@@ -1,7 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
   <defs/>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 周期信号傅里叶分解图 示意图</text>
+    <text x="300" y="30" text-anchor="middle" font-size="18" fill="#333" font-weight="bold">周期信号傅里叶分解图</text>
+    <!-- 原始方波信号 -->
+    <text x="120" y="60" text-anchor="middle" font-size="14" fill="#333" font-weight="bold">方波信号</text>
+    <line x1="60" y1="100" x2="560" y2="100" stroke="#000" stroke-width="2"/>
+    <line x1="60" y1="100" x2="60" y2="50" stroke="#000" stroke-width="2"/>
+    <line x1="60" y1="100" x2="60" y2="105" stroke="#000" stroke-width="1.5"/>
+    <text x="60" y="118" text-anchor="middle" font-size="10" fill="#333">0</text>
+    <line x1="180" y1="100" x2="180" y2="105" stroke="#000" stroke-width="1.5"/>
+    <text x="180" y="118" text-anchor="middle" font-size="10" fill="#333">T/2</text>
+    <line x1="360" y1="100" x2="360" y2="105" stroke="#000" stroke-width="1.5"/>
+    <text x="360" y="118" text-anchor="middle" font-size="10" fill="#333">T</text>
+    <!-- 方波波形 -->
+    <line x1="60" y1="60" x2="180" y2="60" stroke="#d32f2f" stroke-width="2.5"/>
+    <line x1="180" y1="60" x2="180" y2="90" stroke="#d32f2f" stroke-width="2.5"/>
+    <line x1="180" y1="90" x2="360" y2="90" stroke="#d32f2f" stroke-width="2.5"/>
+    <line x1="360" y1="90" x2="360" y2="60" stroke="#d32f2f" stroke-width="2.5"/>
+    <line x1="360" y1="60" x2="540" y2="60" stroke="#d32f2f" stroke-width="2.5"/>
+    <text x="60" y="55" font-size="10" fill="#d32f2f">A</text>
+    <text x="60" y="95" font-size="10" fill="#d32f2f">-A</text>
+
+    <!-- 基波分量 -->
+    <text x="120" y="150" text-anchor="middle" font-size="13" fill="#333" font-weight="bold">基波 (n=1)</text>
+    <path d="M 60 185 Q 90 165 120 175 Q 150 185 180 180 Q 210 175 240 178 Q 270 182 300 180 Q 330 178 360 180 Q 390 182 420 178 Q 450 175 480 180 Q 510 185 540 175 Q 560 168 560 175" fill="none" stroke="#1976d2" stroke-width="2"/>
+
+    <!-- 3次谐波 -->
+    <text x="120" y="220" text-anchor="middle" font-size="13" fill="#333" font-weight="bold">3次谐波 (n=3)</text>
+    <path d="M 60 245 Q 80 235 100 240 Q 120 250 140 245 Q 160 235 180 245 Q 200 255 220 245 Q 240 235 260 245 Q 280 255 300 245 Q 320 235 340 245 Q 360 255 380 245 Q 400 235 420 245 Q 440 255 460 245 Q 480 235 500 245 Q 520 255 540 245 Q 560 235 560 240" fill="none" stroke="#e65100" stroke-width="2"/>
+
+    <!-- 5次谐波 -->
+    <text x="120" y="290" text-anchor="middle" font-size="13" fill="#333" font-weight="bold">5次谐波 (n=5)</text>
+    <path d="M 60 315 Q 72 308 84 312 Q 96 318 108 315 Q 120 308 132 315 Q 144 322 156 315 Q 168 308 180 315 Q 192 322 204 315 Q 216 308 228 315 Q 240 322 252 315 Q 264 308 276 315 Q 288 322 300 315 Q 312 308 324 315 Q 336 322 348 315 Q 360 308 372 315 Q 384 322 396 315 Q 408 308 420 315 Q 432 322 444 315 Q 456 308 468 315 Q 480 322 492 315 Q 504 308 516 315 Q 528 322 540 315 Q 552 308 560 312" fill="none" stroke="#388e3c" stroke-width="2"/>
+
+    <!-- 合成公式 -->
+    <text x="300" y="365" text-anchor="middle" font-size="14" fill="#333" font-weight="bold">f(t) = (4A/π)[sin(ω₀t) + (1/3)sin(3ω₀t) + (1/5)sin(5ω₀t) + ...]</text>
+    <text x="300" y="390" text-anchor="middle" font-size="12" fill="#666">方波只有奇次谐波，幅值按1/n衰减</text>
   </g>
 </svg>

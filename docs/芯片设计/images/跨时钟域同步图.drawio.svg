@@ -1,7 +1,82 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
-  <defs/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#666"/>
+    </marker>
+  </defs>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 跨时钟域同步图 示意图</text>
+    <text x="300" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">跨时钟域同步图 — 双级同步器</text>
+    <!-- Clock domain A -->
+    <rect x="20" y="45" width="160" height="160" rx="5" fill="#e3f2fd" stroke="#1e88e5" stroke-width="2"/>
+    <text x="100" y="65" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e88e5">时钟域A</text>
+    <text x="100" y="82" text-anchor="middle" font-size="11" fill="#1e88e5">clk_a</text>
+    <!-- Source register -->
+    <rect x="35" y="95" width="130" height="50" rx="3" fill="#bbdefb" stroke="#1e88e5" stroke-width="1.5"/>
+    <text x="100" y="115" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e88e5">源寄存器</text>
+    <text x="100" y="132" text-anchor="middle" font-size="10" fill="#333">data_a</text>
+    <text x="100" y="145" text-anchor="middle" font-size="9" fill="#666">(posedge clk_a)</text>
+    <!-- Clock domain B -->
+    <rect x="280" y="45" width="300" height="160" rx="5" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+    <text x="430" y="65" text-anchor="middle" font-size="13" font-weight="bold" fill="#e65100">时钟域B (目标域)</text>
+    <text x="430" y="82" text-anchor="middle" font-size="11" fill="#e65100">clk_b</text>
+    <!-- Sync stage 1 -->
+    <rect x="295" y="95" width="130" height="50" rx="3" fill="#ffe0b2" stroke="#e65100" stroke-width="1.5"/>
+    <text x="360" y="115" text-anchor="middle" font-size="11" font-weight="bold" fill="#e65100">第一级同步</text>
+    <text x="360" y="132" text-anchor="middle" font-size="10" fill="#333">sync_reg1</text>
+    <text x="360" y="145" text-anchor="middle" font-size="9" fill="#666">(posedge clk_b)</text>
+    <!-- Sync stage 2 -->
+    <rect x="445" y="95" width="120" height="50" rx="3" fill="#ffe0b2" stroke="#e65100" stroke-width="1.5"/>
+    <text x="505" y="115" text-anchor="middle" font-size="11" font-weight="bold" fill="#e65100">第二级同步</text>
+    <text x="505" y="132" text-anchor="middle" font-size="10" fill="#333">sync_reg2</text>
+    <text x="505" y="145" text-anchor="middle" font-size="9" fill="#666">(输出)</text>
+    <!-- Data flow arrows -->
+    <line x1="165" y1="120" x2="290" y2="120" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="228" y="115" text-anchor="middle" font-size="10" fill="#e53935">跨时钟域</text>
+    <line x1="425" y1="120" x2="440" y2="120" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- Metastability -->
+    <rect x="220" y="170" width="120" height="25" rx="3" fill="#fce4ec" stroke="#c62828" stroke-width="1.5"/>
+    <text x="280" y="187" text-anchor="middle" font-size="11" fill="#c62828">亚稳态风险!</text>
+    <line x1="280" y1="170" x2="360" y2="145" stroke="#c62828" stroke-width="1" stroke-dasharray="3 2"/>
+    <!-- Timing diagram -->
+    <text x="300" y="230" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">时序图</text>
+    <!-- clk_a -->
+    <text x="20" y="260" font-size="11" fill="#1e88e5">clk_a</text>
+    <line x1="60" y1="260" x2="560" y2="260" stroke="#333" stroke-width="1"/>
+    <line x1="80" y1="255" x2="80" y2="265" stroke="#333" stroke-width="1"/>
+    <line x1="180" y1="255" x2="180" y2="265" stroke="#333" stroke-width="1"/>
+    <line x1="280" y1="255" x2="280" y2="265" stroke="#333" stroke-width="1"/>
+    <line x1="380" y1="255" x2="380" y2="265" stroke="#333" stroke-width="1"/>
+    <line x1="480" y1="255" x2="480" y2="265" stroke="#333" stroke-width="1"/>
+    <!-- clk_b -->
+    <text x="20" y="290" font-size="11" fill="#e65100">clk_b</text>
+    <line x1="60" y1="290" x2="560" y2="290" stroke="#333" stroke-width="1"/>
+    <line x1="130" y1="285" x2="130" y2="295" stroke="#333" stroke-width="1"/>
+    <line x1="230" y1="285" x2="230" y2="295" stroke="#333" stroke-width="1"/>
+    <line x1="330" y1="285" x2="330" y2="295" stroke="#333" stroke-width="1"/>
+    <line x1="430" y1="285" x2="430" y2="295" stroke="#333" stroke-width="1"/>
+    <line x1="530" y1="285" x2="530" y2="295" stroke="#333" stroke-width="1"/>
+    <!-- data_a -->
+    <text x="20" y="320" font-size="11" fill="#333">data_a</text>
+    <line x1="60" y1="320" x2="100" y2="320" stroke="#333" stroke-width="1"/>
+    <line x1="100" y1="320" x2="100" y2="315" stroke="#333" stroke-width="1"/>
+    <line x1="100" y1="315" x2="200" y2="315" stroke="#333" stroke-width="2"/>
+    <line x1="200" y1="315" x2="200" y2="320" stroke="#333" stroke-width="1"/>
+    <line x1="200" y1="320" x2="560" y2="320" stroke="#333" stroke-width="1"/>
+    <text x="150" y="312" font-size="9" fill="#333">数据有效</text>
+    <!-- sync_reg1 -->
+    <text x="20" y="350" font-size="11" fill="#e65100">sync1</text>
+    <line x1="60" y1="350" x2="230" y2="350" stroke="#333" stroke-width="1"/>
+    <line x1="230" y1="350" x2="230" y2="345" stroke="#333" stroke-width="1"/>
+    <line x1="230" y1="345" x2="560" y2="345" stroke="#333" stroke-width="2"/>
+    <!-- sync_reg2 -->
+    <text x="20" y="380" font-size="11" fill="#2e7d32">sync2</text>
+    <line x1="60" y1="380" x2="330" y2="380" stroke="#333" stroke-width="1"/>
+    <line x1="330" y1="380" x2="330" y2="375" stroke="#333" stroke-width="1"/>
+    <line x1="330" y1="375" x2="560" y2="375" stroke="#333" stroke-width="2"/>
+    <text x="360" y="378" font-size="10" fill="#2e7d32">同步后数据</text>
+    <!-- Metastability region -->
+    <rect x="210" y="335" width="40" height="20" fill="#fce4ec" stroke="#c62828" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="230" y="349" text-anchor="middle" font-size="8" fill="#c62828">亚稳态</text>
   </g>
 </svg>

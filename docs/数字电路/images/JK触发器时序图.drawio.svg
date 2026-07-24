@@ -1,7 +1,106 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
   <defs/>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 JK触发器时序图 示意图</text>
+    <text x="300" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#000">JK 触发器时序图</text>
+    <!-- 触发器符号 -->
+    <rect x="30" y="40" width="120" height="80" rx="4" fill="#f0f0ff" stroke="#000" stroke-width="2"/>
+    <text x="90" y="70" text-anchor="middle" font-size="12" font-weight="bold" fill="#000">JK FF</text>
+    <text x="90" y="90" text-anchor="middle" font-size="11" fill="#000">边沿触发</text>
+    <text x="90" y="110" text-anchor="middle" font-size="10" fill="#555">Qₙ₊₁ = JQ̄+KQ</text>
+    <line x1="10" y1="55" x2="30" y2="55" stroke="#000" stroke-width="1.5"/>
+    <text x="5" y="59" text-anchor="end" font-size="11" fill="#000">J</text>
+    <line x1="10" y1="75" x2="30" y2="75" stroke="#000" stroke-width="1.5"/>
+    <text x="5" y="79" text-anchor="end" font-size="11" fill="#000">CP</text>
+    <line x1="10" y1="95" x2="30" y2="95" stroke="#000" stroke-width="1.5"/>
+    <text x="5" y="99" text-anchor="end" font-size="11" fill="#000">K</text>
+    <line x1="150" y1="55" x2="180" y2="55" stroke="#000" stroke-width="1.5"/>
+    <text x="185" y="59" text-anchor="start" font-size="11" fill="#000">Q</text>
+    <line x1="150" y1="95" x2="180" y2="95" stroke="#000" stroke-width="1.5"/>
+    <text x="185" y="99" text-anchor="start" font-size="11" fill="#000">Q̄</text>
+    <!-- 波形图区域 -->
+    <rect x="30" y="140" width="540" height="245" rx="4" fill="#fafafa" stroke="#555" stroke-width="1" stroke-dasharray="3"/>
+    <text x="300" y="160" text-anchor="middle" font-size="13" font-weight="bold" fill="#000">时序波形图</text>
+    <!-- 时间轴 -->
+    <line x1="50" y1="168" x2="560" y2="168" stroke="#000" stroke-width="1"/>
+    <text x="45" y="172" text-anchor="end" font-size="11" fill="#000">t</text>
+    <!-- CP 时钟 -->
+    <text x="40" y="195" text-anchor="end" font-size="12" font-weight="bold" fill="#000">CP</text>
+    <line x1="50" y1="190" x2="80" y2="190" stroke="#000" stroke-width="2"/>
+    <line x1="80" y1="190" x2="80" y2="178" stroke="#000" stroke-width="2"/>
+    <line x1="80" y1="178" x2="110" y2="178" stroke="#000" stroke-width="2"/>
+    <line x1="110" y1="178" x2="110" y2="190" stroke="#000" stroke-width="2"/>
+    <line x1="110" y1="190" x2="140" y2="190" stroke="#000" stroke-width="2"/>
+    <line x1="140" y1="190" x2="140" y2="178" stroke="#000" stroke-width="2"/>
+    <line x1="140" y1="178" x2="170" y2="178" stroke="#000" stroke-width="2"/>
+    <line x1="170" y1="178" x2="170" y2="190" stroke="#000" stroke-width="2"/>
+    <line x1="170" y1="190" x2="200" y2="190" stroke="#000" stroke-width="2"/>
+    <line x1="200" y1="190" x2="200" y2="178" stroke="#000" stroke-width="2"/>
+    <line x1="200" y1="178" x2="230" y2="178" stroke="#000" stroke-width="2"/>
+    <line x1="230" y1="178" x2="230" y2="190" stroke="#000" stroke-width="2"/>
+    <line x1="230" y1="190" x2="260" y2="190" stroke="#000" stroke-width="2"/>
+    <line x1="260" y1="190" x2="260" y2="178" stroke="#000" stroke-width="2"/>
+    <line x1="260" y1="178" x2="290" y2="178" stroke="#000" stroke-width="2"/>
+    <line x1="290" y1="178" x2="290" y2="190" stroke="#000" stroke-width="2"/>
+    <line x1="290" y1="190" x2="320" y2="190" stroke="#000" stroke-width="2"/>
+    <line x1="320" y1="190" x2="320" y2="178" stroke="#000" stroke-width="2"/>
+    <line x1="320" y1="178" x2="350" y2="178" stroke="#000" stroke-width="2"/>
+    <line x1="350" y1="178" x2="350" y2="190" stroke="#000" stroke-width="2"/>
+    <line x1="350" y1="190" x2="380" y2="190" stroke="#000" stroke-width="2"/>
+    <line x1="380" y1="190" x2="380" y2="178" stroke="#000" stroke-width="2"/>
+    <line x1="380" y1="178" x2="410" y2="178" stroke="#000" stroke-width="2"/>
+    <line x1="410" y1="178" x2="410" y2="190" stroke="#000" stroke-width="2"/>
+    <line x1="410" y1="190" x2="440" y2="190" stroke="#000" stroke-width="2"/>
+    <line x1="440" y1="190" x2="440" y2="178" stroke="#000" stroke-width="2"/>
+    <line x1="440" y1="178" x2="470" y2="178" stroke="#000" stroke-width="2"/>
+    <line x1="470" y1="178" x2="470" y2="190" stroke="#000" stroke-width="2"/>
+    <line x1="470" y1="190" x2="500" y2="190" stroke="#000" stroke-width="2"/>
+    <line x1="500" y1="190" x2="500" y2="178" stroke="#000" stroke-width="2"/>
+    <line x1="500" y1="178" x2="530" y2="178" stroke="#000" stroke-width="2"/>
+    <line x1="530" y1="178" x2="530" y2="190" stroke="#000" stroke-width="2"/>
+    <line x1="530" y1="190" x2="560" y2="190" stroke="#000" stroke-width="2"/>
+    <!-- J -->
+    <text x="40" y="230" text-anchor="end" font-size="12" font-weight="bold" fill="#000">J</text>
+    <line x1="50" y1="225" x2="110" y2="225" stroke="#000" stroke-width="2"/>
+    <line x1="110" y1="225" x2="110" y2="210" stroke="#000" stroke-width="2"/>
+    <line x1="110" y1="210" x2="290" y2="210" stroke="#000" stroke-width="2"/>
+    <line x1="290" y1="210" x2="290" y2="225" stroke="#000" stroke-width="2"/>
+    <line x1="290" y1="225" x2="560" y2="225" stroke="#000" stroke-width="2"/>
+    <!-- K -->
+    <text x="40" y="265" text-anchor="end" font-size="12" font-weight="bold" fill="#000">K</text>
+    <line x1="50" y1="260" x2="200" y2="260" stroke="#000" stroke-width="2"/>
+    <line x1="200" y1="260" x2="200" y2="245" stroke="#000" stroke-width="2"/>
+    <line x1="200" y1="245" x2="380" y2="245" stroke="#000" stroke-width="2"/>
+    <line x1="380" y1="245" x2="380" y2="260" stroke="#000" stroke-width="2"/>
+    <line x1="380" y1="260" x2="560" y2="260" stroke="#000" stroke-width="2"/>
+    <!-- Q -->
+    <text x="40" y="300" text-anchor="end" font-size="12" font-weight="bold" fill="#000">Q</text>
+    <line x1="50" y1="295" x2="80" y2="295" stroke="#00a" stroke-width="2"/>
+    <line x1="80" y1="295" x2="80" y2="280" stroke="#00a" stroke-width="2"/>
+    <line x1="80" y1="280" x2="140" y2="280" stroke="#00a" stroke-width="2"/>
+    <line x1="140" y1="280" x2="140" y2="295" stroke="#00a" stroke-width="2"/>
+    <line x1="140" y1="295" x2="200" y2="295" stroke="#00a" stroke-width="2"/>
+    <line x1="200" y1="295" x2="200" y2="280" stroke="#00a" stroke-width="2"/>
+    <line x1="200" y1="280" x2="290" y2="280" stroke="#00a" stroke-width="2"/>
+    <line x1="290" y1="280" x2="290" y2="295" stroke="#00a" stroke-width="2"/>
+    <line x1="290" y1="295" x2="380" y2="295" stroke="#00a" stroke-width="2"/>
+    <line x1="380" y1="295" x2="380" y2="280" stroke="#00a" stroke-width="2"/>
+    <line x1="380" y1="280" x2="470" y2="280" stroke="#00a" stroke-width="2"/>
+    <line x1="470" y1="280" x2="470" y2="295" stroke="#00a" stroke-width="2"/>
+    <line x1="470" y1="295" x2="560" y2="295" stroke="#00a" stroke-width="2"/>
+    <!-- 功能标注 -->
+    <text x="95" y="320" text-anchor="middle" font-size="10" fill="#555">J=0,K=0</text>
+    <text x="170" y="320" text-anchor="middle" font-size="10" fill="#555">保持</text>
+    <text x="245" y="320" text-anchor="middle" font-size="10" fill="#555">J=1,K=0</text>
+    <text x="335" y="320" text-anchor="middle" font-size="10" fill="#555">置位</text>
+    <text x="425" y="320" text-anchor="middle" font-size="10" fill="#555">J=0,K=1</text>
+    <text x="515" y="320" text-anchor="middle" font-size="10" fill="#555">复位</text>
+    <!-- 上升沿标注 -->
+    <line x1="80" y1="170" x2="80" y2="200" stroke="#f00" stroke-width="0.5" stroke-dasharray="2"/>
+    <line x1="140" y1="170" x2="140" y2="200" stroke="#f00" stroke-width="0.5" stroke-dasharray="2"/>
+    <line x1="200" y1="170" x2="200" y2="200" stroke="#f00" stroke-width="0.5" stroke-dasharray="2"/>
+    <line x1="290" y1="170" x2="290" y2="200" stroke="#f00" stroke-width="0.5" stroke-dasharray="2"/>
+    <line x1="380" y1="170" x2="380" y2="200" stroke="#f00" stroke-width="0.5" stroke-dasharray="2"/>
+    <line x1="470" y1="170" x2="470" y2="200" stroke="#f00" stroke-width="0.5" stroke-dasharray="2"/>
   </g>
 </svg>

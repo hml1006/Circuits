@@ -1,7 +1,78 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
   <defs/>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 稳压电路图 示意图</text>
+    <text x="300" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#222">齐纳二极管稳压电路</text>
+
+    <!-- 输入电压 -->
+    <text x="40" y="200" font-size="12" fill="#666">V</text>
+    <text x="40" y="215" font-size="11" fill="#666">I</text>
+    <line x1="60" y1="200" x2="120" y2="200" stroke="#333" stroke-width="2"/>
+    <line x1="60" y1="260" x2="120" y2="260" stroke="#333" stroke-width="2"/>
+
+    <!-- 限流电阻 R -->
+    <rect x="140" y="180" width="16" height="40" fill="#f0f0f0" stroke="#333" stroke-width="2"/>
+    <rect x="140" y="140" width="16" height="40" fill="#f0f0f0" stroke="#333" stroke-width="2"/>
+    <rect x="136" y="140" width="24" height="80" fill="#f0f0f0" stroke="#333" stroke-width="2" rx="3"/>
+    <text x="148" y="185" text-anchor="middle" font-size="12" fill="#333">R</text>
+
+    <line x1="120" y1="200" x2="136" y2="200" stroke="#333" stroke-width="2"/>
+    <line x1="160" y1="200" x2="200" y2="200" stroke="#333" stroke-width="2"/>
+
+    <!-- 齐纳二极管 -->
+    <line x1="200" y1="200" x2="230" y2="200" stroke="#333" stroke-width="2"/>
+    <polygon points="230,185 260,200 230,215" fill="none" stroke="#cc3333" stroke-width="2"/>
+    <line x1="260" y1="185" x2="260" y2="215" stroke="#cc3333" stroke-width="2"/>
+    <line x1="260" y1="200" x2="290" y2="200" stroke="#333" stroke-width="2"/>
+    <text x="245" y="230" text-anchor="middle" font-size="11" fill="#cc3333">Dz</text>
+
+    <!-- 负载电阻 -->
+    <rect x="290" y="180" width="16" height="40" fill="#f0f0f0" stroke="#333" stroke-width="2"/>
+    <rect x="290" y="140" width="16" height="40" fill="#f0f0f0" stroke="#333" stroke-width="2"/>
+    <rect x="286" y="140" width="24" height="80" fill="#f0f0f0" stroke="#333" stroke-width="2" rx="3"/>
+    <text x="298" y="185" text-anchor="middle" font-size="12" fill="#333">R</text>
+    <text x="298" y="197" text-anchor="middle" font-size="9" fill="#666">L</text>
+
+    <line x1="290" y1="200" x2="286" y2="200" stroke="#333" stroke-width="2"/>
+    <line x1="310" y1="200" x2="350" y2="200" stroke="#333" stroke-width="2"/>
+
+    <!-- 公共地线 -->
+    <line x1="200" y1="260" x2="200" y2="300" stroke="#333" stroke-width="2"/>
+    <line x1="120" y1="260" x2="350" y2="260" stroke="#333" stroke-width="2"/>
+    <line x1="350" y1="260" x2="350" y2="300" stroke="#333" stroke-width="2"/>
+    <line x1="180" y1="300" x2="370" y2="300" stroke="#333" stroke-width="2"/>
+    <line x1="180" y1="300" x2="180" y2="310" stroke="#333" stroke-width="2"/>
+    <line x1="200" y1="300" x2="200" y2="310" stroke="#333" stroke-width="2"/>
+    <line x1="190" y1="310" x2="190" y2="320" stroke="#333" stroke-width="3"/>
+    <line x1="370" y1="300" x2="370" y2="310" stroke="#333" stroke-width="2"/>
+    <line x1="360" y1="310" x2="360" y2="320" stroke="#333" stroke-width="3"/>
+    <!-- 接地符号 -->
+    <line x1="190" y1="320" x2="210" y2="320" stroke="#333" stroke-width="2"/>
+    <line x1="360" y1="320" x2="380" y2="320" stroke="#333" stroke-width="2"/>
+
+    <!-- 标注 -->
+    <text x="40" y="180" font-size="12" fill="#666">V</text>
+    <text x="40" y="195" font-size="11" fill="#666">I</text>
+    <text x="80" y="180" font-size="11" fill="#666">(未稳)</text>
+
+    <text x="365" y="195" font-size="12" fill="#333">+ V</text>
+    <text x="365" y="210" font-size="11" fill="#333">O</text>
+    <text x="365" y="225" font-size="11" fill="#666">(稳定)</text>
+
+    <!-- 电流方向标注 -->
+    <text x="148" y="130" font-size="10" fill="#666">I</text>
+    <text x="148" y="142" font-size="10" fill="#666">Z</text>
+    <line x1="155" y1="132" x2="165" y2="132" stroke="#666" stroke-width="1" marker-end="url(#arrowSm)"/>
+    <defs>
+      <marker id="arrowSm" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto">
+        <polygon points="0 0, 6 2, 0 4" fill="#666"/>
+      </marker>
+    </defs>
+
+    <!-- 公式 -->
+    <text x="300" y="350" text-anchor="middle" font-size="12" fill="#666">V</text>
+    <text x="310" y="350" text-anchor="middle" font-size="12" fill="#666">O</text>
+    <text x="325" y="350" text-anchor="middle" font-size="12" fill="#666"> = V</text>
+    <text x="340" y="350" text-anchor="middle" font-size="12" fill="#666">Z</text>
   </g>
 </svg>

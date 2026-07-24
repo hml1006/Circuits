@@ -1,7 +1,79 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
   <defs/>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 二瓦计法接线图 示意图</text>
+    <text x="300" y="30" text-anchor="middle" font-size="18" fill="#333" font-weight="bold">二瓦计法接线图</text>
+    <!-- 三相电源 -->
+    <text x="80" y="65" font-size="14" fill="#333" font-weight="bold">三相电源</text>
+    <!-- A相 -->
+    <line x1="80" y1="80" x2="80" y2="120" stroke="#d32f2f" stroke-width="2"/>
+    <circle cx="80" cy="140" r="15" fill="none" stroke="#d32f2f" stroke-width="2"/>
+    <line x1="80" y1="125" x2="80" y2="130" stroke="#d32f2f" stroke-width="2"/>
+    <line x1="70" y1="140" x2="90" y2="140" stroke="#d32f2f" stroke-width="2"/>
+    <line x1="80" y1="150" x2="80" y2="155" stroke="#d32f2f" stroke-width="2"/>
+    <line x1="80" y1="155" x2="80" y2="180" stroke="#d32f2f" stroke-width="2"/>
+    <text x="60" y="135" font-size="10" fill="#333">+</text>
+    <text x="95" y="135" font-size="10" fill="#333">-</text>
+    <text x="55" y="120" font-size="12" fill="#d32f2f">A</text>
+    <!-- B相 -->
+    <line x1="80" y1="180" x2="80" y2="220" stroke="#1976d2" stroke-width="2"/>
+    <circle cx="80" cy="240" r="15" fill="none" stroke="#1976d2" stroke-width="2"/>
+    <line x1="80" y1="225" x2="80" y2="230" stroke="#1976d2" stroke-width="2"/>
+    <line x1="70" y1="240" x2="90" y2="240" stroke="#1976d2" stroke-width="2"/>
+    <line x1="80" y1="250" x2="80" y2="255" stroke="#1976d2" stroke-width="2"/>
+    <line x1="80" y1="255" x2="80" y2="280" stroke="#1976d2" stroke-width="2"/>
+    <text x="60" y="235" font-size="10" fill="#333">+</text>
+    <text x="95" y="235" font-size="10" fill="#333">-</text>
+    <text x="55" y="220" font-size="12" fill="#1976d2">B</text>
+    <!-- C相 -->
+    <line x1="80" y1="280" x2="80" y2="320" stroke="#e65100" stroke-width="2"/>
+    <circle cx="80" cy="340" r="15" fill="none" stroke="#e65100" stroke-width="2"/>
+    <line x1="80" y1="325" x2="80" y2="330" stroke="#e65100" stroke-width="2"/>
+    <line x1="70" y1="340" x2="90" y2="340" stroke="#e65100" stroke-width="2"/>
+    <line x1="80" y1="350" x2="80" y2="355" stroke="#e65100" stroke-width="2"/>
+    <line x1="80" y1="355" x2="80" y2="380" stroke="#e65100" stroke-width="2"/>
+    <text x="60" y="335" font-size="10" fill="#333">+</text>
+    <text x="95" y="335" font-size="10" fill="#333">-</text>
+    <text x="55" y="320" font-size="12" fill="#e65100">C</text>
+
+    <!-- 三相导线 -->
+    <line x1="95" y1="140" x2="180" y2="140" stroke="#d32f2f" stroke-width="2.5"/>
+    <line x1="95" y1="240" x2="180" y2="240" stroke="#1976d2" stroke-width="2.5"/>
+    <line x1="95" y1="340" x2="180" y2="340" stroke="#e65100" stroke-width="2.5"/>
+
+    <!-- 瓦特表W1 -->
+    <rect x="180" y="110" width="50" height="60" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+    <text x="205" y="145" text-anchor="middle" font-size="14" fill="#e65100" font-weight="bold">W₁</text>
+    <!-- 电流线圈 -->
+    <line x1="230" y1="140" x2="280" y2="140" stroke="#d32f2f" stroke-width="2.5"/>
+    <!-- 电压线圈 -->
+    <line x1="205" y1="170" x2="205" y2="240" stroke="#e65100" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <line x1="205" y1="240" x2="250" y2="240" stroke="#e65100" stroke-width="1.5" stroke-dasharray="4,2"/>
+
+    <!-- 瓦特表W2 -->
+    <rect x="280" y="310" width="50" height="60" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="305" y="345" text-anchor="middle" font-size="14" fill="#1976d2" font-weight="bold">W₂</text>
+    <!-- 电流线圈 -->
+    <line x1="330" y1="340" x2="380" y2="340" stroke="#e65100" stroke-width="2.5"/>
+    <!-- 电压线圈 -->
+    <line x1="305" y1="310" x2="305" y2="240" stroke="#1976d2" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <line x1="305" y1="240" x2="250" y2="240" stroke="#1976d2" stroke-width="1.5" stroke-dasharray="4,2"/>
+
+    <!-- 三相负载 -->
+    <text x="430" y="65" font-size="14" fill="#333" font-weight="bold">三相负载</text>
+    <rect x="380" y="80" width="120" height="280" fill="#e8f5e9" stroke="#388e3c" stroke-width="2" stroke-dasharray="8,4"/>
+    <text x="440" y="200" text-anchor="middle" font-size="16" fill="#388e3c" font-weight="bold">Z</text>
+    <text x="440" y="225" text-anchor="middle" font-size="14" fill="#388e3c" font-weight="bold">Z</text>
+    <text x="440" y="250" text-anchor="middle" font-size="14" fill="#388e3c" font-weight="bold">Z</text>
+    <text x="440" y="290" text-anchor="middle" font-size="12" fill="#666">对称或不对称</text>
+    <text x="440" y="310" text-anchor="middle" font-size="12" fill="#666">三相负载</text>
+
+    <!-- 负载连接线 -->
+    <line x1="280" y1="140" x2="380" y2="140" stroke="#d32f2f" stroke-width="2.5"/>
+    <line x1="250" y1="240" x2="380" y2="240" stroke="#1976d2" stroke-width="2.5"/>
+    <line x1="380" y1="340" x2="380" y2="340" stroke="#e65100" stroke-width="2.5"/>
+
+    <!-- 公式 -->
+    <text x="300" y="395" text-anchor="middle" font-size="14" fill="#333" font-weight="bold">P = P₁ + P₂,  P₁ = U_AB·I_A·cos(30°-θ),  P₂ = U_CB·I_C·cos(30°+θ)</text>
   </g>
 </svg>

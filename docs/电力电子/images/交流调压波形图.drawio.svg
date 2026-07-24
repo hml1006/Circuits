@@ -1,7 +1,64 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
   <defs/>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 交流调压波形图 示意图</text>
+    
+    <text x="300" y="20" text-anchor="middle" font-size="16" fill="#000" font-weight="bold">交流调压波形图（触发角 α）</text>
+    
+    <!-- Input AC waveform -->
+    <text x="60" y="50" font-size="12" fill="#000" font-weight="bold">输入电压</text>
+    
+    <line x1="50" y1="80" x2="550" y2="80" stroke="#000" stroke-width="1"/>
+    <line x1="50" y1="40" x2="50" y2="120" stroke="#000" stroke-width="1"/>
+    <polygon points="50,40 46,48 54,48" fill="#000"/>
+    <polygon points="550,80 542,76 542,84" fill="#000"/>
+    
+    <path d="M 50 80 Q 80 30 110 80 Q 140 130 170 80 Q 200 30 230 80 Q 260 130 290 80 Q 320 30 350 80 Q 380 130 410 80 Q 440 30 470 80 Q 500 130 530 80" fill="none" stroke="#00c" stroke-width="2"/>
+    
+    <text x="300" y="130" text-anchor="middle" font-size="11" fill="#00c">正弦交流输入</text>
+    
+    <!-- Output waveform with firing angle -->
+    <text x="60" y="165" font-size="12" fill="#000" font-weight="bold">输出电压（α = 60°）</text>
+    
+    <line x1="50" y1="195" x2="550" y2="195" stroke="#000" stroke-width="1"/>
+    <line x1="50" y1="155" x2="50" y2="235" stroke="#000" stroke-width="1"/>
+    
+    <!-- Output waveform: zero until firing angle, then follows input until zero crossing -->
+    <path d="M 50 195 L 80 195" fill="none" stroke="#c00" stroke-width="2.5"/>
+    <path d="M 80 195 Q 110 30 140 195" fill="none" stroke="#c00" stroke-width="2.5"/>
+    <path d="M 140 195 L 170 195" fill="none" stroke="#c00" stroke-width="2.5"/>
+    <path d="M 170 195 Q 200 130 230 195" fill="none" stroke="#c00" stroke-width="2.5"/>
+    <path d="M 230 195 L 260 195" fill="none" stroke="#c00" stroke-width="2.5"/>
+    <path d="M 260 195 Q 290 30 320 195" fill="none" stroke="#c00" stroke-width="2.5"/>
+    <path d="M 320 195 L 350 195" fill="none" stroke="#c00" stroke-width="2.5"/>
+    <path d="M 350 195 Q 380 130 410 195" fill="none" stroke="#c00" stroke-width="2.5"/>
+    <path d="M 410 195 L 440 195" fill="none" stroke="#c00" stroke-width="2.5"/>
+    <path d="M 440 195 Q 470 30 500 195" fill="none" stroke="#c00" stroke-width="2.5"/>
+    <path d="M 500 195 L 530 195" fill="none" stroke="#c00" stroke-width="2.5"/>
+    <path d="M 530 195 Q 560 130 590 195" fill="none" stroke="#c00" stroke-width="2.5"/>
+    
+    <!-- Firing angle annotation -->
+    <path d="M 50 195 A 30 30 0 0 0 80 195" fill="none" stroke="#080" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <line x1="50" y1="195" x2="50" y2="155" stroke="#080" stroke-width="1" stroke-dasharray="3,3"/>
+    <text x="65" y="175" font-size="11" fill="#080">α</text>
+    
+    <text x="300" y="245" text-anchor="middle" font-size="11" fill="#c00">触发角 α 后导通，自然过零关断</text>
+    
+    <!-- Gate trigger pulses -->
+    <text x="60" y="275" font-size="12" fill="#000" font-weight="bold">门极触发脉冲</text>
+    
+    <line x1="50" y1="295" x2="550" y2="295" stroke="#000" stroke-width="1"/>
+    
+    <rect x="78" y="285" width="8" height="20" fill="#080"/>
+    <rect x="168" y="285" width="8" height="20" fill="#080"/>
+    <rect x="258" y="285" width="8" height="20" fill="#080"/>
+    <rect x="348" y="285" width="8" height="20" fill="#080"/>
+    <rect x="438" y="285" width="8" height="20" fill="#080"/>
+    <rect x="528" y="285" width="8" height="20" fill="#080"/>
+    
+    <!-- Formula -->
+    <text x="300" y="340" text-anchor="middle" font-size="13" fill="#000" font-weight="bold">输出公式</text>
+    <text x="300" y="360" text-anchor="middle" font-size="12" fill="#000">Vₒ(rms) = Vᵢₙ(rms) · √(1/π(π - α + sin(2α)/2))</text>
+    <text x="300" y="380" text-anchor="middle" font-size="11" fill="#666">调节 R 改变触发角 α → 控制输出功率</text>
   </g>
 </svg>

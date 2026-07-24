@@ -1,7 +1,69 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
   <defs/>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 安全用电标识图 示意图</text>
+    
+    <!-- 标题 -->
+    <text x="300" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#333">安全用电标识图</text>
+    
+    <!-- 安全标识1：高压危险 -->
+    <rect x="30" y="55" width="160" height="150" rx="10" ry="10" fill="#fdedec" stroke="#e74c3c" stroke-width="2.5"/>
+    <!-- 闪电符号 -->
+    <path d="M 95 75 L 85 110 L 100 110 L 90 145 L 115 108 L 100 108 L 110 75 Z" fill="#e74c3c" stroke="#c0392b" stroke-width="1.5"/>
+    <text x="110" y="170" text-anchor="middle" font-size="12" font-weight="bold" fill="#e74c3c">高压危险</text>
+    <text x="110" y="190" text-anchor="middle" font-size="10" fill="#888">请勿靠近</text>
+    
+    <!-- 安全标识2：禁止湿手 -->
+    <rect x="210" y="55" width="160" height="150" rx="10" ry="10" fill="#fef9e7" stroke="#f39c12" stroke-width="2.5"/>
+    <!-- 禁止符号 ⊘ -->
+    <circle cx="290" cy="110" r="25" fill="none" stroke="#e67e22" stroke-width="3"/>
+    <line x1="270" y1="95" x2="310" y2="125" stroke="#e67e22" stroke-width="3"/>
+    <!-- 水滴 -->
+    <path d="M 290 85 Q 280 100 290 105 Q 300 100 290 85" fill="#74b9ff" stroke="#3498db" stroke-width="1"/>
+    <!-- 手 -->
+    <path d="M 280 130 Q 275 140 280 145 Q 290 150 300 145 Q 305 140 300 130" fill="none" stroke="#e67e22" stroke-width="2"/>
+    <text x="290" y="170" text-anchor="middle" font-size="12" font-weight="bold" fill="#e67e22">禁止湿手操作</text>
+    <text x="290" y="190" text-anchor="middle" font-size="10" fill="#888">保持干燥</text>
+    
+    <!-- 安全标识3：安全电压 -->
+    <rect x="390" y="55" width="160" height="150" rx="10" ry="10" fill="#eafaf1" stroke="#27ae60" stroke-width="2.5"/>
+    <circle cx="470" cy="110" r="25" fill="#27ae60" stroke="#1e8449" stroke-width="2"/>
+    <text x="470" y="115" text-anchor="middle" font-size="16" font-weight="bold" fill="#fff">✓</text>
+    <text x="470" y="170" text-anchor="middle" font-size="12" font-weight="bold" fill="#27ae60">安全电压</text>
+    <text x="470" y="190" text-anchor="middle" font-size="10" fill="#888">不高于36V</text>
+    
+    <!-- 安全标识4：接地保护 -->
+    <rect x="30" y="220" width="160" height="150" rx="10" ry="10" fill="#e8f8f5" stroke="#1abc9c" stroke-width="2.5"/>
+    <!-- 接地符号 -->
+    <line x1="110" y1="245" x2="110" y2="275" stroke="#16a085" stroke-width="3"/>
+    <line x1="95" y1="275" x2="125" y2="275" stroke="#16a085" stroke-width="3"/>
+    <line x1="100" y1="282" x2="120" y2="282" stroke="#16a085" stroke-width="3"/>
+    <line x1="105" y1="289" x2="115" y2="289" stroke="#16a085" stroke-width="3"/>
+    <text x="110" y="315" text-anchor="middle" font-size="12" font-weight="bold" fill="#16a085">接地保护</text>
+    <text x="110" y="335" text-anchor="middle" font-size="10" fill="#888">金属外壳接地</text>
+    <text x="110" y="355" text-anchor="middle" font-size="10" fill="#888">左零右火上接地</text>
+    
+    <!-- 安全标识5：禁止攀爬 -->
+    <rect x="210" y="220" width="160" height="150" rx="10" ry="10" fill="#fdedec" stroke="#e74c3c" stroke-width="2.5"/>
+    <circle cx="290" cy="275" r="25" fill="none" stroke="#e74c3c" stroke-width="3"/>
+    <line x1="270" y1="260" x2="310" y2="290" stroke="#e74c3c" stroke-width="3"/>
+    <!-- 电杆 -->
+    <line x1="290" y1="245" x2="290" y2="310" stroke="#8B4513" stroke-width="3"/>
+    <text x="290" y="340" text-anchor="middle" font-size="12" font-weight="bold" fill="#e74c3c">禁止攀爬</text>
+    <text x="290" y="360" text-anchor="middle" font-size="10" fill="#888">高压危险</text>
+    
+    <!-- 安全标识6：安全用电原则 -->
+    <rect x="390" y="220" width="180" height="150" rx="10" ry="10" fill="#f0f0f0" stroke="#999" stroke-width="2"/>
+    <text x="480" y="250" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">安全用电原则</text>
+    
+    <text x="405" y="275" font-size="11" fill="#e74c3c">⚠ 不接触低压带电体</text>
+    <text x="405" y="295" font-size="11" fill="#e74c3c">⚠ 不靠近高压带电体</text>
+    <text x="405" y="315" font-size="11" fill="#555">⚠ 更换灯泡前断开电源</text>
+    <text x="405" y="335" font-size="11" fill="#555">⚠ 不弄湿用电器</text>
+    <text x="405" y="355" font-size="11" fill="#555">⚠ 有人触电先切断电源</text>
+    
+    <!-- 触电类型标注 -->
+    <rect x="30" y="390" width="540" height="25" rx="4" ry="4" fill="#fdedec" stroke="#e74c3c" stroke-width="1.5"/>
+    <text x="300" y="407" text-anchor="middle" font-size="12" fill="#c0392b">触电类型：单线触电 | 双线触电 | 高压电弧触电 | 跨步电压触电</text>
   </g>
 </svg>

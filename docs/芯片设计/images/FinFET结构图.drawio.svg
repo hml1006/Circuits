@@ -1,7 +1,76 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
-  <defs/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#666"/>
+    </marker>
+  </defs>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 FinFET结构图 示意图</text>
+
+    <!-- Title -->
+    <text x="300" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">FinFET 三维器件结构图</text>
+
+    <!-- Substrate (bottom) -->
+    <rect x="100" y="300" width="400" height="60" fill="#e8d5b7" stroke="#333" stroke-width="2"/>
+    <text x="300" y="335" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">衬底 (Substrate)</text>
+
+    <!-- Buried Oxide (BOX) -->
+    <rect x="130" y="270" width="340" height="30" fill="#b3d9ff" stroke="#333" stroke-width="1.5"/>
+    <text x="300" y="290" text-anchor="middle" font-size="11" fill="#333">埋氧层 (BOX)</text>
+
+    <!-- Fin (vertical channel) -->
+    <rect x="270" y="140" width="60" height="130" fill="#90ee90" stroke="#2e7d32" stroke-width="2"/>
+    <text x="300" y="210" text-anchor="middle" font-size="12" font-weight="bold" fill="#2e7d32">Fin</text>
+    <text x="300" y="225" text-anchor="middle" font-size="10" fill="#2e7d32">(Channel)</text>
+
+    <!-- Source -->
+    <rect x="185" y="170" width="85" height="60" fill="#ffcc80" stroke="#e65100" stroke-width="2" rx="3"/>
+    <text x="227" y="200" text-anchor="middle" font-size="13" font-weight="bold" fill="#e65100">源极 (S)</text>
+
+    <!-- Drain -->
+    <rect x="330" y="170" width="85" height="60" fill="#ffcc80" stroke="#e65100" stroke-width="2" rx="3"/>
+    <text x="372" y="200" text-anchor="middle" font-size="13" font-weight="bold" fill="#e65100">漏极 (D)</text>
+
+    <!-- Gate (wrapping around the fin) -->
+    <rect x="255" y="100" width="90" height="40" fill="#ef9a9a" stroke="#c62828" stroke-width="2" rx="3"/>
+    <text x="300" y="125" text-anchor="middle" font-size="13" font-weight="bold" fill="#c62828">栅极 (Gate)</text>
+
+    <!-- Gate Oxide -->
+    <rect x="265" y="140" width="70" height="10" fill="#e0e0e0" stroke="#666" stroke-width="1"/>
+    <text x="300" y="148" text-anchor="middle" font-size="8" fill="#666">Oxide</text>
+
+    <!-- Gate contact line going up -->
+    <line x1="300" y1="100" x2="300" y2="80" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text x="320" y="85" font-size="10" fill="#666">栅极接触</text>
+
+    <!-- Source contact line -->
+    <line x1="227" y1="170" x2="227" y2="80" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text x="200" y="75" font-size="10" fill="#666">源极接触</text>
+
+    <!-- Drain contact line -->
+    <line x1="372" y1="170" x2="372" y2="80" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text x="385" y="75" font-size="10" fill="#666">漏极接触</text>
+
+    <!-- Key parameters box -->
+    <rect x="15" y="15" width="180" height="80" fill="#f5f5f5" stroke="#999" stroke-width="1" rx="5"/>
+    <text x="20" y="32" font-size="11" font-weight="bold" fill="#333">关键参数：</text>
+    <text x="20" y="48" font-size="10" fill="#555">鳍高 Hfin: 30~50nm</text>
+    <text x="20" y="63" font-size="10" fill="#555">鳍宽 Wfin: 5~10nm</text>
+    <text x="20" y="78" font-size="10" fill="#555">栅极长度 Lg: ~20nm</text>
+
+    <!-- Legend -->
+    <rect x="420" y="15" width="160" height="100" fill="#f5f5f5" stroke="#999" stroke-width="1" rx="5"/>
+    <text x="425" y="32" font-size="11" font-weight="bold" fill="#333">图例：</text>
+    <rect x="425" y="40" width="20" height="12" fill="#90ee90" stroke="#2e7d32" stroke-width="1"/>
+    <text x="450" y="50" font-size="10" fill="#555">鳍 (Fin)</text>
+    <rect x="425" y="56" width="20" height="12" fill="#ef9a9a" stroke="#c62828" stroke-width="1"/>
+    <text x="450" y="66" font-size="10" fill="#555">栅极 (Gate)</text>
+    <rect x="425" y="72" width="20" height="12" fill="#ffcc80" stroke="#e65100" stroke-width="1"/>
+    <text x="450" y="82" font-size="10" fill="#555">源极/漏极</text>
+    <rect x="425" y="88" width="20" height="12" fill="#b3d9ff" stroke="#333" stroke-width="1"/>
+    <text x="450" y="98" font-size="10" fill="#555">埋氧层 (BOX)</text>
+
+    <!-- Note about 3D structure -->
+    <text x="300" y="380" text-anchor="middle" font-size="11" fill="#888">FinFET: 三面栅极包裹鳍状沟道，提供更好的沟道控制能力</text>
   </g>
 </svg>

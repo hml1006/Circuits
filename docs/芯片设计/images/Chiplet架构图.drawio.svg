@@ -1,7 +1,93 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
-  <defs/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#666"/>
+    </marker>
+  </defs>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 Chiplet架构图 示意图</text>
+
+    <!-- Title -->
+    <text x="300" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">Chiplet 异构集成架构图</text>
+
+    <!-- Interposer (silicon substrate) -->
+    <rect x="30" y="230" width="540" height="30" fill="#e8e0d0" stroke="#8d6e63" stroke-width="2" rx="3"/>
+    <text x="300" y="250" text-anchor="middle" font-size="12" font-weight="bold" fill="#8d6e63">硅中介层 (Silicon Interposer)</text>
+
+    <!-- Package Substrate -->
+    <rect x="20" y="270" width="560" height="40" fill="#d7ccc8" stroke="#5d4037" stroke-width="2" rx="3"/>
+    <text x="300" y="295" text-anchor="middle" font-size="12" font-weight="bold" fill="#5d4037">封装基板 (Package Substrate)</text>
+
+    <!-- TSVs through interposer -->
+    <rect x="100" y="230" width="10" height="40" fill="#80cbc4" stroke="#00695c" stroke-width="1"/>
+    <rect x="200" y="230" width="10" height="40" fill="#80cbc4" stroke="#00695c" stroke-width="1"/>
+    <rect x="300" y="230" width="10" height="40" fill="#80cbc4" stroke="#00695c" stroke-width="1"/>
+    <rect x="400" y="230" width="10" height="40" fill="#80cbc4" stroke="#00695c" stroke-width="1"/>
+    <rect x="490" y="230" width="10" height="40" fill="#80cbc4" stroke="#00695c" stroke-width="1"/>
+
+    <!-- Chiplet 1: CPU -->
+    <rect x="40" y="80" width="120" height="130" fill="#e3f2fd" stroke="#1565c0" stroke-width="2" rx="8"/>
+    <text x="100" y="120" text-anchor="middle" font-size="14" font-weight="bold" fill="#1565c0">CPU Chiplet</text>
+    <text x="100" y="140" text-anchor="middle" font-size="10" fill="#1565c0">RISC-V Core</text>
+    <text x="100" y="155" text-anchor="middle" font-size="10" fill="#1565c0">L1/L2 Cache</text>
+    <text x="100" y="170" text-anchor="middle" font-size="10" fill="#1565c0">5nm工艺</text>
+    <rect x="60" y="185" width="80" height="15" fill="#bbdefb" stroke="#1565c0" stroke-width="1" rx="2"/>
+    <text x="100" y="196" text-anchor="middle" font-size="9" fill="#1565c0">UCIe Die-to-Die</text>
+
+    <!-- Chiplet 2: GPU -->
+    <rect x="190" y="80" width="120" height="130" fill="#fce4ec" stroke="#c62828" stroke-width="2" rx="8"/>
+    <text x="250" y="120" text-anchor="middle" font-size="14" font-weight="bold" fill="#c62828">GPU Chiplet</text>
+    <text x="250" y="140" text-anchor="middle" font-size="10" fill="#c62828">Compute Unit</text>
+    <text x="250" y="155" text-anchor="middle" font-size="10" fill="#c62828">Tensor Core</text>
+    <text x="250" y="170" text-anchor="middle" font-size="10" fill="#c62828">7nm工艺</text>
+    <rect x="210" y="185" width="80" height="15" fill="#f8bbd0" stroke="#c62828" stroke-width="1" rx="2"/>
+    <text x="250" y="196" text-anchor="middle" font-size="9" fill="#c62828">UCIe Die-to-Die</text>
+
+    <!-- Chiplet 3: Memory -->
+    <rect x="340" y="80" width="120" height="130" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2" rx="8"/>
+    <text x="400" y="120" text-anchor="middle" font-size="14" font-weight="bold" fill="#2e7d32">Memory Chiplet</text>
+    <text x="400" y="140" text-anchor="middle" font-size="10" fill="#2e7d32">HBM3 Stack</text>
+    <text x="400" y="155" text-anchor="middle" font-size="10" fill="#2e7d32">容量: 8GB</text>
+    <text x="400" y="170" text-anchor="middle" font-size="10" fill="#2e7d32">带宽: 1TB/s</text>
+    <rect x="360" y="185" width="80" height="15" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1" rx="2"/>
+    <text x="400" y="196" text-anchor="middle" font-size="9" fill="#2e7d32">UCIe Die-to-Die</text>
+
+    <!-- Chiplet 4: I/O -->
+    <rect x="490" y="80" width="90" height="130" fill="#fff3e0" stroke="#e65100" stroke-width="2" rx="8"/>
+    <text x="535" y="120" text-anchor="middle" font-size="14" font-weight="bold" fill="#e65100">I/O Chiplet</text>
+    <text x="535" y="140" text-anchor="middle" font-size="10" fill="#e65100">PCIe 5.0</text>
+    <text x="535" y="155" text-anchor="middle" font-size="10" fill="#e65100">Ethernet</text>
+    <text x="535" y="170" text-anchor="middle" font-size="10" fill="#e65100">USB 4.0</text>
+    <rect x="495" y="185" width="80" height="15" fill="#ffe0b2" stroke="#e65100" stroke-width="1" rx="2"/>
+    <text x="535" y="196" text-anchor="middle" font-size="9" fill="#e65100">UCIe Die-to-Die</text>
+
+    <!-- Inter-chip connections (through interposer) -->
+    <line x1="160" y1="210" x2="160" y2="230" stroke="#666" stroke-width="1.5"/>
+    <line x1="190" y1="210" x2="190" y2="230" stroke="#666" stroke-width="1.5"/>
+    <line x1="310" y1="210" x2="310" y2="230" stroke="#666" stroke-width="1.5"/>
+    <line x1="340" y1="210" x2="340" y2="230" stroke="#666" stroke-width="1.5"/>
+    <line x1="460" y1="210" x2="460" y2="230" stroke="#666" stroke-width="1.5"/>
+    <line x1="490" y1="210" x2="490" y2="230" stroke="#666" stroke-width="1.5"/>
+
+    <!-- Horizontal connections in interposer -->
+    <line x1="160" y1="240" x2="490" y2="240" stroke="#1565c0" stroke-width="2" stroke-dasharray="4,3"/>
+    <text x="300" y="238" text-anchor="middle" font-size="9" fill="#1565c0">Chiplet 互连 (UCIe/BoW)</text>
+
+    <!-- BGA balls at bottom -->
+    <circle cx="60" cy="310" r="6" fill="#bdbdbd" stroke="#666" stroke-width="1"/>
+    <circle cx="120" cy="310" r="6" fill="#bdbdbd" stroke="#666" stroke-width="1"/>
+    <circle cx="180" cy="310" r="6" fill="#bdbdbd" stroke="#666" stroke-width="1"/>
+    <circle cx="240" cy="310" r="6" fill="#bdbdbd" stroke="#666" stroke-width="1"/>
+    <circle cx="300" cy="310" r="6" fill="#bdbdbd" stroke="#666" stroke-width="1"/>
+    <circle cx="360" cy="310" r="6" fill="#bdbdbd" stroke="#666" stroke-width="1"/>
+    <circle cx="420" cy="310" r="6" fill="#bdbdbd" stroke="#666" stroke-width="1"/>
+    <circle cx="480" cy="310" r="6" fill="#bdbdbd" stroke="#666" stroke-width="1"/>
+    <circle cx="540" cy="310" r="6" fill="#bdbdbd" stroke="#666" stroke-width="1"/>
+    <text x="300" y="340" text-anchor="middle" font-size="10" fill="#888">BGA 焊球</text>
+
+    <!-- Advantages box -->
+    <rect x="30" y="355" width="540" height="35" fill="#f5f5f5" stroke="#999" stroke-width="1" rx="5"/>
+    <text x="40" y="370" font-size="10" fill="#555">优势：良率提升 | 成本降低 | 异构集成 | 设计复用 | 快速迭代 | 不同工艺节点混合</text>
+    <text x="40" y="383" font-size="10" fill="#555">互连标准：UCIe | BoW | OpenHBI</text>
   </g>
 </svg>

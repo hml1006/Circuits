@@ -1,7 +1,87 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
-  <defs/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#666"/>
+    </marker>
+  </defs>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 BIST结构图 示意图</text>
+
+    <!-- Title -->
+    <text x="300" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">BIST 内置自测试结构图</text>
+
+    <!-- BIST Controller -->
+    <rect x="200" y="50" width="200" height="50" fill="#e3f2fd" stroke="#1565c0" stroke-width="2" rx="6"/>
+    <text x="300" y="73" text-anchor="middle" font-size="14" font-weight="bold" fill="#1565c0">BIST 控制器</text>
+    <text x="300" y="90" text-anchor="middle" font-size="10" fill="#1565c0">BIST Controller</text>
+
+    <!-- TPG -->
+    <rect x="50" y="140" width="160" height="70" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2" rx="6"/>
+    <text x="130" y="165" text-anchor="middle" font-size="13" font-weight="bold" fill="#2e7d32">TPG</text>
+    <text x="130" y="182" text-anchor="middle" font-size="10" fill="#2e7d32">测试向量生成器</text>
+    <text x="130" y="198" text-anchor="middle" font-size="10" fill="#2e7d32">LFSR (线性反馈移位寄存器)</text>
+
+    <!-- Circuit Under Test -->
+    <rect x="250" y="140" width="200" height="70" fill="#fff3e0" stroke="#e65100" stroke-width="2" rx="6"/>
+    <text x="350" y="165" text-anchor="middle" font-size="13" font-weight="bold" fill="#e65100">被测电路 (CUT)</text>
+    <text x="350" y="182" text-anchor="middle" font-size="10" fill="#e65100">Circuit Under Test</text>
+    <text x="350" y="198" text-anchor="middle" font-size="10" fill="#e65100">组合逻辑 + 时序逻辑</text>
+
+    <!-- ORA -->
+    <rect x="490" y="140" width="100" height="70" fill="#fce4ec" stroke="#c62828" stroke-width="2" rx="6"/>
+    <text x="540" y="165" text-anchor="middle" font-size="13" font-weight="bold" fill="#c62828">ORA</text>
+    <text x="540" y="182" text-anchor="middle" font-size="10" fill="#c62828">响应分析</text>
+    <text x="540" y="198" text-anchor="middle" font-size="10" fill="#c62828">MISR</text>
+
+    <!-- Connections -->
+    <line x1="210" y1="140" x2="250" y2="140" stroke="#2e7d32" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="450" y1="140" x2="490" y2="140" stroke="#c62828" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="300" y1="100" x2="130" y2="140" stroke="#1565c0" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <line x1="300" y1="100" x2="350" y2="140" stroke="#1565c0" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <line x1="300" y1="100" x2="540" y2="140" stroke="#1565c0" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+    <!-- Labels on connections -->
+    <text x="230" y="135" text-anchor="middle" font-size="9" fill="#2e7d32">测试向量</text>
+    <text x="470" y="135" text-anchor="middle" font-size="9" fill="#c62828">响应输出</text>
+
+    <!-- Go/No Go result -->
+    <line x1="540" y1="210" x2="540" y2="250" stroke="#c62828" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="490" y="250" width="100" height="40" fill="#fce4ec" stroke="#c62828" stroke-width="2" rx="6"/>
+    <text x="540" y="275" text-anchor="middle" font-size="13" font-weight="bold" fill="#c62828">结果</text>
+    <text x="540" y="285" text-anchor="middle" font-size="8" fill="#c62828">Pass/Fail</text>
+
+    <!-- LFSR detail -->
+    <rect x="20" y="240" width="260" height="140" fill="#f5f5f5" stroke="#999" stroke-width="1" rx="5"/>
+    <text x="150" y="260" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">LFSR 原理</text>
+    <text x="30" y="278" font-size="10" fill="#555">特征多项式: P(x) = xⁿ + cₙ₋₁xⁿ⁻¹ + ... + c₁x + 1</text>
+    <!-- LFSR diagram -->
+    <rect x="40" y="288" width="22" height="22" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5" rx="2"/>
+    <text x="51" y="303" text-anchor="middle" font-size="8" fill="#2e7d32">D0</text>
+    <rect x="68" y="288" width="22" height="22" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5" rx="2"/>
+    <text x="79" y="303" text-anchor="middle" font-size="8" fill="#2e7d32">D1</text>
+    <rect x="96" y="288" width="22" height="22" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5" rx="2"/>
+    <text x="107" y="303" text-anchor="middle" font-size="8" fill="#2e7d32">D2</text>
+    <text x="128" y="303" text-anchor="middle" font-size="10" fill="#555">... →</text>
+    <rect x="150" y="288" width="22" height="22" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5" rx="2"/>
+    <text x="161" y="303" text-anchor="middle" font-size="8" fill="#2e7d32">Dn</text>
+    <circle cx="195" cy="299" r="10" fill="#fff" stroke="#2e7d32" stroke-width="1.5"/>
+    <text x="195" y="303" text-anchor="middle" font-size="8" fill="#2e7d32">⊕</text>
+    <line x1="172" y1="299" x2="185" y2="299" stroke="#2e7d32" stroke-width="1.5"/>
+    <line x1="205" y1="299" x2="215" y2="299" stroke="#2e7d32" stroke-width="1.5"/>
+    <line x1="215" y1="299" x2="215" y2="320" stroke="#2e7d32" stroke-width="1.5"/>
+    <line x1="51" y1="310" x2="51" y2="320" stroke="#2e7d32" stroke-width="1.5"/>
+    <line x1="51" y1="320" x2="215" y2="320" stroke="#2e7d32" stroke-width="1.5"/>
+    <text x="30" y="340" font-size="10" fill="#555">LFSR生成伪随机测试向量，广泛应用于BIST</text>
+    <text x="30" y="355" font-size="10" fill="#555">MISR压缩测试响应为特征签名</text>
+
+    <!-- MISR detail -->
+    <rect x="310" y="240" width="270" height="140" fill="#f5f5f5" stroke="#999" stroke-width="1" rx="5"/>
+    <text x="445" y="260" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">BIST 工作流程</text>
+    <text x="320" y="280" font-size="10" fill="#555">1. 初始化: BIST控制器复位</text>
+    <text x="320" y="296" font-size="10" fill="#555">2. 加载: LFSR生成种子向量</text>
+    <text x="320" y="312" font-size="10" fill="#555">3. 测试: 逐周期施加测试向量</text>
+    <text x="320" y="328" font-size="10" fill="#555">4. 响应: MISR捕获并压缩响应</text>
+    <text x="320" y="344" font-size="10" fill="#555">5. 比较: 签名与黄金签名比对</text>
+    <text x="320" y="360" font-size="10" fill="#555">6. 结果: Pass/Fail输出</text>
   </g>
 </svg>

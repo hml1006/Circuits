@@ -1,7 +1,78 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
-  <defs/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#666"/>
+    </marker>
+  </defs>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 CMOS反相器版图 示意图</text>
+
+    <!-- Title -->
+    <text x="300" y="22" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">CMOS 反相器版图</text>
+
+    <!-- Main layout area -->
+    <rect x="30" y="40" width="540" height="280" fill="#fafafa" stroke="#333" stroke-width="1.5" rx="5"/>
+
+    <!-- VDD rail (top) -->
+    <rect x="40" y="50" width="520" height="20" fill="#c62828" stroke="#b71c1c" stroke-width="1.5" rx="2"/>
+    <text x="300" y="64" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">VDD (Metal 1)</text>
+
+    <!-- N-well -->
+    <rect x="50" y="75" width="500" height="85" fill="#e8d5b7" stroke="#8d6e63" stroke-width="2" rx="3" fill-opacity="0.5"/>
+    <text x="300" y="100" text-anchor="middle" font-size="11" font-weight="bold" fill="#5d4037">N阱 (N-well)</text>
+
+    <!-- PMOS Active -->
+    <rect x="120" y="85" width="360" height="50" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5" rx="2"/>
+    <text x="300" y="110" text-anchor="middle" font-size="11" font-weight="bold" fill="#1565c0">PMOS 有源区 (Active)</text>
+    <text x="300" y="125" text-anchor="middle" font-size="9" fill="#1565c0">P+ 注入</text>
+
+    <!-- Polysilicon gate -->
+    <rect x="280" y="75" width="10" height="100" fill="#2e7d32" stroke="#1b5e20" stroke-width="1.5" rx="1"/>
+    <text x="295" y="92" font-size="9" font-weight="bold" fill="#1b5e20">Poly</text>
+
+    <!-- Metal 1 contacts -->
+    <rect x="140" y="140" width="60" height="6" fill="#ffd54f" stroke="#f57f17" stroke-width="1" rx="1"/>
+    <rect x="400" y="140" width="60" height="6" fill="#ffd54f" stroke="#f57f17" stroke-width="1" rx="1"/>
+    <rect x="285" y="140" width="10" height="6" fill="#ffd54f" stroke="#f57f17" stroke-width="1" rx="1"/>
+
+    <!-- VSS rail (bottom) -->
+    <rect x="40" y="290" width="520" height="20" fill="#1565c0" stroke="#0d47a1" stroke-width="1.5" rx="2"/>
+    <text x="300" y="304" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">VSS (Metal 1)</text>
+
+    <!-- NMOS Active (bottom) -->
+    <rect x="120" y="205" width="360" height="50" fill="#fce4ec" stroke="#c62828" stroke-width="1.5" rx="2"/>
+    <text x="300" y="230" text-anchor="middle" font-size="11" font-weight="bold" fill="#c62828">NMOS 有源区 (Active)</text>
+    <text x="300" y="245" text-anchor="middle" font-size="9" fill="#c62828">N+ 注入</text>
+
+    <!-- Polysilicon gate (continued) -->
+    <rect x="280" y="175" width="10" height="115" fill="#2e7d32" stroke="#1b5e20" stroke-width="1.5" rx="1"/>
+
+    <!-- Metal 1 output (connecting PMOS and NMOS drains) -->
+    <rect x="285" y="150" width="10" height="60" fill="#ffd54f" stroke="#f57f17" stroke-width="1.5" rx="1"/>
+
+    <!-- Output label -->
+    <line x1="290" y1="210" x2="290" y2="260" stroke="#f57f17" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="310" y="265" font-size="12" font-weight="bold" fill="#f57f17">输出 Vout</text>
+
+    <!-- Input label -->
+    <line x1="285" y1="95" x2="220" y2="95" stroke="#2e7d32" stroke-width="1.5"/>
+    <line x1="220" y1="95" x2="220" y2="260" stroke="#2e7d32" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="200" y="275" font-size="12" font-weight="bold" fill="#2e7d32">输入 Vin</text>
+
+    <!-- N-well contact -->
+    <rect x="60" y="85" width="40" height="50" fill="#e8d5b7" stroke="#8d6e63" stroke-width="1.5" rx="2"/>
+    <text x="80" y="110" text-anchor="middle" font-size="8" fill="#5d4037">N-well</text>
+    <text x="80" y="122" text-anchor="middle" font-size="8" fill="#5d4037">contact</text>
+
+    <!-- Substrate contact -->
+    <rect x="60" y="205" width="40" height="50" fill="#fce4ec" stroke="#c62828" stroke-width="1.5" rx="2"/>
+    <text x="80" y="230" text-anchor="middle" font-size="8" fill="#c62828">P-sub</text>
+    <text x="80" y="242" text-anchor="middle" font-size="8" fill="#c62828">contact</text>
+
+    <!-- Schematic -->
+    <rect x="15" y="330" width="570" height="60" fill="#f5f5f5" stroke="#999" stroke-width="1" rx="5"/>
+    <text x="300" y="350" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">CMOS 反相器版图要点</text>
+    <text x="30" y="370" font-size="10" fill="#555">1. PMOS 在 N阱内，NMOS 在 P型衬底上</text>
+    <text x="30" y="383" font-size="10" fill="#555">2. 栅极用多晶硅连接 PMOS 和 NMOS | 3. 漏极共同连接作为输出 | 4. 源极分别连接 VDD 和 VSS</text>
   </g>
 </svg>

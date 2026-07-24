@@ -1,7 +1,89 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
-  <defs/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#666"/>
+    </marker>
+  </defs>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 ESD保护结构图 示意图</text>
+
+    <!-- Title -->
+    <text x="300" y="22" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">ESD 保护结构图</text>
+
+    <!-- I/O Pad -->
+    <rect x="250" y="40" width="100" height="40" fill="#e0e0e0" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="300" y="65" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">I/O Pad</text>
+
+    <!-- ESD protection overview -->
+    <rect x="15" y="100" width="570" height="100" fill="#f5f5f5" stroke="#999" stroke-width="1" rx="5"/>
+    <text x="300" y="120" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">ESD 保护原理</text>
+
+    <!-- Primary protection -->
+    <rect x="30" y="130" width="240" height="55" fill="#e3f2fd" stroke="#1565c0" stroke-width="2" rx="5"/>
+    <text x="150" y="152" text-anchor="middle" font-size="12" font-weight="bold" fill="#1565c0">一级保护 (Primary)</text>
+    <text x="150" y="170" text-anchor="middle" font-size="10" fill="#1565c0">GGNMOS / SCR</text>
+    <text x="150" y="182" text-anchor="middle" font-size="10" fill="#1565c0">泄放大电流 (~1.5A HBM)</text>
+
+    <!-- Secondary protection -->
+    <rect x="330" y="130" width="240" height="55" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2" rx="5"/>
+    <text x="450" y="152" text-anchor="middle" font-size="12" font-weight="bold" fill="#2e7d32">二级保护 (Secondary)</text>
+    <text x="450" y="170" text-anchor="middle" font-size="10" fill="#2e7d32">电阻 + 二极管 / RC-trigger PMOS</text>
+    <text x="450" y="182" text-anchor="middle" font-size="10" fill="#2e7d32">限制电压尖峰</text>
+
+    <!-- Resistor between primary and secondary -->
+    <rect x="275" y="145" width="50" height="25" fill="#fff3e0" stroke="#e65100" stroke-width="1.5" rx="3"/>
+    <text x="300" y="162" text-anchor="middle" font-size="10" fill="#e65100">Rballast</text>
+
+    <!-- Internal Circuit -->
+    <rect x="250" y="220" width="100" height="40" fill="#fce4ec" stroke="#c62828" stroke-width="2" rx="5"/>
+    <text x="300" y="245" text-anchor="middle" font-size="11" font-weight="bold" fill="#c62828">内部电路</text>
+
+    <line x1="300" y1="215" x2="300" y2="220" stroke="#c62828" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- ESD structures -->
+    <rect x="15" y="275" width="570" height="115" fill="#f5f5f5" stroke="#999" stroke-width="1" rx="5"/>
+    <text x="300" y="295" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">常见 ESD 保护结构</text>
+
+    <!-- GGNMOS -->
+    <rect x="25" y="305" width="130" height="75" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5" rx="4"/>
+    <text x="90" y="325" text-anchor="middle" font-size="11" font-weight="bold" fill="#1565c0">GGNMOS</text>
+    <text x="90" y="340" text-anchor="middle" font-size="9" fill="#1565c0">栅极接地NMOS</text>
+    <!-- GGNMOS symbol -->
+    <line x1="50" y1="350" x2="80" y2="350" stroke="#1565c0" stroke-width="1.5"/>
+    <line x1="80" y1="350" x2="80" y2="365" stroke="#1565c0" stroke-width="1.5"/>
+    <line x1="60" y1="365" x2="100" y2="365" stroke="#1565c0" stroke-width="1.5"/>
+    <line x1="80" y1="365" x2="80" y2="372" stroke="#1565c0" stroke-width="1.5"/>
+    <text x="90" y="348" text-anchor="middle" font-size="8" fill="#1565c0">D</text>
+    <text x="50" y="354" text-anchor="middle" font-size="8" fill="#1565c0">G</text>
+    <text x="105" y="368" text-anchor="middle" font-size="8" fill="#1565c0">S</text>
+
+    <!-- Diode string -->
+    <rect x="170" y="305" width="130" height="75" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5" rx="4"/>
+    <text x="235" y="325" text-anchor="middle" font-size="11" font-weight="bold" fill="#2e7d32">二极管串</text>
+    <text x="235" y="340" text-anchor="middle" font-size="9" fill="#2e7d32">串联二极管</text>
+    <!-- Diode symbol -->
+    <polygon points="195,348 215,348 215,355 225,350 215,345 215,352" fill="#2e7d32" stroke="#2e7d32" stroke-width="1"/>
+    <line x1="195" y1="350" x2="195" y2="365" stroke="#2e7d32" stroke-width="1"/>
+    <polygon points="205,358 225,358 225,365 235,360 225,355 225,362" fill="#2e7d32" stroke="#2e7d32" stroke-width="1"/>
+    <text x="235" y="365" text-anchor="middle" font-size="8" fill="#2e7d32">双向保护</text>
+
+    <!-- SCR -->
+    <rect x="315" y="305" width="130" height="75" fill="#fff3e0" stroke="#e65100" stroke-width="1.5" rx="4"/>
+    <text x="380" y="325" text-anchor="middle" font-size="11" font-weight="bold" fill="#e65100">SCR</text>
+    <text x="380" y="340" text-anchor="middle" font-size="9" fill="#e65100">硅控整流器</text>
+    <!-- SCR symbol -->
+    <text x="380" y="358" text-anchor="middle" font-size="10" fill="#e65100">PNPN</text>
+    <text x="380" y="372" text-anchor="middle" font-size="8" fill="#e65100">低触发电压</text>
+
+    <!-- RC-trigger PMOS -->
+    <rect x="460" y="305" width="115" height="75" fill="#fce4ec" stroke="#c62828" stroke-width="1.5" rx="4"/>
+    <text x="517" y="325" text-anchor="middle" font-size="11" font-weight="bold" fill="#c62828">RC触发PMOS</text>
+    <text x="517" y="340" text-anchor="middle" font-size="9" fill="#c62828">RC延时触发</text>
+    <!-- RC symbol -->
+    <rect x="475" y="350" width="20" height="12" fill="#fce4ec" stroke="#c62828" stroke-width="1"/>
+    <text x="485" y="360" text-anchor="middle" font-size="7" fill="#c62828">R</text>
+    <rect x="500" y="350" width="20" height="12" fill="#fce4ec" stroke="#c62828" stroke-width="1"/>
+    <text x="510" y="360" text-anchor="middle" font-size="7" fill="#c62828">C</text>
+    <text x="517" y="372" text-anchor="middle" font-size="8" fill="#c62828">导通PMOS</text>
   </g>
 </svg>

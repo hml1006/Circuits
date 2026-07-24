@@ -1,7 +1,75 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
   <defs/>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 SVPWM矢量图 示意图</text>
+    
+    <text x="300" y="25" text-anchor="middle" font-size="16" fill="#000" font-weight="bold">SVPWM 空间矢量图</text>
+    
+    <!-- Six sectors of the hexagon -->
+    <!-- Center -->
+    <circle cx="300" cy="210" r="120" fill="none" stroke="#000" stroke-width="2"/>
+    <circle cx="300" cy="210" r="60" fill="none" stroke="#ddd" stroke-width="1" stroke-dasharray="4,4"/>
+    
+    <!-- Sector lines -->
+    <line x1="300" y1="210" x2="300" y2="90" stroke="#000" stroke-width="1.5"/>
+    <line x1="300" y1="210" x2="404" y2="150" stroke="#000" stroke-width="1.5"/>
+    <line x1="300" y1="210" x2="404" y2="270" stroke="#000" stroke-width="1.5"/>
+    <line x1="300" y1="210" x2="300" y2="330" stroke="#000" stroke-width="1.5"/>
+    <line x1="300" y1="210" x2="196" y2="270" stroke="#000" stroke-width="1.5"/>
+    <line x1="300" y1="210" x2="196" y2="150" stroke="#000" stroke-width="1.5"/>
+    
+    <!-- Voltage vectors V1-V6 -->
+    <!-- V1 (100) - 0° -->
+    <line x1="300" y1="210" x2="420" y2="210" stroke="#c00" stroke-width="3" marker-end="url(#arrowRed)"/>
+    <text x="430" y="214" font-size="12" fill="#c00" font-weight="bold">V₁ (100)</text>
+    
+    <!-- V2 (110) - 60° -->
+    <line x1="300" y1="210" x2="404" y2="106" stroke="#c00" stroke-width="3" marker-end="url(#arrowRed)"/>
+    <text x="410" y="100" font-size="12" fill="#c00" font-weight="bold">V₂ (110)</text>
+    
+    <!-- V3 (010) - 120° -->
+    <line x1="300" y1="210" x2="300" y2="90" stroke="#c00" stroke-width="3" marker-end="url(#arrowRed)"/>
+    <text x="305" y="80" font-size="12" fill="#c00" font-weight="bold">V₃ (010)</text>
+    
+    <!-- V4 (011) - 180° -->
+    <line x1="300" y1="210" x2="180" y2="210" stroke="#c00" stroke-width="3" marker-end="url(#arrowRed)"/>
+    <text x="160" y="214" font-size="12" fill="#c00" font-weight="bold">V₄ (011)</text>
+    
+    <!-- V5 (001) - 240° -->
+    <line x1="300" y1="210" x2="196" y2="314" stroke="#c00" stroke-width="3" marker-end="url(#arrowRed)"/>
+    <text x="180" y="330" font-size="12" fill="#c00" font-weight="bold">V₅ (001)</text>
+    
+    <!-- V6 (101) - 300° -->
+    <line x1="300" y1="210" x2="404" y2="314" stroke="#c00" stroke-width="3" marker-end="url(#arrowRed)"/>
+    <text x="410" y="330" font-size="12" fill="#c00" font-weight="bold">V₆ (101)</text>
+    
+    <!-- Zero vectors at center -->
+    <text x="290" y="205" font-size="11" fill="#000" font-weight="bold">V₀/V₇</text>
+    <text x="275" y="218" font-size="9" fill="#666">(000/111)</text>
+    
+    <!-- Sector labels -->
+    <text x="350" y="175" text-anchor="middle" font-size="11" fill="#666" font-weight="bold">I</text>
+    <text x="300" y="145" text-anchor="middle" font-size="11" fill="#666" font-weight="bold">II</text>
+    <text x="250" y="175" text-anchor="middle" font-size="11" fill="#666" font-weight="bold">III</text>
+    <text x="250" y="255" text-anchor="middle" font-size="11" fill="#666" font-weight="bold">IV</text>
+    <text x="300" y="285" text-anchor="middle" font-size="11" fill="#666" font-weight="bold">V</text>
+    <text x="355" y="255" text-anchor="middle" font-size="11" fill="#666" font-weight="bold">VI</text>
+    
+    <!-- Reference vector Vref -->
+    <line x1="300" y1="210" x2="370" y2="160" stroke="#080" stroke-width="2.5" stroke-dasharray="5,3" marker-end="url(#arrowGreen)"/>
+    <text x="380" y="158" font-size="12" fill="#080" font-weight="bold">V_ref</text>
+    
+    <defs>
+      <marker id="arrowRed" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 Z" fill="#c00"/>
+      </marker>
+      <marker id="arrowGreen" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 Z" fill="#080"/>
+      </marker>
+    </defs>
+    
+    <!-- Synthesis formula -->
+    <text x="300" y="365" text-anchor="middle" font-size="12" fill="#000" font-weight="bold">矢量合成</text>
+    <text x="300" y="385" text-anchor="middle" font-size="11" fill="#666">V_ref · T_s = V_k · T_k + V_{k+1} · T_{k+1} + V₀ · T₀</text>
   </g>
 </svg>

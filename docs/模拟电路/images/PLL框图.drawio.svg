@@ -1,7 +1,73 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
-  <defs/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <marker id="arrowRight" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#333"/>
+    </marker>
+  </defs>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 PLL框图 示意图</text>
+    <text x="300" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#222">锁相环（PLL）基本框图</text>
+
+    <!-- 输入 -->
+    <text x="30" y="130" font-size="13" fill="#333">v</text>
+    <text x="30" y="140" font-size="10" fill="#333">i</text>
+    <line x1="50" y1="130" x2="80" y2="130" stroke="#333" stroke-width="2" marker-end="url(#arrowRight)"/>
+
+    <!-- 鉴相器 PD -->
+    <rect x="80" y="95" width="100" height="70" fill="#e8e8ff" stroke="#3333cc" stroke-width="2" rx="5"/>
+    <text x="130" y="125" text-anchor="middle" font-size="13" font-weight="bold" fill="#3333cc">PD</text>
+    <text x="130" y="140" text-anchor="middle" font-size="10" fill="#3333cc">鉴相器</text>
+
+    <!-- 箭头从PD到LF -->
+    <line x1="180" y1="130" x2="220" y2="130" stroke="#333" stroke-width="2" marker-end="url(#arrowRight)"/>
+
+    <!-- 环路滤波器 LF -->
+    <rect x="220" y="95" width="100" height="70" fill="#e8ffe8" stroke="#2a7a2a" stroke-width="2" rx="5"/>
+    <text x="270" y="125" text-anchor="middle" font-size="13" font-weight="bold" fill="#2a7a2a">LF</text>
+    <text x="270" y="140" text-anchor="middle" font-size="10" fill="#2a7a2a">环路滤波器</text>
+
+    <!-- 箭头从LF到VCO -->
+    <line x1="320" y1="130" x2="360" y2="130" stroke="#333" stroke-width="2" marker-end="url(#arrowRight)"/>
+
+    <!-- VCO -->
+    <rect x="360" y="95" width="100" height="70" fill="#ffe8cc" stroke="#cc6600" stroke-width="2" rx="5"/>
+    <text x="410" y="125" text-anchor="middle" font-size="13" font-weight="bold" fill="#cc6600">VCO</text>
+    <text x="410" y="140" text-anchor="middle" font-size="10" fill="#cc6600">压控振荡器</text>
+
+    <!-- 输出箭头 -->
+    <line x1="460" y1="130" x2="520" y2="130" stroke="#333" stroke-width="2" marker-end="url(#arrowRight)"/>
+    <text x="530" y="135" font-size="13" fill="#333">v</text>
+    <text x="530" y="145" font-size="10" fill="#333">o</text>
+
+    <!-- 反馈路径 -->
+    <line x1="460" y1="160" x2="460" y2="260" stroke="#333" stroke-width="2"/>
+    <line x1="460" y1="260" x2="130" y2="260" stroke="#333" stroke-width="2"/>
+    <line x1="130" y1="260" x2="130" y2="165" stroke="#333" stroke-width="2" marker-end="url(#arrowRight)"/>
+
+    <!-- 反馈标注 -->
+    <text x="300" y="255" text-anchor="middle" font-size="10" fill="#666">反馈路径</text>
+
+    <!-- 分频器 (可选) -->
+    <rect x="360" y="230" width="100" height="40" fill="#ffe8e8" stroke="#cc3333" stroke-width="1.5" rx="3" stroke-dasharray="4,2"/>
+    <text x="410" y="253" text-anchor="middle" font-size="11" fill="#cc3333">÷N (可选)</text>
+
+    <line x1="460" y1="260" x2="460" y2="250" stroke="#333" stroke-width="1.5" stroke-dasharray="3,2"/>
+    <line x1="360" y1="250" x2="130" y2="250" stroke="#333" stroke-width="1.5" stroke-dasharray="3,2"/>
+
+    <!-- 工作原理说明 -->
+    <text x="300" y="310" text-anchor="middle" font-size="11" fill="#666">工作原理：</text>
+    <text x="300" y="325" text-anchor="middle" font-size="10" fill="#666">1. PD 比较 v</text>
+    <text x="310" y="325" text-anchor="middle" font-size="10" fill="#666">i</text>
+    <text x="320" y="325" text-anchor="middle" font-size="10" fill="#666"> 和 v</text>
+    <text x="330" y="325" text-anchor="middle" font-size="10" fill="#666">o</text>
+    <text x="340" y="325" text-anchor="middle" font-size="10" fill="#666"> 的相位差</text>
+    <text x="300" y="340" text-anchor="middle" font-size="10" fill="#666">2. LF 平滑误差电压，产生控制电压 V</text>
+    <text x="375" y="340" text-anchor="middle" font-size="10" fill="#666">c</text>
+    <text x="300" y="355" text-anchor="middle" font-size="10" fill="#666">3. VCO 频率受 V</text>
+    <text x="340" y="355" text-anchor="middle" font-size="10" fill="#666">c</text>
+    <text x="350" y="355" text-anchor="middle" font-size="10" fill="#666"> 控制，锁定后 f</text>
+    <text x="385" y="355" text-anchor="middle" font-size="10" fill="#666">out</text>
+    <text x="400" y="355" text-anchor="middle" font-size="10" fill="#666"> = f</text>
+    <text x="415" y="355" text-anchor="middle" font-size="10" fill="#666">in</text>
   </g>
 </svg>

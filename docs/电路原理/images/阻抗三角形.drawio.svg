@@ -1,7 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
   <defs/>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 阻抗三角形 示意图</text>
+    <text x="300" y="30" text-anchor="middle" font-size="18" fill="#333" font-weight="bold">阻抗三角形</text>
+    <!-- 阻抗三角形 -->
+    <polygon points="100,320 100,80 380,320" fill="none" stroke="#000" stroke-width="2"/>
+    <!-- 直角标记 -->
+    <line x1="100" y1="300" x2="120" y2="300" stroke="#000" stroke-width="1.5"/>
+    <line x1="100" y1="300" x2="100" y2="280" stroke="#000" stroke-width="1.5"/>
+    <!-- 边标注 -->
+    <text x="220" y="210" text-anchor="middle" font-size="16" fill="#d32f2f" font-weight="bold">|Z|</text>
+    <text x="60" y="200" text-anchor="middle" font-size="16" fill="#1976d2" font-weight="bold" transform="rotate(-90, 60, 200)">X</text>
+    <text x="240" y="345" text-anchor="middle" font-size="16" fill="#e65100" font-weight="bold">R</text>
+    <!-- 角度弧 -->
+    <path d="M 110 310 A 30 30 0 0 1 140 285" fill="none" stroke="#333" stroke-width="1.5"/>
+    <text x="150" y="295" font-size="14" fill="#333">θ</text>
+    <!-- 公式 -->
+    <text x="300" y="140" text-anchor="middle" font-size="15" fill="#333" font-weight="bold">阻抗 Z = R + jX = |Z|∠θ</text>
+    <text x="300" y="170" text-anchor="middle" font-size="14" fill="#333">|Z| = √(R² + X²)</text>
+    <text x="300" y="195" text-anchor="middle" font-size="14" fill="#333">θ = arctan(X/R)</text>
+    <text x="300" y="225" text-anchor="middle" font-size="14" fill="#333">R = |Z|·cosθ, X = |Z|·sinθ</text>
+    <!-- 元件阻抗 -->
+    <text x="300" y="270" text-anchor="middle" font-size="13" fill="#666">电阻 Z_R = R | 电感 Z_L = jωL | 电容 Z_C = -j/(ωC)</text>
+    <!-- 导纳说明 -->
+    <text x="300" y="390" text-anchor="middle" font-size="12" fill="#666">导纳 Y = 1/Z = G + jB, 其中G为电导, B为电纳</text>
   </g>
 </svg>

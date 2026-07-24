@@ -1,7 +1,91 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
   <defs/>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 共模与差模干扰示意图 示意图</text>
+    
+    <text x="300" y="25" text-anchor="middle" font-size="16" fill="#000" font-weight="bold">共模与差模干扰示意图</text>
+    
+    <!-- ===== Differential Mode (left) ===== -->
+    <text x="150" y="55" text-anchor="middle" font-size="14" fill="#000" font-weight="bold">差模干扰（DM）</text>
+    
+    <!-- Source -->
+    <rect x="30" y="80" width="50" height="40" fill="#d0e0ff" stroke="#00c" stroke-width="1.5" rx="3"/>
+    <text x="55" y="105" text-anchor="middle" font-size="11" fill="#00c" font-weight="bold">源</text>
+    
+    <!-- Two signal lines -->
+    <line x1="80" y1="90" x2="250" y2="90" stroke="#000" stroke-width="2"/>
+    <line x1="80" y1="110" x2="250" y2="110" stroke="#000" stroke-width="2"/>
+    
+    <!-- Load -->
+    <rect x="250" y="80" width="50" height="40" fill="#e0ffe0" stroke="#080" stroke-width="1.5" rx="3"/>
+    <text x="275" y="105" text-anchor="middle" font-size="11" fill="#080" font-weight="bold">负载</text>
+    
+    <!-- DM current arrows on top line -->
+    <line x1="120" y1="90" x2="160" y2="90" stroke="#c00" stroke-width="2" marker-end="url(#arrowRed)"/>
+    <text x="140" y="85" text-anchor="middle" font-size="10" fill="#c00">I_DM</text>
+    
+    <!-- DM current arrows on bottom line (opposite direction) -->
+    <line x1="200" y1="110" x2="160" y2="110" stroke="#c00" stroke-width="2" marker-end="url(#arrowRed)"/>
+    <text x="210" y="125" text-anchor="middle" font-size="10" fill="#c00">I_DM</text>
+    
+    <text x="150" y="150" text-anchor="middle" font-size="11" fill="#000">信号线之间形成回路</text>
+    <text x="150" y="165" text-anchor="middle" font-size="11" fill="#000">电流方向相反</text>
+    <text x="150" y="180" text-anchor="middle" font-size="10" fill="#666">由开关电源脉动电流引起</text>
+    
+    <!-- ===== Common Mode (right) ===== -->
+    <text x="450" y="55" text-anchor="middle" font-size="14" fill="#000" font-weight="bold">共模干扰（CM）</text>
+    
+    <!-- Source -->
+    <rect x="330" y="80" width="50" height="40" fill="#d0e0ff" stroke="#00c" stroke-width="1.5" rx="3"/>
+    <text x="355" y="105" text-anchor="middle" font-size="11" fill="#00c" font-weight="bold">源</text>
+    
+    <!-- Two signal lines -->
+    <line x1="380" y1="90" x2="550" y2="90" stroke="#000" stroke-width="2"/>
+    <line x1="380" y1="110" x2="550" y2="110" stroke="#000" stroke-width="2"/>
+    
+    <!-- Load -->
+    <rect x="550" y="80" width="50" height="40" fill="#e0ffe0" stroke="#080" stroke-width="1.5" rx="3"/>
+    <text x="575" y="105" text-anchor="middle" font-size="11" fill="#080" font-weight="bold">负载</text>
+    
+    <!-- CM current arrows (same direction) -->
+    <line x1="420" y1="90" x2="460" y2="90" stroke="#c00" stroke-width="2" marker-end="url(#arrowRed)"/>
+    <text x="440" y="85" text-anchor="middle" font-size="10" fill="#c00">I_CM</text>
+    
+    <line x1="420" y1="110" x2="460" y2="110" stroke="#c00" stroke-width="2" marker-end="url(#arrowRed)"/>
+    <text x="440" y="125" text-anchor="middle" font-size="10" fill="#c00">I_CM</text>
+    
+    <!-- Ground current -->
+    <line x1="355" y1="120" x2="355" y2="180" stroke="#c00" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <line x1="355" y1="180" x2="420" y2="180" stroke="#c00" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <polygon points="420,180 412,176 412,184" fill="#c00"/>
+    <text x="380" y="175" text-anchor="middle" font-size="10" fill="#c00">I_CM（地回路）</text>
+    
+    <text x="450" y="150" text-anchor="middle" font-size="11" fill="#000">信号线与地之间形成回路</text>
+    <text x="450" y="165" text-anchor="middle" font-size="11" fill="#000">电流方向相同</text>
+    <text x="450" y="180" text-anchor="middle" font-size="10" fill="#666">由寄生电容耦合引起</text>
+    
+    <!-- ===== Suppression methods ===== -->
+    <text x="300" y="220" text-anchor="middle" font-size="14" fill="#000" font-weight="bold">抑制方法</text>
+    
+    <rect x="50" y="240" width="230" height="60" fill="#f0f0f0" stroke="#000" stroke-width="1.5" rx="5"/>
+    <text x="165" y="260" text-anchor="middle" font-size="12" fill="#000" font-weight="bold">差模抑制</text>
+    <text x="165" y="278" text-anchor="middle" font-size="10" fill="#666">X 电容 + 差模电感</text>
+    <text x="165" y="293" text-anchor="middle" font-size="10" fill="#666">增大线间距（3W 规则）</text>
+    
+    <rect x="320" y="240" width="230" height="60" fill="#f0f0f0" stroke="#000" stroke-width="1.5" rx="5"/>
+    <text x="435" y="260" text-anchor="middle" font-size="12" fill="#000" font-weight="bold">共模抑制</text>
+    <text x="435" y="278" text-anchor="middle" font-size="10" fill="#666">Y 电容 + 共模扼流圈</text>
+    <text x="435" y="293" text-anchor="middle" font-size="10" fill="#666">屏蔽 + 接地</text>
+    
+    <!-- Common mode choke -->
+    <text x="300" y="340" text-anchor="middle" font-size="12" fill="#000" font-weight="bold">共模扼流圈原理</text>
+    <text x="300" y="360" text-anchor="middle" font-size="11" fill="#000">Z_cm = jωL_cm（共模磁通相加 → 高阻抗）</text>
+    <text x="300" y="380" text-anchor="middle" font-size="10" fill="#666">差模磁通相消 → 不影响信号传输</text>
+    
+    <defs>
+      <marker id="arrowRed" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 Z" fill="#c00"/>
+      </marker>
+    </defs>
   </g>
 </svg>

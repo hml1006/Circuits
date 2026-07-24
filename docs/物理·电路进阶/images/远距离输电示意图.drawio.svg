@@ -1,7 +1,70 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
-  <defs/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#333"/>
+    </marker>
+  </defs>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 远距离输电示意图 示意图</text>
+    
+    <text x="300" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#333">远距离输电系统示意图</text>
+    
+    <!-- 发电站 -->
+    <rect x="20" y="100" width="80" height="60" rx="8" ry="8" fill="#ffeb3b" stroke="#f9a825" stroke-width="2"/>
+    <text x="60" y="125" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">发电站</text>
+    <text x="60" y="143" text-anchor="middle" font-size="9" fill="#666">10~20 kV</text>
+    
+    <!-- 升压变压器 -->
+    <rect x="100" y="100" width="60" height="60" rx="8" ry="8" fill="#fff9c4" stroke="#e6b800" stroke-width="2"/>
+    <text x="130" y="125" text-anchor="middle" font-size="10" font-weight="bold" fill="#333">升压</text>
+    <text x="130" y="143" text-anchor="middle" font-size="10" font-weight="bold" fill="#333">变压器</text>
+    
+    <!-- 高压输电线路 -->
+    <line x1="160" y1="115" x2="340" y2="115" stroke="#d32f2f" stroke-width="2.5"/>
+    <line x1="160" y1="145" x2="340" y2="145" stroke="#d32f2f" stroke-width="2.5"/>
+    
+    <text x="250" y="105" text-anchor="middle" font-size="11" fill="#d32f2f">高压输电线路</text>
+    <text x="250" y="165" text-anchor="middle" font-size="9" fill="#d32f2f">110~500 kV</text>
+    
+    <!-- 输电铁塔 -->
+    <line x1="220" y1="100" x2="220" y2="80" stroke="#666" stroke-width="2"/>
+    <line x1="210" y1="80" x2="230" y2="80" stroke="#666" stroke-width="2"/>
+    <line x1="220" y1="80" x2="220" y2="60" stroke="#666" stroke-width="2"/>
+    <line x1="210" y1="60" x2="230" y2="60" stroke="#666" stroke-width="2"/>
+    <line x1="220" y1="60" x2="220" y2="40" stroke="#666" stroke-width="2"/>
+    <line x1="210" y1="40" x2="230" y2="40" stroke="#666" stroke-width="2"/>
+    
+    <line x1="280" y1="100" x2="280" y2="80" stroke="#666" stroke-width="2"/>
+    <line x1="270" y1="80" x2="290" y2="80" stroke="#666" stroke-width="2"/>
+    <line x1="280" y1="80" x2="280" y2="60" stroke="#666" stroke-width="2"/>
+    <line x1="270" y1="60" x2="290" y2="60" stroke="#666" stroke-width="2"/>
+    <line x1="280" y1="60" x2="280" y2="40" stroke="#666" stroke-width="2"/>
+    <line x1="270" y1="40" x2="290" y2="40" stroke="#666" stroke-width="2"/>
+    
+    <!-- 降压变压器 -->
+    <rect x="340" y="100" width="60" height="60" rx="8" ry="8" fill="#fff9c4" stroke="#e6b800" stroke-width="2"/>
+    <text x="370" y="125" text-anchor="middle" font-size="10" font-weight="bold" fill="#333">降压</text>
+    <text x="370" y="143" text-anchor="middle" font-size="10" font-weight="bold" fill="#333">变压器</text>
+    
+    <!-- 用户 -->
+    <rect x="400" y="100" width="80" height="60" rx="8" ry="8" fill="#e8f5e9" stroke="#66bb6a" stroke-width="2"/>
+    <text x="440" y="125" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">用户</text>
+    <text x="440" y="143" text-anchor="middle" font-size="9" fill="#666">220/380V</text>
+    
+    <line x1="400" y1="130" x2="480" y2="130" stroke="#333" stroke-width="2.5"/>
+    
+    <!-- 线路损耗标注 -->
+    <text x="250" y="200" text-anchor="middle" font-size="12" fill="#666">线路损耗：P<tspan font-size="9" dy="3">损</tspan><tspan dy="-3"> = I²R<tspan font-size="9" dy="3">线</tspan></tspan></tspan></text>
+    
+    <!-- 公式 -->
+    <text x="300" y="350" text-anchor="middle" font-size="13" fill="#333">P<tspan font-size="9" dy="3">损</tspan><tspan dy="-3"> = (P/U)²·R<tspan font-size="9" dy="3">线</tspan></tspan></tspan></text>
+    <text x="300" y="370" text-anchor="middle" font-size="13" fill="#333">输电效率 η = (P<tspan font-size="9" dy="3">发</tspan><tspan dy="-3"> − P<tspan font-size="9" dy="3">损</tspan><tspan dy="-3">) / P<tspan font-size="9" dy="3">发</tspan></tspan></tspan></tspan></tspan></text>
+    
+    <!-- 流程箭头 -->
+    <text x="250" y="240" text-anchor="middle" font-size="11" fill="#999">发电站 → 升压 → 高压输电 → 降压 → 用户</text>
+    
+    <!-- 电流方向 -->
+    <polygon points="200,110 215,115 200,120" fill="#d32f2f"/>
+    <polygon points="300,110 315,115 300,120" fill="#d32f2f"/>
   </g>
 </svg>

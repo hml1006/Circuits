@@ -1,7 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
   <defs/>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 OCV分析图 示意图</text>
+    <text x="300" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">片上变化 (OCV) 分析图</text>
+    <!-- OCV concept -->
+    <rect x="20" y="40" width="560" height="35" rx="5" fill="#e3f2fd" stroke="#1e88e5" stroke-width="1.5"/>
+    <text x="300" y="60" text-anchor="middle" font-size="11" fill="#1e88e5">OCV: 同一芯片上不同位置晶体管和互连参数的变化 (工艺/电压/温度)</text>
+    <text x="300" y="73" text-anchor="middle" font-size="10" fill="#666">传统OCV → AOCV (先进OCV) → SSTA (统计STA)</text>
+    <!-- Traditional OCV -->
+    <text x="150" y="105" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">传统OCV方法 (Derating)</text>
+    <rect x="20" y="115" width="260" height="80" rx="5" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+    <text x="150" y="135" text-anchor="middle" font-size="11" font-weight="bold" fill="#555">Derating因子</text>
+    <text x="40" y="155" font-size="10" fill="#333">Dmax = Dnominal × (1 + α)</text>
+    <text x="40" y="172" font-size="10" fill="#333">Dmin = Dnominal × (1 - β)</text>
+    <text x="40" y="189" font-size="9" fill="#666">α, β: 固定derating因子 (如10%)</text>
+    <!-- AOCV -->
+    <text x="450" y="105" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">先进OCV (AOCV)</text>
+    <rect x="320" y="115" width="260" height="80" rx="5" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+    <text x="450" y="135" text-anchor="middle" font-size="11" font-weight="bold" fill="#2e7d32">路径深度感知</text>
+    <text x="340" y="155" font-size="10" fill="#333">derating = f(path_depth, distance)</text>
+    <text x="340" y="172" font-size="10" fill="#333">路径越深 → derating因子越小</text>
+    <text x="340" y="189" font-size="9" fill="#666">考虑统计平均效应</text>
+    <!-- SSTA -->
+    <text x="300" y="230" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">统计STA (SSTA) — 延迟分布</text>
+    <!-- Gaussian distribution -->
+    <ellipse cx="300" cy="270" rx="150" ry="40" fill="none" stroke="#7b1fa2" stroke-width="2"/>
+    <ellipse cx="300" cy="270" rx="150" ry="40" fill="#f3e5f5" fill-opacity="0.3" stroke="none"/>
+    <text x="300" y="250" text-anchor="middle" font-size="11" font-weight="bold" fill="#7b1fa2">延迟概率分布</text>
+    <!-- Mean -->
+    <line x1="300" y1="260" x2="300" y2="310" stroke="#7b1fa2" stroke-width="2"/>
+    <text x="300" y="325" text-anchor="middle" font-size="10" fill="#7b1fa2">μ (标称延迟)</text>
+    <!-- Sigma -->
+    <line x1="220" y1="310" x2="220" y2="290" stroke="#c62828" stroke-width="1.5"/>
+    <line x1="380" y1="310" x2="380" y2="290" stroke="#c62828" stroke-width="1.5"/>
+    <text x="220" y="340" text-anchor="middle" font-size="9" fill="#c62828">-3σ</text>
+    <text x="380" y="340" text-anchor="middle" font-size="9" fill="#c62828">+3σ</text>
+    <line x1="220" y1="310" x2="380" y2="310" stroke="#c62828" stroke-width="1" stroke-dasharray="3 2"/>
+    <!-- Formula -->
+    <rect x="20" y="355" width="560" height="35" rx="5" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+    <text x="300" y="375" text-anchor="middle" font-size="11" fill="#555">D = μ + Σ ai · ΔXi + R · ΔR | μ: 标称延迟, ai: 系统变化灵敏度, ΔXi: 变化源, R: 随机变化</text>
   </g>
 </svg>

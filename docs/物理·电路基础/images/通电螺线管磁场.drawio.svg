@@ -1,7 +1,72 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
   <defs/>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 通电螺线管磁场 示意图</text>
+    
+    <!-- 标题 -->
+    <text x="300" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#333">通电螺线管磁场</text>
+    
+    <!-- 螺线管主体 -->
+    <!-- 铁芯 -->
+    <rect x="150" y="155" width="300" height="30" rx="5" ry="5" fill="#a0a0a0" stroke="#666" stroke-width="2"/>
+    <text x="300" y="175" text-anchor="middle" font-size="10" fill="#fff">铁芯</text>
+    
+    <!-- 线圈绕组 -->
+    <!-- 左侧线圈 -->
+    <path d="M 160 120 Q 180 110 180 145 Q 180 180 200 170 Q 220 160 220 195" fill="none" stroke="#c0392b" stroke-width="2.5"/>
+    <path d="M 220 195 Q 240 185 240 220 Q 240 255 260 245" fill="none" stroke="#c0392b" stroke-width="2.5"/>
+    <path d="M 260 245 Q 280 235 280 270 Q 280 305 300 295" fill="none" stroke="#c0392b" stroke-width="2.5"/>
+    
+    <!-- 右侧线圈 -->
+    <path d="M 440 120 Q 420 110 420 145 Q 420 180 400 170 Q 380 160 380 195" fill="none" stroke="#2980b9" stroke-width="2.5"/>
+    <path d="M 380 195 Q 360 185 360 220 Q 360 255 340 245" fill="none" stroke="#2980b9" stroke-width="2.5"/>
+    <path d="M 340 245 Q 320 235 320 270 Q 320 305 300 295" fill="none" stroke="#2980b9" stroke-width="2.5"/>
+    
+    <!-- 电流方向标注 -->
+    <text x="170" y="110" font-size="10" fill="#c0392b">I</text>
+    <path d="M 175 115 L 175 108" fill="none" stroke="#c0392b" stroke-width="1.5" marker-end="url(#smallUp)"/>
+    
+    <text x="430" y="110" font-size="10" fill="#2980b9">I</text>
+    <path d="M 425 115 L 425 108" fill="none" stroke="#2980b9" stroke-width="1.5" marker-end="url(#smallUp)"/>
+    
+    <!-- N 极（左侧） -->
+    <rect x="100" y="150" width="50" height="40" rx="5" ry="5" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+    <text x="125" y="176" text-anchor="middle" font-size="18" font-weight="bold" fill="#fff">N</text>
+    
+    <!-- S 极（右侧） -->
+    <rect x="450" y="150" width="50" height="40" rx="5" ry="5" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+    <text x="475" y="176" text-anchor="middle" font-size="18" font-weight="bold" fill="#fff">S</text>
+    
+    <!-- 外部磁感线（从N到S） -->
+    <path d="M 100 170 Q 50 100 150 60 Q 300 30 450 60 Q 550 100 500 170" fill="none" stroke="#3498db" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrowBlue)"/>
+    <path d="M 100 170 Q 50 140 130 100 Q 300 70 470 100 Q 550 140 500 170" fill="none" stroke="#3498db" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrowBlue)"/>
+    <path d="M 100 170 Q 50 200 150 250 Q 300 300 450 250 Q 550 200 500 170" fill="none" stroke="#3498db" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrowBlue)"/>
+    
+    <!-- 内部磁感线（从S到N） -->
+    <path d="M 150 185 L 450 185" fill="none" stroke="#3498db" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrowBlueRight)"/>
+    <text x="300" y="200" text-anchor="middle" font-size="10" fill="#3498db">内部磁场方向：S → N</text>
+    
+    <!-- 右手螺旋定则（安培定则二）说明 -->
+    <rect x="30" y="280" width="540" height="105" rx="8" ry="8" fill="#fef9e7" stroke="#f39c12" stroke-width="2"/>
+    <text x="300" y="305" text-anchor="middle" font-size="14" font-weight="bold" fill="#e67e22">右手螺旋定则（安培定则二）</text>
+    
+    <text x="50" y="330" font-size="12" fill="#555">用右手握住螺线管，让四指弯曲的方向与电流方向一致</text>
+    <text x="50" y="350" font-size="12" fill="#555">则大拇指所指的方向即为螺线管的</text>
+    <text x="290" y="350" font-size="12" font-weight="bold" fill="#e74c3c">N极</text>
+    <text x="320" y="350" font-size="12" fill="#555">（北极）</text>
+    
+    <text x="50" y="375" font-size="11" fill="#888">螺线管外部磁场与条形磁铁相同，内部为匀强磁场</text>
+    
+    <defs>
+      <marker id="smallUp" viewBox="0 0 10 10" refX="5" refY="0" markerWidth="5" markerHeight="5" orient="auto">
+        <path d="M 0 10 L 5 0 L 10 10" fill="#333"/>
+      </marker>
+      <marker id="arrowBlue" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10" fill="#3498db"/>
+      </marker>
+      <marker id="arrowBlueRight" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10" fill="#3498db"/>
+      </marker>
+    </defs>
   </g>
 </svg>

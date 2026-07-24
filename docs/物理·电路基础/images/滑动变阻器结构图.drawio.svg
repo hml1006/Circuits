@@ -1,7 +1,119 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
   <defs/>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 滑动变阻器结构图 示意图</text>
+    
+    <!-- 标题 -->
+    <text x="300" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#333">滑动变阻器结构图</text>
+    
+    <!-- 主体结构 -->
+    <!-- 瓷管 -->
+    <rect x="100" y="120" width="400" height="60" rx="10" ry="10" fill="#f5f5f5" stroke="#bbb" stroke-width="2"/>
+    <text x="300" y="155" text-anchor="middle" font-size="13" fill="#888">瓷管（绝缘）</text>
+    
+    <!-- 电阻线圈（绕在瓷管上） -->
+    <line x1="120" y1="120" x2="120" y2="180" stroke="#c0392b" stroke-width="2"/>
+    <line x1="140" y1="120" x2="140" y2="180" stroke="#c0392b" stroke-width="2"/>
+    <line x1="160" y1="120" x2="160" y2="180" stroke="#c0392b" stroke-width="2"/>
+    <line x1="180" y1="120" x2="180" y2="180" stroke="#c0392b" stroke-width="2"/>
+    <line x1="200" y1="120" x2="200" y2="180" stroke="#c0392b" stroke-width="2"/>
+    <line x1="220" y1="120" x2="220" y2="180" stroke="#c0392b" stroke-width="2"/>
+    <line x1="240" y1="120" x2="240" y2="180" stroke="#c0392b" stroke-width="2"/>
+    <line x1="260" y1="120" x2="260" y2="180" stroke="#c0392b" stroke-width="2"/>
+    <line x1="280" y1="120" x2="280" y2="180" stroke="#c0392b" stroke-width="2"/>
+    <line x1="300" y1="120" x2="300" y2="180" stroke="#c0392b" stroke-width="2"/>
+    <line x1="320" y1="120" x2="320" y2="180" stroke="#c0392b" stroke-width="2"/>
+    <line x1="340" y1="120" x2="340" y2="180" stroke="#c0392b" stroke-width="2"/>
+    <line x1="360" y1="120" x2="360" y2="180" stroke="#c0392b" stroke-width="2"/>
+    <line x1="380" y1="120" x2="380" y2="180" stroke="#c0392b" stroke-width="2"/>
+    <line x1="400" y1="120" x2="400" y2="180" stroke="#c0392b" stroke-width="2"/>
+    <line x1="420" y1="120" x2="420" y2="180" stroke="#c0392b" stroke-width="2"/>
+    <line x1="440" y1="120" x2="440" y2="180" stroke="#c0392b" stroke-width="2"/>
+    <line x1="460" y1="120" x2="460" y2="180" stroke="#c0392b" stroke-width="2"/>
+    <line x1="480" y1="120" x2="480" y2="180" stroke="#c0392b" stroke-width="2"/>
+    
+    <text x="300" y="200" text-anchor="middle" font-size="11" fill="#c0392b">电阻线圈（镍铬合金）</text>
+    
+    <!-- 接线柱 A -->
+    <rect x="115" y="80" width="40" height="20" rx="3" ry="3" fill="#e8e8e8" stroke="#666" stroke-width="1.5"/>
+    <circle cx="135" cy="90" r="4" fill="#666"/>
+    <text x="135" y="113" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">A</text>
+    <line x1="135" y1="100" x2="135" y2="120" stroke="#666" stroke-width="1.5"/>
+    
+    <!-- 接线柱 B -->
+    <rect x="445" y="80" width="40" height="20" rx="3" ry="3" fill="#e8e8e8" stroke="#666" stroke-width="1.5"/>
+    <circle cx="465" cy="90" r="4" fill="#666"/>
+    <text x="465" y="113" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">B</text>
+    <line x1="465" y1="100" x2="465" y2="120" stroke="#666" stroke-width="1.5"/>
+    
+    <!-- 接线柱 C（上端） -->
+    <rect x="280" y="50" width="40" height="20" rx="3" ry="3" fill="#e8e8e8" stroke="#666" stroke-width="1.5"/>
+    <circle cx="300" cy="60" r="4" fill="#666"/>
+    <text x="300" y="45" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">C</text>
+    <line x1="285" y1="70" x2="285" y2="120" stroke="#666" stroke-width="1.5"/>
+    <line x1="285" y1="120" x2="290" y2="120" stroke="#666" stroke-width="1.5"/>
+    
+    <!-- 接线柱 D（上端） -->
+    <rect x="330" y="50" width="40" height="20" rx="3" ry="3" fill="#e8e8e8" stroke="#666" stroke-width="1.5"/>
+    <circle cx="350" cy="60" r="4" fill="#666"/>
+    <text x="350" y="45" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">D</text>
+    <line x1="355" y1="70" x2="355" y2="120" stroke="#666" stroke-width="1.5"/>
+    <line x1="355" y1="120" x2="350" y2="120" stroke="#666" stroke-width="1.5"/>
+    
+    <!-- 金属滑杆 -->
+    <rect x="270" y="55" width="110" height="10" rx="3" ry="3" fill="#aaa" stroke="#666" stroke-width="1"/>
+    
+    <!-- 滑片（触头） -->
+    <rect x="285" y="120" width="40" height="12" rx="2" ry="2" fill="#e74c3c" stroke="#c0392b" stroke-width="1.5"/>
+    <path d="M 295 120 L 295 110" fill="none" stroke="#e74c3c" stroke-width="1.5"/>
+    <path d="M 315 120 L 315 110" fill="none" stroke="#e74c3c" stroke-width="1.5"/>
+    <text x="305" y="145" text-anchor="middle" font-size="11" fill="#e74c3c">滑片 P</text>
+    
+    <!-- 滑片滑动方向箭头 -->
+    <path d="M 270 135 L 250 135" fill="none" stroke="#333" stroke-width="2" marker-end="url(#arrowLeft)"/>
+    <path d="M 340 135 L 360 135" fill="none" stroke="#333" stroke-width="2" marker-end="url(#arrowRight)"/>
+    <text x="260" y="165" text-anchor="middle" font-size="10" fill="#666">← 滑</text>
+    <text x="355" y="165" text-anchor="middle" font-size="10" fill="#666">滑 →</text>
+    
+    <!-- 电路符号 -->
+    <rect x="150" y="250" width="300" height="60" rx="8" ry="8" fill="#f9f9f9" stroke="#ddd" stroke-width="1.5"/>
+    <text x="300" y="275" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">电路符号</text>
+    
+    <!-- 滑动变阻器符号 -->
+    <rect x="200" y="290" width="20" height="8" fill="#333"/>
+    <rect x="240" y="290" width="20" height="8" fill="#333"/>
+    <rect x="280" y="290" width="20" height="8" fill="#333"/>
+    <rect x="320" y="290" width="20" height="8" fill="#333"/>
+    <rect x="360" y="290" width="20" height="8" fill="#333"/>
+    <line x1="210" y1="290" x2="210" y2="310" stroke="#333" stroke-width="2"/>
+    <line x1="370" y1="290" x2="370" y2="310" stroke="#333" stroke-width="2"/>
+    <line x1="210" y1="310" x2="370" y2="310" stroke="#333" stroke-width="2"/>
+    <!-- 滑片箭头 -->
+    <path d="M 290 310 L 290 325" fill="none" stroke="#333" stroke-width="2"/>
+    <path d="M 290 325 L 275 320" fill="none" stroke="#333" stroke-width="2"/>
+    <path d="M 290 325 L 305 320" fill="none" stroke="#333" stroke-width="2"/>
+    
+    <text x="300" y="340" text-anchor="middle" font-size="11" fill="#666">或</text>
+    
+    <!-- 另一个符号形式 -->
+    <rect x="200" y="355" width="20" height="6" fill="#333"/>
+    <rect x="240" y="355" width="20" height="6" fill="#333"/>
+    <rect x="280" y="355" width="20" height="6" fill="#333"/>
+    <rect x="320" y="355" width="20" height="6" fill="#333"/>
+    <rect x="360" y="355" width="20" height="6" fill="#333"/>
+    <line x1="210" y1="355" x2="210" y2="370" stroke="#333" stroke-width="2"/>
+    <line x1="370" y1="355" x2="370" y2="370" stroke="#333" stroke-width="2"/>
+    <path d="M 290 355 L 290 370" fill="none" stroke="#333" stroke-width="2"/>
+    <path d="M 290 370 L 275 365" fill="none" stroke="#333" stroke-width="2"/>
+    <path d="M 290 370 L 305 365" fill="none" stroke="#333" stroke-width="2"/>
+    
+    <defs>
+      <marker id="arrowLeft" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M 10 0 L 0 5 L 10 10" fill="#333"/>
+      </marker>
+      <marker id="arrowRight" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10" fill="#333"/>
+      </marker>
+    </defs>
   </g>
 </svg>

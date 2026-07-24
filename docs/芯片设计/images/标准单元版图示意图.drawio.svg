@@ -1,7 +1,83 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
   <defs/>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 标准单元版图示意图 示意图</text>
+    <text x="300" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">标准单元版图示意图</text>
+    <!-- VDD rail (top) -->
+    <rect x="30" y="50" width="540" height="20" fill="#ff6666" stroke="#cc0000" stroke-width="2"/>
+    <text x="300" y="64" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">VDD 电源轨 (Metal 1)</text>
+    <!-- N-well region -->
+    <rect x="30" y="70" width="540" height="60" fill="#ffe0cc" stroke="#ff6600" stroke-width="1.5"/>
+    <text x="300" y="105" text-anchor="middle" font-size="11" font-weight="bold" fill="#ff6600">N阱 (N-Well)</text>
+    <!-- PMOS active area -->
+    <rect x="60" y="80" width="160" height="40" fill="#99ccff" stroke="#0066cc" stroke-width="1.5"/>
+    <text x="140" y="105" text-anchor="middle" font-size="10" fill="#0066cc">PMOS 有源区 (AA)</text>
+    <!-- Poly gate (PMOS) -->
+    <rect x="130" y="75" width="20" height="50" fill="#cc6666" stroke="#993333" stroke-width="1.5"/>
+    <text x="140" y="72" text-anchor="middle" font-size="9" fill="#993333">Poly</text>
+    <!-- NMOS active area -->
+    <rect x="60" y="130" width="160" height="40" fill="#ffcccc" stroke="#cc0000" stroke-width="1.5"/>
+    <text x="140" y="155" text-anchor="middle" font-size="10" fill="#cc0000">NMOS 有源区 (AA)</text>
+    <!-- Poly gate (NMOS) -->
+    <rect x="130" y="125" width="20" height="50" fill="#cc6666" stroke="#993333" stroke-width="1.5"/>
+    <!-- VSS rail (bottom) -->
+    <rect x="30" y="170" width="540" height="20" fill="#3366ff" stroke="#0033cc" stroke-width="2"/>
+    <text x="300" y="184" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">VSS 地轨 (Metal 1)</text>
+    <!-- Contacts -->
+    <rect x="80" y="88" width="10" height="10" fill="#333" stroke="#222" stroke-width="1"/>
+    <rect x="170" y="88" width="10" height="10" fill="#333" stroke="#222" stroke-width="1"/>
+    <rect x="80" y="145" width="10" height="10" fill="#333" stroke="#222" stroke-width="1"/>
+    <rect x="170" y="145" width="10" height="10" fill="#333" stroke="#222" stroke-width="1"/>
+    <rect x="140" y="115" width="10" height="10" fill="#333" stroke="#222" stroke-width="1"/>
+    <rect x="140" y="125" width="10" height="10" fill="#333" stroke="#222" stroke-width="1"/>
+    <!-- Metal 1 routing -->
+    <rect x="75" y="85" width="20" height="16" fill="#88ccff" stroke="#3399ff" stroke-width="1"/>
+    <rect x="165" y="85" width="20" height="16" fill="#88ccff" stroke="#3399ff" stroke-width="1"/>
+    <rect x="75" y="142" width="20" height="16" fill="#88ccff" stroke="#3399ff" stroke-width="1"/>
+    <rect x="165" y="142" width="20" height="16" fill="#88ccff" stroke="#3399ff" stroke-width="1"/>
+    <!-- Output connection -->
+    <rect x="135" y="112" width="20" height="26" fill="#88ccff" stroke="#3399ff" stroke-width="1"/>
+    <!-- Cell boundary -->
+    <rect x="30" y="50" width="220" height="140" fill="none" stroke="#333" stroke-width="2" stroke-dasharray="6 3"/>
+    <!-- Right side - another cell -->
+    <rect x="320" y="50" width="220" height="140" fill="none" stroke="#333" stroke-width="2" stroke-dasharray="6 3"/>
+    <text x="430" y="85" text-anchor="middle" font-size="10" fill="#666">相邻单元</text>
+    <rect x="340" y="80" width="80" height="40" fill="#99ccff" stroke="#0066cc" stroke-width="1"/>
+    <rect x="340" y="130" width="80" height="40" fill="#ffcccc" stroke="#cc0000" stroke-width="1"/>
+    <rect x="385" y="75" width="15" height="50" fill="#cc6666" stroke="#993333" stroke-width="1"/>
+    <!-- Cell dimensions -->
+    <line x1="30" y1="205" x2="250" y2="205" stroke="#333" stroke-width="1"/>
+    <line x1="30" y1="200" x2="30" y2="210" stroke="#333" stroke-width="1"/>
+    <line x1="250" y1="200" x2="250" y2="210" stroke="#333" stroke-width="1"/>
+    <text x="140" y="218" text-anchor="middle" font-size="11" fill="#333">单元宽度 (Cell Width)</text>
+    <line x1="15" y1="50" x2="15" y2="190" stroke="#333" stroke-width="1"/>
+    <line x1="10" y1="50" x2="20" y2="50" stroke="#333" stroke-width="1"/>
+    <line x1="10" y1="190" x2="20" y2="190" stroke="#333" stroke-width="1"/>
+    <text x="8" y="125" text-anchor="middle" font-size="11" fill="#333" transform="rotate(-90,8,125)">单元高度</text>
+    <!-- Legend -->
+    <rect x="30" y="240" width="540" height="60" rx="5" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+    <text x="300" y="258" text-anchor="middle" font-size="11" font-weight="bold" fill="#555">版图层颜色说明</text>
+    <rect x="40" y="268" width="12" height="12" fill="#99ccff" stroke="#0066cc" stroke-width="1"/>
+    <text x="58" y="278" font-size="10" fill="#333">AA (有源区)</text>
+    <rect x="140" y="268" width="12" height="12" fill="#cc6666" stroke="#993333" stroke-width="1"/>
+    <text x="158" y="278" font-size="10" fill="#333">Poly (多晶硅)</text>
+    <rect x="250" y="268" width="12" height="12" fill="#88ccff" stroke="#3399ff" stroke-width="1"/>
+    <text x="268" y="278" font-size="10" fill="#333">M1 (金属1)</text>
+    <rect x="350" y="268" width="12" height="12" fill="#333" stroke="#222" stroke-width="1"/>
+    <text x="368" y="278" font-size="10" fill="#333">CONT (接触孔)</text>
+    <rect x="450" y="268" width="12" height="12" fill="#ff6666" stroke="#cc0000" stroke-width="1"/>
+    <text x="468" y="278" font-size="10" fill="#333">VDD/VSS</text>
+    <!-- Track info -->
+    <text x="300" y="315" text-anchor="middle" font-size="10" fill="#666">标准单元特征: 统一行高 (9~12 track) | 电源轨贯穿顶部/底部 | 可拼接排列</text>
+    <text x="300" y="340" text-anchor="middle" font-size="10" fill="#666">INV_X1, NAND2_X1, DFF_X1 ... 每个逻辑功能提供多种驱动强度版本</text>
+    <!-- Cell types -->
+    <rect x="30" y="355" width="120" height="30" rx="3" fill="#e3f2fd" stroke="#1e88e5" stroke-width="1"/>
+    <text x="90" y="374" text-anchor="middle" font-size="11" fill="#1e88e5">INV_X1</text>
+    <rect x="165" y="355" width="120" height="30" rx="3" fill="#e3f2fd" stroke="#1e88e5" stroke-width="1"/>
+    <text x="225" y="374" text-anchor="middle" font-size="11" fill="#1e88e5">NAND2_X2</text>
+    <rect x="300" y="355" width="120" height="30" rx="3" fill="#e3f2fd" stroke="#1e88e5" stroke-width="1"/>
+    <text x="360" y="374" text-anchor="middle" font-size="11" fill="#1e88e5">DFF_X1</text>
+    <rect x="435" y="355" width="120" height="30" rx="3" fill="#e3f2fd" stroke="#1e88e5" stroke-width="1"/>
+    <text x="495" y="374" text-anchor="middle" font-size="11" fill="#1e88e5">AOI21_X1</text>
   </g>
 </svg>

@@ -1,7 +1,80 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
-  <defs/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#666"/>
+    </marker>
+  </defs>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 时钟树结构图 示意图</text>
+    <text x="300" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">时钟树结构图 (Clock Tree)</text>
+    <!-- Clock source -->
+    <rect x="250" y="40" width="100" height="35" rx="5" fill="#e3f2fd" stroke="#1e88e5" stroke-width="2"/>
+    <text x="300" y="63" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e88e5">时钟源</text>
+    <text x="300" y="75" text-anchor="middle" font-size="9" fill="#555">PLL / clk_port</text>
+    <!-- H-Tree structure -->
+    <line x1="300" y1="75" x2="300" y2="100" stroke="#333" stroke-width="2"/>
+    <!-- Level 1 buffer -->
+    <rect x="280" y="100" width="40" height="20" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+    <text x="300" y="114" text-anchor="middle" font-size="9" fill="#2e7d32">BUF</text>
+    <line x1="300" y1="120" x2="300" y2="135" stroke="#333" stroke-width="2"/>
+    <line x1="150" y1="135" x2="450" y2="135" stroke="#333" stroke-width="2"/>
+    <line x1="150" y1="135" x2="150" y2="145" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="450" y1="135" x2="450" y2="145" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- Level 2 buffers -->
+    <rect x="130" y="148" width="40" height="20" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+    <text x="150" y="162" text-anchor="middle" font-size="9" fill="#2e7d32">BUF</text>
+    <rect x="430" y="148" width="40" height="20" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+    <text x="450" y="162" text-anchor="middle" font-size="9" fill="#2e7d32">BUF</text>
+    <line x1="150" y1="168" x2="150" y2="180" stroke="#333" stroke-width="2"/>
+    <line x1="60" y1="180" x2="240" y2="180" stroke="#333" stroke-width="2"/>
+    <line x1="450" y1="168" x2="450" y2="180" stroke="#333" stroke-width="2"/>
+    <line x1="360" y1="180" x2="540" y2="180" stroke="#333" stroke-width="2"/>
+    <line x1="60" y1="180" x2="60" y2="190" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="240" y1="180" x2="240" y2="190" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="360" y1="180" x2="360" y2="190" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="540" y1="180" x2="540" y2="190" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- Level 3 buffers -->
+    <rect x="40" y="193" width="40" height="20" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+    <text x="60" y="207" text-anchor="middle" font-size="9" fill="#2e7d32">BUF</text>
+    <rect x="220" y="193" width="40" height="20" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+    <text x="240" y="207" text-anchor="middle" font-size="9" fill="#2e7d32">BUF</text>
+    <rect x="340" y="193" width="40" height="20" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+    <text x="360" y="207" text-anchor="middle" font-size="9" fill="#2e7d32">BUF</text>
+    <rect x="520" y="193" width="40" height="20" rx="3" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+    <text x="540" y="207" text-anchor="middle" font-size="9" fill="#2e7d32">BUF</text>
+    <!-- Leaf cells (FFs) -->
+    <line x1="60" y1="213" x2="60" y2="225" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="240" y1="213" x2="240" y2="225" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="360" y1="213" x2="360" y2="225" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="540" y1="213" x2="540" y2="225" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <!-- Leaf FFs -->
+    <rect x="35" y="228" width="50" height="25" rx="3" fill="#fce4ec" stroke="#c62828" stroke-width="1.5"/>
+    <text x="60" y="244" text-anchor="middle" font-size="9" fill="#c62828">FF</text>
+    <rect x="100" y="228" width="50" height="25" rx="3" fill="#fce4ec" stroke="#c62828" stroke-width="1.5"/>
+    <text x="125" y="244" text-anchor="middle" font-size="9" fill="#c62828">FF</text>
+    <rect x="215" y="228" width="50" height="25" rx="3" fill="#fce4ec" stroke="#c62828" stroke-width="1.5"/>
+    <text x="240" y="244" text-anchor="middle" font-size="9" fill="#c62828">FF</text>
+    <rect x="280" y="228" width="50" height="25" rx="3" fill="#fce4ec" stroke="#c62828" stroke-width="1.5"/>
+    <text x="305" y="244" text-anchor="middle" font-size="9" fill="#c62828">FF</text>
+    <rect x="335" y="228" width="50" height="25" rx="3" fill="#fce4ec" stroke="#c62828" stroke-width="1.5"/>
+    <text x="360" y="244" text-anchor="middle" font-size="9" fill="#c62828">FF</text>
+    <rect x="400" y="228" width="50" height="25" rx="3" fill="#fce4ec" stroke="#c62828" stroke-width="1.5"/>
+    <text x="425" y="244" text-anchor="middle" font-size="9" fill="#c62828">FF</text>
+    <rect x="515" y="228" width="50" height="25" rx="3" fill="#fce4ec" stroke="#c62828" stroke-width="1.5"/>
+    <text x="540" y="244" text-anchor="middle" font-size="9" fill="#c62828">FF</text>
+    <rect x="100" y="260" width="50" height="25" rx="3" fill="#fce4ec" stroke="#c62828" stroke-width="1.5"/>
+    <text x="125" y="276" text-anchor="middle" font-size="9" fill="#c62828">FF</text>
+    <rect x="215" y="260" width="50" height="25" rx="3" fill="#fce4ec" stroke="#c62828" stroke-width="1.5"/>
+    <text x="240" y="276" text-anchor="middle" font-size="9" fill="#c62828">FF</text>
+    <rect x="335" y="260" width="50" height="25" rx="3" fill="#fce4ec" stroke="#c62828" stroke-width="1.5"/>
+    <text x="360" y="276" text-anchor="middle" font-size="9" fill="#c62828">FF</text>
+    <rect x="400" y="260" width="50" height="25" rx="3" fill="#fce4ec" stroke="#c62828" stroke-width="1.5"/>
+    <text x="425" y="276" text-anchor="middle" font-size="9" fill="#c62828">FF</text>
+    <!-- Parameters -->
+    <rect x="30" y="300" width="540" height="90" rx="5" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+    <text x="300" y="320" text-anchor="middle" font-size="12" font-weight="bold" fill="#555">时钟树关键参数</text>
+    <text x="50" y="340" font-size="11" fill="#555">时钟偏移 (Skew): Tskew = Tclk_i - Tclk_j — 不同时钟路径的延迟差异</text>
+    <text x="50" y="358" font-size="11" fill="#555">时钟延迟 (Latency): 时钟源到触发器的总延迟</text>
+    <text x="50" y="376" font-size="11" fill="#555">时钟抖动 (Jitter): 时钟沿的时间不确定性 | 占空比失真</text>
   </g>
 </svg>

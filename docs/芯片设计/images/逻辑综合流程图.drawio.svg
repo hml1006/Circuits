@@ -1,7 +1,54 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
-  <defs/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#666"/>
+    </marker>
+  </defs>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 逻辑综合流程图 示意图</text>
+    <text x="300" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">逻辑综合流程图</text>
+    <!-- Input: RTL -->
+    <rect x="200" y="40" width="200" height="40" rx="5" fill="#e3f2fd" stroke="#1e88e5" stroke-width="2"/>
+    <text x="300" y="65" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e88e5">RTL代码 (Verilog/VHDL)</text>
+    <line x1="300" y1="80" x2="300" y2="105" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- Stage 1: Translation -->
+    <rect x="30" y="110" width="160" height="60" rx="5" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="110" y="130" text-anchor="middle" font-size="12" font-weight="bold" fill="#2e7d32">① 转换</text>
+    <text x="110" y="148" text-anchor="middle" font-size="10" fill="#2e7d32">Translation</text>
+    <text x="110" y="163" text-anchor="middle" font-size="9" fill="#555">RTL → GTECH网表</text>
+    <line x1="190" y1="140" x2="215" y2="140" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- Stage 2: Logic Optimization -->
+    <rect x="220" y="110" width="160" height="60" rx="5" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+    <text x="300" y="130" text-anchor="middle" font-size="12" font-weight="bold" fill="#e65100">② 逻辑优化</text>
+    <text x="300" y="148" text-anchor="middle" font-size="10" fill="#e65100">Logic Optimization</text>
+    <text x="300" y="163" text-anchor="middle" font-size="9" fill="#555">布尔/代数/结构优化</text>
+    <line x1="380" y1="140" x2="405" y2="140" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- Stage 3: Technology Mapping -->
+    <rect x="410" y="110" width="160" height="60" rx="5" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2"/>
+    <text x="490" y="130" text-anchor="middle" font-size="12" font-weight="bold" fill="#7b1fa2">③ 工艺映射</text>
+    <text x="490" y="148" text-anchor="middle" font-size="10" fill="#7b1fa2">Tech Mapping</text>
+    <text x="490" y="163" text-anchor="middle" font-size="9" fill="#555">映射到标准单元</text>
+    <!-- Output: Netlist -->
+    <line x1="300" y1="170" x2="300" y2="195" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="200" y="200" width="200" height="40" rx="5" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="300" y="225" text-anchor="middle" font-size="13" font-weight="bold" fill="#2e7d32">门级网表 (Gate-level Netlist)</text>
+    <!-- Constraints input -->
+    <rect x="30" y="200" width="150" height="40" rx="5" fill="#fce4ec" stroke="#c62828" stroke-width="1.5"/>
+    <text x="105" y="220" text-anchor="middle" font-size="11" font-weight="bold" fill="#c62828">设计约束 (SDC)</text>
+    <line x1="180" y1="220" x2="195" y2="220" stroke="#c62828" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <!-- Library input -->
+    <rect x="420" y="200" width="150" height="40" rx="5" fill="#e0f7fa" stroke="#00838f" stroke-width="1.5"/>
+    <text x="495" y="220" text-anchor="middle" font-size="11" font-weight="bold" fill="#00838f">工艺库 (.lib)</text>
+    <line x1="420" y1="220" x2="405" y2="220" stroke="#00838f" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <!-- Optimization details -->
+    <rect x="30" y="260" width="540" height="60" rx="5" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+    <text x="300" y="280" text-anchor="middle" font-size="12" font-weight="bold" fill="#555">综合优化策略</text>
+    <text x="50" y="300" font-size="11" fill="#555">时序优化: 逻辑重构, 重定时, 缓冲插入, 单元尺寸调整</text>
+    <text x="50" y="315" font-size="11" fill="#555">面积优化: 资源共享, 逻辑化简, 冗余删除 | 功耗优化: 时钟门控, 多Vt, 操作数隔离</text>
+    <!-- Tools -->
+    <rect x="30" y="335" width="540" height="55" rx="5" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+    <text x="300" y="355" text-anchor="middle" font-size="12" font-weight="bold" fill="#555">综合工具</text>
+    <text x="50" y="375" font-size="11" fill="#555">Synopsys Design Compiler (DC) | Cadence Genus | Yosys (开源)</text>
+    <text x="50" y="390" font-size="10" fill="#555">DC脚本: read_verilog → create_clock → compile_ultra → report_timing → write -f verilog</text>
   </g>
 </svg>

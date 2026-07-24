@@ -1,7 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
-  <defs/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#333"/>
+    </marker>
+  </defs>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 KCL示意图 示意图</text>
+    
+    <text x="300" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#333">基尔霍夫电流定律（KCL）示意图</text>
+    
+    <!-- 节点 -->
+    <circle cx="300" cy="200" r="20" fill="#ffeb3b" stroke="#333" stroke-width="2.5"/>
+    <text x="300" y="196" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">节点</text>
+    
+    <!-- 支路1 - 流入（上） -->
+    <line x1="300" y1="60" x2="300" y2="180" stroke="#333" stroke-width="2.5"/>
+    <polygon points="295,140 305,140 300,155" fill="#333"/>
+    <text x="315" y="125" text-anchor="start" font-size="14" font-weight="bold" fill="#d32f2f" font-style="italic">I₁</text>
+    
+    <!-- 支路2 - 流入（左上） -->
+    <line x1="80" y1="80" x2="283" y2="183" stroke="#333" stroke-width="2.5"/>
+    <polygon points="200,140 210,130 215,148" fill="#333"/>
+    <text x="160" y="120" text-anchor="middle" font-size="14" font-weight="bold" fill="#d32f2f" font-style="italic">I₂</text>
+    
+    <!-- 支路3 - 流出（右上） -->
+    <line x1="300" y1="200" x2="500" y2="80" stroke="#333" stroke-width="2.5"/>
+    <polygon points="400,148 410,130 420,140" fill="#333"/>
+    <text x="440" y="120" text-anchor="middle" font-size="14" font-weight="bold" fill="#1976d2" font-style="italic">I₃</text>
+    
+    <!-- 支路4 - 流出（右下） -->
+    <line x1="300" y1="200" x2="520" y2="320" stroke="#333" stroke-width="2.5"/>
+    <polygon points="420,260 410,275 430,270" fill="#333"/>
+    <text x="450" y="280" text-anchor="start" font-size="14" font-weight="bold" fill="#1976d2" font-style="italic">I₄</text>
+    
+    <!-- 支路5 - 流出（左下） -->
+    <line x1="300" y1="220" x2="100" y2="340" stroke="#333" stroke-width="2.5"/>
+    <polygon points="180,280 170,270 190,272" fill="#333"/>
+    <text x="140" y="305" text-anchor="middle" font-size="14" font-weight="bold" fill="#1976d2" font-style="italic">I₅</text>
+    
+    <!-- 标注流入/流出 -->
+    <text x="120" y="70" text-anchor="middle" font-size="12" fill="#d32f2f">流入</text>
+    <text x="480" y="70" text-anchor="middle" font-size="12" fill="#1976d2">流出</text>
+    
+    <!-- 公式 -->
+    <text x="300" y="380" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">ΣI<tspan font-size="11" dy="3">in</tspan><tspan dy="-3"> = ΣI<tspan font-size="11" dy="3">out</tspan><tspan dy="-3"> 或 ΣI = 0</tspan></tspan></text>
+    <text x="300" y="360" text-anchor="middle" font-size="12" fill="#666">I₁ + I₂ = I₃ + I₄ + I₅</text>
   </g>
 </svg>

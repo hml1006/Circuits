@@ -1,7 +1,93 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawio="https://www.drawio.com" width="600" height="400" viewBox="0 0 600 400">
   <defs/>
   <g transform="translate(0.5,0.5)">
     <rect x="0" y="0" width="600" height="400" fill="#ffffff" stroke="none"/>
-    <text x="300" y="200" text-anchor="middle" font-size="16" fill="#333">此处放置 运放噪声模型图 示意图</text>
+    <text x="300" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#222">运算放大器噪声模型</text>
+
+    <!-- 运放符号 -->
+    <polygon points="280,100 280,260 400,180" fill="#e8e8e8" stroke="#333" stroke-width="2"/>
+    <text x="310" y="175" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">A</text>
+    <text x="270" y="135" text-anchor="end" font-size="11" fill="#333">−</text>
+    <text x="270" y="215" text-anchor="end" font-size="11" fill="#333">+</text>
+
+    <!-- 输出 -->
+    <line x1="400" y1="180" x2="470" y2="180" stroke="#333" stroke-width="2"/>
+    <text x="480" y="185" font-size="13" fill="#333">v</text>
+    <text x="480" y="195" font-size="10" fill="#333">o</text>
+
+    <!-- 输入噪声电压源 en (串联在反相输入端) -->
+    <line x1="120" y1="130" x2="160" y2="130" stroke="#333" stroke-width="2"/>
+    <circle cx="170" cy="130" r="10" fill="#ffe8e8" stroke="#cc3333" stroke-width="1.5"/>
+    <text x="170" y="134" text-anchor="middle" font-size="9" fill="#cc3333">e</text>
+    <text x="170" y="142" text-anchor="middle" font-size="7" fill="#cc3333">n</text>
+    <line x1="180" y1="130" x2="280" y2="130" stroke="#333" stroke-width="2"/>
+
+    <!-- 同相输入端噪声电流源 in+ -->
+    <line x1="280" y1="230" x2="250" y2="230" stroke="#333" stroke-width="2"/>
+    <circle cx="240" cy="230" r="10" fill="#e8ffe8" stroke="#2a7a2a" stroke-width="1.5"/>
+    <text x="240" y="234" text-anchor="middle" font-size="9" fill="#2a7a2a">i</text>
+    <text x="240" y="242" text-anchor="middle" font-size="7" fill="#2a7a2a">n+</text>
+    <line x1="230" y1="230" x2="200" y2="230" stroke="#333" stroke-width="2"/>
+
+    <!-- 同相端电阻 Rp -->
+    <rect x="160" y="210" width="20" height="40" fill="#f0f0f0" stroke="#333" stroke-width="2" rx="3"/>
+    <text x="170" y="235" text-anchor="middle" font-size="11" fill="#333">R</text>
+    <text x="178" y="235" text-anchor="middle" font-size="9" fill="#666">p</text>
+    <line x1="160" y1="230" x2="130" y2="230" stroke="#333" stroke-width="2"/>
+    <line x1="130" y1="230" x2="130" y2="280" stroke="#333" stroke-width="2"/>
+    <line x1="110" y1="280" x2="150" y2="280" stroke="#333" stroke-width="2"/>
+    <line x1="110" y1="280" x2="110" y2="285" stroke="#333" stroke-width="2"/>
+    <line x1="150" y1="280" x2="150" y2="285" stroke="#333" stroke-width="2"/>
+    <line x1="110" y1="285" x2="150" y2="285" stroke="#333" stroke-width="2"/>
+
+    <!-- 反相输入端噪声电流源 in- -->
+    <line x1="280" y1="130" x2="300" y2="130" stroke="#333" stroke-width="2"/>
+    <line x1="300" y1="130" x2="300" y2="100" stroke="#333" stroke-width="2"/>
+    <circle cx="300" cy="90" r="10" fill="#e8ffe8" stroke="#2a7a2a" stroke-width="1.5"/>
+    <text x="300" y="94" text-anchor="middle" font-size="9" fill="#2a7a2a">i</text>
+    <text x="300" y="102" text-anchor="middle" font-size="7" fill="#2a7a2a">n−</text>
+    <line x1="300" y1="80" x2="300" y2="60" stroke="#333" stroke-width="2"/>
+
+    <!-- 反馈电阻 Rf -->
+    <line x1="400" y1="180" x2="400" y2="280" stroke="#333" stroke-width="2"/>
+    <rect x="390" y="280" width="20" height="40" fill="#f0f0f0" stroke="#333" stroke-width="2" rx="3"/>
+    <text x="400" y="305" text-anchor="middle" font-size="11" fill="#333">R</text>
+    <text x="408" y="305" text-anchor="middle" font-size="9" fill="#666">f</text>
+    <line x1="390" y1="320" x2="300" y2="320" stroke="#333" stroke-width="2"/>
+    <line x1="300" y1="320" x2="300" y2="130" stroke="#333" stroke-width="2"/>
+
+    <!-- 输入电阻 Rg -->
+    <line x1="120" y1="130" x2="100" y2="130" stroke="#333" stroke-width="2"/>
+    <rect x="60" y="110" width="20" height="40" fill="#f0f0f0" stroke="#333" stroke-width="2" rx="3"/>
+    <text x="70" y="135" text-anchor="middle" font-size="11" fill="#333">R</text>
+    <text x="78" y="135" text-anchor="middle" font-size="9" fill="#666">g</text>
+    <line x1="60" y1="130" x2="30" y2="130" stroke="#333" stroke-width="2"/>
+    <text x="20" y="135" font-size="11" fill="#333">v</text>
+    <text x="20" y="145" font-size="9" fill="#333">s</text>
+
+    <!-- 公式说明 -->
+    <text x="300" y="350" text-anchor="middle" font-size="11" fill="#666">总输出噪声：e</text>
+    <text x="340" y="350" text-anchor="middle" font-size="11" fill="#666">no</text>
+    <text x="355" y="350" text-anchor="middle" font-size="11" fill="#666"> = √[(e</text>
+    <text x="385" y="350" text-anchor="middle" font-size="11" fill="#666">n</text>
+    <text x="392" y="350" text-anchor="middle" font-size="11" fill="#666">·G)² + (i</text>
+    <text x="420" y="350" text-anchor="middle" font-size="11" fill="#666">n+</text>
+    <text x="432" y="350" text-anchor="middle" font-size="11" fill="#666">·R</text>
+    <text x="445" y="350" text-anchor="middle" font-size="11" fill="#666">p</text>
+    <text x="452" y="350" text-anchor="middle" font-size="11" fill="#666">·G)² + (i</text>
+    <text x="485" y="350" text-anchor="middle" font-size="11" fill="#666">n−</text>
+    <text x="498" y="350" text-anchor="middle" font-size="11" fill="#666">·R</text>
+    <text x="510" y="350" text-anchor="middle" font-size="11" fill="#666">f</text>
+    <text x="516" y="350" text-anchor="middle" font-size="11" fill="#666">)² + e</text>
+    <text x="540" y="350" text-anchor="middle" font-size="11" fill="#666">R</text>
+    <text x="546" y="350" text-anchor="middle" font-size="11" fill="#666">²]</text>
+
+    <text x="300" y="370" text-anchor="middle" font-size="10" fill="#666">其中 G = 1 + R</text>
+    <text x="342" y="370" text-anchor="middle" font-size="10" fill="#666">f</text>
+    <text x="350" y="370" text-anchor="middle" font-size="10" fill="#666">/R</text>
+    <text x="366" y="370" text-anchor="middle" font-size="10" fill="#666">g</text>
+    <text x="375" y="370" text-anchor="middle" font-size="10" fill="#666">，e</text>
+    <text x="392" y="370" text-anchor="middle" font-size="10" fill="#666">R</text>
+    <text x="402" y="370" text-anchor="middle" font-size="10" fill="#666"> 为电阻热噪声贡献</text>
   </g>
 </svg>

@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="1000" height="650">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 22px; font-weight: bold; fill: #333; }
+      .label { font-family: Arial, sans-serif; font-size: 14px; fill: #555; }
+      .annotation { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #333; }
+      .pole { font-family: Arial, sans-serif; font-size: 28px; font-weight: bold; }
+      .core { fill: #9e9e9e; stroke: #616161; stroke-width: 2; }
+      .coil { stroke: #d32f2f; stroke-width: 3; fill: none; }
+      .wire { stroke: #333; stroke-width: 2.5; fill: none; }
+      .field-line { stroke: #1976d2; stroke-width: 2; fill: none; }
+      .arrow-blue { fill: #1976d2; }
+    </style>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" class="arrow-blue"/>
+    </marker>
+    <linearGradient id="coreGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#bdbdbd;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#9e9e9e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#757575;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1000" height="650" fill="#fafafa"/>
+  
+  <!-- 标题 -->
+  <text x="500" y="40" text-anchor="middle" class="title">电磁铁结构图</text>
+  
+  <!-- ========== 电源（电池） ========== -->
+  <g transform="translate(120, 280)">
+    <!-- 电池符号 -->
+    <line x1="0" y1="0" x2="0" y2="50" stroke="#333" stroke-width="4"/>
+    <line x1="-12" y1="50" x2="12" y2="50" stroke="#333" stroke-width="4"/>
+    <line x1="-8" y1="60" x2="8" y2="60" stroke="#333" stroke-width="2.5"/>
+    <line x1="-12" y1="70" x2="12" y2="70" stroke="#333" stroke-width="4"/>
+    <line x1="-8" y1="80" x2="8" y2="80" stroke="#333" stroke-width="2.5"/>
+    
+    <!-- 正负极标注 -->
+    <text x="-25" y="20" text-anchor="end" class="annotation" font-size="20">+</text>
+    <text x="-25" y="90" text-anchor="end" class="annotation" font-size="20">−</text>
+    
+    <!-- 电源标签 -->
+    <text x="-30" y="130" text-anchor="middle" class="annotation">电源</text>
+  </g>
+  
+  <!-- ========== 连接导线 ========== -->
+  <!-- 从电池正极到线圈 -->
+  <path d="M 120 280 L 120 220 L 300 220" class="wire"/>
+  <!-- 从线圈回到电池负极 -->
+  <path d="M 300 380 L 120 380 L 120 360" class="wire"/>
+  
+  <!-- 电流方向箭头 -->
+  <path d="M 200 220 L 220 220" stroke="#333" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+  <text x="210" y="210" text-anchor="middle" class="label" fill="#1976d2">电流 I</text>
+  
+  <!-- ========== 铁芯（圆柱形） ========== -->
+  <g transform="translate(300, 250)">
+    <!-- 铁芯主体（圆柱形） -->
+    <rect x="0" y="0" width="400" height="100" rx="5" fill="url(#coreGradient)" stroke="#616161" stroke-width="2"/>
+    
+    <!-- 铁芯左端（圆形） -->
+    <ellipse cx="0" cy="50" rx="8" ry="50" fill="#757575" stroke="#616161" stroke-width="2"/>
+    
+    <!-- 铁芯右端（圆形） -->
+    <ellipse cx="400" cy="50" rx="8" ry="50" fill="#757575" stroke="#616161" stroke-width="2"/>
+    
+    <!-- 铁芯标签 -->
+    <text x="200" y="-15" text-anchor="middle" class="annotation">铁芯（软铁）</text>
+  </g>
+  
+  <!-- ========== 线圈（缠绕在铁芯上） ========== -->
+  <g transform="translate(300, 250)">
+    <!-- 线圈缠绕 - 显示缠绕方向 -->
+    <!-- 使用锯齿形路径表示导线缠绕 -->
+    <path d="M 20 50 
+             L 35 10 L 50 90 L 65 10 L 80 90 L 95 10 L 110 90 
+             L 125 10 L 140 90 L 155 10 L 170 90 L 185 10 L 200 90 
+             L 215 10 L 230 90 L 245 10 L 260 90 L 275 10 L 290 90 
+             L 305 10 L 320 90 L 335 10 L 350 90 L 365 10 L 380 90" 
+          class="coil"/>
+    
+    <!-- 线圈标签 -->
+    <text x="200" y="120" text-anchor="middle" class="annotation">线圈</text>
+    
+    <!-- 缠绕方向箭头 -->
+    <g fill="#d32f2f">
+      <path d="M 35 10 L 40 15 L 38 8 Z"/>
+      <path d="M 65 10 L 70 15 L 68 8 Z"/>
+      <path d="M 95 10 L 100 15 L 98 8 Z"/>
+      <path d="M 125 10 L 130 15 L 128 8 Z"/>
+      <path d="M 155 10 L 160 15 L 158 8 Z"/>
+      <path d="M 185 10 L 190 15 L 188 8 Z"/>
+      <path d="M 215 10 L 220 15 L 218 8 Z"/>
+      <path d="M 245 10 L 250 15 L 248 8 Z"/>
+      <path d="M 275 10 L 280 15 L 278 8 Z"/>
+      <path d="M 305 10 L 310 15 L 308 8 Z"/>
+      <path d="M 335 10 L 340 15 L 338 8 Z"/>
+      <path d="M 365 10 L 370 15 L 368 8 Z"/>
+    </g>
+  </g>
+  
+  <!-- ========== 磁极标注 ========== -->
+  <!-- N极（左端） -->
+  <text x="280" y="310" text-anchor="middle" class="pole" fill="#d32f2f">N</text>
+  <!-- S极（右端） -->
+  <text x="720" y="310" text-anchor="middle" class="pole" fill="#1976d2">S</text>
+  
+  <!-- ========== 内部磁场线（从S到N） ========== -->
+  <g>
+    <line x1="680" y1="280" x2="320" y2="280" class="field-line" marker-end="url(#arrowBlue)"/>
+    <line x1="680" y1="300" x2="320" y2="300" class="field-line" marker-end="url(#arrowBlue)"/>
+    <line x1="680" y1="320" x2="320" y2="320" class="field-line" marker-end="url(#arrowBlue)"/>
+  </g>
+  
+  <!-- ========== 外部磁场线（从N到S，形成闭合曲线） ========== -->
+  <!-- 上方磁场线 -->
+  <path d="M 300 250 Q 250 200, 300 150 Q 500 120, 700 150 Q 750 200, 700 250" 
+        class="field-line" marker-end="url(#arrowBlue)"/>
+  <path d="M 300 270 Q 270 230, 300 190 Q 500 160, 700 190 Q 730 230, 700 270" 
+        class="field-line" marker-end="url(#arrowBlue)"/>
+  
+  <!-- 下方磁场线 -->
+  <path d="M 300 350 Q 250 400, 300 450 Q 500 480, 700 450 Q 750 400, 700 350" 
+        class="field-line" marker-end="url(#arrowBlue)"/>
+  <path d="M 300 330 Q 270 370, 300 410 Q 500 440, 700 410 Q 730 370, 700 330" 
+        class="field-line" marker-end="url(#arrowBlue)"/>
+  
+  <!-- ========== 说明文字 ========== -->
+  <g transform="translate(50, 500)">
+    <text x="0" y="0" class="annotation" font-size="18">电磁铁工作原理：</text>
+    <text x="20" y="30" class="label" font-size="14">• 通电时产生磁场，断电时磁场消失</text>
+    <text x="20" y="55" class="label" font-size="14">• 磁性强弱与电流大小、线圈匝数、铁芯材料有关</text>
+    <text x="20" y="80" class="label" font-size="14">• 磁极方向由电流方向决定（右手螺旋定则）</text>
+    <text x="20" y="105" class="label" font-size="14">• 应用：电铃、电磁起重机、继电器等</text>
+  </g>
+  
+  <!-- 图例 -->
+  <g transform="translate(650, 500)">
+    <text x="0" y="0" class="annotation" font-size="18">图例：</text>
+    <line x1="0" y1="20" x2="40" y2="20" class="field-line" marker-end="url(#arrowBlue)"/>
+    <text x="50" y="25" class="label">磁场线</text>
+    <line x1="0" y1="45" x2="40" y2="45" class="coil" stroke-width="3"/>
+    <text x="50" y="50" class="label">线圈</text>
+    <rect x="0" y="65" width="40" height="15" fill="url(#coreGradient)" stroke="#616161" stroke-width="1"/>
+    <text x="50" y="77" class="label">铁芯</text>
+  </g>
+</svg>

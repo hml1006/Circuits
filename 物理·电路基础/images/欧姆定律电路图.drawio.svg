@@ -1,0 +1,212 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 680"
+     font-family="'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif">
+  <defs>
+    <!-- 绘图纸：细格 + 粗格 -->
+    <pattern id="gridS" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#78b4e6" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+    <pattern id="gridL" width="200" height="200" patternUnits="userSpaceOnUse">
+      <path d="M200 0H0V200" fill="none" stroke="#78b4e6" stroke-opacity="0.14" stroke-width="1.2"/>
+    </pattern>
+    <!-- 中心微亮、四角压暗 -->
+    <radialGradient id="vig" cx="42%" cy="40%" r="80%">
+      <stop offset="0%"  stop-color="#13395e"/>
+      <stop offset="60%" stop-color="#0b2540"/>
+      <stop offset="100%" stop-color="#071a2e"/>
+    </radialGradient>
+    <!-- 电流发光 -->
+    <filter id="flowGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- 箭头（电流方向 / 滑变可调） -->
+    <marker id="arr" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+      <path d="M0 0 L6 3 L0 6 Z" fill="#ffd166"/>
+    </marker>
+    <marker id="arrR" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+      <path d="M0 0 L6 3 L0 6 Z" fill="#cfe6ff"/>
+    </marker>
+  </defs>
+
+  <style>
+    .disp{font-family:'Oswald','Bebas Neue','Arial Narrow','Microsoft YaHei',sans-serif;}
+    .math{font-family:'Cambria Math','Latin Modern Math','Times New Roman',Georgia,serif;font-style:italic;}
+    .body{transition:stroke .2s ease;}
+    .comp{cursor:pointer;}
+    .comp:hover .body{stroke:#ffd166;}
+    .tip{opacity:0;transition:opacity .25s ease;pointer-events:none;}
+    .comp:hover .tip{opacity:1;}
+    .heat{animation:pulse 2.2s ease-in-out infinite;}
+    @keyframes pulse{0%,100%{opacity:.12}50%{opacity:.62}}
+    .title{animation:fadeUp .7s ease both;}
+    .circuit{animation:fadeUp .8s .12s ease both;}
+    .panel{animation:fadeUp .8s .28s ease both;transition:stroke .3s ease;}
+    .panel:hover{stroke:#ffd166;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+  </style>
+
+  <!-- 背景层 -->
+  <rect width="1040" height="680" fill="url(#vig)"/>
+  <rect width="1040" height="680" fill="url(#gridS)"/>
+  <rect width="1040" height="680" fill="url(#gridL)"/>
+  <text class="math" x="300" y="648" font-size="220" fill="#ffffff" fill-opacity="0.035" text-anchor="middle">Ω</text>
+
+  <!-- 标题 -->
+  <g class="title">
+    <text class="disp" x="40" y="58" font-size="40" font-weight="800" fill="#ffffff" letter-spacing="2">欧姆定律 · 实验电路</text>
+    <text x="42" y="84" font-size="15" fill="#9fc3e8">伏安法 — 用电流表、电压表探究同一段导体中 I 与 U 的关系</text>
+    <text class="disp" x="40" y="104" font-size="12" fill="#ffd166" letter-spacing="4" opacity="0.8">OHM&#39;S LAW  ·  V = I R</text>
+  </g>
+
+  <!-- ===================== 主电路 ===================== -->
+  <g class="circuit">
+
+    <!-- 导线（元件处断开） -->
+    <path d="M160 180 H288 M320 180 H540 M640 180 H720
+             M720 180 V284 M720 336 V440
+             M720 440 H500 M380 440 H160
+             M160 440 V365 M160 255 V180"
+          fill="none" stroke="#cfe6ff" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- 电压表支路导线 -->
+    <path d="M380 440 V560 H414 M466 560 H500 V440"
+          fill="none" stroke="#cfe6ff" stroke-width="2.4" stroke-linecap="round"/>
+
+    <!-- 电流流动（发光跑动，顺时针） -->
+    <path d="M160 180 H288 M320 180 H540 M640 180 H720
+             M720 180 V284 M720 336 V440
+             M720 440 H500 M380 440 H160
+             M160 440 V365 M160 255 V180"
+          fill="none" stroke="#ffd166" stroke-width="2.4" stroke-linecap="round"
+          stroke-dasharray="5 11" filter="url(#flowGlow)">
+      <animate attributeName="stroke-dashoffset" from="0" to="-16" dur="0.7s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- 电流方向标记 -->
+    <polygon points="428,175 440,180 428,185" fill="#4cc9f0"/>
+    <text class="math" x="434" y="168" font-size="18" fill="#4cc9f0" text-anchor="middle">I</text>
+
+    <!-- 连接节点 -->
+    <circle cx="380" cy="440" r="4.5" fill="#cfe6ff"/>
+    <circle cx="500" cy="440" r="4.5" fill="#cfe6ff"/>
+
+    <!-- ===== 电源 E ===== -->
+    <g class="comp">
+      <rect class="hit" x="276" y="140" width="58" height="80" fill="transparent"/>
+      <line class="body" x1="288" y1="162" x2="288" y2="198" stroke="#cfe6ff" stroke-width="3"/>
+      <line class="body" x1="298" y1="170" x2="298" y2="190" stroke="#cfe6ff" stroke-width="6"/>
+      <line class="body" x1="310" y1="162" x2="310" y2="198" stroke="#cfe6ff" stroke-width="3"/>
+      <line class="body" x1="320" y1="170" x2="320" y2="190" stroke="#cfe6ff" stroke-width="6"/>
+      <text x="280" y="156" font-size="13" fill="#ff8c42">+</text>
+      <text x="324" y="156" font-size="13" fill="#9fc3e8">&#8722;</text>
+      <text class="math" x="304" y="150" font-size="18" fill="#ffffff" text-anchor="middle">E</text>
+      <g class="tip">
+        <rect x="226" y="116" width="158" height="22" rx="4" fill="#071a2e" stroke="#ffd166" stroke-opacity="0.6"/>
+        <text x="234" y="132" font-size="12.5" fill="#ffd166">电源 E：提供电压 U</text>
+      </g>
+    </g>
+
+    <!-- ===== 开关 S（闭合） ===== -->
+    <g class="comp">
+      <rect class="hit" x="532" y="150" width="116" height="60" fill="transparent"/>
+      <line class="body" x1="540" y1="180" x2="640" y2="180" stroke="#cfe6ff" stroke-width="3"/>
+      <line class="body" x1="540" y1="180" x2="628" y2="166" stroke="#cfe6ff" stroke-width="2" opacity="0.55"/>
+      <circle class="body" cx="540" cy="180" r="4.5" fill="#0b2540" stroke="#cfe6ff" stroke-width="2"/>
+      <circle class="body" cx="640" cy="180" r="4.5" fill="#0b2540" stroke="#cfe6ff" stroke-width="2"/>
+      <text class="math" x="590" y="160" font-size="18" fill="#ffffff" text-anchor="middle">S</text>
+      <g class="tip">
+        <rect x="500" y="116" width="172" height="22" rx="4" fill="#071a2e" stroke="#ffd166" stroke-opacity="0.6"/>
+        <text x="508" y="132" font-size="12.5" fill="#ffd166">开关 S：控制电路通断</text>
+      </g>
+    </g>
+
+    <!-- ===== 电流表 A ===== -->
+    <g class="comp">
+      <rect class="hit" x="688" y="278" width="64" height="64" fill="transparent"/>
+      <circle class="body" cx="720" cy="310" r="26" fill="#0b2540" stroke="#4cc9f0" stroke-width="2.6"/>
+      <g stroke="#4cc9f0" stroke-width="1.4" opacity="0.7">
+        <line x1="720" y1="288" x2="720" y2="292"/>
+        <line x1="704" y1="294" x2="707" y2="297"/>
+        <line x1="736" y1="294" x2="733" y2="297"/>
+      </g>
+      <line x1="720" y1="310" x2="720" y2="292" stroke="#4cc9f0" stroke-width="2">
+        <animateTransform attributeName="transform" type="rotate"
+          values="-12 720 310; 14 720 310; -12 720 310" dur="2.4s" repeatCount="indefinite"/>
+      </line>
+      <circle cx="720" cy="310" r="2.4" fill="#4cc9f0"/>
+      <text x="720" y="326" font-size="15" font-weight="700" fill="#4cc9f0" text-anchor="middle">A</text>
+      <g class="tip">
+        <rect x="556" y="296" width="150" height="22" rx="4" fill="#071a2e" stroke="#ffd166" stroke-opacity="0.6"/>
+        <text x="564" y="312" font-size="12.5" fill="#ffd166">电流表 A：串联，测 I</text>
+      </g>
+    </g>
+
+    <!-- ===== 定值电阻 R ===== -->
+    <g class="comp">
+      <rect class="hit" x="372" y="410" width="136" height="78" fill="transparent"/>
+      <rect class="heat" x="374" y="417" width="132" height="46" rx="6" fill="none" stroke="#ff8c42" stroke-width="2"/>
+      <rect class="body" x="380" y="423" width="120" height="34" rx="3" fill="#0b2540" stroke="#cfe6ff" stroke-width="2.6"/>
+      <text class="math" x="440" y="478" font-size="20" fill="#ffffff" text-anchor="middle">R</text>
+      <g class="tip">
+        <rect x="360" y="388" width="160" height="22" rx="4" fill="#071a2e" stroke="#ffd166" stroke-opacity="0.6"/>
+        <text x="368" y="404" font-size="12.5" fill="#ffd166">定值电阻 R：被测导体</text>
+      </g>
+    </g>
+
+    <!-- ===== 滑动变阻器 Rp ===== -->
+    <g class="comp">
+      <rect class="hit" x="120" y="248" width="80" height="124" fill="transparent"/>
+      <rect class="body" x="143" y="255" width="34" height="110" rx="3" fill="#0b2540" stroke="#cfe6ff" stroke-width="2.6"/>
+      <line class="body" x1="128" y1="372" x2="176" y2="248" stroke="#cfe6ff" stroke-width="2" marker-end="url(#arrR)"/>
+      <text class="math" x="126" y="315" font-size="18" fill="#ffffff" text-anchor="end">R&#8346;</text>
+      <g class="tip">
+        <rect x="186" y="298" width="206" height="22" rx="4" fill="#071a2e" stroke="#ffd166" stroke-opacity="0.6"/>
+        <text x="194" y="314" font-size="12.5" fill="#ffd166">滑动变阻器：调 U、I，多次测量</text>
+      </g>
+    </g>
+
+    <!-- ===== 电压表 V ===== -->
+    <g class="comp">
+      <rect class="hit" x="408" y="528" width="64" height="64" fill="transparent"/>
+      <circle class="body" cx="440" cy="560" r="26" fill="#0b2540" stroke="#06d6a0" stroke-width="2.6"/>
+      <g stroke="#06d6a0" stroke-width="1.4" opacity="0.7">
+        <line x1="440" y1="538" x2="440" y2="542"/>
+        <line x1="424" y1="544" x2="427" y2="547"/>
+        <line x1="456" y1="544" x2="453" y2="547"/>
+      </g>
+      <line x1="440" y1="560" x2="440" y2="542" stroke="#06d6a0" stroke-width="2">
+        <animateTransform attributeName="transform" type="rotate"
+          values="-10 440 560; 12 440 560; -10 440 560" dur="2.8s" repeatCount="indefinite"/>
+      </line>
+      <circle cx="440" cy="560" r="2.4" fill="#06d6a0"/>
+      <text x="440" y="576" font-size="15" font-weight="700" fill="#06d6a0" text-anchor="middle">V</text>
+      <g class="tip">
+        <rect x="352" y="600" width="196" height="22" rx="4" fill="#071a2e" stroke="#ffd166" stroke-opacity="0.6"/>
+        <text x="360" y="616" font-size="12.5" fill="#ffd166">电压表 V：并联在 R 两端，测 U</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ===================== 公式面板 ===================== -->
+  <g class="panel">
+    <rect x="772" y="150" width="248" height="372" rx="14" fill="#ffffff" fill-opacity="0.04"
+          stroke="#78b4e6" stroke-opacity="0.4" stroke-width="1.4"/>
+    <text class="disp" x="792" y="186" font-size="22" font-weight="800" fill="#ffffff" letter-spacing="1">欧姆定律</text>
+    <line x1="792" y1="200" x2="1000" y2="200" stroke="#78b4e6" stroke-opacity="0.3"/>
+
+    <text class="math" x="896" y="252" font-size="36" text-anchor="middle">
+      <tspan fill="#4cc9f0">I</tspan><tspan fill="#ffffff"> = </tspan><tspan fill="#06d6a0">U</tspan><tspan fill="#ffffff"> / </tspan><tspan fill="#ff8c42">R</tspan>
+    </text>
+
+    <text x="792" y="296" font-size="15" fill="#4cc9f0"><tspan class="math" font-size="17">I</tspan><tspan fill="#cfe6ff">  电流 / 安 (A)</tspan></text>
+    <text x="792" y="324" font-size="15" fill="#06d6a0"><tspan class="math" font-size="17">U</tspan><tspan fill="#cfe6ff">  电压 / 伏 (V)</tspan></text>
+    <text x="792" y="352" font-size="15" fill="#ff8c42"><tspan class="math" font-size="17">R</tspan><tspan fill="#cfe6ff">  电阻 / 欧 (&#937;)</tspan></text>
+
+    <line x1="792" y1="372" x2="1000" y2="372" stroke="#78b4e6" stroke-opacity="0.3"/>
+    <text class="math" x="792" y="400" font-size="15" fill="#9fc3e8">变形  U = I&#183;R    R = U / I</text>
+
+    <text x="792" y="436" font-size="12.5" fill="#9fc3e8">适用：同一段导体，且温度不变</text>
+    <text x="792" y="458" font-size="12.5" fill="#9fc3e8">移动滑片 R&#8346;，记录多组 U、I 求规律</text>
+    <text x="792" y="494" font-size="12" fill="#ffd166" opacity="0.85">R 一定时，I 与 U 成正比</text>
+  </g>
+</svg>

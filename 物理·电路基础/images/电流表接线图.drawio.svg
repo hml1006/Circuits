@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 550" width="700" height="550">
+  <style>
+    .wire { stroke: #000000; stroke-width: 2; fill: none; stroke-linecap: square; stroke-linejoin: miter; }
+    .thick { stroke: #000000; fill: none; stroke-linecap: square; }
+    .dot { fill: #000000; }
+    .text { font-family: Arial, sans-serif; font-weight: bold; fill: #000000; text-anchor: middle; }
+    .label { font-family: Arial, sans-serif; font-weight: bold; text-anchor: middle; }
+  </style>
+
+  <!-- ================================================================ -->
+  <!-- Main wires — rectangular loop, strictly horizontal/vertical      -->
+  <!-- ================================================================ -->
+  <!-- Top wire: switch right lead → bulb left lead -->
+  <line x1="240" y1="150" x2="410" y2="150" class="wire"/>
+  <!-- Right wire: bulb right lead → ammeter right lead -->
+  <line x1="490" y1="150" x2="490" y2="350" class="wire"/>
+  <!-- Bottom wire: ammeter left lead → power right lead -->
+  <line x1="240" y1="350" x2="410" y2="350" class="wire"/>
+  <!-- Left wire: power left lead → switch left lead -->
+  <line x1="160" y1="150" x2="160" y2="350" class="wire"/>
+
+  <!-- ================================================================ -->
+  <!-- Connection dots — every T-junction and component junction        -->
+  <!-- ================================================================ -->
+  <circle cx="240" cy="150" r="3.5" class="dot"/>
+  <circle cx="410" cy="150" r="3.5" class="dot"/>
+  <circle cx="490" cy="150" r="3.5" class="dot"/>
+  <circle cx="490" cy="350" r="3.5" class="dot"/>
+  <circle cx="410" cy="350" r="3.5" class="dot"/>
+  <circle cx="240" cy="350" r="3.5" class="dot"/>
+  <circle cx="160" cy="150" r="3.5" class="dot"/>
+  <circle cx="160" cy="350" r="3.5" class="dot"/>
+
+  <!-- ================================================================ -->
+  <!-- Switch (grid center: 200, 150)                                   -->
+  <!-- ================================================================ -->
+  <g id="switch">
+    <!-- Left horizontal lead -->
+    <line x1="160" y1="150" x2="180" y2="150" class="wire"/>
+    <!-- Right horizontal lead -->
+    <line x1="220" y1="150" x2="240" y2="150" class="wire"/>
+    <!-- Pivot terminal -->
+    <circle cx="180" cy="150" r="3" class="dot"/>
+    <!-- Contact terminal -->
+    <circle cx="220" cy="150" r="3" class="dot"/>
+    <!-- Switch blade (slightly open for recognizability) -->
+    <line x1="180" y1="150" x2="215" y2="140" class="wire"/>
+  </g>
+
+  <!-- ================================================================ -->
+  <!-- Bulb (grid center: 450, 150)                                     -->
+  <!-- ================================================================ -->
+  <g id="bulb">
+    <!-- Left horizontal lead -->
+    <line x1="410" y1="150" x2="430" y2="150" class="wire"/>
+    <!-- Right horizontal lead -->
+    <line x1="470" y1="150" x2="490" y2="150" class="wire"/>
+    <!-- Bulb circle -->
+    <circle cx="450" cy="150" r="20" class="wire"/>
+    <!-- Cross (×) — endpoints exactly on the circle circumference -->
+    <line x1="436" y1="136" x2="464" y2="164" class="wire"/>
+    <line x1="464" y1="136" x2="436" y2="164" class="wire"/>
+  </g>
+
+  <!-- ================================================================ -->
+  <!-- Ammeter (grid center: 450, 350)                                  -->
+  <!-- ================================================================ -->
+  <g id="ammeter">
+    <!-- Left horizontal lead -->
+    <line x1="410" y1="350" x2="430" y2="350" class="wire"/>
+    <!-- Right horizontal lead -->
+    <line x1="470" y1="350" x2="490" y2="350" class="wire"/>
+    <!-- Ammeter circle -->
+    <circle cx="450" cy="350" r="20" class="wire"/>
+    <!-- Letter "A" -->
+    <text x="450" y="356" class="text" font-size="22">A</text>
+    <!-- Polarity marks: current enters from right (bulb side), "+" on right -->
+    <text x="472" y="330" class="label" font-size="14" fill="#C0392B">+</text>
+    <text x="428" y="330" class="label" font-size="14" fill="#2980B9">−</text>
+  </g>
+
+  <!-- ================================================================ -->
+  <!-- Power Source / Battery (grid center: 200, 350)                   -->
+  <!-- ================================================================ -->
+  <g id="power">
+    <!-- Left lead: connects to the left edge of the long plate -->
+    <line x1="160" y1="350" x2="196" y2="350" class="wire"/>
+    <!-- Long thin line — positive plate -->
+    <line x1="196" y1="330" x2="196" y2="370" class="thick" stroke-width="2.5"/>
+    <!-- Short thick line — negative plate (gap between plates = no wire passes through) -->
+    <line x1="204" y1="336" x2="204" y2="364" class="thick" stroke-width="4"/>
+    <!-- Right lead: connects from the right edge of the short plate -->
+    <line x1="204" y1="350" x2="240" y2="350" class="wire"/>
+    <!-- Polarity marks -->
+    <text x="196" y="324" class="label" font-size="14" fill="#C0392B">+</text>
+    <text x="204" y="324" class="label" font-size="14" fill="#2980B9">−</text>
+  </g>
+</svg>

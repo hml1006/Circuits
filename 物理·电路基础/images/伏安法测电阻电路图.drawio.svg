@@ -1,0 +1,339 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 720" id="root"
+     font-family="'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif">
+  <defs>
+    <pattern id="gridS" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0V28" fill="none" stroke="#c3d2e6" stroke-opacity="0.45" stroke-width="1"/>
+    </pattern>
+    <pattern id="gridL" width="140" height="140" patternUnits="userSpaceOnUse">
+      <path d="M140 0H0V140" fill="none" stroke="#9fb6d4" stroke-opacity="0.5" stroke-width="1.3"/>
+    </pattern>
+    <radialGradient id="vig" cx="40%" cy="34%" r="92%">
+      <stop offset="0%"  stop-color="#fbfdff"/>
+      <stop offset="70%" stop-color="#eef3fa"/>
+      <stop offset="100%" stop-color="#e3ebf6"/>
+    </radialGradient>
+    <linearGradient id="scanG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#38bdf8" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="flowGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrI" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+      <path d="M0 0 L6 3 L0 6 Z" fill="#1f6feb"/>
+    </marker>
+  </defs>
+
+  <style>
+    .disp{font-family:'Saira Condensed','Oswald','Arial Narrow','Microsoft YaHei',sans-serif;}
+    .math{font-family:'Cambria Math','Latin Modern Math','Times New Roman',Georgia,serif;font-style:italic;}
+    .mono{font-family:'Saira Condensed','Consolas','SF Mono',monospace;}
+    .body{transition:stroke .18s ease, stroke-width .18s ease;}
+    .comp{cursor:pointer;}
+    .comp:hover .body{stroke:#f97316; stroke-width:3.4;}
+    .tip{opacity:0; transition:opacity .22s ease; pointer-events:none;}
+    .comp:hover .tip{opacity:1;}
+
+    /* 通电相关：默认断开=静止；根加 .closed 后才活 */
+    .flow{stroke-dasharray:5 12; opacity:0; transition:opacity .35s ease;
+          animation:flow .75s linear infinite; animation-play-state:paused;}
+    .needle{transform-box:view-box; animation:swA 2.5s ease-in-out infinite; animation-play-state:paused;}
+    .needleV{transform-box:view-box; animation:swV 2.9s ease-in-out infinite; animation-play-state:paused;}
+    .heat{opacity:0;}
+    .knife-closed{display:none;}
+    .hint{animation:blink 1.4s ease-in-out infinite;}
+    #root.closed .flow{opacity:1; animation-play-state:running;}
+    #root.closed .needle{animation-play-state:running;}
+    #root.closed .needleV{animation-play-state:running;}
+    #root.closed .heat{animation:pulse 2.4s ease-in-out infinite;}
+    #root.closed .knife-open{display:none;}
+    #root.closed .knife-closed{display:inline;}
+    #root.closed .hint{display:none;}
+    @keyframes flow{to{stroke-dashoffset:-17;}}
+    @keyframes pulse{0%,100%{opacity:.10}50%{opacity:.55}}
+    @keyframes swA{0%,100%{transform:rotate(-13deg)}50%{transform:rotate(15deg)}}
+    @keyframes swV{0%,100%{transform:rotate(-11deg)}50%{transform:rotate(13deg)}}
+    @keyframes blink{0%,100%{opacity:.35}50%{opacity:1}}
+
+    /* 环境扫描线（与通断无关，始终动） */
+    .scan{animation:scan 7s linear infinite;}
+    @keyframes scan{from{transform:translateY(-40px)}to{transform:translateY(720px)}}
+
+    .title{animation:fadeUp .7s ease both;}
+    .circuit{animation:fadeUp .8s .12s ease both;}
+    .panel{animation:fadeUp .85s .26s ease both;}
+    .mini{cursor:default;}
+    .mini .hl{opacity:0; transition:opacity .2s ease;}
+    .mini:hover .hl{opacity:1;}
+    .mini:hover .mbody{stroke:#f97316;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+  </style>
+
+  <!-- 背景层 -->
+  <rect width="1120" height="720" fill="url(#vig)"/>
+  <rect width="1120" height="720" fill="url(#gridS)"/>
+  <rect width="1120" height="720" fill="url(#gridL)"/>
+  <text class="math" x="330" y="430" font-size="340" fill="#16202e" fill-opacity="0.035" text-anchor="middle">Ω</text>
+  <!-- 环境扫描线 -->
+  <rect class="scan" x="0" y="0" width="1120" height="40" fill="url(#scanG)"/>
+
+  <!-- 左缘刻度尺装饰 -->
+  <g stroke="#9fb6d4" stroke-opacity="0.7">
+    <line x1="20" y1="120" x2="20" y2="660" stroke-width="1.4"/>
+    <g stroke-width="1">
+      <line x1="20" y1="140" x2="28" y2="140"/><line x1="20" y1="160" x2="26" y2="160"/>
+      <line x1="20" y1="180" x2="26" y2="180"/><line x1="20" y1="200" x2="26" y2="200"/>
+      <line x1="20" y1="220" x2="26" y2="220"/><line x1="20" y1="240" x2="30" y2="240"/>
+      <line x1="20" y1="260" x2="26" y2="260"/><line x1="20" y1="280" x2="26" y2="280"/>
+      <line x1="20" y1="300" x2="26" y2="300"/><line x1="20" y1="320" x2="26" y2="320"/>
+      <line x1="20" y1="340" x2="30" y2="340"/><line x1="20" y1="360" x2="26" y2="360"/>
+      <line x1="20" y1="380" x2="26" y2="380"/><line x1="20" y1="400" x2="26" y2="400"/>
+      <line x1="20" y1="420" x2="26" y2="420"/><line x1="20" y1="440" x2="30" y2="440"/>
+      <line x1="20" y1="460" x2="26" y2="460"/><line x1="20" y1="480" x2="26" y2="480"/>
+      <line x1="20" y1="500" x2="26" y2="500"/><line x1="20" y1="520" x2="26" y2="520"/>
+      <line x1="20" y1="540" x2="30" y2="540"/><line x1="20" y1="560" x2="26" y2="560"/>
+      <line x1="20" y1="580" x2="26" y2="580"/><line x1="20" y1="600" x2="26" y2="600"/>
+      <line x1="20" y1="620" x2="26" y2="620"/><line x1="20" y1="640" x2="30" y2="640"/>
+    </g>
+  </g>
+
+  <!-- 标题 -->
+  <g class="title">
+    <text class="disp" x="48" y="62" font-size="44" font-weight="800" fill="#16202e" letter-spacing="1">伏安法测电阻</text>
+    <text x="50" y="90" font-size="15" fill="#5b6b80">间接测量 — 用电压表读 U、电流表读 I，由 Rₓ = U / I 求得待测电阻</text>
+    <text class="disp" x="50" y="110" font-size="12" fill="#1f6feb" letter-spacing="4" opacity="0.85">FIG.02 · VOLT–AMPERE METHOD</text>
+    <line x1="50" y1="122" x2="660" y2="122" stroke="#16202e" stroke-opacity="0.18" stroke-width="1.4"/>
+  </g>
+
+  <!-- ===================== 主电路（电流表外接法） ===================== -->
+  <g class="circuit">
+
+    <!-- 导线（元件端口精确对接；开关处断开） -->
+    <path d="M150 170 H262 M298 170 H430 M520 170 H620
+             M620 170 V254 M620 306 V470
+             M620 470 H490 M330 470 H150
+             M150 470 V380 M150 250 V170"
+          fill="none" stroke="#16202e" stroke-width="3" stroke-linecap="round"/>
+    <!-- 电压表支路导线 -->
+    <path d="M330 470 V575 H384 M436 575 H490 V470"
+          fill="none" stroke="#16202e" stroke-width="2.4" stroke-linecap="round"/>
+
+    <!-- 电流流动（仅闭合后跑动） -->
+    <path class="flow" d="M150 170 H262 M298 170 H430 M520 170 H620
+             M620 170 V254 M620 306 V470
+             M620 470 H490 M330 470 H150
+             M150 470 V380 M150 250 V170"
+          fill="none" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" filter="url(#flowGlow)"/>
+
+    <!-- 电流方向标记（静态，示闭合后流向） -->
+    <polygon points="372,165 384,170 372,175" fill="#1f6feb"/>
+    <text class="math" x="378" y="158" font-size="18" fill="#1f6feb" text-anchor="middle">I</text>
+
+    <!-- 交汇节点 -->
+    <circle cx="330" cy="470" r="4.6" fill="#16202e"/>
+    <circle cx="490" cy="470" r="4.6" fill="#16202e"/>
+
+    <!-- ===== 电源 E ===== -->
+    <g class="comp">
+      <rect x="244" y="138" width="72" height="64" fill="transparent"/>
+      <line class="body" x1="262" y1="152" x2="262" y2="188" stroke="#16202e" stroke-width="3"/>
+      <line class="body" x1="272" y1="160" x2="272" y2="180" stroke="#16202e" stroke-width="6"/>
+      <line class="body" x1="286" y1="152" x2="286" y2="188" stroke="#16202e" stroke-width="3"/>
+      <line class="body" x1="298" y1="160" x2="298" y2="180" stroke="#16202e" stroke-width="6"/>
+      <text x="252" y="148" font-size="13" fill="#e23b3b">+</text>
+      <text x="302" y="148" font-size="13" fill="#1f6feb">−</text>
+      <text class="math" x="280" y="146" font-size="18" fill="#16202e" text-anchor="middle">E</text>
+      <g class="tip">
+        <rect x="206" y="112" width="150" height="22" rx="4" fill="#16202e"/>
+        <text x="214" y="128" font-size="12.5" fill="#ffd9a0">电源 E：提供电压</text>
+      </g>
+    </g>
+
+    <!-- ===== 开关 S（默认断开，可点击闭合） ===== -->
+    <g class="comp">
+      <rect id="switchHit" x="420" y="138" width="112" height="58" fill="transparent" style="cursor:pointer"/>
+      <!-- 触点 -->
+      <circle class="body" cx="430" cy="170" r="4.5" fill="#eef3fa" stroke="#16202e" stroke-width="2"/>
+      <circle class="body" cx="520" cy="170" r="4.5" fill="#eef3fa" stroke="#16202e" stroke-width="2"/>
+      <!-- 铰链斜杠（识别为开关） -->
+      <line class="body" x1="426" y1="176" x2="434" y2="164" stroke="#16202e" stroke-width="2"/>
+      <!-- 闸刀：断开=翘起不碰右触点 -->
+      <line class="body knife-open" x1="430" y1="170" x2="506" y2="150" stroke="#16202e" stroke-width="3" stroke-linecap="round"/>
+      <!-- 闸刀：闭合=搭到右触点 -->
+      <line class="body knife-closed" x1="430" y1="170" x2="520" y2="170" stroke="#16202e" stroke-width="3" stroke-linecap="round"/>
+      <text class="math" x="475" y="142" font-size="18" fill="#16202e" text-anchor="middle">S</text>
+      <g class="tip">
+        <rect x="398" y="108" width="176" height="22" rx="4" fill="#16202e"/>
+        <text x="406" y="124" font-size="12.5" fill="#ffd9a0">开关 S：点击切换通 / 断</text>
+      </g>
+    </g>
+    <!-- 通电提示（闭合后隐藏） -->
+    <text class="hint mono" x="475" y="206" font-size="12" fill="#f97316" text-anchor="middle">⏻ 点击 S 通电测量</text>
+
+    <!-- ===== 电流表 A（蓝） ===== -->
+    <g class="comp">
+      <rect x="588" y="248" width="64" height="64" fill="transparent"/>
+      <circle class="body" cx="620" cy="280" r="26" fill="#eef3fa" stroke="#1f6feb" stroke-width="2.8"/>
+      <g stroke="#1f6feb" stroke-width="1.4" opacity="0.7">
+        <line x1="620" y1="258" x2="620" y2="262"/>
+        <line x1="604" y1="264" x2="607" y2="267"/>
+        <line x1="636" y1="264" x2="633" y2="267"/>
+      </g>
+      <line class="needle" x1="620" y1="280" x2="620" y2="262" stroke="#1f6feb" stroke-width="2" style="transform-origin:620px 280px"/>
+      <circle cx="620" cy="280" r="2.4" fill="#1f6feb"/>
+      <text x="620" y="296" font-size="15" font-weight="700" fill="#1f6feb" text-anchor="middle">A</text>
+      <g class="tip">
+        <rect x="470" y="266" width="138" height="22" rx="4" fill="#16202e"/>
+        <text x="478" y="282" font-size="12.5" fill="#ffd9a0">电流表 A：串联读 I</text>
+      </g>
+    </g>
+
+    <!-- ===== 待测电阻 Rₓ ===== -->
+    <g class="comp">
+      <rect x="322" y="430" width="176" height="86" fill="transparent"/>
+      <rect class="heat" x="324" y="446" width="172" height="48" rx="7" fill="none" stroke="#f97316" stroke-width="2"/>
+      <rect class="body" x="330" y="452" width="160" height="36" rx="3" fill="#eef3fa" stroke="#16202e" stroke-width="2.8"/>
+      <text class="math" x="410" y="512" font-size="21" fill="#16202e" text-anchor="middle">Rₓ</text>
+      <text x="410" y="528" font-size="11" fill="#5b6b80" text-anchor="middle">待测电阻</text>
+      <g class="tip">
+        <rect x="332" y="416" width="156" height="22" rx="4" fill="#16202e"/>
+        <text x="340" y="432" font-size="12.5" fill="#ffd9a0">Rₓ：被测对象</text>
+      </g>
+    </g>
+
+    <!-- ===== 滑动变阻器 Rₚ（限流） ===== -->
+    <g class="comp">
+      <rect x="116" y="244" width="68" height="142" fill="transparent"/>
+      <rect class="body" x="133" y="250" width="34" height="130" rx="3" fill="#eef3fa" stroke="#16202e" stroke-width="2.8"/>
+      <line class="body" x1="120" y1="388" x2="172" y2="246" stroke="#16202e" stroke-width="2" marker-end="url(#arrI)"/>
+      <text class="math" x="124" y="320" font-size="18" fill="#16202e" text-anchor="end">Rₚ</text>
+      <g class="tip">
+        <rect x="186" y="300" width="196" height="22" rx="4" fill="#16202e"/>
+        <text x="194" y="316" font-size="12.5" fill="#ffd9a0">滑动变阻器：限流，多次测 U、I</text>
+      </g>
+    </g>
+
+    <!-- ===== 电压表 V（红，并联 Rₓ） ===== -->
+    <g class="comp">
+      <rect x="378" y="543" width="64" height="64" fill="transparent"/>
+      <circle class="body" cx="410" cy="575" r="26" fill="#eef3fa" stroke="#e23b3b" stroke-width="2.8"/>
+      <g stroke="#e23b3b" stroke-width="1.4" opacity="0.7">
+        <line x1="410" y1="553" x2="410" y2="557"/>
+        <line x1="394" y1="559" x2="397" y2="562"/>
+        <line x1="426" y1="559" x2="423" y2="562"/>
+      </g>
+      <line class="needleV" x1="410" y1="575" x2="410" y2="557" stroke="#e23b3b" stroke-width="2" style="transform-origin:410px 575px"/>
+      <circle cx="410" cy="575" r="2.4" fill="#e23b3b"/>
+      <text x="410" y="591" font-size="15" font-weight="700" fill="#e23b3b" text-anchor="middle">V</text>
+      <g class="tip">
+        <rect x="312" y="612" width="196" height="22" rx="4" fill="#16202e"/>
+        <text x="320" y="628" font-size="12.5" fill="#ffd9a0">电压表 V：并联 Rₓ 两端读 U</text>
+      </g>
+    </g>
+
+    <!-- 主图接法说明 -->
+    <text x="50" y="666" font-size="13.5" fill="#16202e">
+      <tspan font-weight="700" fill="#1f6feb">本图＝电流表外接法：</tspan>
+      <tspan fill="#5b6b80">V 直接并联 Rₓ，A 测得 Rₓ 与 V 的总电流 → 测值偏小，宜测小电阻。默认断开，点击 S 通电。</tspan>
+    </text>
+  </g>
+
+  <!-- ===================== 右：接法 / 误差 / 原理 面板 ===================== -->
+  <g class="panel">
+    <rect x="706" y="120" width="384" height="540" rx="14" fill="#ffffff" fill-opacity="0.72"
+          stroke="#9fb6d4" stroke-width="1.4"/>
+    <rect x="706" y="120" width="384" height="44" rx="14" fill="#16202e"/>
+    <rect x="706" y="146" width="384" height="18" fill="#16202e"/>
+    <text class="disp" x="726" y="150" font-size="21" font-weight="800" fill="#ffffff" letter-spacing="1">两种接法 · 误差与选择</text>
+
+    <!-- ① 外接法 mini（导线已全部连续） -->
+    <g class="mini">
+      <rect class="hl" x="720" y="176" width="356" height="118" rx="9" fill="#e8f0fe"/>
+      <text x="728" y="194" font-size="14" font-weight="700" fill="#1f6feb">① 电流表外接法</text>
+      <text class="mono" x="1068" y="194" font-size="11" fill="#5b6b80" text-anchor="end">V 并 Rₓ</text>
+      <g stroke="#16202e" stroke-width="2" fill="none" stroke-linecap="round">
+        <line class="mbody" x1="740" y1="222" x2="765" y2="222"/>
+        <line class="mbody" x1="791" y1="222" x2="812" y2="222"/>
+        <line class="mbody" x1="882" y1="222" x2="912" y2="222"/>
+        <line class="mbody" x1="912" y1="222" x2="972" y2="222"/>
+        <line class="mbody" x1="812" y1="222" x2="812" y2="262"/>
+        <line class="mbody" x1="812" y1="262" x2="834" y2="262"/>
+        <line class="mbody" x1="860" y1="262" x2="912" y2="262"/>
+        <line class="mbody" x1="912" y1="262" x2="912" y2="222"/>
+      </g>
+      <circle class="mbody" cx="778" cy="222" r="13" fill="#eef3fa" stroke="#1f6feb" stroke-width="2.2"/>
+      <text x="778" y="227" font-size="12" font-weight="700" fill="#1f6feb" text-anchor="middle">A</text>
+      <rect class="mbody" x="812" y="210" width="70" height="24" rx="2" fill="#eef3fa" stroke="#16202e" stroke-width="2.2"/>
+      <text class="math" x="847" y="227" font-size="13" fill="#16202e" text-anchor="middle">Rₓ</text>
+      <circle class="mbody" cx="847" cy="262" r="13" fill="#eef3fa" stroke="#e23b3b" stroke-width="2.2"/>
+      <text x="847" y="267" font-size="12" font-weight="700" fill="#e23b3b" text-anchor="middle">V</text>
+      <circle cx="812" cy="222" r="3" fill="#16202e"/><circle cx="912" cy="222" r="3" fill="#16202e"/>
+      <text x="992" y="220" font-size="12.5" fill="#16202e"><tspan class="math" fill="#e23b3b">R测</tspan> &lt; <tspan class="math" fill="#16202e">R真</tspan></text>
+      <text x="992" y="238" font-size="11" fill="#5b6b80">电压表分流</text>
+      <text x="728" y="286" font-size="12" fill="#5b6b80">适用：<tspan class="math" fill="#16202e">Rₓ ≪ R_V</tspan>（测<tspan font-weight="700" fill="#1f6feb">小</tspan>电阻）</text>
+    </g>
+
+    <line x1="726" y1="300" x2="1070" y2="300" stroke="#9fb6d4" stroke-opacity="0.6"/>
+
+    <!-- ② 内接法 mini（导线已全部连续） -->
+    <g class="mini">
+      <rect class="hl" x="720" y="310" width="356" height="118" rx="9" fill="#fdeee9"/>
+      <text x="728" y="328" font-size="14" font-weight="700" fill="#e23b3b">② 电流表内接法</text>
+      <text class="mono" x="1068" y="328" font-size="11" fill="#5b6b80" text-anchor="end">V 并 (A+Rₓ)</text>
+      <g stroke="#16202e" stroke-width="2" fill="none" stroke-linecap="round">
+        <line class="mbody" x1="740" y1="356" x2="758" y2="356"/>
+        <line class="mbody" x1="758" y1="356" x2="772" y2="356"/>
+        <line class="mbody" x1="798" y1="356" x2="798" y2="356"/>
+        <line class="mbody" x1="868" y1="356" x2="898" y2="356"/>
+        <line class="mbody" x1="898" y1="356" x2="972" y2="356"/>
+        <line class="mbody" x1="758" y1="356" x2="758" y2="396"/>
+        <line class="mbody" x1="758" y1="396" x2="815" y2="396"/>
+        <line class="mbody" x1="841" y1="396" x2="898" y2="396"/>
+        <line class="mbody" x1="898" y1="396" x2="898" y2="356"/>
+      </g>
+      <circle class="mbody" cx="785" cy="356" r="13" fill="#eef3fa" stroke="#1f6feb" stroke-width="2.2"/>
+      <text x="785" y="361" font-size="12" font-weight="700" fill="#1f6feb" text-anchor="middle">A</text>
+      <rect class="mbody" x="798" y="344" width="70" height="24" rx="2" fill="#eef3fa" stroke="#16202e" stroke-width="2.2"/>
+      <text class="math" x="833" y="361" font-size="13" fill="#16202e" text-anchor="middle">Rₓ</text>
+      <circle class="mbody" cx="828" cy="396" r="13" fill="#eef3fa" stroke="#e23b3b" stroke-width="2.2"/>
+      <text x="828" y="401" font-size="12" font-weight="700" fill="#e23b3b" text-anchor="middle">V</text>
+      <circle cx="758" cy="356" r="3" fill="#16202e"/><circle cx="898" cy="356" r="3" fill="#16202e"/>
+      <text x="992" y="354" font-size="12.5" fill="#16202e"><tspan class="math" fill="#e23b3b">R测</tspan> &gt; <tspan class="math" fill="#16202e">R真</tspan></text>
+      <text x="992" y="372" font-size="11" fill="#5b6b80">电流表分压</text>
+      <text x="728" y="420" font-size="12" fill="#5b6b80">适用：<tspan class="math" fill="#16202e">Rₓ ≫ R_A</tspan>（测<tspan font-weight="700" fill="#e23b3b">大</tspan>电阻）</text>
+    </g>
+
+    <line x1="726" y1="434" x2="1070" y2="434" stroke="#9fb6d4" stroke-opacity="0.6"/>
+
+    <!-- 口诀框 -->
+    <rect x="726" y="446" width="344" height="62" rx="9" fill="#16202e"/>
+    <text class="disp" x="742" y="472" font-size="22" font-weight="800" fill="#ffd166" letter-spacing="2">大内偏大 · 小外偏小</text>
+    <text x="742" y="496" font-size="12" fill="#cfe0f5">临界比较：Rₓ 与 (R_A·R_V) — 大于它用内接，小于它用外接</text>
+
+    <line x1="726" y1="522" x2="1070" y2="522" stroke="#9fb6d4" stroke-opacity="0.6"/>
+
+    <!-- 测量原理 + 示例读数 -->
+    <text class="math" x="742" y="560" font-size="30" fill="#16202e">
+      Rₓ = <tspan fill="#e23b3b">U</tspan> / <tspan fill="#1f6feb">I</tspan>
+    </text>
+    <g class="mono" font-size="13">
+      <rect x="862" y="536" width="208" height="34" rx="6" fill="#eef3fa" stroke="#9fb6d4"/>
+      <text x="872" y="552" fill="#e23b3b">U = 2.40 V</text>
+      <text x="872" y="566" fill="#1f6feb">I = 0.30 A</text>
+      <text x="982" y="559" fill="#16202e" font-weight="700">→ 8.0 Ω</text>
+    </g>
+    <text x="742" y="600" font-size="12" fill="#5b6b80">调 Rₚ 取多组 (U, I)：求平均，或作 U–I 图，斜率即 Rₓ。</text>
+    <text x="742" y="620" font-size="12" fill="#5b6b80">闭合 S 前，滑片置于阻值最大处，保护电表。</text>
+    <text class="mono" x="1070" y="650" font-size="10" fill="#9fb6d4" text-anchor="end">SCALE 1:1 · SVG</text>
+  </g>
+
+  <script><![CDATA[
+    (function(){
+      var root = (document.currentScript && document.currentScript.ownerSVGElement) || document.documentElement;
+      var hit = document.getElementById('switchHit');
+      if(hit){ hit.addEventListener('click', function(){ root.classList.toggle('closed'); }); }
+    })();
+  ]]></script>
+</svg>

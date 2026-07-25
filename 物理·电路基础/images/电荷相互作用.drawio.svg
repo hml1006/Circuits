@@ -1,0 +1,222 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="661" height="371" viewBox="0 0 661 371">
+  <defs>
+    <style type="text/css">
+      text { font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+    </style>
+  </defs>
+  <diagram id="charge-interaction" name="电荷相互作用">
+    <mxGraphModel dx="0" dy="0" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <!-- 背景 -->
+        <mxCell id="bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="661" height="371" as="geometry"/>
+        </mxCell>
+        <!-- 标题 -->
+        <mxCell id="title" value="电荷间的相互作用" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="0" y="10" width="661" height="35" as="geometry"/>
+        </mxCell>
+        <!-- ====== 左侧：同种电荷相互排斥 ====== -->
+        <mxCell id="left-title" value="同种电荷相互排斥" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=14;fontStyle=0;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="0" y="55" width="330" height="25" as="geometry"/>
+        </mxCell>
+        <!-- 正电荷 + 和 + 相互排斥（上排） -->
+        <mxCell id="pos1" value="+" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FF6B6B;strokeColor=#CC0000;strokeWidth=2;fontSize=28;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="55" y="100" width="60" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="pos2" value="+" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FF6B6B;strokeColor=#CC0000;strokeWidth=2;fontSize=28;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="215" y="100" width="60" height="60" as="geometry"/>
+        </mxCell>
+        <!-- 排斥箭头（正电荷之间） -->
+        <mxCell id="arrow-pos-l" value="" style="endArrow=classic;html=1;strokeColor=#CC0000;strokeWidth=2;curved=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="pos1" target="pos2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="115" y="130" as="sourcePoint"/>
+            <mxPoint x="215" y="130" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="145" y="115"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-pos-r" value="" style="endArrow=classic;html=1;strokeColor=#CC0000;strokeWidth=2;curved=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="pos2" target="pos1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="215" y="130" as="sourcePoint"/>
+            <mxPoint x="115" y="130" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="185" y="115"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pos-repel-label" value="排斥" style="text;html=1;strokeColor=none;fillColor=#FFE0E0;align=center;verticalAlign=middle;fontSize=12;fontColor=#CC0000;rounded=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="120" y="75" width="90" height="22" as="geometry"/>
+        </mxCell>
+        <!-- 负电荷 - 和 - 相互排斥（下排） -->
+        <mxCell id="neg1" value="−" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#4DABF7;strokeColor=#1976D2;strokeWidth=2;fontSize=28;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="55" y="185" width="60" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="neg2" value="−" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#4DABF7;strokeColor=#1976D2;strokeWidth=2;fontSize=28;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="215" y="185" width="60" height="60" as="geometry"/>
+        </mxCell>
+        <!-- 排斥箭头（负电荷之间） -->
+        <mxCell id="arrow-neg-l" value="" style="endArrow=classic;html=1;strokeColor=#1976D2;strokeWidth=2;curved=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="neg1" target="neg2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="115" y="215" as="sourcePoint"/>
+            <mxPoint x="215" y="215" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="145" y="200"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-neg-r" value="" style="endArrow=classic;html=1;strokeColor=#1976D2;strokeWidth=2;curved=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="neg2" target="neg1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="215" y="215" as="sourcePoint"/>
+            <mxPoint x="115" y="215" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="185" y="200"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="neg-repel-label" value="排斥" style="text;html=1;strokeColor=none;fillColor=#D6EAF8;align=center;verticalAlign=middle;fontSize=12;fontColor=#1976D2;rounded=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="120" y="250" width="90" height="22" as="geometry"/>
+        </mxCell>
+        <!-- ====== 右侧：异种电荷相互吸引 ====== -->
+        <mxCell id="right-title" value="异种电荷相互吸引" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=14;fontStyle=0;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="331" y="55" width="330" height="25" as="geometry"/>
+        </mxCell>
+        <!-- 正 + 负 相互吸引 -->
+        <mxCell id="pos3" value="+" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FF6B6B;strokeColor=#CC0000;strokeWidth=2;fontSize=28;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="386" y="100" width="60" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="neg3" value="−" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#4DABF7;strokeColor=#1976D2;strokeWidth=2;fontSize=28;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="546" y="100" width="60" height="60" as="geometry"/>
+        </mxCell>
+        <!-- 吸引箭头（正→负） -->
+        <mxCell id="arrow-attract-l" value="" style="endArrow=classic;html=1;strokeColor=#9C27B0;strokeWidth=2;curved=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="pos3" target="neg3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="446" y="130" as="sourcePoint"/>
+            <mxPoint x="546" y="130" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="476" y="145"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-attract-r" value="" style="endArrow=classic;html=1;strokeColor=#9C27B0;strokeWidth=2;curved=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="neg3" target="pos3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="546" y="130" as="sourcePoint"/>
+            <mxPoint x="446" y="130" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="516" y="145"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="attract-label" value="吸引" style="text;html=1;strokeColor=none;fillColor=#E1BEE7;align=center;verticalAlign=middle;fontSize=12;fontColor=#7B1FA2;rounded=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="451" y="75" width="90" height="22" as="geometry"/>
+        </mxCell>
+        <!-- 负 + 正 相互吸引（下排，交换位置） -->
+        <mxCell id="neg4" value="−" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#4DABF7;strokeColor=#1976D2;strokeWidth=2;fontSize=28;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="386" y="185" width="60" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="pos4" value="+" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FF6B6B;strokeColor=#CC0000;strokeWidth=2;fontSize=28;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="546" y="185" width="60" height="60" as="geometry"/>
+        </mxCell>
+        <!-- 吸引箭头（负→正） -->
+        <mxCell id="arrow-attract2-l" value="" style="endArrow=classic;html=1;strokeColor=#9C27B0;strokeWidth=2;curved=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="neg4" target="pos4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="446" y="215" as="sourcePoint"/>
+            <mxPoint x="546" y="215" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="476" y="230"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-attract2-r" value="" style="endArrow=classic;html=1;strokeColor=#9C27B0;strokeWidth=2;curved=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="pos4" target="neg4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="546" y="215" as="sourcePoint"/>
+            <mxPoint x="446" y="215" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="516" y="230"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="attract2-label" value="吸引" style="text;html=1;strokeColor=none;fillColor=#E1BEE7;align=center;verticalAlign=middle;fontSize=12;fontColor=#7B1FA2;rounded=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="451" y="250" width="90" height="22" as="geometry"/>
+        </mxCell>
+        <!-- 分隔线 -->
+        <mxCell id="divider" value="" style="line;strokeColor=#CCCCCC;strokeWidth=1;strokeDash=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="330" y="90" width="1" height="200" as="geometry"/>
+        </mxCell>
+        <!-- 图例 -->
+        <mxCell id="legend" value="&lt;b&gt;图例：&lt;/b&gt;&lt;br&gt;● 正电荷 &amp;nbsp; ● 负电荷" style="text;html=1;strokeColor=none;fillColor=#F5F5F5;align=center;verticalAlign=middle;fontSize=11;fontColor=#666666;rounded=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="0" y="300" width="661" height="30" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <g transform="translate(0, 0)">
+    <rect x="0" y="0" width="661" height="371" fill="#FFFFFF" stroke="none"/>
+    <text x="330.5" y="35" text-anchor="middle" font-size="18" font-weight="bold" font-family="Microsoft YaHei, PingFang SC, Helvetica Neue, Helvetica, Arial, sans-serif" fill="#333333">电荷间的相互作用</text>
+    <!-- 左侧标题 -->
+    <text x="165" y="75" text-anchor="middle" font-size="14" font-family="Microsoft YaHei, PingFang SC, Helvetica Neue, Helvetica, Arial, sans-serif" fill="#333333">同种电荷相互排斥</text>
+    <!-- 正电荷 + -->
+    <ellipse cx="85" cy="130" rx="30" ry="30" fill="#FF6B6B" stroke="#CC0000" stroke-width="2"/>
+    <text x="85" y="142" text-anchor="middle" font-size="28" font-weight="bold" font-family="Microsoft YaHei, PingFang SC, Helvetica Neue, Helvetica, Arial, sans-serif" fill="#FFFFFF">+</text>
+    <ellipse cx="245" cy="130" rx="30" ry="30" fill="#FF6B6B" stroke="#CC0000" stroke-width="2"/>
+    <text x="245" y="142" text-anchor="middle" font-size="28" font-weight="bold" font-family="Microsoft YaHei, PingFang SC, Helvetica Neue, Helvetica, Arial, sans-serif" fill="#FFFFFF">+</text>
+    <!-- 排斥箭头 -->
+    <path d="M 115 130 Q 145 115 175 130" fill="none" stroke="#CC0000" stroke-width="2" marker-end="url(#mx-end-arrow-red)"/>
+    <path d="M 215 130 Q 185 115 155 130" fill="none" stroke="#CC0000" stroke-width="2" marker-end="url(#mx-end-arrow-red)"/>
+    <rect x="120" y="95" width="90" height="22" rx="4" fill="#FFE0E0" stroke="none"/>
+    <text x="165" y="110" text-anchor="middle" font-size="12" font-family="Microsoft YaHei, PingFang SC, Helvetica Neue, Helvetica, Arial, sans-serif" fill="#CC0000">排斥</text>
+    <!-- 负电荷 − -->
+    <ellipse cx="85" cy="215" rx="30" ry="30" fill="#4DABF7" stroke="#1976D2" stroke-width="2"/>
+    <text x="85" y="227" text-anchor="middle" font-size="28" font-weight="bold" font-family="Microsoft YaHei, PingFang SC, Helvetica Neue, Helvetica, Arial, sans-serif" fill="#FFFFFF">−</text>
+    <ellipse cx="245" cy="215" rx="30" ry="30" fill="#4DABF7" stroke="#1976D2" stroke-width="2"/>
+    <text x="245" y="227" text-anchor="middle" font-size="28" font-weight="bold" font-family="Microsoft YaHei, PingFang SC, Helvetica Neue, Helvetica, Arial, sans-serif" fill="#FFFFFF">−</text>
+    <!-- 排斥箭头 -->
+    <path d="M 115 215 Q 145 200 175 215" fill="none" stroke="#1976D2" stroke-width="2" marker-end="url(#mx-end-arrow-blue)"/>
+    <path d="M 215 215 Q 185 200 155 215" fill="none" stroke="#1976D2" stroke-width="2" marker-end="url(#mx-end-arrow-blue)"/>
+    <rect x="120" y="270" width="90" height="22" rx="4" fill="#D6EAF8" stroke="none"/>
+    <text x="165" y="285" text-anchor="middle" font-size="12" font-family="Microsoft YaHei, PingFang SC, Helvetica Neue, Helvetica, Arial, sans-serif" fill="#1976D2">排斥</text>
+    <!-- 右侧标题 -->
+    <text x="495" y="75" text-anchor="middle" font-size="14" font-family="Microsoft YaHei, PingFang SC, Helvetica Neue, Helvetica, Arial, sans-serif" fill="#333333">异种电荷相互吸引</text>
+    <!-- 正 + 负 吸引 -->
+    <ellipse cx="416" cy="130" rx="30" ry="30" fill="#FF6B6B" stroke="#CC0000" stroke-width="2"/>
+    <text x="416" y="142" text-anchor="middle" font-size="28" font-weight="bold" font-family="Microsoft YaHei, PingFang SC, Helvetica Neue, Helvetica, Arial, sans-serif" fill="#FFFFFF">+</text>
+    <ellipse cx="576" cy="130" rx="30" ry="30" fill="#4DABF7" stroke="#1976D2" stroke-width="2"/>
+    <text x="576" y="142" text-anchor="middle" font-size="28" font-weight="bold" font-family="Microsoft YaHei, PingFang SC, Helvetica Neue, Helvetica, Arial, sans-serif" fill="#FFFFFF">−</text>
+    <!-- 吸引箭头 -->
+    <path d="M 446 130 Q 476 145 506 130" fill="none" stroke="#9C27B0" stroke-width="2" marker-end="url(#mx-end-arrow-purple)"/>
+    <path d="M 546 130 Q 516 145 486 130" fill="none" stroke="#9C27B0" stroke-width="2" marker-end="url(#mx-end-arrow-purple)"/>
+    <rect x="451" y="95" width="90" height="22" rx="4" fill="#E1BEE7" stroke="none"/>
+    <text x="496" y="110" text-anchor="middle" font-size="12" font-family="Microsoft YaHei, PingFang SC, Helvetica Neue, Helvetica, Arial, sans-serif" fill="#7B1FA2">吸引</text>
+    <!-- 负 + 正 吸引（下排） -->
+    <ellipse cx="416" cy="215" rx="30" ry="30" fill="#4DABF7" stroke="#1976D2" stroke-width="2"/>
+    <text x="416" y="227" text-anchor="middle" font-size="28" font-weight="bold" font-family="Microsoft YaHei, PingFang SC, Helvetica Neue, Helvetica, Arial, sans-serif" fill="#FFFFFF">−</text>
+    <ellipse cx="576" cy="215" rx="30" ry="30" fill="#FF6B6B" stroke="#CC0000" stroke-width="2"/>
+    <text x="576" y="227" text-anchor="middle" font-size="28" font-weight="bold" font-family="Microsoft YaHei, PingFang SC, Helvetica Neue, Helvetica, Arial, sans-serif" fill="#FFFFFF">+</text>
+    <!-- 吸引箭头 -->
+    <path d="M 446 215 Q 476 230 506 215" fill="none" stroke="#9C27B0" stroke-width="2" marker-end="url(#mx-end-arrow-purple)"/>
+    <path d="M 546 215 Q 516 230 486 215" fill="none" stroke="#9C27B0" stroke-width="2" marker-end="url(#mx-end-arrow-purple)"/>
+    <rect x="451" y="270" width="90" height="22" rx="4" fill="#E1BEE7" stroke="none"/>
+    <text x="496" y="285" text-anchor="middle" font-size="12" font-family="Microsoft YaHei, PingFang SC, Helvetica Neue, Helvetica, Arial, sans-serif" fill="#7B1FA2">吸引</text>
+    <!-- 分隔线 -->
+    <line x1="330" y1="90" x2="330" y2="310" stroke="#CCCCCC" stroke-width="1" stroke-dasharray="4,4"/>
+    <!-- 图例 -->
+    <rect x="0" y="320" width="661" height="30" rx="4" fill="#F5F5F5" stroke="none"/>
+    <text x="330.5" y="340" text-anchor="middle" font-size="11" font-family="Microsoft YaHei, PingFang SC, Helvetica Neue, Helvetica, Arial, sans-serif" fill="#666666">
+      <tspan font-weight="bold">图例：</tspan>● 正电荷  ● 负电荷
+    </text>
+  </g>
+  <!-- 箭头标记定义 -->
+  <defs>
+    <marker id="mx-end-arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#CC0000"/>
+    </marker>
+    <marker id="mx-end-arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#1976D2"/>
+    </marker>
+    <marker id="mx-end-arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#9C27B0"/>
+    </marker>
+  </defs>
+</svg>

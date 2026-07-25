@@ -1,0 +1,316 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 760" id="root"
+     font-family="'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif">
+  <defs>
+    <pattern id="gridS" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0V28" fill="none" stroke="#c3d2e6" stroke-opacity="0.45" stroke-width="1"/>
+    </pattern>
+    <pattern id="gridL" width="140" height="140" patternUnits="userSpaceOnUse">
+      <path d="M140 0H0V140" fill="none" stroke="#9fb6d4" stroke-opacity="0.5" stroke-width="1.3"/>
+    </pattern>
+    <radialGradient id="vig" cx="38%" cy="30%" r="95%">
+      <stop offset="0%"  stop-color="#fbfdff"/>
+      <stop offset="70%" stop-color="#eef3fa"/>
+      <stop offset="100%" stop-color="#e3ebf6"/>
+    </radialGradient>
+    <linearGradient id="scanG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#38bdf8" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="flowGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.1" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrI" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+      <path d="M0 0 L6 3 L0 6 Z" fill="#1f6feb"/>
+    </marker>
+    <marker id="arrU" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+      <path d="M0 0 L5 3 L0 6 Z" fill="#e23b3b"/>
+    </marker>
+    <marker id="arrUs" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto-start-reverse">
+      <path d="M0 0 L5 3 L0 6 Z" fill="#e23b3b"/>
+    </marker>
+  </defs>
+
+  <style>
+    .disp{font-family:'Saira Condensed','Oswald','Arial Narrow','Microsoft YaHei',sans-serif;}
+    .math{font-family:'Cambria Math','Latin Modern Math','Times New Roman',Georgia,serif;font-style:italic;}
+    .mono{font-family:'Saira Condensed','Consolas','SF Mono',monospace;}
+    .wire{stroke:#16202e; stroke-width:3; fill:none; stroke-linecap:round; stroke-linejoin:round;}
+    .wireT{stroke:#16202e; stroke-width:2.4; fill:none; stroke-linecap:round;}
+
+    .flow{stroke:#38bdf8; fill:none; stroke-linecap:round; stroke-dasharray:5 12;
+          filter:url(#flowGlow); animation:flow .8s linear infinite;}
+    .flowMain{stroke-width:2.6;}
+    .flowBr{stroke-width:2.0;}
+    @keyframes flow{to{stroke-dashoffset:-17;}}
+
+    .node{fill:#16202e; animation:nodeP 1.6s ease-in-out infinite;}
+    @keyframes nodeP{0%,100%{r:3.4;opacity:.55}50%{r:5.2;opacity:1}}
+
+    .blkbg{fill:#ffffff; fill-opacity:0.0; stroke:#9fb6d4; stroke-opacity:0; stroke-width:1.4;
+           transition:fill-opacity .25s ease, stroke-opacity .25s ease;}
+    .blk{cursor:default;}
+    .blk:hover .blkbg{fill-opacity:0.55; stroke-opacity:0.5;}
+
+    .res{cursor:pointer;}
+    .res .rbox{fill:#eef3fa; stroke:#16202e; stroke-width:2.8; transition:stroke .18s ease, stroke-width .18s ease, fill .18s ease;}
+    .res:hover .rbox{stroke:#f97316; stroke-width:3.6; fill:#fff4ea;}
+    .res .rval{transition:fill .18s ease;}
+    .res:hover .rval{fill:#f97316;}
+    .res:active .rbox{fill:#ffe2cc;}
+
+    .panel{transition:stroke .3s ease;}
+    .panel:hover{stroke:#f97316;}
+
+    .scan{animation:scan 8s linear infinite;}
+    @keyframes scan{from{transform:translateY(-40px)}to{transform:translateY(760px)}}
+
+    .title{animation:fadeUp .7s ease both;}
+    .blk1{animation:fadeUp .8s .10s ease both;}
+    .blk2{animation:fadeUp .8s .22s ease both;}
+    .panelG{animation:fadeUp .85s .34s ease both;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+  </style>
+
+  <!-- 背景层 -->
+  <rect width="1120" height="760" fill="url(#vig)"/>
+  <rect width="1120" height="760" fill="url(#gridS)"/>
+  <rect width="1120" height="760" fill="url(#gridL)"/>
+  <text class="math" x="350" y="470" font-size="360" fill="#16202e" fill-opacity="0.03" text-anchor="middle">Ω</text>
+  <rect class="scan" x="0" y="0" width="1120" height="40" fill="url(#scanG)"/>
+
+  <!-- 左缘刻度尺 -->
+  <g stroke="#9fb6d4" stroke-opacity="0.7">
+    <line x1="20" y1="120" x2="20" y2="720" stroke-width="1.4"/>
+    <g stroke-width="1">
+      <line x1="20" y1="140" x2="28" y2="140"/><line x1="20" y1="180" x2="26" y2="180"/>
+      <line x1="20" y1="220" x2="26" y2="220"/><line x1="20" y1="260" x2="30" y2="260"/>
+      <line x1="20" y1="300" x2="26" y2="300"/><line x1="20" y1="340" x2="26" y2="340"/>
+      <line x1="20" y1="380" x2="30" y2="380"/><line x1="20" y1="420" x2="26" y2="420"/>
+      <line x1="20" y1="460" x2="26" y2="460"/><line x1="20" y1="500" x2="30" y2="500"/>
+      <line x1="20" y1="540" x2="26" y2="540"/><line x1="20" y1="580" x2="26" y2="580"/>
+      <line x1="20" y1="620" x2="30" y2="620"/><line x1="20" y1="660" x2="26" y2="660"/>
+      <line x1="20" y1="700" x2="26" y2="700"/>
+    </g>
+  </g>
+
+  <!-- 标题 -->
+  <g class="title">
+    <text class="disp" x="48" y="60" font-size="44" font-weight="800" fill="#16202e" letter-spacing="1">电阻的串联与并联</text>
+    <text x="50" y="88" font-size="15" fill="#5b6b80">串联首尾相接 · 电流一条路；并联并排跨接 · 电流分头走 — 点击电阻换值，看等效电阻如何变</text>
+    <text class="disp" x="50" y="108" font-size="12" fill="#1f6feb" letter-spacing="4" opacity="0.85">FIG.03 · SERIES &amp; PARALLEL</text>
+    <line x1="50" y1="120" x2="690" y2="120" stroke="#16202e" stroke-opacity="0.18" stroke-width="1.4"/>
+  </g>
+
+  <!-- ===================== 串联块 ===================== -->
+  <g class="blk blk1">
+    <rect class="blkbg" x="40" y="138" width="650" height="232" rx="12"/>
+    <text class="disp" x="58" y="170" font-size="26" font-weight="800" fill="#16202e">串联 <tspan fill="#1f6feb" font-size="15" letter-spacing="2">SERIES</tspan></text>
+    <text x="58" y="190" font-size="12.5" fill="#5b6b80">电流处处相等 I；总电压 = 各段电压之和</text>
+
+    <!-- 导线（端口对齐） -->
+    <path class="wire" d="M120 230 H340 M374 230 H600 M600 230 V330 M600 330 H510 M430 330 H290 M210 330 H120 M120 330 V230"/>
+    <!-- 电流跑动（顺时针） -->
+    <path class="flow flowMain" d="M120 230 H340 M374 230 H600 M600 230 V330 M600 330 H510 M430 330 H290 M210 330 H120 M120 330 V230"/>
+
+    <!-- 电源 E（顶边） -->
+    <line class="wire" x1="340" y1="212" x2="340" y2="248"/>
+    <line x1="350" y1="220" x2="350" y2="240" stroke="#16202e" stroke-width="6" stroke-linecap="round"/>
+    <line class="wire" x1="364" y1="212" x2="364" y2="248"/>
+    <line x1="374" y1="220" x2="374" y2="240" stroke="#16202e" stroke-width="6" stroke-linecap="round"/>
+    <text x="330" y="208" font-size="13" fill="#e23b3b">+</text>
+    <text x="378" y="208" font-size="13" fill="#1f6feb">−</text>
+    <text class="math" x="357" y="206" font-size="17" fill="#16202e" text-anchor="middle">E</text>
+
+    <!-- 电流标记 -->
+    <polygon points="470,225 482,230 470,235" fill="#1f6feb"/>
+    <text class="math" x="476" y="219" font-size="17" fill="#1f6feb" text-anchor="middle">I</text>
+    <text x="498" y="223" font-size="11" fill="#1f6feb">处处相等</text>
+
+    <!-- R1（底边左） -->
+    <g class="res" data-key="seqR1">
+      <rect class="rbox" x="210" y="316" width="80" height="28" rx="3"/>
+      <text class="math" x="250" y="335" font-size="15" fill="#16202e" text-anchor="middle">R₁</text>
+    </g>
+    <text class="mono rval" id="seqR1" x="250" y="362" font-size="13" fill="#16202e" text-anchor="middle" style="cursor:pointer">2 Ω</text>
+
+    <!-- R2（底边右） -->
+    <g class="res" data-key="seqR2">
+      <rect class="rbox" x="430" y="316" width="80" height="28" rx="3"/>
+      <text class="math" x="470" y="335" font-size="15" fill="#16202e" text-anchor="middle">R₂</text>
+    </g>
+    <text class="mono rval" id="seqR2" x="470" y="362" font-size="13" fill="#16202e" text-anchor="middle" style="cursor:pointer">2 Ω</text>
+
+    <!-- 电压标注 U1 / U2 / U -->
+    <g stroke="#e23b3b" stroke-width="1.4" fill="none">
+      <line x1="210" y1="300" x2="290" y2="300" marker-start="url(#arrUs)" marker-end="url(#arrU)"/>
+      <line x1="430" y1="300" x2="510" y2="300" marker-start="url(#arrUs)" marker-end="url(#arrU)"/>
+      <line x1="210" y1="282" x2="510" y2="282" marker-start="url(#arrUs)" marker-end="url(#arrU)"/>
+    </g>
+    <text class="math" x="250" y="296" font-size="13" fill="#e23b3b" text-anchor="middle">U₁</text>
+    <text class="math" x="470" y="296" font-size="13" fill="#e23b3b" text-anchor="middle">U₂</text>
+    <text class="math" x="360" y="278" font-size="13" fill="#e23b3b" text-anchor="middle">U = U₁ + U₂</text>
+  </g>
+
+  <!-- ===================== 并联块 ===================== -->
+  <g class="blk blk2">
+    <rect class="blkbg" x="40" y="392" width="650" height="300" rx="12"/>
+    <text class="disp" x="58" y="424" font-size="26" font-weight="800" fill="#16202e">并联 <tspan fill="#e23b3b" font-size="15" letter-spacing="2">PARALLEL</tspan></text>
+    <text x="58" y="444" font-size="12.5" fill="#5b6b80">各支路电压相等 U；干路电流 = 各支路电流之和</text>
+
+    <!-- 外框干路导线 -->
+    <path class="wire" d="M120 470 H540 M540 470 V490 M540 570 V650 M540 650 H120 M120 650 V560 M120 520 V470"/>
+    <!-- 汇流排到支路1顶/底 -->
+    <path class="wire" d="M420 470 V490 M420 570 V650"/>
+    <!-- 支路2顶/底（540 已在外框画到 490/570，补节点即可） -->
+
+    <!-- 电源 E（左竖干路） -->
+    <line x1="102" y1="520" x2="138" y2="520" stroke="#16202e" stroke-width="3" stroke-linecap="round"/>
+    <line x1="110" y1="530" x2="130" y2="530" stroke="#16202e" stroke-width="6" stroke-linecap="round"/>
+    <line x1="102" y1="544" x2="138" y2="544" stroke="#16202e" stroke-width="3" stroke-linecap="round"/>
+    <line x1="110" y1="554" x2="130" y2="554" stroke="#16202e" stroke-width="6" stroke-linecap="round"/>
+    <text x="86" y="524" font-size="13" fill="#e23b3b">+</text>
+    <text x="86" y="558" font-size="13" fill="#1f6feb">−</text>
+    <text class="math" x="80" y="540" font-size="17" fill="#16202e" text-anchor="middle">E</text>
+
+    <!-- 干路电流跑动（粗） -->
+    <path class="flow flowMain" d="M120 520 V470 H540 M540 650 H120 V560"/>
+    <!-- 支路电流跑动（细） -->
+    <path class="flow flowBr" d="M420 470 V490 M420 570 V650"/>
+    <path class="flow flowBr" d="M540 470 V490 M540 570 V650"/>
+
+    <!-- 分叉/汇合节点脉冲 -->
+    <circle class="node" cx="420" cy="470" r="4"/>
+    <circle class="node" cx="540" cy="470" r="4"/>
+    <circle class="node" cx="420" cy="650" r="4"/>
+    <circle class="node" cx="540" cy="650" r="4"/>
+
+    <!-- R1（支路1 竖直） -->
+    <g class="res" data-key="parR1">
+      <rect class="rbox" x="406" y="490" width="28" height="80" rx="3"/>
+      <text class="math" x="420" y="535" font-size="14" fill="#16202e" text-anchor="middle">R₁</text>
+    </g>
+    <text class="mono rval" id="parR1" x="372" y="535" font-size="13" fill="#16202e" text-anchor="end" style="cursor:pointer">2 Ω</text>
+
+    <!-- R2（支路2 竖直） -->
+    <g class="res" data-key="parR2">
+      <rect class="rbox" x="526" y="490" width="28" height="80" rx="3"/>
+      <text class="math" x="540" y="535" font-size="14" fill="#16202e" text-anchor="middle">R₂</text>
+    </g>
+    <text class="mono rval" id="parR2" x="582" y="535" font-size="13" fill="#16202e" text-anchor="start" style="cursor:pointer">2 Ω</text>
+
+    <!-- 电流标注 I / I1 / I2 -->
+    <polygon points="250,465 262,470 250,475" fill="#1f6feb"/>
+    <text class="math" x="256" y="459" font-size="16" fill="#1f6feb" text-anchor="middle">I</text>
+    <polygon points="415,482 420,494 425,482" fill="#1f6feb"/>
+    <text class="math" x="438" y="486" font-size="14" fill="#1f6feb">I₁</text>
+    <polygon points="535,482 540,494 545,482" fill="#1f6feb"/>
+    <text class="math" x="558" y="486" font-size="14" fill="#1f6feb">I₂</text>
+    <text class="math" x="300" y="690" font-size="14" fill="#1f6feb" text-anchor="middle">I = I₁ + I₂</text>
+
+    <!-- 电压相等标注 -->
+    <g stroke="#e23b3b" stroke-width="1.4" fill="none">
+      <line x1="392" y1="470" x2="392" y2="650" marker-start="url(#arrUs)" marker-end="url(#arrU)"/>
+    </g>
+    <text class="math" x="386" y="565" font-size="13" fill="#e23b3b" text-anchor="end">U 相等</text>
+  </g>
+
+  <!-- ===================== 右：对照面板 ===================== -->
+  <g class="panelG">
+    <rect class="panel" x="712" y="138" width="388" height="554" rx="14" fill="#ffffff" fill-opacity="0.74" stroke="#9fb6d4" stroke-width="1.4"/>
+    <rect x="712" y="138" width="388" height="46" rx="14" fill="#16202e"/>
+    <rect x="712" y="164" width="388" height="20" fill="#16202e"/>
+    <text class="disp" x="732" y="168" font-size="21" font-weight="800" fill="#ffffff" letter-spacing="1">串 vs 并 · 规律对照</text>
+
+    <!-- 等效电阻公式（实时） -->
+    <text x="732" y="212" font-size="13" font-weight="700" fill="#1f6feb">串联等效</text>
+    <text class="math" x="732" y="236" font-size="22" fill="#16202e">R = R₁ + R₂ = <tspan id="seqReq" fill="#f97316" font-weight="700">4 Ω</tspan></text>
+    <text class="mono" x="732" y="256" font-size="12" fill="#5b6b80">分压 <tspan id="seqRatio" fill="#e23b3b">U1:U2 = 2:2</tspan>  （电压按阻值正比分）</text>
+
+    <text x="732" y="286" font-size="13" font-weight="700" fill="#e23b3b">并联等效</text>
+    <text class="math" x="732" y="310" font-size="20" fill="#16202e">1/R = 1/R₁ + 1/R₂  →  R = <tspan id="parReq" fill="#f97316" font-weight="700">1.0 Ω</tspan></text>
+    <text class="mono" x="732" y="330" font-size="12" fill="#5b6b80">分流 <tspan id="parRatio" fill="#1f6feb">I1:I2 = 2:2</tspan>  （电流按阻值反比分）</text>
+
+    <line x1="732" y1="346" x2="1080" y2="346" stroke="#9fb6d4" stroke-opacity="0.6"/>
+
+    <!-- 对比表 -->
+    <g font-size="12.5">
+      <rect x="732" y="358" width="348" height="26" rx="4" fill="#16202e"/>
+      <text class="disp" x="744" y="376" font-size="12" font-weight="700" fill="#cfe0f5" letter-spacing="1">比较项</text>
+      <text class="disp" x="866" y="376" font-size="12" font-weight="700" fill="#7fb2ff" letter-spacing="1">串联</text>
+      <text class="disp" x="986" y="376" font-size="12" font-weight="700" fill="#ff9a9a" letter-spacing="1">并联</text>
+
+      <rect x="732" y="384" width="348" height="26" fill="#eef3fa"/>
+      <text x="744" y="402" fill="#16202e" font-weight="700">电流</text>
+      <text class="math" x="866" y="402" fill="#16202e">I 处处相等</text>
+      <text class="math" x="986" y="402" fill="#16202e">I = Σ Iₙ</text>
+
+      <text x="744" y="428" fill="#16202e" font-weight="700">电压</text>
+      <text class="math" x="866" y="428" fill="#16202e">U = Σ Uₙ</text>
+      <text class="math" x="986" y="428" fill="#16202e">U 各支路相等</text>
+
+      <rect x="732" y="436" width="348" height="26" fill="#eef3fa"/>
+      <text x="744" y="454" fill="#16202e" font-weight="700">总电阻</text>
+      <text class="math" x="866" y="454" fill="#16202e">越串越大</text>
+      <text class="math" x="986" y="454" fill="#16202e">越并越小</text>
+
+      <text x="744" y="480" fill="#16202e" font-weight="700">断一路</text>
+      <text x="866" y="480" fill="#16202e">全断（互相影响）</text>
+      <text x="986" y="480" fill="#16202e">其余照通（独立）</text>
+    </g>
+
+    <line x1="732" y1="498" x2="1080" y2="498" stroke="#9fb6d4" stroke-opacity="0.6"/>
+
+    <!-- 生活类比 -->
+    <text class="disp" x="732" y="522" font-size="14" font-weight="800" fill="#16202e" letter-spacing="1">生活类比</text>
+    <g font-size="12.5" fill="#5b6b80">
+      <circle cx="742" cy="542" r="3.5" fill="#1f6feb"/>
+      <text x="754" y="546"><tspan fill="#16202e" font-weight="700">串联</tspan> ＝ 单行道连过两道收费站，车流相同，一处封路全停。</text>
+      <circle cx="742" cy="568" r="3.5" fill="#e23b3b"/>
+      <text x="754" y="572"><tspan fill="#16202e" font-weight="700">并联</tspan> ＝ 多车道高速，车速(电压)相同，一车道堵其余仍通。</text>
+    </g>
+
+    <line x1="732" y1="590" x2="1080" y2="590" stroke="#9fb6d4" stroke-opacity="0.6"/>
+
+    <!-- 特例 + 提示 -->
+    <text class="math" x="732" y="616" font-size="14" fill="#16202e">n 个相同 R 并联：R并 = R / n</text>
+    <text class="math" x="732" y="640" font-size="14" fill="#16202e">混联：先并后串，逐段化简</text>
+    <rect x="732" y="654" width="348" height="26" rx="6" fill="#16202e"/>
+    <text class="mono" x="744" y="672" font-size="12" fill="#ffd166">⊹ 点击左图任一电阻，在 2/4/6/8/10 Ω 间换值</text>
+  </g>
+
+  <script><![CDATA[
+    (function(){
+      var root = (document.currentScript && document.currentScript.ownerSVGElement) || document.documentElement;
+      var vals = [2,4,6,8,10];
+      var state = {seqR1:0, seqR2:0, parR1:0, parR2:0};
+      function $(id){ return root.ownerDocument.getElementById(id); }
+      function v(k){ return vals[state[k]]; }
+      function recompute(){
+        var a,b,r;
+        a=v('seqR1'); b=v('seqR2');
+        $('seqReq').textContent = (a+b)+' Ω';
+        $('seqRatio').textContent = 'U1:U2 = '+a+':'+b;
+        a=v('parR1'); b=v('parR2');
+        r = (a*b)/(a+b);
+        $('parReq').textContent = (Math.round(r*10)/10)+' Ω';
+        $('parRatio').textContent = 'I1:I2 = '+b+':'+a;
+      }
+      var nodes = root.querySelectorAll('.res');
+      for(var i=0;i<nodes.length;i++){
+        (function(g){
+          var key = g.getAttribute('data-key');
+          function bump(){
+            state[key] = (state[key]+1) % vals.length;
+            var t = $(key); if(t) t.textContent = v(key)+' Ω';
+            recompute();
+          }
+          g.addEventListener('click', bump);
+          var t = $(key); if(t) t.addEventListener('click', bump);
+        })(nodes[i]);
+      }
+      recompute();
+    })();
+  ]]></script>
+</svg>

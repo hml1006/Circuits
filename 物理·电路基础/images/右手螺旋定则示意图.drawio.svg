@@ -1,0 +1,352 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 840" id="root"
+     font-family="'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif">
+  <defs>
+    <pattern id="gridS" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0V28" fill="none" stroke="#c3d2e6" stroke-opacity="0.45" stroke-width="1"/>
+    </pattern>
+    <pattern id="gridL" width="140" height="140" patternUnits="userSpaceOnUse">
+      <path d="M140 0H0V140" fill="none" stroke="#9fb6d4" stroke-opacity="0.5" stroke-width="1.3"/>
+    </pattern>
+    <radialGradient id="vig" cx="36%" cy="28%" r="96%">
+      <stop offset="0%"  stop-color="#fbfdff"/>
+      <stop offset="70%" stop-color="#eef3fa"/>
+      <stop offset="100%" stop-color="#e3ebf6"/>
+    </radialGradient>
+    <linearGradient id="scanG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#38bdf8" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.13"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="flowGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.0" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3.2" flood-color="#f97316" flood-opacity="0.9"/>
+    </filter>
+    <!-- 方向箭头：orient=auto，朝向=路径绘制方向 -->
+    <marker id="arrB" markerWidth="9" markerHeight="9" refX="6.5" refY="4" orient="auto">
+      <path d="M0 0 L7 4 L0 8 Z" fill="#f59e0b"/>
+    </marker>
+    <marker id="arrI" markerWidth="9" markerHeight="9" refX="6.5" refY="4" orient="auto">
+      <path d="M0 0 L7 4 L0 8 Z" fill="#1f6feb"/>
+    </marker>
+    <marker id="arrIsoft" markerWidth="8" markerHeight="8" refX="6" refY="3.5" orient="auto">
+      <path d="M0 0 L6 3.5 L0 7 Z" fill="#1f6feb" fill-opacity="0.55"/>
+    </marker>
+    <marker id="arrN" markerWidth="9" markerHeight="9" refX="6.5" refY="4" orient="auto">
+      <path d="M0 0 L7 4 L0 8 Z" fill="#e23b3b"/>
+    </marker>
+  </defs>
+
+  <style>
+    .disp{font-family:'Saira Condensed','Oswald','Arial Narrow','Microsoft YaHei',sans-serif;}
+    .math{font-family:'Cambria Math','Latin Modern Math','Times New Roman',Georgia,serif;font-style:italic;}
+    .mono{font-family:'Saira Condensed','Consolas','SF Mono',monospace;}
+    .wire{stroke:#16202e; stroke-width:3.4; fill:none; stroke-linecap:round;}
+    .hand{fill:#dfe7f1; stroke:#16202e; stroke-width:2.6; stroke-linejoin:round;}
+    .face{stroke:#dfe7f1; stroke-width:15; fill:none; stroke-linecap:round;}
+    .edge{stroke:#16202e; stroke-width:22; fill:none; stroke-linecap:round;}
+    .nail{stroke:#9fb6d4; stroke-width:1.6; fill:none;}
+
+    .flowI{stroke:#1f6feb; fill:none; stroke-linecap:round; stroke-dasharray:5 12;
+           filter:url(#flowGlow); animation:flow .8s linear infinite;}
+    .flowRing{stroke:#f59e0b; fill:none; stroke-width:2.4; stroke-linecap:round;
+              stroke-dasharray:6 10; animation:flow 1.1s linear infinite;}
+    .flowExt{stroke:#f59e0b; fill:none; stroke-width:2.4; stroke-linecap:round;
+             stroke-dasharray:6 11; animation:flow 1.3s linear infinite;}
+    @keyframes flow{to{stroke-dashoffset:-16;}}
+
+    .ringPulse{animation:rp 2.6s ease-in-out infinite;}
+    @keyframes rp{0%,100%{opacity:.30}50%{opacity:.75}}
+
+    .comp{cursor:pointer;}
+    .tip{opacity:0; transition:opacity .22s ease; pointer-events:none;}
+    .comp:hover .tip{opacity:1;}
+
+    .blkbg{fill:#ffffff; fill-opacity:0; stroke:#9fb6d4; stroke-opacity:0; stroke-width:1.4;
+           transition:fill-opacity .25s ease, stroke-opacity .25s ease;}
+    .blk{cursor:default;}
+    .blk:hover .blkbg{fill-opacity:0.5; stroke-opacity:0.45;}
+
+    #thumbL.on, #thumbR.on{fill:#fff4ea; stroke:#f97316; stroke-width:3.4; filter:url(#glow);}
+    #fingersL.on .face, #fingersR.on .face{stroke:#f97316; filter:url(#glow);}
+    #fingersL.on .edge, #fingersR.on .edge{stroke:#c2410c;}
+    .handHit{cursor:pointer;}
+
+    .scan{animation:scan 8.5s linear infinite;}
+    @keyframes scan{from{transform:translateY(-40px)}to{transform:translateY(840px)}}
+
+    .title{animation:fadeUp .7s ease both;}
+    .blkL{animation:fadeUp .8s .10s ease both;}
+    .blkR{animation:fadeUp .8s .22s ease both;}
+    .panelG{animation:fadeUp .85s .34s ease both;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+  </style>
+
+  <!-- 背景层 -->
+  <rect width="1180" height="840" fill="url(#vig)"/>
+  <rect width="1180" height="840" fill="url(#gridS)"/>
+  <rect width="1180" height="840" fill="url(#gridL)"/>
+  <!-- 螺旋水印（呼应“螺旋”定则） -->
+  <path d="M300 345 A8 8 0 0 1 316 345 A18 18 0 0 1 280 345 A30 30 0 0 1 340 345
+           A44 44 0 0 1 252 345 A60 60 0 0 1 372 345 A78 78 0 0 1 216 345
+           A98 98 0 0 1 412 345 A120 120 0 0 1 172 345 A144 144 0 0 1 460 345"
+        fill="none" stroke="#f59e0b" stroke-opacity="0.07" stroke-width="2.4"/>
+  <rect class="scan" x="0" y="0" width="1180" height="40" fill="url(#scanG)"/>
+
+  <!-- 左缘刻度尺 -->
+  <g stroke="#9fb6d4" stroke-opacity="0.7">
+    <line x1="20" y1="120" x2="20" y2="800" stroke-width="1.4"/>
+    <g stroke-width="1">
+      <line x1="20" y1="140" x2="28" y2="140"/><line x1="20" y1="180" x2="26" y2="180"/>
+      <line x1="20" y1="220" x2="26" y2="220"/><line x1="20" y1="260" x2="30" y2="260"/>
+      <line x1="20" y1="300" x2="26" y2="300"/><line x1="20" y1="340" x2="26" y2="340"/>
+      <line x1="20" y1="380" x2="30" y2="380"/><line x1="20" y1="420" x2="26" y2="420"/>
+      <line x1="20" y1="460" x2="26" y2="460"/><line x1="20" y1="500" x2="30" y2="500"/>
+      <line x1="20" y1="540" x2="26" y2="540"/><line x1="20" y1="580" x2="26" y2="580"/>
+      <line x1="20" y1="620" x2="30" y2="620"/><line x1="20" y1="660" x2="26" y2="660"/>
+      <line x1="20" y1="700" x2="26" y2="700"/><line x1="20" y1="740" x2="30" y2="740"/>
+      <line x1="20" y1="780" x2="26" y2="780"/>
+    </g>
+  </g>
+
+  <!-- 标题 -->
+  <g class="title">
+    <text class="disp" x="48" y="60" font-size="44" font-weight="800" fill="#16202e" letter-spacing="1">右手螺旋定则</text>
+    <text x="50" y="88" font-size="15" fill="#5b6b80">安培定则 — 用右手把“电流方向”与“磁场方向”握成一对：拇指与四指，各管一头</text>
+    <text class="disp" x="50" y="108" font-size="12" fill="#1f6feb" letter-spacing="4" opacity="0.85">FIG.04 · RIGHT-HAND GRIP / SCREW RULE</text>
+    <line x1="50" y1="120" x2="700" y2="120" stroke="#16202e" stroke-opacity="0.18" stroke-width="1.4"/>
+  </g>
+
+  <!-- ===================== 左：通电直导线 ===================== -->
+  <g class="blk blkL">
+    <rect class="blkbg" x="40" y="138" width="580" height="430" rx="12"/>
+    <text class="disp" x="58" y="172" font-size="25" font-weight="800" fill="#16202e">通电直导线 <tspan fill="#1f6feb" font-size="14" letter-spacing="2">STRAIGHT WIRE</tspan></text>
+    <text x="58" y="192" font-size="12.5" fill="#5b6b80">拇指 ＝ 电流 I ；四指弯曲 ＝ 磁感线 B 的环绕方向</text>
+
+    <!-- 磁感线环（4 段弧 + 方向箭头 + 流动；内环静态） -->
+    <g>
+      <ellipse class="ringPulse" cx="300" cy="345" rx="60" ry="22" fill="none" stroke="#f59e0b" stroke-width="2" opacity="0.45"/>
+      <!-- 中环 -->
+      <g class="ringPulse">
+        <path class="flowRing" d="M400 345 A100 36 0 0 0 300 309" marker-end="url(#arrB)"/>
+        <path class="flowRing" d="M300 309 A100 36 0 0 0 200 345" marker-end="url(#arrB)"/>
+        <path class="flowRing" d="M200 345 A100 36 0 0 0 300 381" marker-end="url(#arrB)"/>
+        <path class="flowRing" d="M300 381 A100 36 0 0 0 400 345" marker-end="url(#arrB)"/>
+      </g>
+      <!-- 外环 -->
+      <g class="ringPulse" style="animation-delay:.5s">
+        <path class="flowRing" d="M440 345 A140 50 0 0 0 300 295" marker-end="url(#arrB)"/>
+        <path class="flowRing" d="M300 295 A140 50 0 0 0 160 345" marker-end="url(#arrB)"/>
+        <path class="flowRing" d="M160 345 A140 50 0 0 0 300 395" marker-end="url(#arrB)"/>
+        <path class="flowRing" d="M300 395 A140 50 0 0 0 440 345" marker-end="url(#arrB)"/>
+      </g>
+    </g>
+    <text class="math" x="452" y="332" font-size="16" fill="#f59e0b">B</text>
+
+    <!-- 导线 + 电流 -->
+    <g class="comp">
+      <line class="wire" x1="300" y1="520" x2="300" y2="172"/>
+      <line class="flowI" x1="300" y1="520" x2="300" y2="172" stroke-width="2.6"/>
+      <path d="M300 184 L300 168" stroke="#1f6feb" stroke-width="3" marker-end="url(#arrI)"/>
+      <text class="math" x="316" y="178" font-size="18" fill="#1f6feb">I</text>
+      <g class="tip">
+        <rect x="330" y="232" width="172" height="22" rx="4" fill="#16202e"/>
+        <text x="338" y="248" font-size="12.5" fill="#ffd9a0">导线：电流 I 向上（蓝箭头）</text>
+      </g>
+    </g>
+
+    <!-- 右手（竖握：拇指向上，四指在导线前方向右扣握） -->
+    <g id="handL" class="handHit">
+      <rect x="170" y="150" width="240" height="280" fill="transparent"/>
+      <!-- 手掌 -->
+      <rect class="hand" x="196" y="300" width="96" height="104" rx="24"/>
+      <!-- 拇指（向上 = I） -->
+      <rect id="thumbL" class="hand" x="236" y="176" width="30" height="132" rx="15"/>
+      <path class="nail" d="M244 184 q7 -4 14 0"/>
+      <!-- 四指（两层 stroke：墨底 + 冷灰面，跨导线向右扣握） -->
+      <g id="fingersL">
+        <path class="edge" d="M288 312 Q330 304 372 316"/>
+        <path class="edge" d="M288 338 Q330 330 372 342"/>
+        <path class="edge" d="M288 364 Q330 356 372 368"/>
+        <path class="edge" d="M288 390 Q330 382 372 394"/>
+        <path class="face" d="M288 312 Q330 304 372 316"/>
+        <path class="face" d="M288 338 Q330 330 372 342"/>
+        <path class="face" d="M288 364 Q330 356 372 368"/>
+        <path class="face" d="M288 390 Q330 382 372 394"/>
+      </g>
+      <path class="nail" d="M366 311 q6 5 0 10"/>
+      <path class="nail" d="M366 337 q6 5 0 10"/>
+      <path class="nail" d="M366 363 q6 5 0 10"/>
+      <path class="nail" d="M366 389 q6 5 0 10"/>
+      <g class="tip">
+        <rect x="150" y="430" width="220" height="22" rx="4" fill="#16202e"/>
+        <text x="158" y="446" font-size="12.5" fill="#ffd9a0">点击手：循环高亮 拇指 / 四指</text>
+      </g>
+    </g>
+    <!-- 拇指/四指 含义（点击切换） -->
+    <text id="tipL" x="300" y="498" font-size="13.5" fill="#16202e" text-anchor="middle" font-weight="700">
+      点击手掌 → 看拇指、四指各代表什么
+    </text>
+    <text x="300" y="516" font-size="11.5" fill="#5b6b80" text-anchor="middle">拇指与电流同向，四指环绕方向即磁感线方向</text>
+  </g>
+
+  <!-- ===================== 右上：通电螺线管 ===================== -->
+  <g class="blk blkR">
+    <rect class="blkbg" x="640" y="138" width="510" height="300" rx="12"/>
+    <text class="disp" x="658" y="172" font-size="25" font-weight="800" fill="#16202e">通电螺线管 <tspan fill="#e23b3b" font-size="14" letter-spacing="2">SOLENOID</tspan></text>
+    <text x="658" y="192" font-size="12.5" fill="#5b6b80">四指 ＝ 线圈电流 I ；拇指 ＝ 管内磁场 B / N 极</text>
+
+    <!-- 外部磁感线（N 出 S 进） -->
+    <path class="flowExt" d="M1012 268 C 1012 168 722 168 722 268" marker-end="url(#arrB)"/>
+    <path class="flowExt" d="M1012 292 C 1012 394 722 394 722 292" marker-end="url(#arrB)" style="animation-delay:.4s"/>
+
+    <!-- 管包络 + 线圈环 -->
+    <rect x="722" y="244" width="286" height="72" rx="34" fill="#eef3fa" stroke="#16202e" stroke-width="1.4"/>
+    <g fill="none" stroke="#16202e" stroke-width="1.8">
+      <ellipse cx="750" cy="280" rx="13" ry="42"/>
+      <ellipse cx="810" cy="280" rx="13" ry="42"/>
+      <ellipse cx="870" cy="280" rx="13" ry="42"/>
+      <ellipse cx="930" cy="280" rx="13" ry="42"/>
+      <ellipse cx="990" cy="280" rx="13" ry="42"/>
+    </g>
+    <!-- 后侧电流（顶，向上，淡） -->
+    <g stroke="#1f6feb" stroke-width="2" opacity="0.5">
+      <path d="M750 272 L750 250" marker-end="url(#arrIsoft)"/>
+      <path d="M810 272 L810 250" marker-end="url(#arrIsoft)"/>
+      <path d="M870 272 L870 250" marker-end="url(#arrIsoft)"/>
+      <path d="M930 272 L930 250" marker-end="url(#arrIsoft)"/>
+      <path d="M990 272 L990 250" marker-end="url(#arrIsoft)"/>
+    </g>
+    <!-- 前侧电流（底，向下，实） -->
+    <g stroke="#1f6feb" stroke-width="2.4">
+      <path d="M750 288 L750 312" marker-end="url(#arrI)"/>
+      <path d="M810 288 L810 312" marker-end="url(#arrI)"/>
+      <path d="M870 288 L870 312" marker-end="url(#arrI)"/>
+      <path d="M930 288 L930 312" marker-end="url(#arrI)"/>
+      <path d="M990 288 L990 312" marker-end="url(#arrI)"/>
+    </g>
+    <!-- 管内磁场 B（向右 = 拇指 = N） -->
+    <path d="M742 280 L996 280" stroke="#f59e0b" stroke-width="3.4" marker-end="url(#arrB)"/>
+    <text class="math" x="858" y="274" font-size="16" fill="#f59e0b" text-anchor="middle">B</text>
+    <!-- N / S 极 -->
+    <text class="disp" x="1034" y="288" font-size="26" font-weight="800" fill="#e23b3b">N</text>
+    <text class="disp" x="690" y="288" font-size="26" font-weight="800" fill="#059669" text-anchor="end">S</text>
+
+    <!-- 右手（横握：四指在管前向下，拇指向右 = N） -->
+    <g id="handR" class="handHit">
+      <rect x="800" y="186" width="250" height="150" fill="transparent"/>
+      <!-- 手掌（管上方） -->
+      <rect class="hand" x="820" y="196" width="110" height="60" rx="20"/>
+      <!-- 拇指（向右 = N） -->
+      <rect id="thumbR" class="hand" x="922" y="200" width="92" height="26" rx="13"/>
+      <path class="nail" d="M1004 207 q5 6 0 12"/>
+      <!-- 四指（向下扣握 = 前侧电流向下） -->
+      <g id="fingersR">
+        <path class="edge" d="M842 252 Q836 285 844 322"/>
+        <path class="edge" d="M868 252 Q862 285 870 322"/>
+        <path class="edge" d="M894 252 Q888 285 896 322"/>
+        <path class="edge" d="M920 252 Q914 285 922 322"/>
+        <path class="face" d="M842 252 Q836 285 844 322"/>
+        <path class="face" d="M868 252 Q862 285 870 322"/>
+        <path class="face" d="M894 252 Q888 285 896 322"/>
+        <path class="face" d="M920 252 Q914 285 922 322"/>
+      </g>
+      <path class="nail" d="M838 314 q6 4 12 0"/>
+      <path class="nail" d="M864 314 q6 4 12 0"/>
+      <path class="nail" d="M890 314 q6 4 12 0"/>
+      <path class="nail" d="M916 314 q6 4 12 0"/>
+      <g class="tip">
+        <rect x="800" y="344" width="220" height="22" rx="4" fill="#16202e"/>
+        <text x="808" y="360" font-size="12.5" fill="#ffd9a0">点击手：循环高亮 拇指 / 四指</text>
+      </g>
+    </g>
+    <text id="tipR" x="895" y="402" font-size="13.5" fill="#16202e" text-anchor="middle" font-weight="700">
+      点击手掌 → 看拇指、四指各代表什么
+    </text>
+    <text x="895" y="420" font-size="11.5" fill="#5b6b80" text-anchor="middle">四指顺电流绕，拇指所指即 N 极</text>
+  </g>
+
+  <!-- ===================== 右下：对照 / 口诀 / 类比 面板 ===================== -->
+  <g class="panelG">
+    <rect x="640" y="452" width="510" height="356" rx="14" fill="#ffffff" fill-opacity="0.74" stroke="#9fb6d4" stroke-width="1.4"/>
+    <rect x="640" y="452" width="510" height="44" rx="14" fill="#16202e"/>
+    <rect x="640" y="478" width="510" height="18" fill="#16202e"/>
+    <text class="disp" x="660" y="482" font-size="20" font-weight="800" fill="#ffffff" letter-spacing="1">安培定则 · 一张表分清两种用法</text>
+
+    <!-- 对照表 -->
+    <g font-size="12.5">
+      <rect x="660" y="510" width="470" height="26" rx="4" fill="#16202e"/>
+      <text class="disp" x="672" y="528" font-size="12" font-weight="700" fill="#cfe0f5" letter-spacing="1">情形</text>
+      <text class="disp" x="812" y="528" font-size="12" font-weight="700" fill="#ffd9a0" letter-spacing="1">拇指 指向</text>
+      <text class="disp" x="982" y="528" font-size="12" font-weight="700" fill="#ffd9a0" letter-spacing="1">四指 弯曲</text>
+
+      <rect x="660" y="536" width="470" height="30" fill="#eef3fa"/>
+      <text x="672" y="556" fill="#16202e" font-weight="700">直导线</text>
+      <text class="math" x="812" y="556" fill="#1f6feb">电流 I</text>
+      <text class="math" x="982" y="556" fill="#f59e0b">磁感线 B 环绕</text>
+
+      <text x="672" y="586" fill="#16202e" font-weight="700">螺线管</text>
+      <text class="math" x="812" y="586" fill="#f59e0b">管内 B ／ N 极</text>
+      <text class="math" x="982" y="586" fill="#1f6feb">线圈电流 I</text>
+    </g>
+
+    <!-- 口诀框 -->
+    <rect x="660" y="602" width="470" height="56" rx="9" fill="#16202e"/>
+    <text class="disp" x="676" y="626" font-size="19" font-weight="800" fill="#ffd166" letter-spacing="1">电生磁，用右手；拇指四指，各管一头。</text>
+    <text x="676" y="648" font-size="12" fill="#cfe0f5">直导线“拇电四磁”，螺线管“拇磁四电”—— 刚好对调，别记反。</text>
+
+    <!-- 拧螺丝类比（点睛） -->
+    <g>
+      <!-- 螺丝 icon -->
+      <g transform="translate(672,672)">
+        <rect x="0" y="6" width="14" height="14" rx="2" fill="#cfe0f5" stroke="#16202e" stroke-width="1.6"/>
+        <line x1="3" y1="13" x2="11" y2="13" stroke="#16202e" stroke-width="1.6"/>
+        <path d="M14 9 L46 11 L46 15 L14 17 Z" fill="#dfe7f1" stroke="#16202e" stroke-width="1.6"/>
+        <line x1="22" y1="10" x2="18" y2="16" stroke="#9fb6d4" stroke-width="1.4"/>
+        <line x1="30" y1="10.5" x2="26" y2="16" stroke="#9fb6d4" stroke-width="1.4"/>
+        <line x1="38" y1="11" x2="34" y2="15.5" stroke="#9fb6d4" stroke-width="1.4"/>
+        <!-- 旋转 = 四指 -->
+        <path d="M7 2 A9 9 0 1 1 -2 13" fill="none" stroke="#1f6feb" stroke-width="2" marker-end="url(#arrI)"/>
+        <!-- 前进 = 拇指 -->
+        <path d="M48 13 L66 13" stroke="#f59e0b" stroke-width="2.4" marker-end="url(#arrB)"/>
+      </g>
+      <text x="752" y="682" font-size="12.5" fill="#16202e"><tspan font-weight="700" fill="#1f6feb">四指</tspan> ＝ 拧螺丝的旋转方向</text>
+      <text x="752" y="700" font-size="12.5" fill="#16202e"><tspan font-weight="700" fill="#f59e0b">拇指</tspan> ＝ 螺丝前进的方向 —— 这正是“螺旋”二字的来历</text>
+    </g>
+
+    <!-- 区分左手 -->
+    <rect x="660" y="724" width="470" height="30" rx="6" fill="#fdeee9" stroke="#e23b3b" stroke-opacity="0.5"/>
+    <text x="672" y="744" font-size="12.5" fill="#e23b3b" font-weight="700">⚠ 别混：<tspan fill="#16202e" font-weight="400">“电生磁”用右手（本图）；“磁对电流/电荷的受力”用左手定则。</tspan></text>
+
+    <!-- 角标 -->
+    <text class="mono" x="1130" y="798" font-size="10" fill="#9fb6d4" text-anchor="end">SCALE 1:1 · SVG</text>
+  </g>
+
+  <script><![CDATA[
+    (function(){
+      var root = (document.currentScript && document.currentScript.ownerSVGElement) || document.documentElement;
+      var doc = root.ownerDocument;
+      function $(id){ return doc.getElementById(id); }
+      function bind(handId, thumbId, fingersId, tipId, t1, t2){
+        var hand = $(handId), tip = $(tipId), s = 0;
+        if(!hand) return;
+        hand.addEventListener('click', function(){
+          s = (s + 1) % 3;
+          $(thumbId).classList.toggle('on', s === 1);
+          $(fingersId).classList.toggle('on', s === 2);
+          tip.textContent = (s === 0) ? '点击手掌 → 看拇指、四指各代表什么'
+                        : (s === 1) ? t1 : t2;
+          tip.setAttribute('fill', s === 0 ? '#16202e' : '#f97316');
+        });
+      }
+      bind('handL','thumbL','fingersL','tipL',
+           '✦ 拇指 指向 ＝ 电流 I 的方向',
+           '✦ 四指 弯曲 ＝ 磁感线 B 的环绕方向');
+      bind('handR','thumbR','fingersR','tipR',
+           '✦ 拇指 指向 ＝ 管内磁场 B ／ N 极',
+           '✦ 四指 弯曲 ＝ 线圈电流 I 的方向');
+    })();
+  ]]></script>
+</svg>

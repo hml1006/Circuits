@@ -1,0 +1,242 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="601" height="441" viewBox="0 0 601 441">
+  <defs>
+    <style type="text/css">
+      text { font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+    </style>
+  </defs>
+  <diagram id="current-formation" name="电流形成示意图">
+    <mxGraphModel dx="0" dy="0" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="601" height="441" as="geometry"/>
+        </mxCell>
+        <mxCell id="title" value="电流形成示意图" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="0" y="10" width="601" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="before-title" value="未通电时：自由电子无规则运动" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=0;fontColor=#555555;" vertex="1" parent="1">
+          <mxGeometry x="0" y="55" width="601" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="wire-top" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0F0F0;strokeColor=#AAAAAA;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="45" y="85" width="511" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" value="" style="ellipse;fillColor=#E74C3C;strokeColor=#C0392B;strokeWidth=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="75" y="100" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" value="" style="ellipse;fillColor=#E74C3C;strokeColor=#C0392B;strokeWidth=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="165" y="105" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" value="" style="ellipse;fillColor=#E74C3C;strokeColor=#C0392B;strokeWidth=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="255" y="98" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" value="" style="ellipse;fillColor=#E74C3C;strokeColor=#C0392B;strokeWidth=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="345" y="108" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" value="" style="ellipse;fillColor=#E74C3C;strokeColor=#C0392B;strokeWidth=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="435" y="100" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" value="" style="ellipse;fillColor=#E74C3C;strokeColor=#C0392B;strokeWidth=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="118" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="e7" value="" style="ellipse;fillColor=#E74C3C;strokeColor=#C0392B;strokeWidth=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="122" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="e8" value="" style="ellipse;fillColor=#E74C3C;strokeColor=#C0392B;strokeWidth=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="115" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="e9" value="" style="ellipse;fillColor=#E74C3C;strokeColor=#C0392B;strokeWidth=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="120" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="e10" value="" style="ellipse;fillColor=#E74C3C;strokeColor=#C0392B;strokeWidth=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="118" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="re1" value="" style="endArrow=classic;html=1;strokeColor=#E74C3C;strokeWidth=1;curved=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="80" y="105" as="sourcePoint"/>
+            <mxPoint x="76" y="95" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="re2" value="" style="endArrow=classic;html=1;strokeColor=#E74C3C;strokeWidth=1;curved=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="103" as="sourcePoint"/>
+            <mxPoint x="265" y="93" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="re3" value="" style="endArrow=classic;html=1;strokeColor=#E74C3C;strokeWidth=1;curved=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="105" as="sourcePoint"/>
+            <mxPoint x="435" y="115" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="re4" value="" style="endArrow=classic;html=1;strokeColor=#E74C3C;strokeWidth=1;curved=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="215" y="127" as="sourcePoint"/>
+            <mxPoint x="218" y="137" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="re5" value="" style="endArrow=classic;html=1;strokeColor=#E74C3C;strokeWidth=1;curved=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="395" y="125" as="sourcePoint"/>
+            <mxPoint x="400" y="115" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="transition-arrow" value="" style="endArrow=classic;html=1;strokeColor=#333333;strokeWidth=2.5;curved=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="165" as="sourcePoint"/>
+            <mxPoint x="300" y="195" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="transition-label" value="通电后定向移动" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=12;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="0" y="172" width="601" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="after-title" value="通电后：自由电子定向移动形成电流" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fontColor=#C0392B;" vertex="1" parent="1">
+          <mxGeometry x="0" y="215" width="601" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="wire-bottom" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3CD;strokeColor=#F0AD4E;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="45" y="245" width="511" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="battery-neg" value="-" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3498DB;strokeColor=#2980B9;strokeWidth=1.5;fontSize=14;fontColor=#FFFFFF;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="45" y="250" width="40" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="battery-neg-label" value="负极" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=10;fontColor=#2980B9;" vertex="1" parent="1">
+          <mxGeometry x="45" y="302" width="40" height="16" as="geometry"/>
+        </mxCell>
+        <mxCell id="battery-pos" value="+" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E74C3C;strokeColor=#C0392B;strokeWidth=1.5;fontSize=14;fontColor=#FFFFFF;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="516" y="250" width="40" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="battery-pos-label" value="正极" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=10;fontColor=#C0392B;" vertex="1" parent="1">
+          <mxGeometry x="516" y="302" width="40" height="16" as="geometry"/>
+        </mxCell>
+        <mxCell id="d1" value="" style="ellipse;fillColor=#E74C3C;strokeColor=#C0392B;strokeWidth=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="266" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2" value="" style="ellipse;fillColor=#E74C3C;strokeColor=#C0392B;strokeWidth=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="270" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="d3" value="" style="ellipse;fillColor=#E74C3C;strokeColor=#C0392B;strokeWidth=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="266" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="d4" value="" style="ellipse;fillColor=#E74C3C;strokeColor=#C0392B;strokeWidth=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="270" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="d5" value="" style="ellipse;fillColor=#E74C3C;strokeColor=#C0392B;strokeWidth=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="266" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="d6" value="" style="ellipse;fillColor=#E74C3C;strokeColor=#C0392B;strokeWidth=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="270" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="d7" value="" style="ellipse;fillColor=#E74C3C;strokeColor=#C0392B;strokeWidth=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="266" width="10" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="da1" value="" style="endArrow=classic;html=1;strokeColor=#E74C3C;strokeWidth=1.5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="271" as="sourcePoint"/>
+            <mxPoint x="165" y="271" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="da2" value="" style="endArrow=classic;html=1;strokeColor=#E74C3C;strokeWidth=1.5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="200" y="271" as="sourcePoint"/>
+            <mxPoint x="225" y="271" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="da3" value="" style="endArrow=classic;html=1;strokeColor=#E74C3C;strokeWidth=1.5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="271" as="sourcePoint"/>
+            <mxPoint x="285" y="271" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="da4" value="" style="endArrow=classic;html=1;strokeColor=#E74C3C;strokeWidth=1.5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="320" y="271" as="sourcePoint"/>
+            <mxPoint x="345" y="271" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="da5" value="" style="endArrow=classic;html=1;strokeColor=#E74C3C;strokeWidth=1.5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="271" as="sourcePoint"/>
+            <mxPoint x="405" y="271" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="da6" value="" style="endArrow=classic;html=1;strokeColor=#E74C3C;strokeWidth=1.5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="271" as="sourcePoint"/>
+            <mxPoint x="465" y="271" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="current-arrow" value="" style="endArrow=classic;html=1;strokeColor=#E74C3C;strokeWidth=2.5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="340" as="sourcePoint"/>
+            <mxPoint x="140" y="340" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="current-label" value="电流方向（正电荷定向移动方向）" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=12;fontColor=#E74C3C;" vertex="1" parent="1">
+          <mxGeometry x="0" y="355" width="601" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="note" value="※ 电子带负电，其定向移动方向与电流方向相反" style="text;html=1;strokeColor=none;fillColor=#F9F9F9;align=center;verticalAlign=middle;fontSize=11;fontColor=#888888;rounded=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="120" y="385" width="361" height="24" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <g transform="translate(0, 0)">
+    <rect x="0" y="0" width="601" height="441" fill="#FFFFFF" stroke="none"/>
+    <text x="300.5" y="35" text-anchor="middle" font-size="18" font-weight="bold" font-family="'Microsoft YaHei','PingFang SC','Helvetica Neue',Helvetica,Arial,sans-serif" fill="#333333">电流形成示意图</text>
+    <text x="300.5" y="72" text-anchor="middle" font-size="13" font-family="'Microsoft YaHei','PingFang SC','Helvetica Neue',Helvetica,Arial,sans-serif" fill="#555555">未通电时：自由电子无规则运动</text>
+    <rect x="45" y="85" width="511" height="60" rx="6" fill="#F0F0F0" stroke="#AAAAAA" stroke-width="2"/>
+    <circle cx="80" cy="105" r="5" fill="#E74C3C" stroke="#C0392B" stroke-width="1"/>
+    <circle cx="170" cy="110" r="5" fill="#E74C3C" stroke="#C0392B" stroke-width="1"/>
+    <circle cx="260" cy="103" r="5" fill="#E74C3C" stroke="#C0392B" stroke-width="1"/>
+    <circle cx="350" cy="113" r="5" fill="#E74C3C" stroke="#C0392B" stroke-width="1"/>
+    <circle cx="440" cy="105" r="5" fill="#E74C3C" stroke="#C0392B" stroke-width="1"/>
+    <circle cx="125" cy="123" r="5" fill="#E74C3C" stroke="#C0392B" stroke-width="1"/>
+    <circle cx="215" cy="127" r="5" fill="#E74C3C" stroke="#C0392B" stroke-width="1"/>
+    <circle cx="305" cy="120" r="5" fill="#E74C3C" stroke="#C0392B" stroke-width="1"/>
+    <circle cx="395" cy="125" r="5" fill="#E74C3C" stroke="#C0392B" stroke-width="1"/>
+    <circle cx="485" cy="123" r="5" fill="#E74C3C" stroke="#C0392B" stroke-width="1"/>
+    <path d="M 80 105 L 77 97" fill="none" stroke="#E74C3C" stroke-width="1" marker-end="url(#arrow-small)"/>
+    <path d="M 260 103 L 264 95" fill="none" stroke="#E74C3C" stroke-width="1" marker-end="url(#arrow-small)"/>
+    <path d="M 440 105 L 435 113" fill="none" stroke="#E74C3C" stroke-width="1" marker-end="url(#arrow-small)"/>
+    <path d="M 215 127 L 218 134" fill="none" stroke="#E74C3C" stroke-width="1" marker-end="url(#arrow-small)"/>
+    <path d="M 395 125 L 400 118" fill="none" stroke="#E74C3C" stroke-width="1" marker-end="url(#arrow-small)"/>
+    <path d="M 300.5 165 L 300.5 195" fill="none" stroke="#333333" stroke-width="2.5" marker-end="url(#arrow-mid)"/>
+    <text x="300.5" y="188" text-anchor="middle" font-size="12" font-family="'Microsoft YaHei','PingFang SC','Helvetica Neue',Helvetica,Arial,sans-serif" fill="#333333">通电后定向移动</text>
+    <text x="300.5" y="235" text-anchor="middle" font-size="13" font-weight="bold" font-family="'Microsoft YaHei','PingFang SC','Helvetica Neue',Helvetica,Arial,sans-serif" fill="#C0392B">通电后：自由电子定向移动形成电流</text>
+    <rect x="45" y="245" width="511" height="60" rx="6" fill="#FFF3CD" stroke="#F0AD4E" stroke-width="2"/>
+    <rect x="45" y="250" width="40" height="50" rx="3" fill="#3498DB" stroke="#2980B9" stroke-width="1.5"/>
+    <text x="65" y="280" text-anchor="middle" font-size="14" font-weight="bold" font-family="'Microsoft YaHei','PingFang SC','Helvetica Neue',Helvetica,Arial,sans-serif" fill="#FFFFFF">-</text>
+    <text x="65" y="318" text-anchor="middle" font-size="10" font-family="'Microsoft YaHei','PingFang SC','Helvetica Neue',Helvetica,Arial,sans-serif" fill="#2980B9">负极</text>
+    <rect x="516" y="250" width="40" height="50" rx="3" fill="#E74C3C" stroke="#C0392B" stroke-width="1.5"/>
+    <text x="536" y="280" text-anchor="middle" font-size="14" font-weight="bold" font-family="'Microsoft YaHei','PingFang SC','Helvetica Neue',Helvetica,Arial,sans-serif" fill="#FFFFFF">+</text>
+    <text x="536" y="318" text-anchor="middle" font-size="10" font-family="'Microsoft YaHei','PingFang SC','Helvetica Neue',Helvetica,Arial,sans-serif" fill="#C0392B">正极</text>
+    <circle cx="125" cy="271" r="5" fill="#E74C3C" stroke="#C0392B" stroke-width="1"/>
+    <circle cx="185" cy="275" r="5" fill="#E74C3C" stroke="#C0392B" stroke-width="1"/>
+    <circle cx="245" cy="271" r="5" fill="#E74C3C" stroke="#C0392B" stroke-width="1"/>
+    <circle cx="305" cy="275" r="5" fill="#E74C3C" stroke="#C0392B" stroke-width="1"/>
+    <circle cx="365" cy="271" r="5" fill="#E74C3C" stroke="#C0392B" stroke-width="1"/>
+    <circle cx="425" cy="275" r="5" fill="#E74C3C" stroke="#C0392B" stroke-width="1"/>
+    <circle cx="485" cy="271" r="5" fill="#E74C3C" stroke="#C0392B" stroke-width="1"/>
+    <path d="M 140 271 L 165 271" fill="none" stroke="#E74C3C" stroke-width="1.5" marker-end="url(#arrow-small)"/>
+    <path d="M 200 271 L 225 271" fill="none" stroke="#E74C3C" stroke-width="1.5" marker-end="url(#arrow-small)"/>
+    <path d="M 260 271 L 285 271" fill="none" stroke="#E74C3C" stroke-width="1.5" marker-end="url(#arrow-small)"/>
+    <path d="M 320 271 L 345 271" fill="none" stroke="#E74C3C" stroke-width="1.5" marker-end="url(#arrow-small)"/>
+    <path d="M 380 271 L 405 271" fill="none" stroke="#E74C3C" stroke-width="1.5" marker-end="url(#arrow-small)"/>
+    <path d="M 440 271 L 465 271" fill="none" stroke="#E74C3C" stroke-width="1.5" marker-end="url(#arrow-small)"/>
+    <path d="M 460 340 L 140 340" fill="none" stroke="#E74C3C" stroke-width="2.5" marker-end="url(#arrow-big)"/>
+    <text x="300.5" y="370" text-anchor="middle" font-size="12" font-family="'Microsoft YaHei','PingFang SC','Helvetica Neue',Helvetica,Arial,sans-serif" fill="#E74C3C">电流方向（正电荷定向移动方向）</text>
+    <rect x="120" y="390" width="361" height="24" rx="4" fill="#F9F9F9" stroke="none"/>
+    <text x="300.5" y="406" text-anchor="middle" font-size="11" font-family="'Microsoft YaHei','PingFang SC','Helvetica Neue',Helvetica,Arial,sans-serif" fill="#888888">※ 电子带负电，其定向移动方向与电流方向相反</text>
+  </g>
+  <defs>
+    <marker id="arrow-small" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#E74C3C"/>
+    </marker>
+    <marker id="arrow-mid" viewBox="0 0 10 10" refX="5" refY="10" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 5 10 L 10 0 Z" fill="#333333"/>
+    </marker>
+    <marker id="arrow-big" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#E74C3C"/>
+    </marker>
+  </defs>
+</svg>

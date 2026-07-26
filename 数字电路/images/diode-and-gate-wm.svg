@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Circuit Diagram, cdlibrary.dll 1.0.0.0 -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="256.62354"
+   height="272"
+   id="svg80"
+   sodipodi:docname="circuit(1).svg"
+   inkscape:version="0.92.4 5da689c313, 2019-01-14">
+  <metadata
+     id="metadata86">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs84" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1125"
+     id="namedview82"
+     showgrid="false"
+     inkscape:zoom="0.7375"
+     inkscape:cx="132.50337"
+     inkscape:cy="141"
+     inkscape:window-x="0"
+     inkscape:window-y="400"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg80" />
+  <text
+     x="249.7915"
+     y="121"
+     style="font-size:11px;font-family:Arial;text-anchor:start"
+     dy="3.3000002"
+     id="text2">S</text>
+  <text
+     x="247.7915"
+     y="131"
+     style="font-size:12px;font-family:Arial;text-anchor:start"
+     dy="3.6000001"
+     id="text4" />
+  <line
+     x1="159.7915"
+     y1="131"
+     x2="236.7915"
+     y2="131"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line6" />
+  <circle
+     cx="239.7915"
+     cy="131"
+     style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2"
+     id="ellipse8"
+     r="3" />
+  <text
+     x="59.791504"
+     y="161"
+     style="font-size:11px;font-family:Arial;text-anchor:start"
+     dy="3.3000002"
+     id="text10">B</text>
+  <text
+     x="49.791504"
+     y="111"
+     style="font-size:11px;font-family:Arial;text-anchor:start"
+     dy="3.3000002"
+     id="text12">A</text>
+  <text
+     x="41.791504"
+     y="171"
+     style="font-size:12px;font-family:Arial;text-anchor:end"
+     dy="3.6000001"
+     id="text14" />
+  <line
+     x1="52.791504"
+     y1="171"
+     x2="69.791504"
+     y2="171"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line16" />
+  <circle
+     cx="49.791504"
+     cy="171"
+     style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2"
+     id="ellipse18"
+     r="3" />
+  <text
+     x="41.791504"
+     y="131"
+     style="font-size:12px;font-family:Arial;text-anchor:end"
+     dy="3.6000001"
+     id="text20" />
+  <line
+     x1="52.791504"
+     y1="131"
+     x2="69.791504"
+     y2="131"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line22" />
+  <circle
+     cx="49.791504"
+     cy="131"
+     style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2"
+     id="ellipse24"
+     r="3" />
+  <line
+     x1="49.791504"
+     y1="221"
+     x2="49.791504"
+     y2="186"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line26" />
+  <path
+     d="m 49.791504,186 h -3 l 3,-5 3,5 h -3"
+     style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2"
+     id="path28"
+     inkscape:connector-curvature="0" />
+  <text
+     x="57.791504"
+     y="201"
+     style="font-size:11px;font-family:Arial;text-anchor:start"
+     dy="3.3000002"
+     id="text30">V_e_2</text>
+  <line
+     x1="39.791504"
+     y1="221"
+     x2="39.791504"
+     y2="146"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line32" />
+  <path
+     d="m 39.791504,146 h 3 l -3,-5 -3,5 h 3"
+     style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2"
+     id="path34"
+     inkscape:connector-curvature="0" />
+  <text
+     x="31.791504"
+     y="181"
+     style="font-size:11px;font-family:Arial;text-anchor:end"
+     dy="3.3000002"
+     id="text36">V_e_1</text>
+  <line
+     x1="239.7915"
+     y1="221"
+     x2="239.7915"
+     y2="146"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line38" />
+  <path
+     d="m 239.7915,146 h 3 l -3,-5 -3,5 h 3"
+     style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2"
+     id="path40"
+     inkscape:connector-curvature="0" />
+  <text
+     x="231.7915"
+     y="181"
+     style="font-size:11px;font-family:Arial;text-anchor:end"
+     dy="3.3000002"
+     id="text42">V_s</text>
+  <text
+     x="179.7915"
+     y="81"
+     style="font-size:11px;font-family:Arial;text-anchor:start"
+     dy="3.3000002"
+     id="text44">R_1</text>
+  <text
+     x="109.7915"
+     y="111"
+     style="font-size:11px;font-family:Arial;text-anchor:start"
+     dy="3.3000002"
+     id="text46">D_1</text>
+  <text
+     x="109.7915"
+     y="191"
+     style="font-size:11px;font-family:Arial;text-anchor:start"
+     dy="3.3000002"
+     id="text48">D_2</text>
+  <line
+     x1="159.7915"
+     y1="231"
+     x2="159.7915"
+     y2="259"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line50" />
+  <line
+     x1="151.7915"
+     y1="259"
+     x2="167.7915"
+     y2="259"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line52" />
+  <line
+     x1="154.7915"
+     y1="265"
+     x2="164.7915"
+     y2="265"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line54" />
+  <line
+     x1="157.7915"
+     y1="271"
+     x2="161.7915"
+     y2="271"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line56" />
+  <line
+     x1="49.791504"
+     y1="231"
+     x2="239.7915"
+     y2="231"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line58" />
+  <line
+     x1="159.7915"
+     y1="131"
+     x2="69.791504"
+     y2="131"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line60" />
+  <path
+     d="m 107.7915,131 m 0,-8 v 16 m 0,-8 15,8 v -16 l -15,8"
+     style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2"
+     id="path62"
+     inkscape:connector-curvature="0" />
+  <line
+     x1="159.7915"
+     y1="171"
+     x2="69.791504"
+     y2="171"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line64" />
+  <path
+     d="m 107.7915,171 m 0,-8 v 16 m 0,-8 15,8 v -16 l -15,8"
+     style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2"
+     id="path66"
+     inkscape:connector-curvature="0" />
+  <line
+     x1="159.7915"
+     y1="1"
+     x2="159.7915"
+     y2="66"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line68" />
+  <rect
+     x="151.7915"
+     y="66"
+     width="16"
+     height="40"
+     style="fill-opacity:0;stroke:#000000;stroke-width:2"
+     id="rect70" />
+  <line
+     x1="159.7915"
+     y1="106"
+     x2="159.7915"
+     y2="171"
+     style="stroke:#000000;stroke-width:2;stroke-linecap:square"
+     id="line72" />
+  <text
+     x="145.7915"
+     y="86"
+     style="font-size:11px;font-family:Arial;text-anchor:end"
+     dy="3.3000002"
+     id="text74">10 kΩ</text>
+  <circle
+     cx="159.7915"
+     cy="131"
+     style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2"
+     id="ellipse76"
+     r="2" />
+  <circle
+     cx="159.7915"
+     cy="231"
+     style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2"
+     id="ellipse78"
+     r="2" />
+</svg>

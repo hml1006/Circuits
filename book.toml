@@ -1,0 +1,19 @@
+[book]
+title = "电路学习教程"
+authors = ["louis"]
+language = "zh-CN"
+src = "src"
+
+[build]
+build-dir = "book"
+
+[output.html]
+default-theme = "ayu"
+preferred-dark-theme = "navy"
+
+[output.html.search]
+enable = true
+limit-results = 30
+
+[preprocessor.katex]
+after = ["links"]

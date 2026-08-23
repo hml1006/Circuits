@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="680" viewBox="0 0 960 680" font-family="Arial, 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#444"/>
+    </marker>
+    <marker id="arrred" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#c0392b"/>
+    </marker>
+  </defs>
+
+  <title>PCIe 链路训练状态机（LTSSM）示意</title>
+
+  <!-- title -->
+  <text x="480" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#263238">PCIe 链路训练状态机（LTSSM）示意图（自绘）</text>
+
+  <!-- initial arrow into Detect -->
+  <line x1="60" y1="90" x2="120" y2="90" stroke="#444" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="90" y="78" text-anchor="middle" font-size="12" fill="#c0392b">上电 / 复位</text>
+
+  <!-- ===== 主训练链（左列）===== -->
+  <!-- Detect -->
+  <rect x="120" y="70" width="170" height="40" rx="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="205" y="88" text-anchor="middle" font-size="13" font-weight="bold" fill="#0d47a1">Detect</text>
+  <text x="205" y="102" text-anchor="middle" font-size="10" fill="#555">D0（检测对端阻抗）</text>
+
+  <!-- Det->Poll -->
+  <line x1="205" y1="110" x2="205" y2="150" stroke="#444" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Polling -->
+  <rect x="120" y="152" width="170" height="40" rx="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="205" y="170" text-anchor="middle" font-size="13" font-weight="bold" fill="#0d47a1">Polling</text>
+  <text x="205" y="184" text-anchor="middle" font-size="10" fill="#555">发送 TS1/TS2，lane 方向握手</text>
+
+  <!-- Poll->Config -->
+  <line x1="205" y1="192" x2="205" y2="232" stroke="#444" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Configuration -->
+  <rect x="120" y="234" width="170" height="40" rx="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="205" y="252" text-anchor="middle" font-size="13" font-weight="bold" fill="#0d47a1">Configuration</text>
+  <text x="205" y="266" text-anchor="middle" font-size="10" fill="#555">lane 数 / 速率 / 极性协商</text>
+
+  <!-- Config->L0 -->
+  <line x1="205" y1="274" x2="205" y2="314" stroke="#2e7d32" stroke-width="3" marker-end="url(#arr)"/>
+
+  <!-- L0 (highlighted) -->
+  <rect x="110" y="316" width="190" height="52" rx="12" fill="#c8e6c9" stroke="#2e7d32" stroke-width="3"/>
+  <text x="205" y="336" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b5e20">L0（正常工作）</text>
+  <text x="205" y="356" text-anchor="middle" font-size="10" fill="#33691e">收发 TLP 业务数据</text>
+
+  <!-- L0->Recovery -->
+  <line x1="205" y1="368" x2="205" y2="428" stroke="#c0392b" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrred)"/>
+  <text x="300" y="400" font-size="11" fill="#c0392b">错误 / 需要重协商</text>
+
+  <!-- Recovery -->
+  <rect x="120" y="430" width="170" height="40" rx="10" fill="#ffebee" stroke="#c0392b" stroke-width="2"/>
+  <text x="205" y="448" text-anchor="middle" font-size="13" font-weight="bold" fill="#b71c1c">Recovery</text>
+  <text x="205" y="462" text-anchor="middle" font-size="10" fill="#555">重协商速率 / 宽度</text>
+
+  <!-- Recovery->L0 -->
+  <path d="M205,430 C 150,400 60,380 95,342" fill="none" stroke="#2e7d32" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arr)"/>
+  <text x="40" y="392" font-size="11" fill="#2e7d32">协商成功 → 重回 L0</text>
+
+  <!-- Recovery->Detect (脱离链路) -->
+  <path d="M120,450 C 30,430 30,110 120,90" fill="none" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrred)"/>
+  <text x="28" y="280" font-size="11" fill="#c0392b">链路脱离 / 无法收敛</text>
+
+  <!-- ===== 功耗状态（右列）===== -->
+  <!-- L0 -> L0s -->
+  <line x1="300" y1="336" x2="520" y2="270" stroke="#f9a825" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="405" y="292" text-anchor="middle" font-size="11" fill="#e65100">低功耗</text>
+
+  <!-- L0s -->
+  <rect x="520" y="250" width="170" height="40" rx="10" fill="#fff8e1" stroke="#f9a825" stroke-width="2"/>
+  <text x="605" y="266" text-anchor="middle" font-size="12" font-weight="bold" fill="#e65100">L0s</text>
+  <text x="605" y="282" text-anchor="middle" font-size="10" fill="#555">lane 级快速待机</text>
+
+  <!-- L0s -> L0 -->
+  <line x1="520" y1="250" x2="300" y2="320" stroke="#2e7d32" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="418" y="268" text-anchor="middle" font-size="10" fill="#2e7d32">唤醒(低延迟)</text>
+
+  <!-- L0s -> L1 -->
+  <line x1="605" y1="290" x2="605" y2="330" stroke="#f9a825" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- L1 -->
+  <rect x="520" y="332" width="170" height="40" rx="10" fill="#fff8e1" stroke="#f9a825" stroke-width="2"/>
+  <text x="605" y="348" text-anchor="middle" font-size="12" font-weight="bold" fill="#e65100">L1</text>
+  <text x="605" y="364" text-anchor="middle" font-size="10" fill="#555">链路级休眠（可停时钟）</text>
+
+  <!-- L1 <-> L2 -->
+  <line x1="605" y1="372" x2="605" y2="412" stroke="#ef6c00" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="620" y="395" font-size="10" fill="#ef6c00">更深</text>
+
+  <!-- L2 -->
+  <rect x="520" y="414" width="170" height="40" rx="10" fill="#fbe9e7" stroke="#ef6c00" stroke-width="2"/>
+  <text x="605" y="430" text-anchor="middle" font-size="12" font-weight="bold" fill="#bf360c">L2</text>
+  <text x="605" y="446" text-anchor="middle" font-size="10" fill="#555">深度休眠（靠辅助电源）</text>
+
+  <!-- L1 -> L0 (wake) -->
+  <path d="M520,352 C 420,350 330,345 300,352" fill="none" stroke="#2e7d32" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr)"/>
+  <text x="415" y="358" text-anchor="middle" font-size="10" fill="#2e7d32">L1 回 L0</text>
+
+  <!-- L2 -> L0 (wake via Wake#/Beacon) -->
+  <path d="M520,434 C 300,470 250,380 250,368" fill="none" stroke="#2e7d32" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr)"/>
+  <text x="430" y="486" text-anchor="middle" font-size="10" fill="#2e7d32">L2 退出：Wake# / Beacon 唤醒</text>
+
+  </svg>

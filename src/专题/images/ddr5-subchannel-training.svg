@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="600" viewBox="0 0 980 600" font-family="Arial, 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#444"/>
+    </marker>
+    <marker id="arb" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#1a5276"/>
+    </marker>
+    <marker id="arg" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#1e8449"/>
+    </marker>
+  </defs>
+
+  <title>DDR5 双子通道（Subchannel）分训结构示意</title>
+
+  <!-- 标题 -->
+  <text x="490" y="30" text-anchor="middle" font-size="19" font-weight="bold" fill="#1a1a2e">DDR5 双子通道（Subchannel）分训结构示意（自绘）</text>
+
+  <!-- ===== Memory Controller ===== -->
+  <rect x="30" y="90" width="200" height="260" rx="12" fill="#eaf2f8" stroke="#1a5276" stroke-width="2.5"/>
+  <text x="130" y="120" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a5276">Memory Controller</text>
+  <text x="130" y="142" text-anchor="middle" font-size="11" fill="#555">(MC / Host)</text>
+  <!-- 内部训练逻辑 -->
+  <rect x="45" y="155" width="170" height="80" rx="8" fill="#d4e6f1" stroke="#2874a6"/>
+  <text x="130" y="176" text-anchor="middle" font-size="12" font-weight="bold" fill="#154360">训练引擎 (Training Engine)</text>
+  <text x="130" y="194" text-anchor="middle" font-size="10" fill="#333">• 扫相位 / 扫电平</text>
+  <text x="130" y="208" text-anchor="middle" font-size="10" fill="#333">• 已知图案回读比对</text>
+  <text x="130" y="222" text-anchor="middle" font-size="10" fill="#333">• 写回对应子通道 MR</text>
+
+  <!-- 分通道出口标注 -->
+  <line x1="130" y1="245" x2="130" y2="290" stroke="#444" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="132" y="268" text-anchor="middle" font-size="10" fill="#555">按子通道分别训练</text>
+
+  <!-- ===== Subchannel A (上半) ===== -->
+  <g>
+    <!-- 连到 A 的 CA 总线 -->
+    <path d="M 230,215 C 320,215 340,215 400,185" fill="none" stroke="#1a5276" stroke-width="3" marker-end="url(#arb)"/>
+    <text x="300" y="212" text-anchor="middle" font-size="11" fill="#1a5276" font-weight="bold">CA Bus (独立)</text>
+
+    <!-- DQS/DQ 到 A -->
+    <path d="M 230,255 C 320,255 350,255 400,225" fill="none" stroke="#1e8449" stroke-width="3" marker-end="url(#arg)"/>
+    <text x="300" y="252" text-anchor="middle" font-size="11" fill="#1e8449" font-weight="bold">DQS/DQ 组A (×32/×36)</text>
+
+    <!-- DRAM A 芯片 -->
+    <rect x="400" y="155" width="230" height="110" rx="10" fill="#d5f5e3" stroke="#1e8449" stroke-width="2"/>
+    <text x="515" y="180" text-anchor="middle" font-size="13" font-weight="bold" fill="#145a32">Subchannel A 芯片 (Rank)</text>
+    <text x="515" y="198" text-anchor="middle" font-size="10" fill="#333">独立 CA + 独立 DQS/DQ</text>
+    <text x="515" y="214" text-anchor="middle" font-size="10" fill="#333">训练读数独立校准</text>
+    <!-- A 的独立 MR -->
+    <rect x="452" y="226" width="126" height="26" rx="6" fill="#abe1c3" stroke="#1e8449"/>
+    <text x="515" y="243" text-anchor="middle" font-size="11" font-weight="bold" fill="#145a32">写回 MR_A</text>
+
+    <!-- 训练标注 -->
+    <text x="515" y="150" text-anchor="middle" font-size="11" fill="#1e8449" font-weight="bold">▼ 对 A 独立跑一遍 读/写/leveling</text>
+  </g>
+
+  <!-- 分隔虚线 -->
+  <line x1="60" y1="310" x2="930" y2="310" stroke="#999" stroke-dasharray="6,4" stroke-width="1.5"/>
+  <text x="920" y="305" text-anchor="end" font-size="10" fill="#777">＝ DIMM 下沿 / 上沿分界</text>
+
+  <!-- ===== Subchannel B (下半) ===== -->
+  <g>
+    <!-- 连到 B 的 CA 总线 -->
+    <path d="M 230,335 C 320,335 340,335 400,365" fill="none" stroke="#1a5276" stroke-width="3" marker-end="url(#arb)"/>
+    <text x="300" y="352" text-anchor="middle" font-size="11" fill="#1a5276" font-weight="bold">CA Bus (独立)</text>
+
+    <!-- DQS/DQ 到 B -->
+    <path d="M 230,375 C 320,375 350,375 400,405" fill="none" stroke="#1e8449" stroke-width="3" marker-end="url(#arg)"/>
+    <text x="300" y="392" text-anchor="middle" font-size="11" fill="#1e8449" font-weight="bold">DQS/DQ 组B (×32/×36)</text>
+
+    <!-- DRAM B 芯片 -->
+    <rect x="400" y="355" width="230" height="110" rx="10" fill="#d5f5e3" stroke="#1e8449" stroke-width="2"/>
+    <text x="515" y="380" text-anchor="middle" font-size="13" font-weight="bold" fill="#145a32">Subchannel B 芯片 (Rank)</text>
+    <text x="515" y="398" text-anchor="middle" font-size="10" fill="#333">独立 CA + 独立 DQS/DQ</text>
+    <text x="515" y="414" text-anchor="middle" font-size="10" fill="#333">训练读数独立校准</text>
+    <!-- B 的独立 MR -->
+    <rect x="452" y="426" width="126" height="26" rx="6" fill="#abe1c3" stroke="#1e8449"/>
+    <text x="515" y="443" text-anchor="middle" font-size="11" font-weight="bold" fill="#145a32">写回 MR_B</text>
+
+    <!-- 训练标注 -->
+    <text x="515" y="350" text-anchor="middle" font-size="11" fill="#1e8449" font-weight="bold">▼ 对 B 独立跑一遍 读/写/leveling</text>
+  </g>
+
+  <!-- 右侧图例 / 说明 -->
+  <g>
+    <rect x="720" y="150" width="240" height="160" rx="8" fill="#fdf2e9" stroke="#e67e22"/>
+    <text x="740" y="172" text-anchor="start" font-size="12" font-weight="bold" fill="#9a3412">关键点</text>
+    <text x="740" y="193" text-anchor="start" font-size="10.5" fill="#3b3b3b">• A/B 各有独立 CA 总线与控制</text>
+    <text x="740" y="211" text-anchor="start" font-size="10.5" fill="#3b3b3b">• A/B 各有独立 DQS/DQ 数据组</text>
+    <text x="740" y="229" text-anchor="start" font-size="10.5" fill="#3b3b3b">• 训练读数 / 相位 / 电平分别校准</text>
+    <text x="740" y="247" text-anchor="start" font-size="10.5" fill="#3b3b3b">• 校准结果各写回独立的 MR</text>
+    <text x="740" y="265" text-anchor="start" font-size="10.5" fill="#3b3b3b">• 每个子通道 ≈ 32 数据线（扩展 36/40）</text>
+    <text x="740" y="283" text-anchor="start" font-size="10.5" fill="#3b3b3b">• 与 DDR4 单通道差异点：分训粒度下放</text>
+  </g>
+
+  <!-- 底部总结 -->
+  <rect x="60" y="520" width="860" height="55" rx="8" fill="#f4f6f6" stroke="#7f8c8d"/>
+  <text x="490" y="540" text-anchor="middle" font-size="12" fill="#2c3e50">训练流程：MC 对每个子通道（A 或 B）分别执行 → 读训练（扫 DQS 相位找眼心）→ 写训练（写图案回读比对）→</text>
+  <text x="490" y="558" text-anchor="middle" font-size="12" fill="#2c3e50">写/读 Leveling（校准 DQS↔CK、补偿 die 间延迟）→ DQS Gate / ZQ / VREF → 把 A、B 各自参数写回对应 MR，互不共享。</text>
+</svg>

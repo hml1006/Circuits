@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="520" viewBox="0 0 920 520" font-family="Arial, 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333"/>
+    </marker>
+  </defs>
+
+  <title>DRAM 感测放大器（交叉耦合反相器）原理</title>
+
+  <text x="460" y="30" text-anchor="middle" font-size="19" font-weight="bold" fill="#1a1a2e">DRAM 感测放大器（交叉耦合反相器）原理示意（自绘）</text>
+
+  <!-- 两个存取晶体管 + 电容（顶部） -->
+  <!-- 左单元 -->
+  <g stroke="#555" fill="none">
+    <!-- access transistor 左 -->
+    <rect x="120" y="70" width="90" height="12" fill="#cfe8ff" stroke="#2874a6"/>
+    <text x="165" y="78" text-anchor="middle" font-size="10" fill="#1c4e6f">存取晶体管(M1)</text>
+    <!-- 左电容 -->
+    <rect x="150" y="110" width="30" height="34" fill="#fff3cd" stroke="#b8860b"/>
+    <line x1="165" y1="82" x2="165" y2="110" stroke="#2874a6" stroke-width="2"/>
+    <text x="165" y="105" text-anchor="middle" font-size="9" fill="#7a5c00">Cs</text>
+    <line x1="115" y1="140" x2="215" y2="140" stroke="#b8860b" stroke-width="1.5"/>
+    <text x="165" y="158" text-anchor="middle" font-size="9" fill="#7a5c00">(上极板=Vdd)</text>
+  </g>
+  <!-- 左字线 -->
+  <line x1="70" y1="58" x2="250" y2="58" stroke="#c0392b" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="165" y1="82" x2="165" y2="60" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="70" y="52" text-anchor="middle" font-size="11" fill="#c0392b" font-weight="bold">WL（选中行）</text>
+
+  <!-- 右单元 (未选中示意) -->
+  <g stroke="#555" fill="none">
+    <rect x="480" y="70" width="90" height="12" fill="#e8e8e8" stroke="#999"/>
+    <text x="525" y="78" text-anchor="middle" font-size="10" fill="#666">存取晶体管(M2)</text>
+    <rect x="510" y="110" width="30" height="34" fill="#f0f0f0" stroke="#aaa"/>
+    <line x1="525" y1="82" x2="525" y2="110" stroke="#999" stroke-width="2"/>
+    <text x="525" y="105" text-anchor="middle" font-size="9" fill="#888">Cs</text>
+    <line x1="475" y1="140" x2="575" y2="140" stroke="#bbb" stroke-width="1.5"/>
+  </g>
+
+  <!-- 位线 BL 与 /BL -->
+  <line x1="165" y1="183" x2="165" y2="230" stroke="#2874a6" stroke-width="3"/>
+  <line x1="525" y1="183" x2="525" y2="230" stroke="#2874a6" stroke-width="3" stroke-dasharray="5,3"/>
+  <line x1="165" y1="230" x2="525" y2="230" stroke="#2874a6" stroke-width="1.5"/>
+  <text x="150" y="213" text-anchor="middle" font-size="12" fill="#2874a6" font-weight="bold">BL</text>
+  <text x="545" y="213" text-anchor="middle" font-size="12" fill="#2874a6" font-weight="bold">/BL</text>
+
+  <!-- 预充电控制 (顶部电压 Vpre=0.5V) -->
+  <g stroke="#555">
+    <line x1="165" y1="230" x2="165" y2="268" stroke="#2874a6" stroke-width="3"/>
+    <line x1="525" y1="230" x2="525" y2="268" stroke="#2874a6" stroke-width="3" stroke-dasharray="5,3"/>
+    <line x1="120" y1="268" x2="570" y2="268" stroke="#777" stroke-width="1.5"/>
+    <rect x="120" y="258" width="12" height="20" fill="#eee" stroke="#777"/>
+    <rect x="558" y="258" width="12" height="20" fill="#eee" stroke="#777"/>
+  </g>
+  <text x="345" y="262" text-anchor="middle" font-size="10" fill="#777">预充电到中点电压 Vpre≈Vdd/2（位线被预读出前的静置态）</text>
+
+  <!-- 交叉耦合反相器对 (感测放大主体) -->
+  <!-- 晶体管网络示意：两反相器交叉回接 -->
+  <g stroke="#333" fill="none">
+    <!-- 左反相器 PMOS顶 / NMOS底 简化矩形表示 -->
+    <rect x="150" y="292" width="30" height="60" fill="#ffe0e0" stroke="#c0392b" stroke-width="2"/>
+    <rect x="510" y="292" width="30" height="60" fill="#ffe0e0" stroke="#c0392b" stroke-width="2"/>
+    <!-- 输出连线 BL /BL 上交差耦合 -->
+    <line x1="165" y1="268" x2="165" y2="292" stroke="#2874a6" stroke-width="3"/>
+    <line x1="525" y1="268" x2="525" y2="292" stroke="#2874a6" stroke-width="3" stroke-dasharray="5,3"/>
+    <!-- 交叉线 -->
+    <path d="M195,292 C 300,270 420,270 525,296" fill="none" stroke="#a9262c" stroke-width="1.8"/>
+    <path d="M195,312 C 300,330 420,330 525,312" fill="none" stroke="#a9262c" stroke-width="1.8"/>
+  </g>
+  <text x="165" y="377" text-anchor="middle" font-size="11" fill="#8b0000" font-weight="bold">反相器I1</text>
+  <text x="525" y="377" text-anchor="middle" font-size="11" fill="#8b0000" font-weight="bold">反相器I2</text>
+  <text x="345" y="288" text-anchor="middle" font-size="12" fill="#8b0000" font-weight="bold">交叉耦合正反馈：--------------------</text>
+
+  <!-- 底部使能 (N 型下拉) -->
+  <line x1="165" y1="352" x2="165" y2="390" stroke="#333" stroke-width="2.5"/>
+  <line x1="525" y1="352" x2="525" y2="390" stroke="#333" stroke-width="2.5"/>
+  <g stroke="#333" fill="none">
+    <rect x="150" y="392" width="30" height="26" fill="#d5f5e3" stroke="#1e8449" stroke-width="2"/>
+    <rect x="510" y="392" width="30" height="26" fill="#d5f5e3" stroke="#1e8449" stroke-width="2"/>
+  </g>
+  <line x1="165" y1="418" x2="165" y2="440" stroke="#1e8449" stroke-width="2.5"/>
+  <text x="165" y="452" text-anchor="middle" font-size="10" fill="#1e8449">SEN_ (使能)</text>
+  <line x1="525" y1="418" x2="525" y2="440" stroke="#1e8449" stroke-width="2.5"/>
+  <text x="525" y="452" text-anchor="middle" font-size="10" fill="#1e8449">SEN_</text>
+  <line x1="345" y1="405" x2="345" y2="470" stroke="#999" stroke-dasharray="4,3" stroke-width="1.5"/>
+  <text x="345" y="488" text-anchor="middle" font-size="9" fill="#555">SEN_ 断言时下管导通，把微小压差放大到 0/Vdd 满摆幅</text>
+
+  <text x="460" y="512" text-anchor="middle" font-size="10" fill="#666">说明：BL/BL̄ 预充到中点后，单元电荷共享只造成几十 mV 的微小压差；SEN_ 断言触发交叉耦合正反馈，把它放大成满摆幅并回写单元。</text>
+</svg>

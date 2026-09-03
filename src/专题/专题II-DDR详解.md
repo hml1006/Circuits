@@ -296,7 +296,7 @@ DDR 的读写是**源同步（Source Synchronous）**的：数据以 `DQS` 为�
 
 DDR5 继承了 5.3~5.10 的通用训练项，但因其**内部 ECC、双子通道结构、更高速、更低电平**，在训练上引入了若干**与 DDR4 明显不同**的差异：
 
-<p align="center"><img src="images/ddr5-subchannel-training.svg" alt="DDR5 subchannel-split training structure" width="820"></p>
+![DDR5 subchannel-split training structure](images/ddr5-subchannel-training.svg)
 <p align="center"><b>图 5-1</b>：DDR5 双子通道（Subchannel）分训结构示意（自绘）。一个 DIMM 拆成 A/B 两个独立子通道，各自拥有独立 CA 总线与 DQS/DQ 数据组。MC 的训练引擎对 A、B 分别执行完整的读训练/写训练/Leveling/ZQ/VREF，再各自写回对应的 MR（MR_A / MR_B），参数互不共享。</p>
 
 - **双子通道（Subchannel）分训**：DDR5 一个 DIMM 拆成两个独立子通道（A/B），每个子通道各拥有一条独立的 `CA` 总线与一组 `DQS/DQ`。因此**训练必须按子通道分别进行**——MC 对 Subchannel A 与 Subchannel B 各自跑一遍完整训练，各自的相位/电平校准值也分别写入各自的 MR。不能像 DDR4 那样"一条通道一套参数"。
@@ -422,7 +422,7 @@ DDR5-6400 典型 CL=40，$t_{CK}=\frac{1}{3200\ \text{MHz}}\approx0.3125\ \text{
 
 下图为经典 **1T1C DRAM 单元剖面示意图**（字线为多晶硅（poly-silicon），位线为 N+，有源区为 P 衬底，电容接 Vdd）：
 
-<p align="center"><img src="images/dram-1t1c-cell.svg" alt="1T1C DRAM cell cross-section" height="380"></p>
+![1T1C DRAM cell cross-section](images/dram-1t1c-cell.svg)
 <p align="center"><b>图 A1-1</b>：1T1C DRAM 单元剖面。水平多晶硅字线（Word line）选中后，把存储电容通过存取晶体管接到下方位线（Bit line）进行读写；电容上极板接 Vdd。</p>
 
 ## A2. 读操作：破坏性读出的完整时序
@@ -438,12 +438,12 @@ DDR5-6400 典型 CL=40，$t_{CK}=\frac{1}{3200\ \text{MHz}}\approx0.3125\ \text{
 
 下图为 **MOSFET 阵列读操作示意**（每条字线选中一行，感测放大器放大位线对压差并锁存整行）：
 
-<p align="center"><img src="images/dram-array-read.svg" alt="DRAM array read operation" height="420"></p>
+![DRAM array read operation](images/dram-array-read.svg)
 <p align="center"><b>图 A2-1</b>：DRAM 阵列读操作。选中行（Active 的字线）使整行单元接入位线；每列下方一对交叉耦合反相器构成感测放大器，把位线上微小的电荷共享压差放大到满摆幅，行随之"打开"。</p>
 
 感测放大器的结构与工作原理可用下图理解：
 
-<p align="center"><img src="images/dram-sense-amplifier.svg" alt="DRAM sense amplifier (cross-coupled inverter)" height="440"></p>
+![DRAM sense amplifier (cross-coupled inverter)](images/dram-sense-amplifier.svg)
 <p align="center"><b>图 A2-2</b>：DRAM 感测放大器（交叉耦合反相器）原理（自绘示意）。位线对 BL/BL̄ 先预充到中点电压，读操作时单元电荷共享只造成几十 mV 的微小压差；断言使能信号 SEN_ 后，两个交叉耦合反相器正反馈把该微小压差放大到 0~Vdd 满摆幅，并由下管电流流回单元电容完成回写。</p>
 
 ## A3. 写操作
@@ -451,7 +451,7 @@ DDR5-6400 典型 CL=40，$t_{CK}=\frac{1}{3200\ \text{MHz}}\approx0.3125\ \text{
 - 打开行后，把目标**列的感测放大器强制到目标高压/低压**，感测放大器的正反馈把这些值"钉住"，再沿位线写入单元电容。
 - 虽然只改一列，但打开行的**整行都会同时被感测并回写刷新**——写某一单元 = 顺带刷新整行。
 
-<p align="center"><img src="images/dram-array-write.png" alt="DRAM array write operation" height="420"></p>
+![DRAM array write operation](images/dram-array-write.png)
 <p align="center"><b>图 A3-1</b>：DRAM 阵列写操作。把目标列的感测放大器强制到目标电平，正反馈将其"钉住"，再沿位线写入电容；同行的其余单元因感测而顺带回写刷新。</p>
 
 ## A4. 刷新（Refresh）与计时
@@ -463,7 +463,7 @@ DDR5-6400 典型 CL=40，$t_{CK}=\frac{1}{3200\ \text{MHz}}\approx0.3125\ \text{
 
 刷新沿时间轴的原理可用下图理解（存储电容的电荷随时间泄漏，需在降到触发电压前刷新）：
 
-<p align="center"><img src="images/DRAM-retention-refresh.svg" alt="DRAM retention time and refresh" height="380"></p>
+![DRAM retention time and refresh](images/DRAM-retention-refresh.svg)
 <p align="center"><b>图 A4-1</b>：DRAM 存储电容放电（保持时间）曲线（来源：维基百科）。电容电压 Vc 随时间按指数泄漏下降，虚线为触发电压（逻辑阈值）；在降至触发电压前由刷新命令恢复电荷，从而保证 64ms/32ms 内数据不丢。</p>
 
 ## A5. 时序关键参数溯源（异步 DRAM 实例）
@@ -504,7 +504,7 @@ DDR5-6400 典型 CL=40，$t_{CK}=\frac{1}{3200\ \text{MHz}}\approx0.3125\ \text{
 
 下图为 DRAM 存储节点的实际版图细节（字线/位线的自对准接触与存储节点布置）：
 
-<p align="center"><img src="images/dram-cell-field.png" alt="DRAM cell field layout details" height="380"></p>
+![DRAM cell field layout details](images/dram-cell-field.png)
 <p align="center"><b>图 A7-1</b>：DRAM 单元阵列的版图细节——自对准存储节点（Self-aligned storage node）位置，展示字线与位线交叉网格下如何紧凑布置存取晶体管与电容，最大限度提高单元密度。</p>
 
 ## A8. 可靠性、软错误与安全

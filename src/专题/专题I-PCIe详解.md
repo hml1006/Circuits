@@ -56,7 +56,7 @@ PCIe 是用于在计算机内部连接硬件组件的高速标准，由 **PCI-SI
 
 下图为经典的 **PCI Express 拓扑示意图**（RC → Switch → 多 Branch 端点）：
 
-<p align="center"><img src="images/pcie-topology.png" alt="PCI Express topology" width="680"></p>
+![PCI Express topology](images/pcie-topology.png)
 <p align="center"><b>图 2-1</b>：PCI Express 典型拓扑。Root Complex 作为根提供若干 Root Port，经 Switch（内含虚拟 PCI-PCI 桥）把上游链路扇出为多条下游分支（Branch），各自挂接不同端点；桥接 PCI、PCMCIA 等其他总线也可作为端点接入。</p>
 
 ### 2.4 Interconnect 与 Lane
@@ -73,7 +73,7 @@ PCIe 是用于在计算机内部连接硬件组件的高速标准，由 **PCI-SI
 
 下图为 **PCI Express 术语示意**（lane、互连链路、双单工差分对的关系）：
 
-<p align="center"><img src="images/pcie-terminology.png" alt="PCI Express terminology" width="680"></p>
+![PCI Express terminology](images/pcie-terminology.png)
 <p align="center"><b>图 2-2</b>：PCIe 术语图解。一条 lane 含一对发送差分线与一对接收差分线（双单工）；多 lane 组成一条互连链路（Link）；发送数据包被条带（Striping）到各 lane 上并行搬运，带宽随 lane 数线性扩展。</p>
 
 ## 3. 分层协议栈
@@ -126,7 +126,7 @@ LTSSM 是物理层最关键的状态机（共 11 个状态，核心路径）：
 
 LTSSM 的主状态转移图（省略 Disable/Hot Reset/Loopback 等旁路，图示为自绘示意）：
 
-<p align="center"><img src="images/ltssm-states.svg" alt="PCIe LTSSM state machine diagram" width="760"></p>
+![PCIe LTSSM state machine diagram](images/ltssm-states.svg)
 <p align="center"><b>图 4-1</b>：PCIe 链路训练状态机（LTSSM）示意。左列为主线训练链，右列为低功耗状态，L0 为正常业务态，Recovery 用于速率/宽度重协商。图中省略 Disable / Hot Reset / Loopback 等次级状态。</p>
 
 - **正常路径**：Detect → Polling → Configuration → **L0**（业务数据）。
@@ -548,6 +548,14 @@ PCIe 插槽支持 **+3.3V、3.3Vaux（备用电源）、+12V** 三种电压。**
 - **12VHPWR（16 针）连接器**：用于新一代高功耗显卡，可提供高达 1000W 级供电能力；
 - 设备在**待机**时靠 3.3Vaux 维持唤醒电路。
 
+下图为常见的 **6 针/8 针辅助供电连接器**与新一代 **12VHPWR（12V-2x6）** 连接器实物对比：
+
+![PCIe 6-pin and 8-pin power connectors](images/pcie-power-6pin-8pin.png)
+<p align="center"><b>图 15-1</b>：PCIe 显卡外接供电：左为 8 针、右为 6 针的 Molex Mini-fit Jr. 辅助电源连接器（×16 插槽本身最多 75 W，高功耗显卡常需这种外加供电）。</p>
+
+![PCIe 12VHPWR 16-pin connector](images/pcie-power-12vhpwr.png)
+<p align="center"><b>图 15-2</b>：新一代 16 针 12VHPWR（12V-2x6）连接器，单个接口可提供 600 W 以上供电，用于 RTX 40 系等高功耗新一代显卡；向下可借助转接线适配 2×8 针传统接口。</p>
+
 ### 15.2 热插拔相关引脚
 
 - **PRSNT1# / PRSNT2#**：**必须比其他引脚稍短**，以确保卡片完全插入后才建立连接，是检测"卡在位"的关键引脚；
@@ -579,6 +587,11 @@ PCIe 通过 **ASPM（Active State Power Management，主动状态电源管理）
 
 扩展卡物理尺寸：标准（全高）111.15 mm 高，半高（低矮）68.90 mm 高；长度可全/四分之三/半等。**卡尺寸必须不小于槽尺寸**（如 ×16 卡不能插入 ×4/×8 槽），但可用"开口端（open-ended）"插槽容纳更长的卡，同时协商最优电气/逻辑连接。
 
+下图为 **开口端（open-ended）插槽** 实物示意：
+
+![PCIe open-ended slot](images/pcie-openend-slot.png)
+<p align="center"><b>图 16-1</b>：开口端插槽在末端不做物理封闭，允许更长的扩展卡（如长于插槽尺寸的卡）插入并仅连接其占用的电气段，从而在物理不自锁的前提下协商最优的电气/逻辑连接。</p>
+
 ### 16.2 常见制式
 
 - **Mini PCIe**：替代 Mini PCI，支持 x1 PCIe + USB 2.0 + SMBus；
@@ -589,11 +602,24 @@ PCIe 通过 **ASPM（Active State Power Management，主动状态电源管理）
 - **M.2 / U.2 / SATA Express**：存储与扩展接口；M.2 可用最多 4 lane（通常 x4）PCIe；
 - **OCuLink / 外置 PCIe（External Cabling）**：把 PCIe 引出机箱外的标准（OCuLink-2 在 Gen4 达 16 GT/s）；也可借助 **Thunderbolt / USB4** 隧道承载 PCIe。
 
+下图为典型的 **Mini PCIe 扩展卡（Mini Card）** 实物形态：
+
+![Mini PCIe expansion card](images/pcie-mini-card.png)
+<p align="center"><b>图 16-2</b>：Mini PCIe（半尺寸 Mini Card）扩展卡，采用 x1 电气链路并叠加以 USB 2.0 与 SMBus 总线，曾广泛用于笔记本/嵌入式设备的 Wi-Fi、蜂窝网卡与 SSD 等模块扩展。</p>
+
 ### 16.3 高带宽存储与显卡应用
 
 - **NVMe SSD**：PCIe 之上运行 NVM Express 逻辑接口，利用设备内部并行度提供极高 IOPS，取代 SATA Express/AHCI 旧方案。NVMe 目前是最高效的 PCIe SSD 协议标准；
 - **显卡**：主流 GPU（AMD/NVIDIA/Intel）均使用 PCIe ×16；支持 SLI（NVIDIA）/CrossFire（AMD）等多卡并行；
 - **外置显卡**：通过 ExpressCard/Thunderbolt 连接外部 PCIe 显卡坞（如 Razer Core），让笔记本获得桌面级图形算力。
+
+下图为两类典型的 **×4/x16 PCIe 端点**实物：一块 **NVMe SSD 扩展卡** 与一块 **×16 高性能显卡**：
+
+![Intel P3608 NVMe PCIe SSD add-in card](images/pcie-nvme-ssd.png)
+<p align="center"><b>图 16-3</b>：Intel P3608 系列 NVMe flash SSD（PCIe 扩展卡形态，×4/×8 lane），把 NVM Express 逻辑接口运行在 PCIe 物理链路上，实现高 IOPS 与低延迟访问。</p>
+
+![Nvidia GeForce GTX 1070 PCIe x16 graphics card](images/pcie-gpu-x16.png)
+<p align="center"><b>图 16-4</b>：Nvidia GTX 1070，一张标准的 PCIe 3.0 ×16 显卡——展现 PCIe 扩展卡的最大众形态（×16 全高卡）及其在主板上的典型占位。</p>
 
 ## 17. 竞争协议与定位
 

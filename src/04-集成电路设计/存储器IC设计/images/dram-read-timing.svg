@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="460" viewBox="0 0 840 460">
+  <defs>
+    <marker id="arrEnd" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#b03a2e"/>
+    </marker>
+    <marker id="arrStart" markerWidth="8" markerHeight="8" refX="1" refY="4" orient="auto">
+      <path d="M8,0 L0,4 L8,8 Z" fill="#b03a2e"/>
+    </marker>
+    <style type="text/css">
+      .lbl { font-family: "Noto Sans CJK SC","Source Han Sans SC","DejaVu Sans",sans-serif; font-size: 12px; fill: #1a1a1a; }
+      .small { font-family: "Noto Sans CJK SC","Source Han Sans SC","DejaVu Sans",sans-serif; font-size: 10px; fill: #444; }
+      .title { font-family: "Noto Sans CJK SC","Source Han Sans SC","DejaVu Sans",sans-serif; font-size: 14px; font-weight: 600; fill: #1f4e79; }
+      .axis { stroke: #333; stroke-width: 1.2; fill: none; }
+      .cmd { fill: #cfe2f3; stroke: #1f4e79; stroke-width: 1.2; }
+      .data { fill: #f7d7c4; stroke: #b35c1e; stroke-width: 1.2; }
+      .dim { stroke: #b03a2e; stroke-width: 1.2; fill: none; }
+      .dash { stroke: #9a9a9a; stroke-width: 0.9; stroke-dasharray: 4 4; fill: none; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="840" height="460" fill="#ffffff"/>
+  <text class="title" x="420" y="30" text-anchor="middle">DRAM 读访问时序：ACT → RD → 数据 → PRE</text>
+
+  <!-- 时钟 -->
+  <text class="lbl" x="40" y="85">CLK</text>
+  <path class="axis" d="M80,90 H100 V70 H130 V90 H160 V70 H190 V90 H220 V70 H250 V90 H280 V70 H310 V90 H340 V70 H370 V90 H400 V70 H430 V90 H460 V70 H490 V90 H520 V70 H550 V90 H580 V70 H610 V90 H640 V70 H670 V90 H700 V70 H730 V90 H760"/>
+
+  <!-- 命令 -->
+  <text class="lbl" x="40" y="160">命令</text>
+  <line class="axis" x1="80" y1="160" x2="780" y2="160"/>
+  <rect class="cmd" x="180" y="148" width="40" height="12"/>
+  <text class="small" x="200" y="142" text-anchor="middle">ACT</text>
+  <rect class="cmd" x="280" y="148" width="40" height="12"/>
+  <text class="small" x="300" y="142" text-anchor="middle">RD</text>
+  <rect class="cmd" x="460" y="148" width="40" height="12"/>
+  <text class="small" x="480" y="142" text-anchor="middle">PRE</text>
+  <rect class="cmd" x="560" y="148" width="40" height="12"/>
+  <text class="small" x="580" y="142" text-anchor="middle">ACT</text>
+
+  <!-- 数据 -->
+  <text class="lbl" x="40" y="240">DQ</text>
+  <line class="axis" x1="80" y1="240" x2="780" y2="240"/>
+  <rect class="data" x="350" y="228" width="100" height="12"/>
+  <text class="small" x="400" y="238" text-anchor="middle">D0 D1 D2 D3</text>
+
+  <!-- 时间参考线 -->
+  <line class="dash" x1="180" y1="90" x2="180" y2="430"/>
+  <line class="dash" x1="280" y1="90" x2="280" y2="430"/>
+  <line class="dash" x1="350" y1="90" x2="350" y2="430"/>
+  <line class="dash" x1="460" y1="90" x2="460" y2="430"/>
+  <line class="dash" x1="560" y1="90" x2="560" y2="430"/>
+
+  <!-- 时序参数 -->
+  <line class="dim" x1="180" y1="300" x2="280" y2="300" marker-start="url(#arrStart)" marker-end="url(#arrEnd)"/>
+  <text class="lbl" x="230" y="292" text-anchor="middle">tRCD</text>
+
+  <line class="dim" x1="280" y1="328" x2="350" y2="328" marker-start="url(#arrStart)" marker-end="url(#arrEnd)"/>
+  <text class="lbl" x="315" y="320" text-anchor="middle">CL</text>
+
+  <line class="dim" x1="180" y1="356" x2="460" y2="356" marker-start="url(#arrStart)" marker-end="url(#arrEnd)"/>
+  <text class="lbl" x="320" y="348" text-anchor="middle">tRAS</text>
+
+  <line class="dim" x1="460" y1="384" x2="560" y2="384" marker-start="url(#arrStart)" marker-end="url(#arrEnd)"/>
+  <text class="lbl" x="510" y="376" text-anchor="middle">tRP</text>
+
+  <line class="dim" x1="180" y1="412" x2="560" y2="412" marker-start="url(#arrStart)" marker-end="url(#arrEnd)"/>
+  <text class="lbl" x="370" y="404" text-anchor="middle">tRC</text>
+
+  <text class="small" x="600" y="412">tRC ≈ tRAS + tRP</text>
+  <text class="small" x="420" y="445" text-anchor="middle">ACT 激活行 → tRCD 后发 RD → CL 后数据有效 → tRAS 后预充 → tRP 后才能再次激活</text>
+</svg>

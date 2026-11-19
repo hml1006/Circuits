@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="420" viewBox="0 0 820 420">
+  <defs>
+    <style type="text/css">
+      .lbl { font-family: "Noto Sans CJK SC","Source Han Sans SC","DejaVu Sans",sans-serif; font-size: 12px; fill: #1a1a1a; }
+      .small { font-family: "Noto Sans CJK SC","Source Han Sans SC","DejaVu Sans",sans-serif; font-size: 10px; fill: #444; }
+      .title { font-family: "Noto Sans CJK SC","Source Han Sans SC","DejaVu Sans",sans-serif; font-size: 14px; font-weight: 600; fill: #1f4e79; }
+      .box { fill: #eef2f7; stroke: #333; stroke-width: 1.2; }
+      .axis { stroke: #333; stroke-width: 1.2; fill: none; }
+      .tm { stroke: #b03a2e; stroke-width: 1; stroke-dasharray: 5 4; fill: none; }
+      .tg { stroke: #3d6b35; stroke-width: 1; stroke-dasharray: 5 4; fill: none; }
+      .reset { stroke: #b03a2e; stroke-width: 2; fill: none; }
+      .set { stroke: #1f4e79; stroke-width: 2; fill: none; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="820" height="420" fill="#ffffff"/>
+  <text class="title" x="220" y="32" text-anchor="middle">PCM：晶态与非晶态</text>
+  <text class="title" x="620" y="32" text-anchor="middle">编程温度曲线</text>
+
+  <!-- 晶态 -->
+  <rect class="box" x="60" y="70" width="150" height="180" rx="3"/>
+  <g fill="#1f4e79">
+    <circle cx="85" cy="95" r="4"/><circle cx="110" cy="95" r="4"/><circle cx="135" cy="95" r="4"/><circle cx="160" cy="95" r="4"/><circle cx="185" cy="95" r="4"/>
+    <circle cx="85" cy="125" r="4"/><circle cx="110" cy="125" r="4"/><circle cx="135" cy="125" r="4"/><circle cx="160" cy="125" r="4"/><circle cx="185" cy="125" r="4"/>
+    <circle cx="85" cy="155" r="4"/><circle cx="110" cy="155" r="4"/><circle cx="135" cy="155" r="4"/><circle cx="160" cy="155" r="4"/><circle cx="185" cy="155" r="4"/>
+    <circle cx="85" cy="185" r="4"/><circle cx="110" cy="185" r="4"/><circle cx="135" cy="185" r="4"/><circle cx="160" cy="185" r="4"/><circle cx="185" cy="185" r="4"/>
+    <circle cx="85" cy="215" r="4"/><circle cx="110" cy="215" r="4"/><circle cx="135" cy="215" r="4"/><circle cx="160" cy="215" r="4"/><circle cx="185" cy="215" r="4"/>
+  </g>
+  <text class="lbl" x="135" y="278" text-anchor="middle">晶态：有序</text>
+  <text class="small" x="135" y="296" text-anchor="middle">低阻</text>
+
+  <!-- 非晶态 -->
+  <rect class="box" x="235" y="70" width="150" height="180" rx="3"/>
+  <g fill="#b03a2e">
+    <circle cx="255" cy="92" r="4"/><circle cx="288" cy="105" r="4"/><circle cx="320" cy="88" r="4"/><circle cx="350" cy="110" r="4"/><circle cx="368" cy="86" r="4"/>
+    <circle cx="262" cy="130" r="4"/><circle cx="300" cy="142" r="4"/><circle cx="335" cy="126" r="4"/><circle cx="368" cy="148" r="4"/>
+    <circle cx="248" cy="168" r="4"/><circle cx="282" cy="180" r="4"/><circle cx="318" cy="165" r="4"/><circle cx="352" cy="184" r="4"/>
+    <circle cx="260" cy="208" r="4"/><circle cx="296" cy="220" r="4"/><circle cx="332" cy="204" r="4"/><circle cx="366" cy="222" r="4"/>
+    <circle cx="275" cy="238" r="4"/><circle cx="315" cy="232" r="4"/><circle cx="350" cy="240" r="4"/>
+  </g>
+  <text class="lbl" x="310" y="278" text-anchor="middle">非晶态：无序</text>
+  <text class="small" x="310" y="296" text-anchor="middle">高阻</text>
+
+  <!-- 温度曲线 -->
+  <line class="axis" x1="450" y1="70" x2="450" y2="330"/>
+  <line class="axis" x1="450" y1="330" x2="790" y2="330"/>
+  <text class="small" x="430" y="200" transform="rotate(-90 430 200)" text-anchor="middle">温度</text>
+  <text class="small" x="780" y="348" text-anchor="end">时间</text>
+
+  <line class="tm" x1="460" y1="130" x2="785" y2="130"/>
+  <text class="small" x="785" y="125" text-anchor="end">Tm（熔化）</text>
+  <line class="tg" x1="460" y1="215" x2="785" y2="215"/>
+  <text class="small" x="785" y="210" text-anchor="end">Tg（结晶）</text>
+
+  <path class="reset" d="M470,320 L510,320 L525,100 L545,100 L555,320 L600,320"/>
+  <path class="set" d="M620,320 L650,175 L690,175 L730,320"/>
+
+  <text class="small" x="560" y="72">RESET：熔化后快速淬火</text>
+  <text class="small" x="560" y="88">→ 非晶（高阻）</text>
+  <text class="small" x="700" y="150">SET：加热保温</text>
+  <text class="small" x="700" y="166">→ 晶态（低阻）</text>
+
+  <text class="small" x="620" y="390" text-anchor="middle">读：测量电阻；写：用焦耳热控制晶态/非晶态的比例与冷却速度</text>
+</svg>

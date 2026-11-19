@@ -46,8 +46,8 @@
 
     <!-- C1 -->
     <line x1="370" y1="220" x2="370" y2="240" stroke="#333" stroke-width="2"/>
-    <line x1="360" y1="220" x2="380" y2="220" stroke="#333" stroke-width="2" stroke-width="3"/>
-    <line x1="360" y1="240" x2="380" y2="240" stroke="#333" stroke-width="2" stroke-width="3"/>
+    <line x1="360" y1="220" x2="380" y2="220" stroke="#333" stroke-width="3"/>
+    <line x1="360" y1="240" x2="380" y2="240" stroke="#333" stroke-width="3"/>
     <text x="390" y="235" font-size="12" fill="#333">C</text>
     <text x="398" y="235" font-size="10" fill="#666">1</text>
     <line x1="370" y1="240" x2="370" y2="280" stroke="#333" stroke-width="2"/>

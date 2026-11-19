@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="460" viewBox="0 0 800 460">
+  <defs>
+    <marker id="blueArrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#1f4e79"/>
+    </marker>
+    <marker id="blkArrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#333"/>
+    </marker>
+    <style type="text/css">
+      .lbl { font-family: "Noto Sans CJK SC","Source Han Sans SC","DejaVu Sans",sans-serif; font-size: 12px; fill: #1a1a1a; }
+      .small { font-family: "Noto Sans CJK SC","Source Han Sans SC","DejaVu Sans",sans-serif; font-size: 10px; fill: #444; }
+      .title { font-family: "Noto Sans CJK SC","Source Han Sans SC","DejaVu Sans",sans-serif; font-size: 14px; font-weight: 600; fill: #1f4e79; }
+      .wire { stroke: #1a1a1a; stroke-width: 1.6; fill: none; }
+      .dash { stroke: #8a8a8a; stroke-width: 1.2; fill: none; stroke-dasharray: 6 5; }
+      .cell { fill: #eef2f7; stroke: #1f4e79; stroke-width: 1.4; }
+      .sel { fill: #f7d7c4; stroke: #b35c1e; stroke-width: 1.6; }
+      .dev { fill: #dce6f1; stroke: #333; stroke-width: 1.3; }
+      .block { fill: #eef2f7; stroke: #1f4e79; stroke-width: 1.4; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="460" fill="#ffffff"/>
+
+  <text class="title" x="240" y="30" text-anchor="middle">NOR 随机读取偏置</text>
+
+  <!-- BL / SL -->
+  <text class="lbl" x="206" y="62">BL ≈ 1 V</text>
+  <line class="wire" x1="220" y1="70" x2="220" y2="330"/>
+  <text class="lbl" x="426" y="62">SL</text>
+  <line class="wire" x1="420" y1="70" x2="420" y2="330"/>
+
+  <!-- WL0 选中 -->
+  <line class="wire" x1="90" y1="105" x2="500" y2="105"/>
+  <text class="small" x="52" y="110">WL0</text>
+  <text class="small" x="118" y="96">Vread ≈ 5 V（选中）</text>
+  <line class="wire" x1="320" y1="105" x2="320" y2="130"/>
+
+  <rect class="sel" x="240" y="130" width="160" height="50" rx="3"/>
+  <text class="lbl" x="320" y="160" text-anchor="middle">FG cell</text>
+  <line class="wire" x1="220" y1="155" x2="240" y2="155"/>
+  <line class="wire" x1="400" y1="155" x2="420" y2="155"/>
+
+  <!-- WL1 未选 -->
+  <line class="wire" x1="90" y1="215" x2="500" y2="215"/>
+  <text class="small" x="52" y="220">WL1</text>
+  <text class="small" x="118" y="206">0 V（未选）</text>
+  <line class="wire" x1="320" y1="215" x2="320" y2="240"/>
+
+  <rect class="cell" x="240" y="240" width="160" height="50" rx="3"/>
+  <text class="lbl" x="320" y="270" text-anchor="middle">FG cell</text>
+  <line class="wire" x1="220" y1="265" x2="240" y2="265"/>
+  <line class="wire" x1="400" y1="265" x2="420" y2="265"/>
+
+  <!-- 底部 -->
+  <rect class="dev" x="180" y="330" width="80" height="50" rx="3"/>
+  <text class="small" x="220" y="352" text-anchor="middle">Sense Amp</text>
+  <text class="small" x="220" y="368" text-anchor="middle">判决</text>
+  <rect class="dev" x="380" y="330" width="80" height="50" rx="3"/>
+  <text class="small" x="420" y="352" text-anchor="middle">SL 驱动</text>
+  <text class="small" x="420" y="368" text-anchor="middle">0 V</text>
+
+  <rect class="dash" x="200" y="88" width="240" height="222"/>
+  <text class="small" x="320" y="326" text-anchor="middle">Sector / Block</text>
+
+  <!-- 电流与判决 -->
+  <line x1="280" y1="182" x2="280" y2="202" stroke="#1f4e79" stroke-width="1.6" marker-end="url(#blueArrow)"/>
+  <text class="small" x="320" y="408" text-anchor="middle">擦除态：Vth 低，选中单元导通 → 读 1</text>
+  <text class="small" x="320" y="426" text-anchor="middle">编程态：Vth 高，选中单元截止 → 读 0</text>
+
+  <!-- XIP 右侧 -->
+  <text class="title" x="650" y="30" text-anchor="middle">XIP 直接取指</text>
+  <rect class="block" x="580" y="70" width="140" height="60" rx="4"/>
+  <text class="lbl" x="650" y="96" text-anchor="middle">CPU</text>
+  <text class="small" x="650" y="114" text-anchor="middle">取指 / 数据访问</text>
+
+  <rect class="block" x="580" y="220" width="140" height="70" rx="4"/>
+  <text class="lbl" x="650" y="248" text-anchor="middle">NOR Flash</text>
+  <text class="small" x="650" y="268" text-anchor="middle">启动代码 / 固件</text>
+
+  <line class="wire" x1="620" y1="130" x2="620" y2="220" marker-end="url(#blkArrow)"/>
+  <text class="small" x="536" y="170" text-anchor="middle">地址</text>
+  <line class="wire" x1="680" y1="220" x2="680" y2="130" marker-end="url(#blkArrow)"/>
+  <text class="small" x="716" y="180" text-anchor="middle">指令 / 数据</text>
+
+  <text class="small" x="650" y="330" text-anchor="middle">CPU 直接按地址读取并执行，</text>
+  <text class="small" x="650" y="348" text-anchor="middle">无需先把代码搬到 RAM</text>
+</svg>

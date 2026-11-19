@@ -23,13 +23,13 @@
     
     <!-- 电阻 -->
     <rect x="120" y="110" width="40" height="30" rx="3" ry="3" fill="#fff" stroke="#333" stroke-width="1.5" transform="rotate(0,140,125)"/>
-    <text x="140" y="130" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">R<tspan font-size="8" dy="3">a</tspan></tspan>
+    <text x="140" y="130" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">R<tspan font-size="8" dy="3">a</tspan></text>
     
     <rect x="65" y="245" width="40" height="30" rx="3" ry="3" fill="#fff" stroke="#333" stroke-width="1.5" transform="rotate(-55,85,260)"/>
-    <text x="85" y="265" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">R<tspan font-size="8" dy="3">b</tspan></tspan>
+    <text x="85" y="265" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">R<tspan font-size="8" dy="3">b</tspan></text>
     
     <rect x="195" y="245" width="40" height="30" rx="3" ry="3" fill="#fff" stroke="#333" stroke-width="1.5" transform="rotate(55,215,260)"/>
-    <text x="215" y="265" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">R<tspan font-size="8" dy="3">c</tspan></tspan>
+    <text x="215" y="265" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">R<tspan font-size="8" dy="3">c</tspan></text>
     
     <!-- 端点标注 -->
     <text x="40" y="305" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">a</text>
@@ -54,13 +54,13 @@
     
     <!-- 电阻 -->
     <rect x="380" y="150" width="40" height="30" rx="3" ry="3" fill="#fff" stroke="#333" stroke-width="1.5" transform="rotate(-60,400,165)"/>
-    <text x="400" y="170" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">R<tspan font-size="8" dy="3">ab</tspan></tspan>
+    <text x="400" y="170" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">R<tspan font-size="8" dy="3">ab</tspan></text>
     
     <rect x="470" y="150" width="40" height="30" rx="3" ry="3" fill="#fff" stroke="#333" stroke-width="1.5" transform="rotate(60,490,165)"/>
-    <text x="490" y="170" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">R<tspan font-size="8" dy="3">bc</tspan></tspan>
+    <text x="490" y="170" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">R<tspan font-size="8" dy="3">bc</tspan></text>
     
     <rect x="410" y="265" width="40" height="30" rx="3" ry="3" fill="#fff" stroke="#333" stroke-width="1.5"/>
-    <text x="430" y="284" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">R<tspan font-size="8" dy="3">ca</tspan></tspan>
+    <text x="430" y="284" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">R<tspan font-size="8" dy="3">ca</tspan></text>
     
     <!-- 端点标注 -->
     <text x="340" y="305" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">a</text>
@@ -68,7 +68,7 @@
     <text x="560" y="305" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">c</text>
     
     <!-- 公式 -->
-    <text x="300" y="360" text-anchor="middle" font-size="13" fill="#333">Δ → Y: R<tspan font-size="9" dy="3">a</tspan><tspan dy="-3"> = R<tspan font-size="9" dy="3">ab</tspan><tspan dy="-3">·R<tspan font-size="9" dy="3">ac</tspan><tspan dy="-3">/(R<tspan font-size="9" dy="3">ab</tspan><tspan dy="-3">+R<tspan font-size="9" dy="3">bc</tspan><tspan dy="-3">+R<tspan font-size="9" dy="3">ca</tspan><tspan dy="-3">)</tspan></tspan></tspan></tspan></tspan></tspan></tspan></tspan></tspan></tspan></text>
-    <text x="300" y="380" text-anchor="middle" font-size="13" fill="#333">Y → Δ: R<tspan font-size="9" dy="3">ab</tspan><tspan dy="-3"> = R<tspan font-size="9" dy="3">a</tspan><tspan dy="-3">+R<tspan font-size="9" dy="3">b</tspan><tspan dy="-3">+R<tspan font-size="9" dy="3">a</tspan><tspan dy="-3">R<tspan font-size="9" dy="3">b</tspan><tspan dy="-3">/R<tspan font-size="9" dy="3">c</tspan></tspan></tspan></tspan></tspan></tspan></tspan></tspan></tspan></tspan></tspan></text>
+    <text x="300" y="360" text-anchor="middle" font-size="13" fill="#333">Δ → Y: Ra = Rab × Rac / (Rab + Rbc + Rca)</text>
+    <text x="300" y="380" text-anchor="middle" font-size="13" fill="#333">Y → Δ: Rab = Ra + Rb + Ra × Rb / Rc</text>
   </g>
 </svg>

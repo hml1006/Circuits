@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="340" viewBox="0 0 760 340">
+  <defs>
+    <style type="text/css">
+      .lbl { font-family: "Noto Sans CJK SC","Source Han Sans SC","DejaVu Sans",sans-serif; font-size: 12px; fill: #1a1a1a; }
+      .small { font-family: "Noto Sans CJK SC","Source Han Sans SC","DejaVu Sans",sans-serif; font-size: 10px; fill: #444; }
+      .state { font-family: "DejaVu Sans Mono",monospace; font-size: 9px; fill: #333; }
+      .title { font-family: "Noto Sans CJK SC","Source Han Sans SC","DejaVu Sans",sans-serif; font-size: 14px; font-weight: 600; fill: #1f4e79; }
+      .axis { stroke: #333; stroke-width: 1.4; fill: none; }
+      .ref { stroke: #b03a2e; stroke-width: 1.1; stroke-dasharray: 5 4; fill: none; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="760" height="340" fill="#ffffff"/>
+
+  <!-- SLC -->
+  <text class="title" x="205" y="38" text-anchor="middle">SLC：1 bit，2 个状态</text>
+  <line class="axis" x1="50" y1="70" x2="50" y2="270"/>
+  <line class="axis" x1="50" y1="270" x2="360" y2="270"/>
+  <text class="small" x="22" y="175" transform="rotate(-90 22 175)" text-anchor="middle">单元数</text>
+  <text class="small" x="350" y="290" text-anchor="end">Vth</text>
+
+  <path d="M70,270 C86,270 100,130 130,130 C160,130 174,270 190,270 Z" fill="#cfe2f3" stroke="#1f4e79" stroke-width="1.3"/>
+  <path d="M220,270 C236,270 250,130 280,130 C310,130 324,270 340,270 Z" fill="#f7d7c4" stroke="#b35c1e" stroke-width="1.3"/>
+
+  <line class="ref" x1="205" y1="110" x2="205" y2="270"/>
+  <text class="small" x="205" y="292" text-anchor="middle">Vref</text>
+  <text class="lbl" x="130" y="300" text-anchor="middle">1（擦除）</text>
+  <text class="lbl" x="280" y="300" text-anchor="middle">0（编程）</text>
+
+  <!-- TLC -->
+  <text class="title" x="580" y="38" text-anchor="middle">TLC：3 bit，8 个状态</text>
+  <line class="axis" x1="420" y1="70" x2="420" y2="270"/>
+  <line class="axis" x1="420" y1="270" x2="740" y2="270"/>
+
+
+  <path d="M420,270 C426,270 430,170 440,150 C450,170 454,270 460,270 Z" fill="#cfe2f3" stroke="#1f4e79" stroke-width="1.1"/>
+  <path d="M460,270 C466,270 470,170 480,150 C490,170 494,270 500,270 Z" fill="#d9e8d0" stroke="#3d6b35" stroke-width="1.1"/>
+  <path d="M500,270 C506,270 510,170 520,150 C530,170 534,270 540,270 Z" fill="#f7e6c4" stroke="#9a6b1a" stroke-width="1.1"/>
+  <path d="M540,270 C546,270 550,170 560,150 C570,170 574,270 580,270 Z" fill="#f7d7c4" stroke="#b35c1e" stroke-width="1.1"/>
+  <path d="M580,270 C586,270 590,170 600,150 C610,170 614,270 620,270 Z" fill="#eadcf2" stroke="#6b3d8a" stroke-width="1.1"/>
+  <path d="M620,270 C626,270 630,170 640,150 C650,170 654,270 660,270 Z" fill="#d6eef0" stroke="#1f6b73" stroke-width="1.1"/>
+  <path d="M660,270 C666,270 670,170 680,150 C690,170 694,270 700,270 Z" fill="#f2d9e6" stroke="#8a2d5c" stroke-width="1.1"/>
+  <path d="M700,270 C706,270 710,170 720,150 C730,170 734,270 740,270 Z" fill="#e6e6e6" stroke="#555" stroke-width="1.1"/>
+
+  <line class="ref" x1="460" y1="120" x2="460" y2="270"/>
+  <line class="ref" x1="540" y1="120" x2="540" y2="270"/>
+  <line class="ref" x1="620" y1="120" x2="620" y2="270"/>
+  <line class="ref" x1="700" y1="120" x2="700" y2="270"/>
+
+  <text class="state" x="440" y="286" text-anchor="middle">111</text>
+  <text class="state" x="480" y="286" text-anchor="middle">110</text>
+  <text class="state" x="520" y="286" text-anchor="middle">101</text>
+  <text class="state" x="560" y="286" text-anchor="middle">100</text>
+  <text class="state" x="600" y="286" text-anchor="middle">011</text>
+  <text class="state" x="640" y="286" text-anchor="middle">010</text>
+  <text class="state" x="680" y="286" text-anchor="middle">001</text>
+  <text class="state" x="720" y="286" text-anchor="middle">000</text>
+
+  <text class="small" x="580" y="318" text-anchor="middle">位数越多，状态间距越小，读窗口与编程精度要求越高</text>
+</svg>

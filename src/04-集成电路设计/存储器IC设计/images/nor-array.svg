@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="600" viewBox="0 0 760 600">
+  <defs>
+    <style type="text/css">
+      .lbl { font-family: "Noto Sans CJK SC","Source Han Sans SC","DejaVu Sans",sans-serif; font-size: 12px; fill: #1a1a1a; }
+      .small { font-family: "Noto Sans CJK SC","Source Han Sans SC","DejaVu Sans",sans-serif; font-size: 10px; fill: #444; }
+      .title { font-family: "Noto Sans CJK SC","Source Han Sans SC","DejaVu Sans",sans-serif; font-size: 14px; font-weight: 600; fill: #1f4e79; }
+      .wire { stroke: #1a1a1a; stroke-width: 1.6; fill: none; }
+      .dash { stroke: #8a8a8a; stroke-width: 1.2; fill: none; stroke-dasharray: 6 5; }
+      .cell { fill: #eef2f7; stroke: #1f4e79; stroke-width: 1.5; }
+      .dev { fill: #dce6f1; stroke: #333; stroke-width: 1.3; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="760" height="600" fill="#ffffff"/>
+
+  <text class="title" x="370" y="32" text-anchor="middle">NOR 阵列：单元并联，支持随机访问</text>
+
+  <!-- BL / SL -->
+  <text class="lbl" x="256" y="66">BL</text>
+  <text class="lbl" x="474" y="66">SL</text>
+  <line class="wire" x1="270" y1="74" x2="270" y2="470"/>
+  <line class="wire" x1="470" y1="74" x2="470" y2="470"/>
+
+  <!-- WL0 -->
+  <line class="wire" x1="110" y1="105" x2="500" y2="105"/>
+  <text class="small" x="72" y="110">WL0</text>
+  <line class="wire" x1="370" y1="105" x2="370" y2="130"/>
+
+  <!-- 单元 0 -->
+  <rect class="cell" x="290" y="130" width="160" height="50" rx="3"/>
+  <text class="lbl" x="370" y="160" text-anchor="middle">FG cell</text>
+  <line class="wire" x1="270" y1="155" x2="290" y2="155"/>
+  <line class="wire" x1="450" y1="155" x2="470" y2="155"/>
+
+  <!-- WL1 -->
+  <line class="wire" x1="110" y1="215" x2="500" y2="215"/>
+  <text class="small" x="72" y="220">WL1</text>
+  <line class="wire" x1="370" y1="215" x2="370" y2="240"/>
+
+  <!-- 单元 1 -->
+  <rect class="cell" x="290" y="240" width="160" height="50" rx="3"/>
+  <text class="lbl" x="370" y="270" text-anchor="middle">FG cell</text>
+  <line class="wire" x1="270" y1="265" x2="290" y2="265"/>
+  <line class="wire" x1="450" y1="265" x2="470" y2="265"/>
+
+  <!-- WL2 -->
+  <line class="wire" x1="110" y1="325" x2="500" y2="325"/>
+  <text class="small" x="72" y="330">WL2</text>
+  <line class="wire" x1="370" y1="325" x2="370" y2="350"/>
+
+  <!-- 单元 2 -->
+  <rect class="cell" x="290" y="350" width="160" height="50" rx="3"/>
+  <text class="lbl" x="370" y="380" text-anchor="middle">FG cell</text>
+  <line class="wire" x1="270" y1="375" x2="290" y2="375"/>
+  <line class="wire" x1="450" y1="375" x2="470" y2="375"/>
+
+  <!-- 底部电路 -->
+  <rect class="dev" x="228" y="470" width="84" height="52" rx="3"/>
+  <text class="small" x="270" y="492" text-anchor="middle">Sense Amp</text>
+  <text class="small" x="270" y="508" text-anchor="middle">判决</text>
+  <rect class="dev" x="428" y="470" width="84" height="52" rx="3"/>
+  <text class="small" x="470" y="492" text-anchor="middle">SL 驱动</text>
+  <text class="small" x="470" y="508" text-anchor="middle">/ 地</text>
+
+  <!-- Sector 范围 -->
+  <rect class="dash" x="250" y="88" width="240" height="342"/>
+  <text class="small" x="370" y="450" text-anchor="middle">Sector / Block（擦除单位）</text>
+
+  <!-- 说明 -->
+  <text class="lbl" x="530" y="140">同一列单元并联在</text>
+  <text class="lbl" x="530" y="160">BL 与 SL 之间</text>
+  <text class="lbl" x="530" y="200">任一 WL 选中，该行</text>
+  <text class="lbl" x="530" y="220">单元直接接入位线</text>
+  <text class="lbl" x="530" y="260">可字 / 字节随机读，</text>
+  <text class="lbl" x="530" y="280">适合 XIP 与启动代码</text>
+
+  <text class="small" x="370" y="570" text-anchor="middle">与 NAND 串不同：NOR 单元不需要经过整条串，读到的是单个单元的电流</text>
+</svg>
